@@ -62,6 +62,9 @@ TAGMACHGUN = "Machinegun";
 GOTGRENL = "You got the Grenade Launcher!";
 TAGGRENL = "Grenade Launcher";
 
+// Items
+GOTUNIAMMO = "Picked up an Ammo Sampler Pack!";
+
 // Obituaries
 OB_MONTELEFRAG = "%o was telefragged by";
 OB_ZOMBIEMAN = "%o was popped by";

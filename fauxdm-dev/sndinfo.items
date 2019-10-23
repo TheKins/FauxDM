@@ -45,3 +45,5 @@ items/ammo/rocket2		getrock2
 
 items/ammo/cell1		getcell1
 items/ammo/cell2		getcell2
+
+items/ammo/uni			getammo
