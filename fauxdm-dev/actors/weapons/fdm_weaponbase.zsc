@@ -1,0 +1,40 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Shared weapon code
+ 
+ Comment:
+
+================================================================================
+*/
+
+class FDM_BaseWeapon : DoomWeapon
+{
+	States
+	{
+	Ready:
+	Select:
+	Deselect:
+	Fire:
+		TNT1 A 1;
+		Loop;
+	Deadman:
+		TNT1 A 1;
+		Loop;
+	}
+	
+	// Don't play the weapon switch sound when dying
+	// Thanks to Phantombeta for fixing this
+	action State A_DeselectionShit()
+	{
+		if (health <= 0)
+			return ResolveState("Deadman");
+		else
+			A_PlaySound("weapons/swap");
+
+		return ResolveState(null);
+	}
+}

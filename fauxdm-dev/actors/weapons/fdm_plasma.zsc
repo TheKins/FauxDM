@@ -11,7 +11,7 @@
 ================================================================================
 */
 
-class FDM_PlasmaRifle : DoomWeapon replaces PlasmaRifle
+class FDM_PlasmaRifle : FDM_BaseWeapon replaces PlasmaRifle
 {
 	Default
 	{
@@ -29,7 +29,7 @@ class FDM_PlasmaRifle : DoomWeapon replaces PlasmaRifle
 		BEEM A 1 A_WeaponReady;
 		Loop;
 	Deselect:
-		BEEM A 1 A_PlaySound("weapons/swap");
+		BEEM A 1 A_DeselectionShit();
 		"####" A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,39,WOF_INTERPOLATE);

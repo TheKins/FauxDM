@@ -11,7 +11,7 @@
 ================================================================================
 */
 
-class FDM_Railgun : DoomWeapon
+class FDM_Railgun : FDM_BaseWeapon
 {
 	Default
 	{
@@ -34,7 +34,7 @@ class FDM_Railgun : DoomWeapon
 		RAIL A 1 A_WeaponReady;
 		Loop;
 	Deselect:
-		RAIL A 1 A_PlaySound("weapons/swap");
+		RAIL A 1 A_DeselectionShit();
 		"####" A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,39,WOF_INTERPOLATE);

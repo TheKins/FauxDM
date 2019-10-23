@@ -20,6 +20,8 @@ Version "3.8"
 
 #include "actors/fdm_gameplay.zsc"
 #include "actors/fdm_player.zsc"
+
+#include "actors/weapons/fdm_weaponbase.zsc"
 #include "actors/weapons/fdm_handgun.zsc"
 #include "actors/weapons/fdm_shotgun.zsc"
 #include "actors/weapons/fdm_supershotgun.zsc"

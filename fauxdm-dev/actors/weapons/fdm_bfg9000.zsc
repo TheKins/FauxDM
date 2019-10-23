@@ -11,7 +11,7 @@
 ================================================================================
 */
 
-class FDM_BFG9000 : DoomWeapon replaces BFG9000
+class FDM_BFG9000 : FDM_BaseWeapon replaces BFG9000
 {
 	Default
 	{
@@ -30,7 +30,7 @@ class FDM_BFG9000 : DoomWeapon replaces BFG9000
 		ABFG A 1 A_WeaponReady;
 		Loop;
 	Deselect:
-		ABFG A 1 A_PlaySound("weapons/swap");
+		ABFG A 1 A_DeselectionShit();
 		"####" A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,39,WOF_INTERPOLATE);

@@ -11,7 +11,7 @@
 ================================================================================
 */
 
-class FDM_GrenadeLauncher : DoomWeapon
+class FDM_GrenadeLauncher : FDM_BaseWeapon
 {
 	Default
 	{
@@ -33,7 +33,7 @@ class FDM_GrenadeLauncher : DoomWeapon
 		GLAU A 1 A_WeaponReady;
 		Loop;
 	Deselect:
-		GLAU A 1 A_PlaySound("weapons/swap");
+		GLAU A 1 A_DeselectionShit();
 		"####" A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,39,WOF_INTERPOLATE);

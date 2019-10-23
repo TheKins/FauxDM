@@ -11,7 +11,7 @@
 ================================================================================
 */
 
-class FDM_Handgun : DoomWeapon replaces Pistol
+class FDM_Handgun : FDM_BaseWeapon replaces Pistol
 {
 	Default
 	{
@@ -35,7 +35,7 @@ class FDM_Handgun : DoomWeapon replaces Pistol
 		HGUN A 1 A_WeaponReady;
 		Loop;
 	Deselect:
-		HGUN A 1 A_PlaySound("weapons/swap");
+		HGUN A 1 A_DeselectionShit();
 		"####" A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,39,WOF_INTERPOLATE);

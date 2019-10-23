@@ -11,7 +11,7 @@
 ================================================================================
 */
 
-class FDM_Machinegun : DoomWeapon replaces Chaingun
+class FDM_Machinegun : FDM_BaseWeapon replaces Chaingun
 {
 	Default
 	{
@@ -30,7 +30,7 @@ class FDM_Machinegun : DoomWeapon replaces Chaingun
 		MGUN A 1 A_WeaponReady;
 		Loop;
 	Deselect:
-		MGUN A 1 A_PlaySound("weapons/swap");
+		MGUN A 1 A_DeselectionShit();
 		"####" A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,39,WOF_INTERPOLATE);

@@ -11,7 +11,7 @@
 ================================================================================
 */
 
-class FDM_RocketLauncher : DoomWeapon replaces RocketLauncher
+class FDM_RocketLauncher : FDM_BaseWeapon replaces RocketLauncher
 {
 	Default
 	{
@@ -30,7 +30,7 @@ class FDM_RocketLauncher : DoomWeapon replaces RocketLauncher
 		RLAU A 1 A_WeaponReady;
 		Loop;
 	Deselect:
-		RLAU A 1 A_PlaySound("weapons/swap");
+		RLAU A 1 A_DeselectionShit();
 		"####" A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
 		"####" A 1 A_WeaponOffset(0,39,WOF_INTERPOLATE);
