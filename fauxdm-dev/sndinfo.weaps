@@ -52,6 +52,10 @@ weapons/grenade/bounce	grenbnce
 
 // BFG9000
 weapons/devzap                bfgzap
+weapons/bfg/charge			bfgchrg
+weapons/bfg/fire			bfgfire
+weapons/bfg/loop			bfgloop
+weapons/bfg/explode			bfgexpl
 
 // Railgun
 weapons/railgun/fire			railfire

@@ -59,9 +59,13 @@ class FDM_BFG9000 : DoomWeapon replaces BFG9000
 		"####" A 1 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE);
 		goto Ready;
 	Fire:
-		BFGG A 20 A_BFGsound;
+		BFGG A 20 A_PlaySound("weapons/bfg/charge", CHAN_WEAPON);
 		BFGG B 10 A_GunFlash;
-		BFGG B 10 A_FireBFG;
+		BFGG B 10 
+		{
+			A_FireBFG();
+			A_PlaySound("weapons/bfg/fire", CHAN_WEAPON);
+		}
 		BFGG B 20 A_ReFire;
 		Goto Ready;
 	Flash:
@@ -89,7 +93,6 @@ class FDM_BFGBall : BFGBall replaces BFGBall
 		+NOTAUTOAIMED
 		RenderStyle "Add";
 		Alpha 0.75;
-		DeathSound "weapons/bfgx";
 		Obituary "$OB_MPBFG_BOOM";
 	}
 	
@@ -98,6 +101,8 @@ class FDM_BFGBall : BFGBall replaces BFGBall
 	States
 	{
 	Spawn:
+		BFC1 A 0;
+		BFC1 A 0 A_PlaySound("weapons/bfg/loop", CHAN_6, 1.0, 1);
 		BFC1 A 2 Bright
 		{
 			A_SpawnItemEx("FDM_BFGBlastTShot2",0,0,0,0,0,5,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS);
@@ -132,7 +137,11 @@ class FDM_BFGBall : BFGBall replaces BFGBall
 		}
 		loop;
 	Death:
-		BFE1 A 0 A_Explode(200,128, !XF_HURTSOURCE);
+		BFE1 A 0 
+		{
+			A_Explode(200,256, !XF_HURTSOURCE);
+			A_PlaySound("weapons/bfg/explode", CHAN_6);
+		}
 		BFE1 AB 8 Bright;
 		BFE1 C 8 Bright; //A_BFGSpray;
 		BFE1 DEF 8 Bright;
