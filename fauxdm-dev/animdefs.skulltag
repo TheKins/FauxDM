@@ -1,0 +1,110 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: Carnevil
+ 
+ Purpose: Texture animations and warp effects from Skulltag
+ 
+ Comment: Ported over directly from skulltag_data.pk3
+
+================================================================================
+*/
+// [SP] Duel surge compatibilty
+warp2 texture HYWATER
+warp2 texture HYNUKE
+
+// [BC] Some new switches for Skulltag.
+switch SW1STNE1 on pic SW2STNE1 tics 0
+switch SW1STNE2 on pic SW2STNE2 tics 0
+switch SW1SKUL2 on pic SW2SKUL2 tics 0
+
+// [BC] And here we have a boatload of new animations for ST.
+texture bluelava
+	pic bluelava tics 8
+	pic bluelav2 tics 8
+
+texture firewal2
+	pic firewal2 tics 8
+	pic firewalc tics 8
+	pic firewald tics 8
+
+texture lavfall1
+	pic lavfall1 tics 8
+	pic lavfall2 tics 8
+	pic lavfall3 tics 8
+	pic lavfall4 tics 8
+
+flat fan1
+	pic fan1 tics 1
+	pic fan2 tics 1
+	pic fan3 tics 1
+	pic fan4 tics 1
+
+flat flava1
+	pic flava1 tics 8
+	pic flava2 tics 8
+
+flat bwater1
+	pic bwater1 tics 8
+	pic bwater2 tics 8
+	pic bwater3 tics 8
+	pic bwater4 tics 8
+
+flat blblood1
+	pic blblood1 tics 8
+	pic blblood2 tics 8
+	pic blblood3 tics 8
+
+texture bbfall1
+	pic bbfall1 tics 8
+	pic bbfall2 tics 8
+	pic bbfall3 tics 8
+	pic bbfall4 tics 8
+
+texture gstfont4
+	pic gstfont4 tics 8
+	pic gstfont5 tics 8
+	pic gstfont6 tics 8
+
+texture cacbbl1
+	pic cacbbl1 tics 8
+	pic cacbbl2 tics 8
+	pic cacbbl3 tics 8
+
+texture cacrbl1
+	pic cacrbl1 tics 8
+	pic cacrbl2 tics 8
+	pic cacrbl3 tics 8
+
+texture snuke1
+	pic snuke1 tics 8
+	pic snuke2 tics 8
+	pic snuke3 tics 8
+
+flat granuke1
+	pic granuke1 tics 8
+	pic granuke2 tics 8
+	pic granuke3 tics 8
+
+texture telr1
+	pic telr1 tics 5
+	pic telr2 tics 5
+	pic telr3 tics 5
+	pic telr4 tics 5
+	pic telr5 tics 5
+	pic telr6 tics 5
+	pic telr7 tics 5
+	pic telr8 tics 5
+	pic telr9 tics 5
+
+warp flat e1sky1
+warp flat e3sky1
+warp flat wslime01
+warp flat wblood1
+warp flat wfwater1
+warp flat wsflr6_4
+warp texture wsksnak2
+warp texture wsky2
+warp texture warpface
+warp flat wqlava

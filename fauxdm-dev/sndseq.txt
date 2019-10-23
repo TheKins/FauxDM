@@ -1,0 +1,18 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: World sounds. (See: SNDINFO.WORLD for more)
+ 
+ Comment: 
+
+================================================================================
+*/
+
+:Platform
+	playtime plats/start 25
+	playrepeat plats/mid
+	stopsound plats/stop
+end

@@ -1,0 +1,71 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Weapon sounds
+ 
+ Comment: 
+
+================================================================================
+*/
+
+weapons/swap					wswap
+
+weapons/pistol/fire				pistfire
+
+// Shotgun
+weapons/shotgun/fire		shotfire
+weapons/shotgun/cock		shotcock
+
+// Super Shotgun
+weapons/ssg/fire			ssgfire
+weapons/ssg/open			ssgopen
+weapons/ssg/close			ssgclose
+$random weapons/ssg/load 	{ weapons/ssg/load1 weapons/ssg/load2 weapons/ssg/load3 }
+weapons/ssg/load1			ssgload1
+weapons/ssg/load2			ssgload2
+weapons/ssg/load3			ssgload3
+
+// Machinegun
+$random weapons/machinegun/fire { weapons/machinegun/fire1 weapons/machinegun/fire2 }
+weapons/machinegun/fire1	mgunfir1
+weapons/machinegun/fire2	mgunfir2
+
+// Rocket Launcher
+weapons/rocket/fire		rcktfire
+weapons/rocket/loop		rcktloop
+
+$random weapons/explode { weapons/explode1 weapons/explode2 weapons/explode3 }
+weapons/explode1	expl1
+weapons/explode2	expl2
+weapons/explode3	expl3
+
+// Plasma
+weapons/beem/fire		beemfire
+weapons/beem/hit		beemhit
+
+// Grenade Launcher
+weapons/grenade/fire	grenfire
+weapons/grenade/bounce	grenbnce
+
+// BFG9000
+weapons/devzap                bfgzap
+
+// Railgun
+weapons/railgun/fire			railfire
+weapons/railgun/hitwall			railwall
+weapons/railgun/hitactor		railhit
+
+// Super Chaingun from Reelism
+weapons/minigunhold	DSMGMID
+weapons/minigunup	dsmgup
+weapons/minigundown	dsmgdown
+weapons/miniout		miniout
+
+weapons/idc			idc
+
+$random weapons/minigun{weapons/minigun1 weapons/minigun2}
+weapons/minigun1	DSMINIG1
+weapons/minigun2	DSMINIG2

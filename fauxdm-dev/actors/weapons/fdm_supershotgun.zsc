@@ -1,0 +1,110 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Super Shotgun weapon
+ 
+ Comment:
+
+================================================================================
+*/
+
+class FDM_SuperShotgun : DoomWeapon replaces SuperShotgun
+{
+	Default
+	{
+		Weapon.SelectionOrder 400;
+		Weapon.AmmoUse 2;
+		Weapon.AmmoGive 8;
+		Weapon.AmmoType "Shell";
+		Inventory.PickupMessage "$GOTSHOTGUN2";
+		Obituary "$OB_MPSSHOTGUN";
+		Tag "$TAG_SUPERSHOTGUN";
+		Decal "BulletChip";
+	}
+	States
+	{
+	Ready:
+		SSGN A 1 A_WeaponReady;
+		Loop;
+	Deselect:
+		SSGN A 1 A_PlaySound("weapons/swap");
+		"####" A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,39,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,44,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,49,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,55,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,60,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,70,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,80,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,90,WOF_INTERPOLATE);
+	FinishDeselect:
+		"####" A 0 A_Lower;
+		Loop;
+	Select:
+		SSGN A 1 A_WeaponOffset(0,90,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,80,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,70,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,60,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,55,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,49,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,44,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,39,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,35,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,33,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponOffset(0,32,WOF_INTERPOLATE);
+		"####" A 1 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE);
+		goto Ready;
+	Fire:
+		SSGN A 3;
+		SSGN B 2 BRIGHT Offset (0,44)
+		{
+			A_FireBullets (11.2, 7.1, 20, 5, "BulletPuff");
+			A_PlaySound ("weapons/ssg/fire", CHAN_WEAPON);
+			A_GunFlash();
+			A_Quake (3,5,0,750,0);
+			A_ZoomFactor(0.9,ZOOM_INSTANT|ZOOM_NOSCALETURNING);
+		}
+		SSGN C 1 BRIGHT Offset (0,45) A_ZoomFactor(0.95,ZOOM_NOSCALETURNING);
+		SSGN C 1 BRIGHT Offset (0,44) A_ZoomFactor(0.96,ZOOM_NOSCALETURNING);
+		SSGN B 1 BRIGHT Offset (0,43) A_ZoomFactor(0.97,ZOOM_NOSCALETURNING);
+		SSGN B 1 BRIGHT Offset (0,42) A_ZoomFactor(0.98,ZOOM_NOSCALETURNING);
+		SSGN A 1 Offset (0,41) A_ZoomFactor(0.99,ZOOM_NOSCALETURNING);
+		SSGN A 1 Offset (0,40) A_ZoomFactor(1.0,ZOOM_NOSCALETURNING);
+		//SSGN A 1 Offset (0,38);
+		//SSGN A 1 Offset (0,36);
+		//SSGN A 1 Offset (0,34);
+		//SSGN A 1 Offset (0,32);
+		//SSGN A 10 A_CheckReload;
+		SSGN A 1 Offset (0,39);
+		SSGN A 1 Offset (0,38);
+		SSGN A 1 Offset (0,37);
+		SSGN A 1 Offset (0,36);
+		SSGN A 1 Offset (0,35);
+		SSGN A 1 Offset (0,34);
+		SSGN A 1 Offset (0,33);
+		SSGN A 1 Offset (0,32);
+		SSGN A 6 A_CheckReload;
+		
+		SSGN D 2 A_PlaySound("weapons/ssg/open"); 
+		SSGN EF 2;
+		SSGR ABCD 2;
+		SSGR E 1 A_PlaySound("weapons/ssg/load"); 
+		SSGR FEE 1;
+		SSGR GHIJ 2;
+		SSGN FE 2;
+		SSGN D 2 A_PlaySound("weapons/ssg/close");
+		SSGN A 5 A_ReFire;
+		Goto Ready;
+	Flash:
+		TNT1 A 4 Bright A_Light1;
+		TNT1 A 3 Bright A_Light2;
+		Goto LightDone;
+	Spawn:
+		SSGN Z -1;
+		Stop;
+	}
+}

@@ -1,0 +1,40 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Terrain definitions.
+ 
+ Comment: 
+
+================================================================================
+*/
+
+// Water splash - recycled from NULL
+splash DoomWater
+{
+   smallclass      FDM_WaterSplashBaseSmall
+   smallclip      0
+   smallsound      world/drip
+   
+   baseclass      FDM_WaterSplashBase
+   sound         world/watersplash
+   noalert
+}
+
+terrain DoomWater
+{
+	splash			DoomWater
+	//footclip		10
+	liquid
+}
+
+// Terrains are assigned to flats here
+
+// Water
+floor fwater1 Doomwater
+floor fwater2 Doomwater
+floor fwater3 Doomwater
+floor fwater4 Doomwater
+floor sw0780 Doomwater

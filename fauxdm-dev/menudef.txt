@@ -1,0 +1,57 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Menu definitions
+ 
+ Comment: 
+
+================================================================================
+*/
+
+LISTMENU "MainMenu"
+{
+	StaticPatch 16, 38, "BETHBOX1"
+	StaticPatch 45, 19, "M_FAUXDM"
+	Position 97, 72
+	
+	TextItem "$MNU_NEWGAME", "n", "PlayerclassMenu"
+	TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
+	TextItem "$MNU_INFO", "i", "ReadThisMenu"
+	TextItem "$MNU_QUITGAME", "q", "QuitMenu"
+}
+
+ListMenu "EpisodeMenu"
+{
+	StaticText 54, 10, "$MNU_EPISODE"
+	Position 48, 30
+	// items will be filled in by MAPINFO
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+AddOptionMenu "OptionsMenu"
+{
+	Submenu "$OPTMNU_FDM",			"FDMOptionsMenu"
+}
+
+OptionMenu "FDMOptionsMenu"
+{
+	Title "$FDMMNU_TITLE"
+	Option "$FDMMNU_STARTINGWEAP",		"fdm_startingweapon", "StartingWeaponChoices"
+	StaticText ""
+	Option "$FDMMNU_MPWEAPS",			"fdm_mpweaps", "OnOff"
+	StaticText "$FDMNU_MPWEAPSWARN1"
+	StaticText "$FDMNU_MPWEAPSWARN2"
+	StaticText "$FDMNU_MPWEAPSWARN3"
+	StaticText ""
+	Option "$FDMMNU_DEVSPEW",			"fdm_devspew", "OnOff"
+}
+
+OptionValue "StartingWeaponChoices"
+{
+	0, "$OPTVAL_PISTOL"
+	1, "$OPTVAL_SHOTGUN"
+}

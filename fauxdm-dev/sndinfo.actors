@@ -1,0 +1,96 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Actor sounds
+ 
+ Comment: 
+
+================================================================================
+*/
+
+// Shared Noises
+$random actors/shared/gibbed { actors/shared/gibbed1 actors/shared/gibbed2 actors/shared/gibbed3 }
+actors/shared/gibbed1		actrgib1
+actors/shared/gibbed2		actrgib2
+actors/shared/gibbed3		actrgib3
+
+actors/shared/telefragged	actrtfrg
+
+// Old Doom Monsters
+actors/oldactors/imptaunt		imptnt
+actors/oldactors/posstaunt1		posstnt1
+actors/oldactors/posstaunt2		posstnt2
+
+// Quake Ranger
+actors/quakeranger/jump			qranjump
+$random actors/quakeranger/die { actors/quakeranger/die1 actors/quakeranger/die2 }
+actors/quakeranger/die1			qrandie1
+actors/quakeranger/die2			qrandie2
+$random actors/quakeranger/pain { actors/quakeranger/pain1 actors/quakeranger/pain2 }
+actors/quakeranger/pain1			qranpn1
+actors/quakeranger/pain2			qranpn2
+$random actors/quakeranger/taunt { actors/quakeranger/taunt1 actors/quakeranger/taunt2 actors/quakeranger/taunt3 actors/quakeranger/taunt4 actors/quakeranger/taunt5 }
+actors/quakeranger/taunt1			qrantnt1
+actors/quakeranger/taunt2			qrantnt2
+actors/quakeranger/taunt3			qrantnt3
+actors/quakeranger/taunt4			qrantnt4
+actors/quakeranger/taunt5			qrantnt5
+
+actors/quakeranger/fire			qranfire
+actors/quakeranger/nailwall		qrantink
+$random actors/quakeranger/ricochet { actors/quakeranger/ricochet1 actors/quakeranger/ricochet2 actors/quakeranger/ricochet3 }
+actors/quakeranger/ricochet1	qranric1
+actors/quakeranger/ricochet2	qranric2
+actors/quakeranger/ricochet3	qranric3
+
+actors/quakeranger/naildude		qranhit
+
+// crudux cruo!!
+$random actors/cultist/die	{ actors/cultist/die1 actors/cultist/die2 }
+actors/cultist/die1		cultdie1
+actors/cultist/die2		cultdie2
+
+$random actors/cultist/burn	{ actors/cultist/burn1 actors/cultist/burn2 actors/cultist/burn3}
+actors/cultist/burn1		cultfir1
+actors/cultist/burn2		cultfir2
+actors/cultist/burn3		cultfir3
+
+$random actors/cultist/pain	{ actors/cultist/pain1 actors/cultist/pain2 actors/cultist/pain3 actors/cultist/pain4 }
+actors/cultist/pain1		cultpai1
+actors/cultist/pain2		cultpai2
+actors/cultist/pain3		cultpai3
+actors/cultist/pain4		cultpai4
+
+$random actors/cultist/shotgun	{ actors/cultist/shotgun1 actors/cultist/shotgun2 }
+actors/cultist/shotgun1	cultsht1
+actors/cultist/shotgun2	cultsht2
+actors/cultist/tommy		culttomy
+actors/cultist/fuse			cultfuse
+actors/cultist/throw		culttoss
+actors/cultist/explosion	cultboom
+actors/cultist/bounce		cultbnce
+
+$random actors/cultist/rant	{ actors/cultist/rant1 actors/cultist/rant2 actors/cultist/rant3 actors/cultist/rant4 actors/cultist/rant5 actors/cultist/rant6 actors/cultist/rant7 actors/cultist/rant8 actors/cultist/rant9 }
+actors/cultist/rant1		cultrnt1
+actors/cultist/rant2		cultrnt2
+actors/cultist/rant3		cultrnt3
+actors/cultist/rant4		cultrnt4
+actors/cultist/rant5		cultrnt5
+actors/cultist/rant6		cultrnt6
+actors/cultist/rant7		cultrnt7
+actors/cultist/rant8		cultrnt8
+actors/cultist/rant9		cultrnt9
+
+// Chubbs
+actors/chubbs/oof			chuboof
+actors/chubbs/pain			chubpain
+actors/chubbs/die			chubdie
+actors/chubbs/taunt			chubtnt
+
+actors/chubbs/fire			chubfire
+actors/chubbs/open			chubopen
+actors/chubbs/load			chubload
+actors/chubbs/close			chubclos

@@ -1,0 +1,96 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Monsters of old Skulltag skins and such
+ 
+ Comment: 
+
+================================================================================
+*/
+
+// Chubbs from Skulltag
+class FDM_Chubbs : FDM_BaseMonster
+{
+	Default
+	{
+		Health 300;
+		Radius 16;
+		Height 56;
+		PainChance 20;
+		Monster;
+		+FLOORCLIP
+		speed 2;
+		MaxTargetRange 128;
+		mass 300;
+		FDM_BaseMonster.TauntSound "actors/chubbs/taunt";
+		PainSound "actors/chubbs/pain";
+		DeathSound "actors/chubbs/die";
+		ActiveSound "actors/chubbs/oof";
+		Obituary "$OB_CHUBBS";
+		DropItem "Shell";
+		Decal "BulletChip";
+	}
+	States
+	{
+	Spawn:
+		CHUB A 10 A_Look;
+		goto Roam;
+	Roam:
+		CHUB AABBCCDD 4 A_FDMRoam();
+		Loop;
+	See:
+		CHUB AABBCCDD 4 A_FDMChase;
+		Loop;
+	Missile:
+		CHUB E 10 A_FaceTarget;
+		CHUB F 8 BRIGHT
+		{
+			A_PlaySound("actors/chubbs/fire", CHAN_WEAPON);
+			A_CustomBulletAttack(8, 7, 7, 5, "BulletPuff");
+		}
+		CHUB E 6;
+		CHUB A 10 A_PlaySound("actors/chubbs/open");
+		CHUB E 10 A_PlaySound("actors/chubbs/load");
+		CHUB A 15 A_PlaySound("actors/chubbs/close");
+		Goto See;
+	Pain:
+		CHUB G 3;
+		CHUB G 3 A_Pain;
+		Goto See;
+	Death:
+		CHUB H 5;
+		CHUB I 5 A_Scream;
+		CHUB J 5 A_NoBlocking;
+		CHUB KLM 5;
+		CHUB N -1;
+		Stop;
+	}
+	
+	// Give the actor a real stupid name.
+	override void GiveStupidName()
+	{
+		static const string NameList[] =
+		{
+			"Chubbs",
+			"Chunks",
+			"Chonks",
+			"TruffleShuffle",
+			"Hana",
+			"Superchunk",
+			"Beefcaaaake",
+			"Big-Boned",
+			"SantaClaus",
+			"MikeMeyers",
+			"Garfield",
+			"Garbagefeld",
+			"Plus-Sized",
+			"BodyPositive"
+		};
+		int i;
+		i = random(0,NameList.Size()-1);
+		SetTag(NameList[i]);
+	}
+}

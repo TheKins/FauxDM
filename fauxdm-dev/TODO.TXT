@@ -1,0 +1,52 @@
+================================================================================
+
+ The To-Do List
+
+================================================================================
+
+MONSTERS:
+- Navigation is kind of fucked. They're never, _ever_ going to be trying to be
+  proper bots (they're idiot monsters that think they're people!) but it'd be
+  nice if they didn't just "run the rope" between walls as much.
+  
+GAMEPLAY JUNK:
+- ACS should probably be de-fucked and ported to ZScript, but that stuff is
+  pretty scary, so it's ACS for now. _For now._
+- Skill settings need implementing. Prob. once more stuff is added.
+  
+MAPS:
+- FDM02 could use further tweaking.
+- FDM04 needs more actors, improvements to the outside bit and an art pass.
+  
+================================================================================
+
+ The Will-Do In The Future List
+
+================================================================================
+
+MONSTERS:
+- Add more monster types! And then add more! AND THEN MORE.
+- Find a way to fake obituaries when killed, using player name and monster name.
+  Yes, this would be spammy. No, I don't care.
+- Maybe some fake text chat every now and then?
+
+WEAPONS:
+- Preferably, they'd all exist.
+- Make the Grenade Launcher's grenades more like the Quake GL's
+
+MISC:
+- Make the win/lose intermission pics script better handle non-320x240 resolutions.
+
+================================================================================
+
+ The Can't-Do List
+ 
+================================================================================
+
+- Even though they basically aren't used by the mod, maps still require a Player
+  1 start to load. This rules out some Deathmatch map sets unless you manually
+  add a start position in an editor. Which isn't HARD, but it can be tedious.
+- The LevelCompatibility script to make multiplayer weapon spawns appear mangles
+  spawn flags, causing script-triggering actors like SecActHitFloor to have
+  incorrect settings. As such, this is locked behind a CVar until engine-side
+  functionality emerges to fix this.

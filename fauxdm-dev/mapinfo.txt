@@ -1,0 +1,213 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Game and map info definitions.
+ 
+ Comment: 
+
+================================================================================
+*/
+
+gameinfo
+{
+	titlemusic = "D64INTER"
+	playerclasses = "FDM_Player"
+	
+	gibfactor = 0.5
+	
+	AddEventHandlers = "FDM_DMPlayerSpawnHandler", "FDM_DMSpawnHandler", "FDM_SP_ItemRespawner"
+	translator = "xlat.txt"
+	statusbarclass = "FDM_StatusBar"
+	statscreen_single = "FDM_StatusScreen"
+	
+	weaponslot = 1, "Fist", "Chainsaw"
+	weaponslot = 2, "FDM_Handgun"
+	weaponslot = 3, "FDM_Shotgun", "FDM_SuperShotgun"
+	weaponslot = 4, "FDM_Machinegun", "FDM_Minigun"
+	weaponslot = 5, "FDM_RocketLauncher", "FDM_GrenadeLauncher"
+	weaponslot = 6, "FDM_PlasmaRifle", "FDM_Railgun"
+	weaponslot = 7, "FDM_BFG9000"
+}
+
+gamedefaults
+{
+	AllowRespawn
+	ResetHealth
+	ResetInventory
+	ResetItems
+	TotalInfighting
+}
+
+// Redefine skill settings to allow for certain features to
+// work in pre-existing Doom maps.
+clearskills
+/*
+skill baby
+{
+	SpawnFilter = Baby
+	Name = "$SKILL1"
+	Key = "i"
+	PlayerRespawn
+	TotalInfighting
+}
+
+skill easy
+{
+	SpawnFilter = Easy
+	Name = "$SKILL2"
+	Key = "h"
+	
+	PlayerRespawn
+	TotalInfighting
+}
+*/
+skill normal
+{
+	SpawnFilter = Normal
+	Key = "h"
+	Name = "$SKILL3"
+	DefaultSkill
+	
+	PlayerRespawn
+	TotalInfighting
+}
+/*
+skill hard
+{
+	SpawnFilter = Hard
+	Name = "$SKILL4"
+	Key = "u"
+	
+	PlayerRespawn
+	TotalInfighting
+}
+
+skill nightmare
+{
+	DisableCheats
+	SpawnFilter = Nightmare
+	Name = "$SKILL5"
+	MustConfirm
+	Key = "n"
+	
+	PlayerRespawn
+	TotalInfighting
+}
+*/
+
+// Quick-n-Dirty Skulltag Compat
+DoomEdNums
+{
+	5013 = "BFG9000" // BFG10K
+	5011 = "FDM_GrenadeLauncher" // GrenadeLauncher
+	5014 = "FDM_Minigun" // Minigun
+	5012 = "FDM_Railgun" // Railgun
+	
+	5030 = "SoulSphere" // Turbosphere
+	5032 = "SoulSphere"// TimeFreezeSphere
+	5035 = "BlurSphere" // InvisibilitySphere
+	5036 = "Berserk" // DoomSphere
+	5037 = "BlueArmor" // Guardsphere
+	5039 = "SoulSphere" // RandomPowerup
+	
+	5090 = "FDM_HealthBonus" // MaxHealthBonus
+	5091 = "FDM_ArmorBonus" //  MaxArmorBonus
+	5040 = "BlueArmor" // RedArmor
+	
+	5080 = "FDM_Blank" // Team Spawn
+	5081 = "FDM_Blank" // Team Spawn
+	
+	5100 = "FDM_Blank" // StrengthRune
+	5101 = "FDM_Blank" // RageRune
+	5102 = "FDM_Blank" // DrainRune
+	5103 = "FDM_Blank" // SpreadRune
+	5104 = "FDM_Blank" // ResistanceRune
+	5105 = "FDM_Blank" // RegenerationRune
+	5106 = "FDM_Blank" // ProsperityRune
+	5107 = "FDM_Blank" // ReflectionRune
+	5108 = "FDM_Blank" // HighJumpRune
+	5109 = "FDM_Blank" // HasteRune
+	
+	5068 = "FDM_SpringPadZone"
+	
+	// New Stuff
+	21000 = "TangoHangingLight144"
+	21001 = "TangoHangingLight96"
+	21002 = "TangoHangingLight66"
+	21003 = "FDM_DoomTree"
+	21004 = "FDM_MarshLily"
+	21005 = "FDM_MarshReeds"
+	21006 = "FDM_Waterspout"
+}
+	
+
+// Map Definitions
+episode FDM01
+{
+	name = "$TXT_FDM"
+	key = "f"
+}
+
+cluster 50
+{
+	flat = "SLIME16"
+	music = "$MUSIC_READ_M"
+}
+
+map FDM01 "Carnyard Love" // orig by Carnevil and Matthew McGee
+{
+	author = "Orig. by Carnevil & Matthew McGee"
+	next = "D5M1"
+	sky1 = "STSKY1"
+	music = "mglodoom"
+	levelnum = 1
+	cluster = 50
+	EnterPic = "I_FDM01"
+}
+
+map D5M1 "Plead the Fifth" // Orig. SS-MAP1 (aka DWANGO5 Map01) by Rockt and Asmo
+{
+	author = "Orig. by Rockt & Asmo"
+	next = "FDM02"
+	sky1 = "D5SKY"
+	music = "mus_d5m1"
+	levelnum = 2
+	cluster = 50
+	EnterPic = "I_D5M1"
+}
+
+map FDM02 "Forgotten Temple" // orig from first 1995 SW proto
+{
+	author = "Eric Reuter, The Kins"
+	next = "FDM03"
+	sky1 = "SNSSKY01"
+	music = "swtaiko"
+	levelnum = 3
+	cluster = 50
+	EnterPic = "I_FDM02"
+}
+
+map FDM03 "Shooting Gallery" // from Metroid Prime 2 MP
+{
+	author = "Retro Studios, The Kins"
+	next = "FDM04"
+	sky1 = "AB3DSKY"
+	music = "300toll"
+	levelnum = 4
+	cluster = 50
+	EnterPic = "I_FDM03"
+}
+
+map FDM04 "Don't Wake Daddy" // All original, baby
+{
+	author = "The Kins"
+	next = "FDM01"
+	sky1 = "STSKY6"
+	music = "PBLOOD1"
+	levelnum = 5
+	cluster = 50
+	EnterPic = "I_FDM04"
+}

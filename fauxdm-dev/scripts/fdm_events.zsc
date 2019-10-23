@@ -1,0 +1,157 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie (see comment)
+ 
+ Purpose: Event Handlers
+ 
+ Comment: While I smushed this all together, Gutawer, Phantombeta,
+          Jekyll Grim Payne, Zombie and Kodi all deserve credit for
+		  babying my dumb ass through all of this at one point or another.
+
+================================================================================
+*/
+
+Class FDM_DMPlayerSpawnHandler : EventHandler
+{				
+	override void PlayerEntered(PlayerEvent e)
+	{
+		Vector3 checkpos = level.PickDeathmatchStart();
+		
+		// Means there is no deathmatch starts.
+		if (checkpos ~== (0,0,0))
+		{
+			if (!multiplayer && !deathmatch && fdm_devspew == 1)
+				Console.printf("FDM_Error: No deathmatch starts found when player entering game!");
+			return;
+		}
+		
+		if (!multiplayer && !deathmatch)
+		{
+			Vector3 dest;
+			int destAngle;
+			[dest, destAngle] = level.PickDeathmatchStart();
+				
+			PlayerInfo player = players[e.PlayerNumber];
+			if (player.mo != null)
+			{
+				player.mo.setOrigin(dest, false);
+				dest.z = player.mo.curSector.floorplane.ZatPoint(dest.XY);
+				player.mo.setOrigin(dest, false);
+
+				player.mo.angle = destAngle;
+				player.mo.giveinventory("RedCard",1);
+				player.mo.giveinventory("RedSkull",1);
+				player.mo.giveinventory("BlueCard",1);
+				player.mo.giveinventory("BlueSkull",1);
+				player.mo.giveinventory("YellowCard",1);
+				player.mo.giveinventory("YellowSkull",1);
+				Actor.Spawn("FDM_ActorSpawnFog", dest);
+			} else {
+				Console.printf("FDM_Error: No player 1 start! (Yes, we still need one in the\nmap, otherwise the engine refuses to start the game. Like it's\njust about to do. Sorry, we can't work around this! You'll\nneed to manually add a Player 1 Start in the level editor.)");
+			}
+		}
+	}
+	
+	override void PlayerRespawned(PlayerEvent e)
+	{
+		Vector3 checkpos = level.PickDeathmatchStart();
+		
+		// Means there is no deathmatch starts.
+		if (checkpos ~== (0,0,0))
+		{
+			if (!multiplayer && !deathmatch && fdm_devspew == 1)
+				Console.printf("FDM_Error: No deathmatch starts found when player respawning!");
+			return;
+		}
+		
+		if (!multiplayer && !deathmatch)
+		{
+			Vector3 dest;
+			int destAngle;
+			[dest, destAngle] = level.PickDeathmatchStart();
+				
+			PlayerInfo player = players[e.PlayerNumber];
+			if (player.mo != null)
+			{
+				player.mo.setOrigin(dest, false);
+				dest.z = player.mo.curSector.floorplane.ZatPoint(dest.XY);
+				player.mo.setOrigin(dest, false);
+
+				player.mo.angle = destAngle;
+				player.mo.giveinventory("RedCard",1);
+				player.mo.giveinventory("RedSkull",1);
+				player.mo.giveinventory("BlueCard",1);
+				player.mo.giveinventory("BlueSkull",1);
+				player.mo.giveinventory("YellowCard",1);
+				player.mo.giveinventory("YellowSkull",1);
+				Actor.Spawn("FDM_ActorSpawnFog", dest);
+			}
+		}
+	}
+}
+
+
+Class FDM_DMSpawnHandler : EventHandler
+{
+	Array<Actor> Things;
+	
+	override void WorldLoaded(WorldEvent e)
+	{
+		Things.Clear();
+		
+		// are we in single player? and are we re-entering a hub level?
+		if (!multiplayer && !deathmatch && e.IsReopen == false)
+		{
+			for (int j = 0; j < 100; j++)
+			{
+				Vector3 checkpos = level.PickDeathmatchStart();
+				
+				// Means there is no deathmatch starts.
+				if (checkpos ~== (0,0,0) && fdm_devspew == 1)
+				{
+					Console.printf("FDM_Error: No deathmatch starts found when placing monster spawners!");
+					return;
+				}
+				
+				if (Things.Size() > 0)
+				{
+					bool cont = false;
+					for (int i = 0; i < Things.Size(); i++)
+					{
+						if (Things[i].pos == checkpos)
+						{
+							cont = true;
+							break;
+						}
+					}
+					if (cont) continue;
+				}
+				// spawn a little sumptin'-sumptin'
+				if (!(level.nomonsters || sv_nomonsters))
+				{
+					Actor n = Actor.Spawn("FDM_Spawner", checkpos);
+					if (n) Things.Push(n);
+				} else {
+					Console.printf("Monsters are disabled. Game mode disabled.");
+					return;
+				}
+			}
+		}
+	}
+}
+
+class FDM_SP_ItemRespawner : EventHandler
+{
+	override void WorldThingSpawned(Worldevent e)
+	{
+		if (!multiplayer && !deathmatch)
+		{
+			if (e.thing is "Inventory" || e.thing is "Weapon")
+			{
+				Inventory(e.thing).bALWAYSRESPAWN = true;
+			}
+		}
+	}
+}

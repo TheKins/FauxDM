@@ -1,0 +1,50 @@
+// Star Soldier Energy Gun
+decal StarSoldierPlasmaScorchLower1
+{
+	pic PLASMA1
+	shade "00 00 00"
+	x-scale 0.3
+	y-scale 0.3
+	randomflipx
+	randomflipy
+}
+
+decal StarSoldierPlasmaScorch1
+{
+	pic SSPLDEC1
+	add 1.0
+	fullbright
+	animator GoAway
+	lowerdecal StarSoldierPlasmaScorchLower1
+}
+
+decal StarSoldierPlasmaScorchLower2
+{
+	pic PLASMA2
+	shade "00 00 00"
+	x-scale 0.3
+	y-scale 0.3
+	randomflipx
+	randomflipy
+}
+
+decal StarSoldierPlasmaScorch2
+{
+	pic SSPLDEC2
+	add 1.0
+	fullbright
+	animator GoAway
+	lowerdecal StarSoldierPlasmaScorchLower2
+}
+
+decalgroup StarSoldierPlasmaScorchLower
+{
+	StarSoldierPlasmaScorchLower1	1
+	StarSoldierPlasmaScorchLower2	1
+}
+
+decalgroup StarSoldierPlasmaScorch
+{
+	StarSoldierPlasmaScorch1	1
+	StarSoldierPlasmaScorch2	1
+}

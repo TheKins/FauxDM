@@ -1,0 +1,24 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: World sounds. (See: SNDSEQ.TXT for more)
+ 
+ Comment: 
+
+================================================================================
+*/
+
+// World noises
+world/jumppad				jumppad
+
+plats/start				platstrt
+plats/mid				platloop
+plats/stop				platstop
+
+world/drip splish
+world/watersplash splash
+world/lavasizzle acid5
+world/sludgegloop muck5

@@ -1,0 +1,14 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Tells the game what ACS script to load.
+ 
+ Comment: 
+
+================================================================================
+*/
+
+FAUXDM

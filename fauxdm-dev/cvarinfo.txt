@@ -1,0 +1,25 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: CVARs, CCMDs and such.
+ 
+ Comment: 
+
+================================================================================
+*/
+
+// Toggles FauxDM-specific warnings and errors
+server int fdm_devspew = 0;
+
+// Defines the weapon you spawn with.
+// 0 = Pistol (Default)
+// 1 = Shotgun
+server int fdm_startingweapon = 0;
+
+// Defines whether multiplayer-only spawns appear in single player.
+// This currently overwrites thing flags, which can cause problems
+// with certain kinds of script trigger, so for now it defaults to off.
+server int fdm_mpweaps = 0;

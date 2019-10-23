@@ -1,0 +1,24 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: XLAT definitions.
+ 
+ Comment: Remove the ability to exit on non-UDMF maps. May be rendered
+          irrelevant by LevelCompatibility junk in the future.
+
+================================================================================
+*/
+
+include "xlat/doom.txt"
+
+// No running away now!
+ 11 = USE,		DamageThing(9999, 20)
+ 51 = USE,		DamageThing(9999, 20)
+ 52 = WALK,		DamageThing(9999, 20)
+124 = WALK,		DamageThing(9999, 20)
+197 = SHOOT,		DamageThing(9999, 20)
+198 = SHOOT,		DamageThing(9999, 20)
+sector 11 = Damage_InstantDeath;

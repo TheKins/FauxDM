@@ -1,0 +1,98 @@
+================================================================================
+
+ Deathmatch Simulator (aka: FauxDM)
+ 
+ Credits
+
+================================================================================
+
+Developed by:
+The Kinsie
+
+Babying Me Through Most Of The Heavy ZScript-Lifting:
+Gutawer
+Phantombeta
+Jekyll Grim Payne
+Zombie
+Kodi
+Comet
+
+Graphics That Weren't "Borrowed" From Commercial Games:
+Zrrion (Quake Ranger)
+hidfan (Doom AI Rescale)
+Mechadon (Big Box-o-Skies)
+Seth Gorden (Skulltag Intermission Pics base)
+Seth Gorden and Chris Schnefke (Chubbs skin)
+LossForWords (Quake SSG)
+Smooth Doom Team (Doom 64 SSG Frames)
+Michael Niggel and Edmundo Bordeau (Skulltag Railgun)
+Sonik.O.Fan (Shotgun and Machinegun sprites, Skulltag railgun remaster)
+Amuscaria (Rocket and Grenade Launchers, Hell-Forged Texture pack)
+
+Other Stuff From Other Mods:
+JoeyTD (BFG9000 Attack)
+MaxiClouds (Re-Blood TNT code)
+Samsara Devs (Duke3D Gib code)
+Skulltag Development Team (Any further Skulltag assets otherwise uncredited)
+
+Testers:
+BlorgX3
+
+================================================================================
+
+Music Credits:
+"D64INTER"
+Doom 64 Intermission
+Original by Aubrey Hodges
+MIDIfied by Jose Navarrete
+
+"MGLODOOM"
+Megalodoomia
+Based off tracks by Bobby Prince and Toby Fox
+by Xaser Acheron
+
+"300TOLL"
+Dethtoll.mid sped up x3
+Original by Bobby Prince
+
+"SWTAIKO"
+Taiko Recall
+by Lee Jackson
+
+"STWIN"
+Skulltag victory music
+Original by Joose Zansai
+
+"STLOSE"
+TNT Evilution intermission music
+Original by TeamTNT
+
+"PBLOOD1"
+Untitled track for Blood prototype
+by Jay Wilson
+
+================================================================================
+
+Map Credits:
+FDM01: "Carnyard Love"
+Based on D2DM1 and D2DM2 of Skulltag
+Originally by Carnevil and Matthew McGee
+Glued together with little tweaks here and there by The Kins
+
+D5M1: "Plead the Fifth"
+Based on SS-MAP1 (aka Dwango5 Map01)
+Originally by Rockt and Asmo (https://d5m1.com/)
+Minor tweaks, fixes and bits of visual polish by The Kins
+
+FDM02: "Forgotten Temple"
+Based on ERIC-1.MAP from the January 1995 prototype of Shadow Warrior
+Originally by Eric Reuter... presumably
+Porting and turning into a DM map by The Kins
+
+FDM03: "Shooting Gallery"
+Based on Shooting Gallery from Metroid Prime 2 multiplayer
+Originally by Retro Studios
+Remade by The Kins
+
+FDM04: "Don't Wake Daddy"
+Made by The Kins

@@ -1,0 +1,202 @@
+/*
+================================================================================
+ FauxDM ACS Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Gameplay Loop and such
+ 
+ Comment: This will inevitably have to be ported over to ZScript at some point.
+          Preferably sooner rather than later. But ZScript is scary so we're
+		  starting here for now.
+
+================================================================================
+*/
+
+#library "fauxdm"
+#include "zcommon.acs"
+
+int minutes = 5;
+int seconds = 0;
+global int 2:killcap;
+int stoptheclock = 0;
+global int 1:mapsCleared;
+
+script "FDM_StartGameplay" OPEN
+{
+	if (GameType() == GAME_SINGLE_PLAYER && GetCVar("sv_nomonsters") == 0)
+	{
+		killcap = 20 + (mapsCleared * 5);
+		
+		ACS_NamedExecute("FDM_GamePlayTimer",0);
+	}
+}
+
+script "FDM_GameplayFragTracker" ENTER
+{
+	TakeInventory("FDM_FragCounter", 999999);
+	
+	if (GameType() == GAME_SINGLE_PLAYER && GetCVar("sv_nomonsters") == 0)
+	{
+		while(true)
+		{
+			if (CheckInventory("FDM_FragCounter") >= killcap)
+			{
+				ACS_NamedExecute("FDM_MissionComplete",0);
+				break;
+			} else {
+				//HudMessageBold(s:"Target: ", i:killcap; HUDMSG_PLAIN, 98, CR_RED, 0.5, 0.95, 0.1);
+			}
+			delay(1);
+		}
+	}
+}
+
+script "FDM_GameplayTimer" (void)
+{
+    while(true)
+    {
+        if (stoptheclock == 1)
+		{
+			break;
+		}
+		delay(35);
+
+        if (seconds <= 0)
+        {
+            minutes--;
+            seconds = 59;
+        } else {
+            seconds--;
+        }
+		
+		if (minutes == 0 && seconds == 0 && stoptheclock == 0)
+		{
+			ACS_NamedExecute("FDM_MissionFailed",0);
+			break;
+		}
+		
+        SetFont ("BIGFONT");
+		if (seconds < 10)
+		{
+			if (stoptheclock == 0)
+				HudMessageBold(i:minutes, s:":0", i:seconds; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 1.0);
+		} else {
+			if (stoptheclock == 0)
+				HudMessageBold(i:minutes, s:":", i:seconds; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 1.0);
+		}
+    }
+}
+
+script "FDM_MissionFailed" (void)
+{
+	ClearInventory();
+	GiveInventory("FDM_Endgame_Loser", 1);
+	SetFont ("BIGFONT");
+	HudMessageBold(s:"YOU FAILED!"; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 5.0);
+	SetPlayerProperty (1, 1, PROP_TOTALLYFROZEN);
+	SetPlayerProperty (1, 1, PROP_INVULNERABILITY);
+	SetMusic("M_NULL",0);
+	AmbientSound("gameplay/missionfailed", 127);
+	AmbientSound("gameplay/missionfailed", 127);
+	delay(105);
+	SetPlayerProperty (1, 0, PROP_TOTALLYFROZEN);
+	SetPlayerProperty (1, 0, PROP_INVULNERABILITY);
+	Teleport_NewMap (GetLevelInfo(LEVELINFO_LEVELNUM), 0, 0);
+}
+
+script "FDM_MissionComplete" (void)
+{
+	stoptheclock = 1;
+	GiveInventory("FDM_Endgame_Winner", 1);
+	SetFont ("BIGFONT");
+	HudMessageBold(s:"YOU WIN!"; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 5.0);
+	SetPlayerProperty (1, 1, PROP_INVULNERABILITY);
+	SetMusic("M_NULL",0);
+	AmbientSound("gameplay/missioncomplete", 127);
+	AmbientSound("gameplay/missioncomplete", 127);
+	delay(105);
+	SetPlayerProperty (1, 0, PROP_INVULNERABILITY);
+	//TakeInventory("FDM_FragCounter",9999);
+	ClearInventory();
+	mapsCleared++;
+	Exit_Normal(0);
+}
+
+script "FDM_ResetInventory" ENTER
+{
+	ClearInventory();
+	TakeInventory("FDM_Endgame_Winner",9999);
+	TakeInventory("FDM_Endgame_Loser",9999);
+	GiveInventory("Fist", 1);
+	if (GetCVar("fdm_startingweapon") == 1)
+	{
+		GiveInventory("FDM_Shotgun", 1);
+		SetWeapon("FDM_Shotgun");
+	} else {
+		GiveInventory("FDM_Handgun", 1);
+		SetWeapon("FDM_Handgun");
+	}
+	GiveInventory("Clip", 30);
+	GiveInventory("RedCard", 1);
+	GiveInventory("RedSkull", 1);
+	GiveInventory("BlueCard", 1);
+	GiveInventory("BlueSkull", 1);
+	GiveInventory("YellowCard", 1);
+	GiveInventory("YellowSkull", 1);
+}
+
+script "FDM_ResetInventoryOnRespawn" RESPAWN
+{
+	ClearInventory();
+	GiveInventory("Fist", 1);
+	if (GetCVar("fdm_startingweapon") == 1)
+	{
+		GiveInventory("FDM_Shotgun", 1);
+		SetWeapon("FDM_Shotgun");
+	} else {
+		GiveInventory("FDM_Handgun", 1);
+		SetWeapon("FDM_Handgun");
+	}
+	GiveInventory("Clip", 30);
+	GiveInventory("RedCard", 1);
+	GiveInventory("RedSkull", 1);
+	GiveInventory("BlueCard", 1);
+	GiveInventory("BlueSkull", 1);
+	GiveInventory("YellowCard", 1);
+	GiveInventory("YellowSkull", 1);
+}
+
+script "FDM_MapIntro" ENTER
+{
+	int Verb[7] =
+	{
+		"waste",
+		"nuke",
+		"frag",
+		"destroy",
+		"splatter",
+		"evaporate",
+		"spray"
+	};
+	
+	int Punchline[6] =
+	{
+		"Get to it!",
+		"Get crackin'!",
+		"Haev a balst!",
+		"Don't fuck up!",
+		"Refrain from failure!",
+		"That cool with you?"
+	};
+	
+	if (GameType() == GAME_SINGLE_PLAYER && GetCVar("sv_nomonsters") == 0)
+	{
+		delay(16);
+		AmbientSound("gameplay/start",127);
+		SetFont ("BIGUPPER");
+		HudMessageBold(s:"You have five minutes"; HUDMSG_PLAIN, 1, CR_RED, 0.5, 0.45, 5.0);
+		HudMessageBold(s:"to ", s:Verb[random(0,6)], s:" ", i:killcap, s:" enemies!"; HUDMSG_PLAIN, 2, CR_RED, 0.5, 0.5, 5.0);
+		HudMessageBold(s:Punchline[random(0,5)]; HUDMSG_PLAIN, 31, CR_RED, 0.5, 0.6, 5.0);
+	}
+}

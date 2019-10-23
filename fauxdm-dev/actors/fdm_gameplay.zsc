@@ -1,0 +1,63 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Inventory counters for FDM gameplay.
+ 
+ Comment: Yes, I know this is the dumb bad way to go about things.
+
+================================================================================
+*/
+
+class FDM_FragCounter : Inventory
+{
+    Default
+	{    
+	Inventory.MaxAmount 0x7FFFFFFF;
+	+Inventory.UNDROPPABLE
+    -Inventory.INVBAR
+	}
+}
+
+class FDM_FragCounterCareer : Inventory
+{
+    Default
+	{    
+	Inventory.MaxAmount 0x7FFFFFFF;
+	+Inventory.UNDROPPABLE
+    -Inventory.INVBAR
+	}
+}
+
+class FDM_MonsterTaunt : Inventory
+{
+    Default
+	{    
+	Inventory.MaxAmount 1;
+    -Inventory.INVBAR
+	}
+}
+
+class FDM_MonsterTauntPlayer : FDM_MonsterTaunt {}
+
+class FDM_Endgame_Winner : Inventory
+{
+    Default
+	{    
+	Inventory.MaxAmount 1;
+    -Inventory.INVBAR
+	+Inventory.UNDROPPABLE
+	}
+}
+
+class FDM_Endgame_Loser : Inventory
+{
+    Default
+	{    
+	Inventory.MaxAmount 1;
+    -Inventory.INVBAR
+	+Inventory.UNDROPPABLE
+	}
+}

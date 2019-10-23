@@ -1,0 +1,172 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie, Tango
+ 
+ Purpose: Decorative props for maps.
+ 
+ Comment: 
+
+================================================================================
+*/
+
+// Ported from Paradise by Tango
+class TangoHangingLight144 : Actor
+{
+	Default
+	{
+		Radius 2;
+		Height 144;
+		+NOGRAVITY
+		+SPAWNCEILING
+		//$Category "FauxDM Props/Third Party"
+		//$Title "Paradise Hanging Light - 144 Height"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+	
+	States
+	{
+	Spawn:
+		HLT1 A -1 Bright;
+		Stop;
+	}
+}
+
+class TangoHangingLight96 : Actor
+{
+	Default
+	{
+		Radius 2;
+		Height 96;
+		+NOGRAVITY
+		+SPAWNCEILING
+		//$Category "FauxDM Props/Third Party"
+		//$Title "Paradise Hanging Light - 96 Height"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+	
+	States
+	{
+	Spawn:
+		HLT2 A -1 Bright;
+		Stop;
+	}
+}
+
+class TangoHangingLight66 : Actor
+{
+	Default
+	{
+		Radius 2;
+		Height 66;
+		+NOGRAVITY
+		+SPAWNCEILING
+		//$Category "FauxDM Props/Third Party"
+		//$Title "Paradise Hanging Light - 66 Height"
+		//$IsDecoration
+		//$NotAngled
+		//$Color 11
+	}
+	
+	States
+	{
+	Spawn:
+		HLT3 A -1 Bright;
+		Stop;
+	}
+}
+
+// From the Doom Romero data dump
+class FDM_DoomTree : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 56;
+		ProjectilePassHeight -16;
+		+SOLID
+		//$Category "FauxDM Props"
+		//$Title "Doom Proto Tree"
+		//$IsDecoration
+		//$NotAngled
+		//$Color 3
+	}
+	States
+	{
+	Spawn:
+		BUSH A -1;
+		Stop;
+	}
+}
+
+// From the Doom Romero data dump
+class FDM_MarshReeds : Actor
+{
+	Default
+	{
+		Radius 32;
+		Height 16;
+		-SOLID
+		//$Category "FauxDM Props"
+		//$Title "Marsh Reeds"
+		//$IsDecoration
+		//$NotAngled
+		//$Color 3
+	}
+	States
+	{
+	Spawn:
+		MRSH B -1;
+		Stop;
+	}
+}
+
+class FDM_MarshLily : Actor
+{
+	Default
+	{
+		Radius 32;
+		Height 8;
+		-SOLID
+		+FLATSPRITE
+		+NOGRAVITY
+		//$Category "FauxDM Props"
+		//$Title "Marsh Lilypad"
+		//$IsDecoration
+		//$Color 3
+	}
+	States
+	{
+	Spawn:
+		MRSH A -1;
+		Stop;
+	}
+}
+
+class FDM_Waterspout : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 56;
+		ProjectilePassHeight -16;
+		-SOLID
+		+NOGRAVITY
+		//$Category "FauxDM Props"
+		//$Title "Duke3D Water Spout"
+		//$IsDecoration
+		//$NotAngled
+		//$Color 3
+	}
+	States
+	{
+	Spawn:
+		WATR ABCD 2;
+		loop;
+	}
+}

@@ -1,0 +1,75 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: In-game text definitions.
+ 
+ Comment: 
+
+================================================================================
+*/
+
+[enu default]
+
+// Menu Stuff
+SKILL1 = "Baby Mode";
+SKILL2 = "Easy Mode";
+SKILL3 = "Normal Mode";
+SKILL4 = "Hard Mode";
+SKILL5 = "Stupid Mode";
+
+TXT_FDM = "FauxDM Maps";
+
+MNU_NEWGAME = "Join Server";
+MNU_INFO = "MOTD";
+MNU_QUITGAME = "Disconnect";
+
+MNU_EPISODE = "Server List";
+
+OPTMNU_FDM = "Deathmatch Simulator Options";
+FDMMNU_TITLE = "DM Simulator Options";
+
+FDMMNU_STARTINGWEAP = "Starting Weapon";
+OPTVAL_PISTOL = "Pistol";
+OPTVAL_SHOTGUN = "Shotgun";
+
+FDMMNU_MPWEAPS = "MP Weapon Spawns in SP";
+FDMNU_MPWEAPSWARN1 = "WARNING: This will mangle thing flags, breaking some";
+FDMNU_MPWEAPSWARN2 = "script activators in maps! Takes effect on map load.";
+FDMNU_MPWEAPSWARN3 = "If a map seems fucked or gunless, toggle and reload!";
+
+FDMMNU_DEVSPEW = "Developer Barf";
+
+// Intermission Text
+TXT_IMWIN = "Completed!";
+TXT_IMLOSE = "Failed!";
+TXT_IMKILLS = "Frags";
+TXT_IMTOTAL = "Total";
+TXT_IMCAREER = "Career";
+
+// Weapons
+GOTMINIGUN = "You got the Minigun!";
+TAGMINIGUN = "Minigun";
+
+GOTRAILGUN = "You got the Railgun!";
+TAGRAILGUN = "Railgun";
+
+GOTMACHGUN = "You got the Machinegun!";
+TAGMACHGUN = "Machinegun";
+
+GOTGRENL = "You got the Grenade Launcher!";
+TAGGRENL = "Grenade Launcher";
+
+// Obituaries
+OB_MONTELEFRAG = "%o was telefragged by";
+OB_ZOMBIEMAN = "%o was popped by";
+OB_SHOTGUNGUY = "%o was peppered by";
+OB_IMPHIT = "%o was clawed by";
+OB_IMP = "%o was toasted by";
+OB_CHUBBS = "%o was weighed down by";
+OB_QUAKERANGER = "%o was nailed by";
+OB_BLOODCULTIST = "%o was pulped by";
+
+OB_ICON = "%o was splattered by a big wall texture!";

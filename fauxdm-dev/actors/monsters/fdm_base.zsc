@@ -1,0 +1,323 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie (see comment)
+ 
+ Purpose: Base monster code, from which all monsters are derived
+ 
+ Comment: Things to keep in mind when making new monsters:
+ 
+          1.) Keep the radius property at 16. Otherwise, monsters may become
+		      stuck when spawning too close to walls or odd corners.
+			  (MAP04 of FreeDM is a good test case.)
+			  
+          While I smushed this all together, Gutawer, Phantombeta,
+          Jekyll Grim Payne, Zombie and Comet all deserve credit for
+		  babying my dumb ass through all of this at one point or another.
+
+================================================================================
+*/
+
+class FDM_BaseMonster : Actor
+{
+	Default
+	{
+		Speed 1;
+		+NOBLOCKMONST
+		+BLOCKASPLAYER
+		+DROPOFF
+	}
+	
+	int swimtimer;
+	int sectordmgtimer;
+	int tauntdelaytimer;
+	vector3 oldPos;
+	sound TauntSound;
+	property TauntSound: TauntSound;
+	vector2 neckchecker;
+	int wallcooldown;
+	
+	States
+	{
+	XDeath:
+		GUTS A 0 
+		{
+			A_SetScale(1.0,1.0);
+			A_PlaySound("actors/shared/gibbed", CHAN_5);
+		}
+		goto GibAnim;
+	XDeath.Telefrag:
+		GUTS A 0 
+		{
+			A_SetScale(1.0,1.0);
+			A_PlaySound("actors/shared/telefragged", CHAN_5);
+		}
+		goto GibAnim;
+	GibAnim:
+		GUTS A 0
+		{
+			A_NoBlocking();
+			A_SpawnProjectile("FDM_Gib_Eye",random(48,56),random(-4,4),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
+			A_SpawnProjectile("FDM_Gib_Eye",random(48,56),random(-4,4),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
+			A_SpawnProjectile("FDM_Gib_Head",random(48,56),random(-4,4),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
+			A_SpawnProjectile("FDM_Gib_Heart",random(8,56),random(-4,4),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
+			A_SpawnProjectile("FDM_Gib_Heart",random(8,56),random(-4,4),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
+			A_SpawnProjectile("FDM_Gib_Intestines",random(8,56),random(-4,4),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
+			A_SpawnProjectile("FDM_Gib_Intestines",random(8,56),random(-4,4),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
+			A_SpawnProjectile("FDM_Gib_Ribs",random(8,56),random(-4,4),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
+			A_SpawnProjectile("FDM_Gib_Ribs",random(8,56),random(-4,4),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
+			A_SpawnProjectile("FDM_Gib_Spine",random(8,56),random(-4,4),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
+		}
+		GUTS ABCDEFGHIJK 3;
+		GUTS L -1;
+		Stop;
+	}
+	
+	void A_FDMChase(statelabel melee = "Melee", statelabel missile = "Missile", int flags = 0)
+	{
+		DoAvoidWallrunning();
+		
+		A_Chase(melee, missile, flags);
+		A_Recoil(-speed);
+		oldPos = pos;
+	}
+	
+	void A_FDMRoam()
+	{
+		DoAvoidWallrunning();
+		
+		A_Wander();
+		A_Look();
+		A_Recoil(-speed);
+		oldPos = pos;
+	}
+	
+	override void Tick()
+	{
+		// These have all been broken into seperate functions so that individual
+		// actors can disable or orverride them for whatever reason.
+		
+		DoNeckChecker();
+		DoAllianceFlicker();
+		DoFluidNavigation();
+		DoHurtFloorDamage();
+		DoTaunts();
+		
+		Super.Tick();
+	}
+	
+	virtual void DoAvoidWallrunning()
+	{
+		// Making an attempt to prevent actors running into walls a bunch
+		if (pos.xy == oldpos.xy)
+		{
+			A_Recoil(speed * 2);
+			self.angle = self.angle + 180;
+		}
+	}
+	
+	virtual void DoNeckChecker()
+	{
+		// Make something resembling an effort to not swan-dive into toxic waste.
+		// Not perfect, but that probably makes it more realistic...
+		neckchecker = level.Vec2Offset (self.pos.xy, AngleToVector (self.angle, 32));
+		
+		if (level.IsPointInLevel((neckchecker.x, neckchecker.y, GetZAt(neckchecker.x, neckchecker.y)))
+		&& level.PointInSector(neckchecker).damageamount != 0
+		&& self.CurSector.damageamount == 0
+		&& self.pos.z == self.floorz && health > 0)
+		{
+			A_Recoil(10);
+			self.angle = self.angle + 180;
+		}
+	}
+	
+	virtual void DoAllianceFlicker()
+	{
+		// Randomly flick between friendly and unfriendly if you don't have a
+		// target, in order to simulate a free-for-all.
+		if (target == null || target.health > 0 && health > 0)
+		{
+			bFRIENDLY = random(0,1);
+		}
+		
+		// If target is a player, maybe don't be friends with that player?
+		// I dunno, just a suggestion?!
+		if (target is "PlayerPawn" && target.player)
+		{
+			bFRIENDLY = 0;
+		}
+	}
+	
+	virtual void DoFluidNavigation()
+	{
+		// If in water and alive, try and get out of it.
+		swimtimer++;
+		if (swimtimer >= 8)
+		{
+			swimtimer = 0;
+			
+			if (waterlevel >= 2 && health > 0)
+			{
+				ThrustThingZ(0,16,0,1);
+			}
+		}
+		
+		// If in water and dead, sadly float up to the surface
+		if (waterlevel > 1 && health <= 0)
+		{
+			ThrustThingZ(0,1,0,0);
+		}
+	}
+	
+	virtual void DoHurtFloorDamage()
+	{
+		// If on a hurtfloor... get hurt by it.
+		if (sectordmgtimer < self.CurSector.damageinterval)
+		{
+			sectordmgtimer++;
+		} else {
+			sectordmgtimer = 0;
+		}
+		
+		// Handle things a little differently depending on whether the actor is
+		// in water or not. If they're not, only damage them if they're actually
+		// on the floor. If they are, assume they're swimming in toxic waste or
+		// nukage or some shit and ding them at any time.
+		if (self.CurSector.damageamount != 0 && sectordmgtimer >= self.CurSector.damageinterval)
+		{
+			if (waterlevel == 0 && pos.z == GetZAt(pos.x, pos.y))
+			{
+				sectordmgtimer = 0;
+				DamageMobj(self, self, self.CurSector.damageamount, self.CurSector.damagetype, 0, 0);
+			}
+			
+			if (waterlevel > 0)
+			{
+				sectordmgtimer = 0;
+				DamageMobj(self, self, self.CurSector.damageamount, self.CurSector.damagetype, 0, 0);
+			}
+		}
+	}
+	
+	virtual void DoTaunts()
+	{
+		// Taunt other monsters with a local-volume sound.
+		if (CountInv("FDM_MonsterTaunt"))
+		{
+			tauntdelaytimer++;
+			
+			if (tauntdelaytimer > 24 && health > 0)
+			{
+				A_TakeInventory("FDM_MonsterTaunt", 9999);
+				A_PlaySound(TauntSound, CHAN_VOICE);
+				tauntdelaytimer = 0;
+			}
+		}
+		
+		// Taunt players with a zero-attentuation sound, so they always hear it.
+		if (CountInv("FDM_MonsterTauntPlayer"))
+		{
+			tauntdelaytimer++;
+			
+			if (tauntdelaytimer > 24 && health > 0)
+			{
+				A_TakeInventory("FDM_MonsterTauntPlayer", 9999);
+				A_PlaySound(TauntSound, CHAN_VOICE, 1.0, 0, ATTN_NONE);
+				tauntdelaytimer = 0;
+			}
+		}
+	}
+	
+	// If killed (IF?!) give a frag to the lucky lad/lass/etc. responsible.
+	override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
+	{
+		if (source != self && source != null)
+		{
+			target = source;
+			A_GiveInventory("FDM_FragCounter", 1, AAPTR_TARGET);
+			A_GiveInventory("FDM_FragCounterCareer", 1, AAPTR_TARGET);
+			A_GiveInventory("FDM_MonsterTaunt", 1, AAPTR_TARGET);
+		}
+		
+		Super.Die(source, inflictor, dmgflags, MeansOfDeath);
+	}
+	
+	// Give the actor a real stupid name.
+	virtual void GiveStupidName()
+	{
+		static const string NameList[] =
+		{
+			// 300 Pounds Stuff
+			"Dog Pope",
+			"WorldsMostBoringestGhost",
+			"THE JERK",
+			"DinosaurJones",
+			"The Fuck Monster",
+			"MAYOR HOBART DUNGLE",
+			"FiveDrunkenBats",
+			"[MLB]Slugfeast",
+			// Shade Thrown At Retro FPS Things
+			"CON Parser",
+			"Ken's Global Values",
+			"PolyObject-amorous",
+			// New and Exciting! Yes.
+			"AlternativeFaxMachine",
+			"Microsoft Bing Crosby",
+			"7-11 Denialist",
+			"John Wayne's Subversives", // thx shadsy
+			"Snr. Constable Daddy",
+			"gimmick halloween name",
+			"large_adult_son",
+			"COMEDY USERNAME",
+			"10X Pee-Drinker",
+			"The Gosh of Heckfire",
+			"Girl Poop",
+			"Intranet Petition",
+			"Elly the Oliphant",
+			"The 24-Hour Rule",
+			"Flaw Enforcer",
+			"Resting Kitsch Face",
+			"Sawn-Off Shogun",
+			"sudo echo",
+			"Hot Girl Summoner",
+			"Fiverr Babysitter",
+			"Ol' Jimmy Euphemisms",
+			"Fiverr Hitman",
+			"Inconspicuous Consumption",
+			"Blood 'n' Silicone",
+			"Emoji w/ a Bulge",
+			"Bob Costas-Rican"
+		};
+		
+		int i;
+		i = random(0,NameList.Size()-1);
+		SetTag(NameList[i]);
+	}
+	
+	override void BeginPlay()
+	{
+		GiveStupidName();
+	}
+
+	// Add the actor's new name to the obits when the player is killed.
+    override String GetObituary(Actor victim, Actor inflictor, Name mod, bool playerattack)
+    {
+        if (mod == 'Telefrag')
+        {
+			//return "$OB_MONTELEFRAG";
+			return string.format("%s %s.", Stringtable.Localize("$OB_MONTELEFRAG"), GetTag());
+        }
+        else if (mod == 'Melee' && HitObituary.Length() > 0)
+        {
+            //return HitObituary;
+            string test = HitObituary;
+            //return string.format("%s %s.",HitObituary, GetTag());
+			return string.format("%s %s.", Stringtable.Localize(HitObituary), GetTag());
+        }
+        //return string.format("%s %s.",Obituary, GetTag());
+		return string.format("%s %s.", Stringtable.Localize(Obituary), GetTag());
+    }
+
+}

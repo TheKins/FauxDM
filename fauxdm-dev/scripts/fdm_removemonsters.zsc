@@ -1,0 +1,90 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Remove all pre-existing monsters and keys from each map.
+ 
+ Comment: There's probably a more graceful way to do this.
+
+================================================================================
+*/
+
+//$GZDB_SKIP
+
+// Remove all normal monsters from pre-existing maps for compatibility purposes,
+// triggering bossdeath scripts where appropriate
+
+class FDM_Blank : Actor
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0;
+	    Stop;
+	}
+}
+
+class FDM_ActivateBossScripts : Actor
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_BossDeath;
+	    Stop;
+	}
+}
+
+class FDM_BlankedShotgunGuy : FDM_Blank replaces ShotgunGuy{}
+class FDM_BlankedChaingunGuy : FDM_Blank replaces ChaingunGuy{}
+class FDM_BlankedBaronOfHell : FDM_ActivateBossScripts replaces BaronOfHell{}
+class FDM_BlankedZombieman : FDM_Blank replaces Zombieman{}
+class FDM_BlankedDoomImp : FDM_Blank replaces DoomImp{}
+class FDM_BlankedArachnotron : FDM_ActivateBossScripts replaces Arachnotron{}
+class FDM_BlankedSpiderMastermind : FDM_Blank replaces SpiderMastermind{}
+class FDM_BlankedDemon : FDM_Blank replaces Demon{}
+class FDM_BlankedSpectre : FDM_Blank replaces Spectre{}
+class FDM_BlankedCacodemon : FDM_Blank replaces Cacodemon{}
+class FDM_BlankedRevenant : FDM_Blank replaces Revenant{}
+class FDM_BlankedBlueCard : FDM_Blank replaces BlueCard{}
+class FDM_BlankedRedCard : FDM_Blank replaces RedCard{}
+class FDM_BlankedYellowCard : FDM_Blank replaces YellowCard{}
+class FDM_BlankedYellowSkull : FDM_Blank replaces YellowSkull{}
+class FDM_BlankedRedSkull : FDM_Blank replaces RedSkull{}
+class FDM_BlankedBlueSkull : FDM_Blank replaces BlueSkull{}
+class FDM_BlankedStealthBaron : FDM_Blank replaces StealthBaron{}
+class FDM_BlankedStealthHellKnight : FDM_Blank replaces StealthHellKnight{}
+class FDM_BlankedStealthZombieMan : FDM_Blank replaces StealthZombieman{}
+class FDM_BlankedStealthShotgunGuy : FDM_Blank replaces ShotgunGuy{}
+class FDM_BlankedLostSoul : FDM_Blank replaces LostSoul{}
+class FDM_BlankedArchvile : FDM_Blank replaces Archvile{}
+class FDM_BlankedFatso : FDM_ActivateBossScripts replaces Fatso{}
+class FDM_BlankedHellKnight : FDM_Blank replaces HellKnight{}
+class FDM_BlankedCyberdemon : FDM_Blank replaces Cyberdemon{}
+class FDM_BlankedPainElemental : FDM_Blank replaces PainElemental{}
+class FDM_BlankedWolfensteinSS : FDM_Blank replaces WolfensteinSS{}
+class FDM_BlankedStealthArachnotron : FDM_Blank replaces StealthArachnotron{}
+class FDM_BlankedStealthArchvile : FDM_Blank replaces StealthArchvile{}
+class FDM_BlankedStealthCacodemon : FDM_Blank replaces StealthCacodemon{}
+class FDM_BlankedStealthChaingunGuy : FDM_Blank replaces StealthChaingunGuy{}
+class FDM_BlankedStealthDemon : FDM_Blank replaces StealthDemon{}
+class FDM_BlankedStealthDoomImp : FDM_Blank replaces StealthDoomImp{}
+class FDM_BlankedStealthFatso : FDM_Blank replaces StealthFatso{}
+class FDM_BlankedStealthRevenant : FDM_Blank replaces StealthRevenant{}
+
+class FDM_BlankedMBFHelperDog : FDM_Blank replaces MBFHelperDog{}
+class FDM_BlankedScriptedMarine : FDM_Blank replaces ScriptedMarine{}
+class FDM_BlankedMarineFist : FDM_Blank replaces MarineFist{}
+class FDM_BlankedMarineBerserk : FDM_Blank replaces MarineBerserk{}
+class FDM_BlankedMarineChainsaw : FDM_Blank replaces MarineChainsaw{}
+class FDM_BlankedMarinePistol : FDM_Blank replaces MarinePistol{}
+class FDM_BlankedMarineShotgun : FDM_Blank replaces MarineShotgun{}
+class FDM_BlankedMarineSSG : FDM_Blank replaces MarineSSG{}
+class FDM_BlankedMarineChaingun : FDM_Blank replaces MarineChaingun{}
+class FDM_BlankedMarineRocket : FDM_Blank replaces MarineRocket{}
+class FDM_BlankedMarinePlasma : FDM_Blank replaces MarinePlasma{}
+class FDM_BlankedMarineRailgun : FDM_Blank replaces MarineRailgun{}
+class FDM_BlankedMarineBFG : FDM_Blank replaces MarineBFG{}

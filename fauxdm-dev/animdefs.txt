@@ -1,0 +1,25 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Texture animations and warp effects
+ 
+ Comment: 
+
+================================================================================
+*/
+
+warp flat DNLAVA
+warp flat DNSLIME
+warp2 flat SW0780
+
+texture SW0300
+pic SW0301 tics 1
+pic SW0302 tics 1
+pic SW0303 tics 1
+pic SW0304 tics 1
+pic SW0305 tics 1
+pic SW0306 tics 1
+pic SW0307 tics 1

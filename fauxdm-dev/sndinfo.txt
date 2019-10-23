@@ -1,0 +1,55 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: General purpose sounds (UI etc.)
+ 
+ Comment: 
+
+================================================================================
+*/
+
+actors/spawn				actrspwn
+misc/spawn					itemresp
+
+gameplay/missionfailed		lvlfail
+gameplay/missioncomplete	lvlwin
+
+// UI Garbage
+$random gameplay/start { gameplay/start01 gameplay/start02 gameplay/start03 gameplay/start04 gameplay/start05 gameplay/start06 gameplay/start07 gameplay/start08 gameplay/start09 gameplay/start10 gameplay/start11 gameplay/start12 gameplay/start13 gameplay/start14 }
+gameplay/start01			start01
+gameplay/start02			start02
+gameplay/start03			start03
+gameplay/start04			start04
+gameplay/start05			start05
+gameplay/start06			start06
+gameplay/start07			start07
+gameplay/start08			start08
+gameplay/start09			start09
+gameplay/start10			start10
+gameplay/start11			start11
+gameplay/start12			start12
+gameplay/start13			start13
+gameplay/start14			start14
+
+intermission/nextstage		endlcntd
+
+$random intermission/paststats { intermission/nextmap1 intermission/nextmap2 intermission/nextmap3 }
+intermission/nextmap1		nextmap1
+intermission/nextmap2		nextmap2
+intermission/nextmap3		nextmap3
+
+menu/activate			menusel	// Activate a new menu
+menu/backup			menuback	// Backup to previous menu
+menu/prompt			menusel	// Activate a prompt "menu"
+menu/cursor			menucurs		// Move cursor up/down
+menu/change			menuslid	// Select new value for option
+menu/invalid			dsoof		// Menu not available
+menu/dismiss			menuback	// Dismiss a prompt message
+menu/choose			menusel	// Choose a menu item
+menu/clear			menuback	// Close top menu
+menu/cheater			cheater
+menu/quit 			menuquit
+$volume menu/quit 2.0

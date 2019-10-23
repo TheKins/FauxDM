@@ -1,0 +1,139 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: HUD code
+ 
+ Comment: 
+
+================================================================================
+*/
+
+class FDM_StatusBar : BaseStatusBar
+{
+	HUDFont mHUDFont;
+	HUDFont mIndexFont;
+	HUDFont mAmountFont;
+	InventoryBarState diparms;
+	
+
+	override void Init()
+	{
+		Super.Init();
+		SetSize(0, 320, 200);
+
+		// Create the font used for the fullscreen HUD
+		Font fnt = "BIGUPPER";
+		mHUDFont = HUDFont.Create(fnt, fnt.GetCharWidth("0"), Mono_CellLeft, 1, 1);
+		fnt = "INDEXFONT_DOOM";
+		mIndexFont = HUDFont.Create(fnt, fnt.GetCharWidth("0"), Mono_CellLeft);
+		mAmountFont = HUDFont.Create("INDEXFONT");
+		diparms = InventoryBarState.Create();
+	}
+
+	override void Draw (int state, double TicFrac)
+	{
+		Super.Draw (state, TicFrac);
+
+		if (state == HUD_StatusBar)
+		{
+			//BeginStatusBar();
+			//DrawMainBar (TicFrac);
+			BeginHUD();
+			DrawFullScreenStuff ();
+		}
+		else if (state == HUD_Fullscreen)
+		{
+			BeginHUD();
+			DrawFullScreenStuff ();
+		}
+	}
+
+	protected void DrawFullScreenStuff ()
+	{
+		Vector2 iconbox = (40, 20);
+		// Draw health
+		DrawTexture(GetMugShot(5), (20, -1));
+		DrawString(mHUDFont, FormatNumber(CPlayer.health, 3), (44, -20), DI_TEXT_ALIGN_LEFT, Font.CR_RED);
+		
+		// Draw Armor
+		let armor = CPlayer.mo.FindInventory("BasicArmor");
+		if (armor != null && armor.Amount > 0)
+		{
+			DrawInventoryIcon(armor, (120, -2));
+			DrawString(mHUDFont, FormatNumber(armor.Amount, 3), (144, -20), DI_TEXT_ALIGN_LEFT, Font.CR_RED);
+		}
+		
+		// Draw Frag Counter
+		DrawImage("hudfrag", (20, -32));
+		if (deathmatch)
+		{
+			DrawString(mHUDFont, FormatNumber(CPlayer.FragCount, 3), (44, -50), DI_TEXT_ALIGN_LEFT, Font.CR_RED);
+		} else {
+			DrawString(mHUDFont, FormatNumber(GetAmount("FDM_FragCounter"), 3), (44, -50), DI_TEXT_ALIGN_LEFT, Font.CR_RED);
+		}
+		
+		// Draw Frag Target
+		if (!multiplayer && !(level.nomonsters || sv_nomonsters))
+		{
+			DrawImage("hudtarg", (-14, -32));
+			DrawString(mHUDFont, FormatNumber(GetGlobalACSValue(2), 3), (-30, -50), DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
+		}
+		
+		Inventory ammotype1, ammotype2;
+		[ammotype1, ammotype2] = GetCurrentAmmo();
+		int invY = -20;
+		if (ammotype1 != null)
+		{
+			DrawInventoryIcon(ammotype1, (-14, -4));
+			DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -20), DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
+			invY -= 20;
+		}
+		/*if (ammotype2 != null && ammotype2 != ammotype1)
+		{
+			DrawInventoryIcon(ammotype2, (-14, invY + 17));
+			DrawString(mHUDFont, FormatNumber(ammotype2.Amount, 3), (-30, invY), DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
+			invY -= 20;
+		}*/
+		if (!isInventoryBarVisible() && !Level.NoInventoryBar && CPlayer.mo.InvSel != null)
+		{
+			DrawInventoryIcon(CPlayer.mo.InvSel, (-14, invY + 17));
+			DrawString(mHUDFont, FormatNumber(CPlayer.mo.InvSel.Amount, 3), (-30, invY), DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
+		}
+		
+		//DrawFullscreenKeys();
+		
+		if (isInventoryBarVisible())
+		{
+			DrawInventoryBar(diparms, (0, 0), 7, DI_SCREEN_CENTER_BOTTOM, HX_SHADOW);
+		}
+	}
+	
+	protected virtual void DrawFullscreenKeys()
+	{
+		// Draw the keys. This does not use a special draw function like SBARINFO because the specifics will be different for each mod
+		// so it's easier to copy or reimplement the following piece of code instead of trying to write a complicated all-encompassing solution.
+		Vector2 keypos = (-10, 2);
+		int rowc = 0;
+		double roww = 0;
+		for(let i = CPlayer.mo.Inv; i != null; i = i.Inv)
+		{
+			if (i is "Key" && i.Icon.IsValid())
+			{
+				DrawTexture(i.Icon, keypos, DI_SCREEN_RIGHT_TOP|DI_ITEM_LEFT_TOP);
+				Vector2 size = TexMan.GetScaledSize(i.Icon);
+				keypos.Y += size.Y + 2;
+				roww = max(roww, size.X);
+				if (++rowc == 3)
+				{
+					keypos.Y = 2;
+					keypos.X -= roww + 2;
+					roww = 0;
+					rowc = 0;
+				}
+			}
+		}
+	}
+}

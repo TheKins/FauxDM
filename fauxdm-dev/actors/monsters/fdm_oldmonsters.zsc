@@ -1,0 +1,189 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Repurposed old Doom monsters
+ 
+ Comment: 
+
+================================================================================
+*/
+
+
+
+// Zombieman
+class FDM_ZombieMan : FDM_BaseMonster
+{
+	Default
+	{
+		Health 100;
+		Radius 16;
+		Height 56;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		speed 4;
+		FDM_BaseMonster.TauntSound "actors/oldactors/posstaunt2";
+		AttackSound "grunt/attack";
+		PainSound "grunt/pain";
+		DeathSound "grunt/death";
+		ActiveSound "grunt/active";
+		Obituary "$OB_ZOMBIEMAN";
+		//Tag "$FN_ZOMBIE";
+		DropItem "Clip";
+		Decal "BulletChip";
+	}
+	States
+	{
+	Spawn:
+		POSS A 10 A_Look;
+		goto Roam;
+	Roam:
+		POSS AABBCCDD 4 A_FDMRoam();
+		Loop;
+	See:
+		POSS AABBCCDD 4 A_FDMChase;
+		Loop;
+	Missile:
+		POSS E 0 ThrustThing(frandom(0,360), 8, 0, 0);
+		POSS E 8 A_FaceTarget;
+		POSS F 8 A_PosAttack;
+		POSS E 1 A_CPosRefire;
+		Goto Missile;
+	Pain:
+		POSS G 3;
+		POSS G 3 A_Pain;
+		Goto See;
+	Death:
+		POSS H 5;
+		POSS I 5 A_Scream;
+		POSS J 5 A_NoBlocking;
+		POSS K 5;
+		POSS L -1;
+		Stop;
+	}
+	
+	override void PostBeginPlay ()
+	{
+		Super.PostBeginPlay ();
+		bFRIGHTENED = random(0,1);
+	}
+}
+
+// Shotgun Guy
+class FDM_ShotgunGuy : FDM_BaseMonster
+{
+	Default
+	{
+		Health 100;
+		Radius 16;
+		Height 56;
+		Mass 100;
+		Speed 4;
+		PainChance 170;
+		Monster;
+		+FLOORCLIP
+		FDM_BaseMonster.TauntSound "actors/oldactors/posstaunt1";
+		AttackSound "shotguy/attack";
+		PainSound "shotguy/pain";
+		DeathSound "shotguy/death";
+		ActiveSound "shotguy/active";
+		Obituary "$OB_SHOTGUNGUY";
+		//Tag "$FN_SHOTGUN";
+		DropItem "Shotgun";
+		Decal "BulletChip";
+	}
+	States
+	{
+	Spawn:
+		SPOS A 10 A_Look;
+		goto Roam;
+	Roam:
+		SPOS AABBCCDD 4 A_FDMRoam();
+		Loop;
+	See:
+		SPOS AABBCCDD 4 A_FDMChase;
+		Loop;
+	Missile:
+		SPOS E 10 A_FaceTarget;
+		SPOS F 10 BRIGHT A_SposAttackUseAtkSound;
+		SPOS E 10;
+		Goto See;
+	Pain:
+		SPOS G 3;
+		SPOS G 3 A_Pain;
+		Goto See;
+	Death:
+		SPOS H 5;
+		SPOS I 5 A_Scream;
+		SPOS J 5 A_NoBlocking;
+		SPOS K 5;
+		SPOS L -1;
+		Stop;
+	}
+	
+	override void PostBeginPlay ()
+	{
+		Super.PostBeginPlay ();
+		bFRIGHTENED = random(0,1);
+	}
+}
+
+// Imp
+class FDM_DoomImp : FDM_BaseMonster
+{
+	Default
+	{
+		Health 100;
+		Radius 16;
+		Height 56;
+		Mass 100;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		speed 4;
+		FDM_BaseMonster.TauntSound "actors/oldactors/imptaunt";
+		PainSound "imp/pain";
+		DeathSound "imp/death";
+		ActiveSound "imp/active";
+		HitObituary "$OB_IMPHIT";
+		Obituary "$OB_IMP";
+		//Tag "$FN_IMP";
+	}
+	States
+	{
+	Spawn:
+		TROO AB 10 A_Look;
+		goto Roam;
+	Roam:
+		TROO AABBCCDD 4 A_FDMRoam();
+		Loop;
+	See:
+		TROO AABBCCDD 3 A_FDMChase;
+		Loop;
+	Melee:
+	Missile:
+		TROO EF 8 A_FaceTarget;
+		TROO G 6 A_TroopAttack;
+		Goto See;
+	Pain:
+		TROO H 2;
+		TROO H 2 A_Pain;
+		Goto See;
+	Death:
+		TROO I 8;
+		TROO J 8 A_Scream;
+		TROO K 6;
+		TROO L 6 A_NoBlocking;
+		TROO M -1;
+		Stop;
+	}
+	
+	override void PostBeginPlay ()
+	{
+		Super.PostBeginPlay ();
+		bFRIGHTENED = random(0,1);
+	}
+}

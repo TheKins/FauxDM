@@ -1,0 +1,48 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: 
+ 
+ Comment: 
+
+================================================================================
+*/
+
+Version "3.8"
+#include "scripts/fdm_events.zsc"
+#include "scripts/fdm_levelcompat.zsc"
+#include "scripts/fdm_removemonsters.zsc"
+#include "scripts/fdm_sbar.zsc"
+#include "scripts/fdm_intermission.zsc"
+
+#include "actors/fdm_gameplay.zsc"
+#include "actors/fdm_player.zsc"
+#include "actors/weapons/fdm_handgun.zsc"
+#include "actors/weapons/fdm_shotgun.zsc"
+#include "actors/weapons/fdm_supershotgun.zsc"
+#include "actors/weapons/fdm_machinegun.zsc"
+#include "actors/weapons/fdm_rocketlauncher.zsc"
+#include "actors/weapons/fdm_plasma.zsc"
+#include "actors/weapons/fdm_bfg9000.zsc"
+
+#include "actors/weapons/fdm_grenadelauncher.zsc"
+#include "actors/weapons/fdm_minigun.zsc"
+#include "actors/weapons/fdm_railgun.zsc"
+
+#include "actors/fdm_fx.zsc"
+#include "actors/items/fdm_healtharmor.zsc"
+#include "actors/items/fdm_ammo.zsc"
+
+#include "actors/fdm_decor.zsc"
+
+#include "actors/monsters/fdm_base.zsc"
+#include "actors/monsters/fdm_spawners.zsc"
+
+#include "actors/monsters/fdm_oldmonsters.zsc"
+#include "actors/monsters/fdm_retrofps.zsc"
+#include "actors/monsters/fdm_skulltag.zsc"
+
+#include "actors/fdm_miscactors.zsc"

@@ -1,0 +1,66 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: LevelCompatibility adjustments
+ 
+ Comment: Some levels need a little extra KY Jelly to fit this mod inside of 'em
+
+================================================================================
+*/
+
+class FDM_LevelCompatibility : LevelCompatibility
+{
+	protected void Apply(Name checksum, String mapname)
+	{
+		
+		// Enable multi-player only items in single player.
+		// This mangles thing flags, a better solution needs to be found
+		if (!multiplayer && fdm_mpweaps)
+		{
+			for (int i = 0; i < 65535; i ++)
+			{
+				SetThingFlags(i, 2016);
+			}			 
+		}
+		
+		
+		
+		switch (checksum)
+		{			
+			case 'none':
+				return;
+				
+			case '058FB092EA1B70DA1E3CBF501C4A91A1': // Doom1 E1M8
+			{
+				// Disable Exit Teleporter-O-Death
+				//ClearLineSpecial(233);
+				ClearLineSpecial(299);
+				ClearLineSpecial(301);
+				ClearLineSpecial(302);
+				ClearLineSpecial(303);
+				ClearLineSpecial(304);
+				ClearLineSpecial(305);
+				ClearLineSpecial(306);
+				
+				// Open Baron Holes Automagically
+				OffsetSectorPlane(45, Sector.ceiling, 86);
+				OffsetSectorPlane(49, Sector.ceiling, 86);
+			}
+				
+			case '291F24417FB3DD411339AE82EF9B3597': // Doom2 MAP07
+			{
+				// Auto-lower the start room walls to avoid grief
+				OffsetSectorPlane(19, Sector.floor, -80);
+				ClearLineSpecial(162);
+				
+				// Open up the BFG room
+				OffsetSectorPlane(25, Sector.ceiling, 112);
+				ClearLineSpecial(169);
+				break;
+			}
+		}
+	}
+}

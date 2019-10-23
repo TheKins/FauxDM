@@ -1,0 +1,406 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie, Maxiclouds
+ 
+ Purpose: Characters and Enemies from other Retro FPS games.
+ 
+ Comment: 
+
+================================================================================
+*/
+
+// Quake 1 Player (Ranger)
+class FDM_QuakeRanger : FDM_BaseMonster
+{
+	Default
+	{
+		Health 200;
+		Radius 16;
+		Height 56;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		speed 3;
+		FDM_BaseMonster.TauntSound "actors/quakeranger/taunt";
+		PainSound "actors/quakeranger/pain";
+		DeathSound "actors/quakeranger/die";
+		Obituary "$OB_QUAKERANGER";
+		DropItem "Clip";
+	}
+	
+	int strafedir; 
+	States
+	{
+	Spawn:
+		QRAN A 0;
+		QRAN A 0 { strafedir = random(0,1); }
+		QRAN A 10 A_Look;
+		goto Roam;
+	Roam:
+		QRAN A 0 { strafedir = random(0,1); }
+		QRAN AA 4 A_FDMRoam();
+		QRAN A 0 A_Huhh();
+		QRAN BB 4 A_FDMRoam();
+		QRAN B 0 A_Huhh();
+		QRAN CC 4 A_FDMRoam();
+		QRAN C 0 A_Huhh();
+		QRAN DD 4 A_FDMRoam();
+		QRAN D 0 A_Huhh();
+		Loop;
+	See:
+		QRAN A 0 { strafedir = random(0,1); }
+		QRAN AA 4 A_FDMChase();
+		QRAN A 0 A_Huhh();
+		QRAN BB 4 A_FDMChase();
+		QRAN B 0 A_Huhh();
+		QRAN CC 4 A_FDMChase();
+		QRAN C 0 A_Huhh();
+		QRAN DD 4 A_FDMChase();
+		QRAN D 0 A_Huhh();
+	Missile:
+		QRAN E 0 
+		{
+			if (strafedir == 1)
+			{
+				ThrustThing(angle * 256 / 360 + 64, 8, 0, 0);
+			} else {
+				ThrustThing(angle * 256 / 360 + 192, 8, 0, 0);
+			}
+		}
+		QRAN E 4 A_FaceTarget;
+		QRAN F 4 BRIGHT
+		{
+			A_PlaySound("actors/quakeranger/fire", CHAN_6);
+			A_SpawnProjectile("FDM_QuakeRangerNail");
+		}
+		QRAN F 0
+		{
+			if (vel.x == 0 && vel.y == 0)
+			{
+				if (strafedir == 1)
+				{
+					strafedir = 0;
+				} else {
+					strafedir = 1;
+				}
+			}
+		}
+		QRAN E 1 A_CPosRefire;
+		Goto Missile;
+	Pain:
+		QRAN A 0 { strafedir = random(0,1); }
+		QRAN G 3;
+		QRAN G 3 A_Pain;
+		Goto See;
+	Death:
+		QRAN H 5;
+		QRAN I 5 A_Scream;
+		QRAN J 5 A_NoBlocking;
+		QRAN KL 5;
+		QRAN M -1;
+		Stop;
+	}
+	
+	// HUHH HUHH HUHH HUHH
+	void A_Huhh()
+	{
+		if (pos.z == floorz)
+		{
+			ThrustThingZ (0, 32, 0, 1);
+			A_PlaySound("actors/quakeranger/jump");
+		}
+	}
+	
+	// Give the actor a real stupid name.
+	override void GiveStupidName()
+	{
+		static const string NameList[] =
+		{
+			// Quake 1 Characters
+			"Ranger",
+			"Rotfish",
+			"Scrag",
+			"Shambler",
+			"Centroid",
+			"Armagon",
+			"Cthon",
+			// Dumb Quake References Only ITT
+			"func_wit",
+			"cutie.qc",
+			"Thresh Prince Of Bel-Aire",
+			"#fuckthestrogg",
+			"Operation Bayshield",
+			"jrbase1",
+			"DWANGO-killer",
+			"Mexican Threewave",
+			"Omicron",
+			"ReaperBot",
+			"Shub-Optimal",
+			"WheresTheDragon",
+			"FragsDoneQuick",
+			"HUHH HUHH HUHH",
+			"shart.bsp"
+		};
+		int i;
+		i = random(0,NameList.Size()-1);
+		SetTag(NameList[i]);
+	}
+	
+	override void PostBeginPlay()
+	{
+		bFRIGHTENED = random(0,1);
+	}
+}
+
+class FDM_QuakeRangerNail : FastProjectile
+{
+	Default
+	{
+		Radius 8;
+		Height 8;
+		Speed 50;
+		DamageFunction 9;
+		Projectile;
+		+RANDOMIZE
+		+ZDOOMTRANS
+		Decal "BulletChip";
+	}
+	States
+	{
+	Spawn:
+		QKNL A 1 BRIGHT A_SpawnParticle ("Yellow", SPF_FULLBRIGHT, 16, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, -1, -1);
+		Loop;
+	Death:
+		TNT1 A 0
+		{
+			int rico = random(1,4);
+			A_SetRenderStyle(0.5, STYLE_Translucent);
+			A_PlaySound("actors/quakeranger/nailwall", CHAN_6);
+			if (rico == 4)
+			{
+				A_PlaySound("actors/quakeranger/ricochet", CHAN_7);
+			}
+		}
+		QKNL B 2 Bright;
+		QKNL CDE 2;
+		Stop;
+	XDeath:
+		TNT1 A 0 A_PlaySound("actors/quakeranger/naildude");
+		TNT1 A 0;
+		TNT1 A 0;
+		Stop;
+	}
+}
+
+// Blood Cultist... CRUDUX CRUO!!
+class FDM_BloodCultist : FDM_BaseMonster
+{
+	Default
+	{
+		Health 150;
+		Radius 16;
+		Height 56;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		speed 3;
+		FDM_BaseMonster.TauntSound "actors/cultist/rant";
+		PainSound "actors/cultist/pain";
+		DeathSound "actors/cultist/die";
+		Obituary "$OB_BLOODCULTIST";
+		DropItem "Shell";
+		translation "192:207=64:79", "240:247=5:8";
+		scale 0.52;
+		mass 35;
+		Decal "BulletChip";
+	}
+	States
+	{
+	Spawn:
+		CUL1 G 10 A_Look;
+		goto Roam;
+	Roam:
+		CUL1 AABBCCDDEEFF 4 A_FDMRoam();
+		Loop;
+	See:
+		CUL1 AABBCCDDEEFF 4 A_FDMChase;
+		Loop;
+	Missile:
+		CUL1 G 8 A_FaceTarget;
+		CUL1 H 8 BRIGHT A_CultistAttack;
+		CUL1 G 8 A_FaceTarget;
+		CUL1 H 8 BRIGHT A_CultistAttack;
+		CUL1 G 8 A_FaceTarget;
+		CUL1 H 4 BRIGHT A_CultistAttack;
+		CUL1 G 8 A_FaceTarget;
+	ThrowTNT:
+		CUL1 I 4 A_FaceTarget;
+		CUL1 IJKL 3;
+		CUL1 M 15
+		{
+			A_PlaySound("actors/cultist/throw");
+			A_SpawnProjectile("FDM_BloodCultistTNT");
+		}
+		Goto See;
+	Pain:
+		CUL1 O 3;
+		CUL1 O 3 A_Pain;
+		CUL1 O 0 A_Jump(128,"ThrowTNT");
+		Goto See;
+	Death:
+		CUL1 O 5;
+		CUL1 P 4 A_Scream;
+		CUL1 Q 3 A_NoBlocking;
+		CUL1 RST 3;
+		CUL1 V -1;
+		Stop;
+	}
+	
+	void A_CultistAttack()
+	{
+		A_PlaySound("actors/cultist/shotgun", CHAN_WEAPON);
+		A_CustomBulletAttack(22.5, 8.5, 3, random(1,5)*3, "BulletPuff", 0, CBAF_NORANDOM);
+	}
+	
+	
+	// Give the actor a real stupid name.
+	override void GiveStupidName()
+	{
+		static const string NameList[] =
+		{
+			// Blood 1 Monsters
+			"Fanatic",
+			"Ackolyte",
+			"Zealot",
+			"BloatedButcher",
+			"ChokingHand",
+			"Cheogh",
+			"Shial",
+			"Cerberus",
+			"Tchernoborg",
+			// Blood 2 Monsters
+			"Shikari",
+			"DeathShroud",
+			"BoneLeech",
+			"Gideon",
+			// Dumb Memery
+			"CruduxCruownage",
+			"Shikawaii",
+			"Lithtech Licensee",
+			"MAGIC CLAW",
+			"WORTHY YOU KNOW",
+			"Modern Arts",
+			"Fear Books",
+			// Sh... Shogo?
+			"SanjuroMakabe",
+			"KuraAkkaraju",
+			"HankJohnson",
+			"KathrynAkkaraju"
+		};
+		int i;
+		i = random(0,NameList.Size()-1);
+		SetTag(NameList[i]);
+	}
+	
+	override void PostBeginPlay()
+	{		
+		bFRIGHTENED = random(0,1);
+	}
+}
+
+// Code largely taken from Re-Blood by MaxiClouds. Should prob. rewrite!
+class FDM_BloodCultistTNT : Actor
+{ 
+	Default
+	{
+		Radius 4;
+		Height 4;
+		Health 1;
+		Speed 10;
+		Scale 0.5;
+		PROJECTILE;
+		+MISSILE
+		//+NOBOUNCESOUND
+		-NOGRAVITY
+		BounceType "Hexen";
+		+BOUNCEONACTORS
+		+EXTREMEDEATH
+		+SHOOTABLE
+		-COUNTKILL
+		+NOTAUTOAIMED
+		+CANBOUNCEWATER
+		BounceSound "actors/cultist/bounce";
+		bouncefactor 0.3;
+		bouncecount 5;
+		gravity 0.5;
+	}
+	
+	int fuse;
+	
+	states
+	{
+	Spawn:
+		PTNT A 0;
+		PTNT A 0 { self.vel.z = 5; }
+		PTNT A 0 A_PlaySound("actors/cultist/fuse",5,1,true);
+		PTNT ABCDEFGH 2 Bright;
+		TNT1 A 0
+		{ 
+			fuse++; 
+			
+			if (fuse >= 5)
+			{
+				return ResolveState("Explode");
+			} else {
+				return ResolveState(null);
+			}
+		}
+		Goto Spawn+3;
+	Death:
+		PTNT IJKIJK 3 Bright;
+		TNT1 A 0
+		{ 
+			fuse++; 
+			
+			if (fuse >= 5)
+			{
+				return ResolveState("Explode");
+			} else {
+				return ResolveState(null);
+			}
+		}
+		Loop;
+	Explode:
+		TNT1 A 0 A_StopSound(5);
+		TNT1 A 0 A_SpawnProjectile("FDM_BloodCultistTNTExplosion",0,0,0,CMF_TRACKOWNER);
+		Stop;
+	}
+}
+
+class FDM_BloodCultistTNTExplosion : Actor
+{
+	Default
+	{
+	+NOCLIP
+	+FORCEXYBILLBOARD 
+	Projectile;
+	Speed 0;
+	RenderStyle "Add";
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 
+		{
+			A_Quake (1,24,0,750,0);
+			A_playSound("actors/cultist/explosion",CHAN_WEAPON);
+			A_Explode();
+		}
+		BEXP ABCDEFGHIJKLM 2 Bright;
+		Stop;
+	}
+}

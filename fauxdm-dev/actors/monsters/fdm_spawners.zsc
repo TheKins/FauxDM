@@ -1,0 +1,115 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Monster spawning code
+ 
+ Comment: 
+
+================================================================================
+*/
+
+class FDM_Spawner : Actor
+{
+	Default
+	{
+		-SOLID
+		RenderStyle "Translucent";
+		alpha 0.1;
+	}
+	
+	int spawncount;
+	
+	// Different Spawn Lists that get harder. Typically aim for a cycle of
+	// 4 easy, 2 medium, 1 hard to mix things up a bit.
+	static const string CritterListEasy[] =
+	{
+		"FDM_ZombieMan",
+		"FDM_ShotgunGuy",
+		"FDM_DoomImp"
+	};
+	
+	static const string CritterListMedium[] =
+	{
+		"FDM_DoomImp",
+		"FDM_ShotgunGuy",
+		"FDM_QuakeRanger"
+	};
+	
+	static const string CritterListHard[] =
+	{
+		"FDM_QuakeRanger",
+		"FDM_Chubbs",
+		"FDM_BloodCultist"
+	};
+	
+	States
+	{
+	Spawn:
+		TNT1 A 140;
+		TNT1 A 0
+		{
+			if ((level.total_monsters - level.killed_monsters) >= 50)
+			{
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Warning: %i monsters alive, spawner delaying at %ix%i!",
+					(level.total_monsters - level.killed_monsters), self.pos.x, self.pos.y);
+				return ResolveState("Spawn");
+			} else {
+				return ResolveState(null);
+			}
+		}
+		TNT1 A 0 A_Jump(128, "Delay");
+		goto BeginSpawn;
+	Delay:
+		TNT1 A 8;
+		TNT1 A 0 A_Jump(64, "Delay");
+		goto BeginSpawn;
+	BeginSpawn:
+		MSPN AAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_FadeIn(0.01);
+		MSPN BBBBBBBBBBBBBBBBBBBBBBBBBB 1 A_FadeIn(0.01);
+		MSPN CCCCCCCCCCCCCCCCCCCCCCCCCC 1 A_FadeIn(0.01);
+		goto SpawnMonster;
+	SpawnMonster:
+		TNT1 A 0
+		{
+			int i;
+			
+			if (spawncount > 7)
+			{
+				spawncount = 0;
+			}
+			
+			if (spawncount <= 4)
+			{
+				i = random(0,CritterListEasy.Size()-1);
+				A_SpawnItemEx(CritterListEasy[i], 0, 0, 0, 0, 0, 0, random(0,360), SXF_NOCHECKPOSITION|SXF_TELEFRAG);
+				A_SpawnItemEx("FDM_ActorSpawnFog", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION);
+			} else if (spawncount <= 6)
+			{
+				i = random(0,CritterListMedium.Size()-1);
+				A_SpawnItemEx(CritterListMedium[i], 0, 0, 0, 0, 0, 0, random(0,360), SXF_NOCHECKPOSITION|SXF_TELEFRAG);
+				A_SpawnItemEx("FDM_ActorSpawnFog", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION);
+			} else if (spawncount <= 7)
+			{
+				i = random(0,CritterListHard.Size()-1);
+				A_SpawnItemEx(CritterListHard[i], 0, 0, 0, 0, 0, 0, random(0,360), SXF_NOCHECKPOSITION|SXF_TELEFRAG);
+				A_SpawnItemEx("FDM_ActorSpawnFog", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION);
+			}				
+			
+			spawncount++;
+			alpha = 0.1;
+		}
+		goto Chill;
+	Chill:
+		TNT1 A 70;
+		goto Spawn;
+	}
+	
+	override void PostBeginPlay()
+	{
+		spawncount = 0;
+	}
+}

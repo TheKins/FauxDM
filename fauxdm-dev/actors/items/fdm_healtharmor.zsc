@@ -1,0 +1,138 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Health and ammo pickup actors
+ 
+ Comment: 
+
+================================================================================
+*/
+
+class FDM_HealthBonus : Health replaces HealthBonus
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		Inventory.Amount 1;
+		Inventory.MaxAmount 200;
+		Inventory.PickupMessage "$GOTHTHBONUS";
+		inventory.pickupsound "items/health/crumb";
+		+WALLSPRITE
+		+FLOATBOB
+		scale 2.0;
+	}
+	States
+	{
+	Spawn:
+		CRMB H 1 BRIGHT A_SetAngle(8+angle);
+		Loop;
+	}
+}
+
+class FDM_Stimpack : Health replaces Stimpack
+{
+	Default
+	{
+		Inventory.Amount 10;
+		Inventory.PickupMessage "$GOTSTIM";
+		inventory.pickupsound "items/health/light";
+	}
+	States
+	{
+	Spawn:
+		STIM A -1;
+		Stop;
+	}
+}
+
+class FDM_Medikit : Health replaces Medikit
+{
+	Default
+	{
+		Inventory.Amount 25;
+		Inventory.PickupMessage "$GOTMEDIKIT";
+		Health.LowMessage 25, "$GOTMEDINEED";
+		inventory.pickupsound "items/health/heavy";
+	}
+	States
+	{
+	Spawn:
+		MEDI A -1;
+		Stop;
+	}
+}
+
+
+// Armor
+class FDM_ArmorBonus : BasicArmorBonus replaces ArmorBonus
+{
+	Default
+	{
+		Radius 20;
+		Height 16;
+		Inventory.Pickupmessage "$GOTARMBONUS";
+		Inventory.Icon "ARMCRUMB";
+		Armor.Savepercent 33.335;
+		Armor.Saveamount 1;
+		Armor.Maxsaveamount 200;
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		inventory.pickupsound "items/armor/crumb";
+		+WALLSPRITE
+		+FLOATBOB
+		scale 2.0;
+	}
+	States
+	{
+	Spawn:
+		CRMB A 1 BRIGHT A_SetAngle(8+angle);
+		loop;
+	}
+}
+
+class FDM_GreenArmor : BasicArmorPickup replaces GreenArmor
+{
+	Default
+	{
+		Radius 20;
+		Height 16;
+		Inventory.Pickupmessage "$GOTARMOR";
+		Inventory.Icon "ARMRA0";
+		Armor.SavePercent 33.335;
+		Armor.SaveAmount 100;
+		inventory.pickupsound "items/armor/light";
+	}
+	States
+	{
+	Spawn:
+		ARMR A 6;
+		ARMR A 7 bright;
+		loop;
+	}
+}
+
+class FDM_BlueArmor : BasicArmorPickup replaces BlueArmor
+{
+	Default
+	{
+		Radius 20;
+		Height 16;
+		Inventory.Pickupmessage "$GOTMEGA";
+		Inventory.Icon "ARMRB0";
+		Armor.Savepercent 50;
+		Armor.Saveamount 200;
+		inventory.pickupsound "items/armor/heavy";
+	}
+	States
+	{
+	Spawn:
+		ARMR B 6;
+		ARMR B 6 bright;
+		loop;
+	}
+}
+

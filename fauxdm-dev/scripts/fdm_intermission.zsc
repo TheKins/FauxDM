@@ -1,0 +1,326 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Intermission Screen code
+ 
+ Comment: This needs a SERIOUS fucking cleanup
+
+================================================================================
+*/
+
+class FDM_StatusScreen : StatusScreen
+{
+	int intermissioncounter;
+	
+
+	
+	override void Drawer (void)
+	{
+		switch (CurState)
+		{
+		case StatCount:
+			// draw animated background
+			bg.drawBackground(CurState, false, false);
+			drawRealBackground();
+			drawStats();
+			break;
+	
+		case ShowNextLoc:
+			drawShowNextLoc();
+			break;
+	
+		case LeavingIntermission:
+			break;
+
+		default:
+			drawNoState();
+			//drawRealBackground();
+			break;
+		}
+	}
+	
+	// Draw a different background depending on whether you won or lost, ala Skulltag.
+	void drawRealBackground ()
+    {
+        TextureID winBG = TexMan.CheckForTexture("WINERPIC", TexMan.Type_MiscPatch);
+		TextureID loseBG = TexMan.CheckForTexture("LOSERPIC", TexMan.Type_MiscPatch);
+		
+		Vector2 borderSize = TexMan.GetScaledSize(winBG);
+        Vector2 interpicTL, interpicRS;
+        [interpicTL, interpicRS] = Screen.VirtualToRealCoords((0, 0), (640, 400), (640, 400));
+		
+		if (players[consoleplayer].mo.CountInv("FDM_Endgame_Winner"))
+		{
+			screen.DrawTexture (winBG, true, interPicTL.x, 0, DTA_CleanNoMove, true);
+		} else {
+			screen.DrawTexture (loseBG, true, interPicTL.x, 0, DTA_CleanNoMove, true);
+		}
+    }
+	
+	// Ditto, but for Ye Olde Skulltag victory/defeat music.
+	override void StartMusic()
+	{
+		//int fart_time = Thinker.Tics2Seconds(Plrs[me].stime);
+		
+		if (players[consoleplayer].mo.CountInv("FDM_Endgame_Winner"))
+		{
+		S_ChangeMusic("STWIN", 0, 1, 0);
+		} else {
+		S_ChangeMusic("STLOSE", 0, 1, 0);
+		}
+	}
+	
+	override void initStats ()
+	{
+		intermissioncounter = gameinfo.intermissioncounter;
+		CurState = StatCount;
+		acceleratestage = 0;
+		sp_state = 1;
+		cnt_kills[0] = cnt_items[0] = cnt_secret[0] = -1;
+		cnt_time = cnt_par = -1;
+		cnt_pause = Thinker.TICRATE;
+	
+		cnt_total_time = -1;
+	}
+
+	override void updateStats ()
+	{
+		if (acceleratestage && sp_state != 10)
+		{
+			acceleratestage = 0;
+			sp_state = 10;
+			PlaySound("intermission/nextstage");
+
+			cnt_kills[0] = Plrs[me].skills;
+			cnt_items[0] = Plrs[me].sitems;
+			cnt_secret[0] = Plrs[me].ssecret;
+			cnt_time = Thinker.Tics2Seconds(Plrs[me].stime);
+			cnt_par = wbs.partime / Thinker.TICRATE;
+			cnt_total_time = Thinker.Tics2Seconds(wbs.totaltime);
+		}
+
+		if (sp_state == 2)
+		{
+				PlaySound("intermission/nextstage");
+				sp_state++;
+		}
+		else if (sp_state == 4)
+		{
+				PlaySound("intermission/nextstage");
+				sp_state++;
+		}
+		else if (sp_state == 6)
+		{
+				PlaySound("intermission/nextstage");
+				sp_state++;
+		}
+		else if (sp_state == 8)
+		{
+				cnt_total_time = Thinker.Tics2Seconds(wbs.totaltime);
+				PlaySound("intermission/nextstage");
+				sp_state++;
+		}
+		else if (sp_state == 10)
+		{
+			if (acceleratestage)
+			{
+				PlaySound("intermission/paststats");
+				initShowNextLoc();
+			}
+		}
+		else if (sp_state & 1)
+		{
+			if (!--cnt_pause)
+			{
+				sp_state++;
+				cnt_pause = Thinker.TICRATE;
+			}
+		}
+	}
+
+	override void drawStats (void)
+	{
+		// line height
+		int lh = IntermissionFont.GetHeight() * 3 / 2;
+
+		drawLF();
+
+		//Font textFont = generic_ui? NewSmallFont : content.mFont;
+		Font textFont = Font.GetFont("BIGUPPER");
+		let tcolor = content.mColor;
+
+		int countpos = gameinfo.gametype==GAME_Strife? 285:270;
+		if (sp_state >= 2)
+		{
+			//drawPercent (IntermissionFont, countpos, 65, cnt_kills[0], wbs.maxkills, true, tcolor);
+			screen.DrawText (textFont, tcolor, 50, 65, "$TXT_IMKILLS", DTA_Clean, true, DTA_Shadow, true);
+			drawNum(textFont, countpos, 65, players[consoleplayer].mo.CountInv("FDM_FragCounter"), 0, false, Font.CR_RED);
+		}
+		if (sp_state >= 4)
+		{
+			//drawPercent (IntermissionFont, countpos, 90, cnt_items[0], wbs.maxitems, true, tcolor);
+			screen.DrawText (textFont, tcolor, 50, 90, "$TXT_IMCAREER", DTA_Clean, true, DTA_Shadow, true);
+			drawNum(textFont, countpos, 90, players[consoleplayer].mo.CountInv("FDM_FragCounterCareer"), 0, false, Font.CR_RED);
+		}
+		if (sp_state >= 6)
+		{
+			screen.DrawText (textFont, tcolor, 50, 115, "$TXT_IMTIME", DTA_Clean, true, DTA_Shadow, true);
+			drawTimeFont (textFont, countpos, 115, cnt_time, tcolor);
+		}
+		if (sp_state >= 8)
+		{
+			screen.DrawText (textFont, tcolor, 50, 140, "$TXT_IMTOTAL", DTA_Clean, true, DTA_Shadow, true);
+			drawTimeFont (textFont, countpos, 140, cnt_total_time, tcolor);
+		}
+	}
+	
+	int DrawPatchOrText(int y, PatchInfo pinfo, TextureID patch, String stringname)
+	{
+		String string = Stringtable.Localize(stringname);
+		int midx = screen.GetWidth() / 2;
+		Font textFont = Font.GetFont("BIGUPPER");
+		
+		screen.DrawText(textFont, Font.CR_RED, midx - textFont.StringWidth(string) * CleanXfac/2, y, string, DTA_CleanNoMove, true);
+		return y + pinfo.mFont.GetHeight() * CleanYfac;
+	}
+	
+	override int drawLF ()
+	{
+		bool ispatch = wbs.LName0.isValid();
+		int oldy = TITLEY * CleanYfac;
+		int h;
+		
+		if (!ispatch)
+		{
+			let asc = mapname.mFont.GetMaxAscender(lnametexts[1]);
+			if (asc > TITLEY - 2)
+			{
+				oldy = (asc+2) * CleanYfac;
+			}
+		}
+		
+		int y = DrawName(oldy, wbs.LName0, lnametexts[0]);
+
+		// If the displayed info is made of patches we need some additional offsetting here.
+		if (ispatch) 
+		{
+			int disp = 0;
+			// The offset getting applied here must at least be as tall as the largest ascender in the following text to avoid overlaps.
+			if (authortexts[0].length() == 0)
+			{
+				int h1 = BigFont.GetHeight() - BigFont.GetDisplacement();
+				int h2 = (y - oldy) / CleanYfac / 4;
+				disp = min(h1, h2);
+				
+				if (!TexMan.OkForLocalization(finishedPatch, "$WI_FINISHED"))
+				{
+					disp += finished.mFont.GetMaxAscender("$WI_FINISHED");
+				}
+			}
+			else
+			{
+					disp += author.mFont.GetMaxAscender(authortexts[0]);
+			}
+			y += disp * CleanYfac;
+		}
+		
+		y = DrawAuthor(y, authortexts[0]);
+		
+		// draw "Finished!"
+
+		int statsy = multiplayer? NG_STATSY : SP_STATSY * CleanYFac;
+		if (y < (statsy - finished.mFont.GetHeight()*3/4) * CleanYfac)
+		{
+			// don't draw 'finished' if the level name is too tall
+			//y = DrawPatchOrText(y, finished, finishedPatch, "$WI_FINISHED");
+			if (players[consoleplayer].mo.CountInv("FDM_Endgame_Winner"))
+			{
+				y = DrawPatchOrText(y, finished, finishedPatch, "$TXT_IMWIN");
+			} else {
+				y = DrawPatchOrText(y, finished, finishedPatch, "$TXT_IMLOSE");
+			}
+		}
+		return y;
+	}
+	
+	override void drawEL ()
+	{
+		bool ispatch = TexMan.OkForLocalization(enteringPatch, "$WI_ENTERING");
+		int oldy = TITLEY * CleanYfac;
+
+		if (!ispatch)
+		{
+			let asc = entering.mFont.GetMaxAscender("$WI_ENTERING");
+			if (asc > TITLEY - 2)
+			{
+				oldy = (asc+2) * CleanYfac;
+			}
+		}
+
+		int y = DrawPatchOrText(oldy, entering, enteringPatch, "$WI_ENTERING");
+		
+		// If the displayed info is made of patches we need some additional offsetting here.
+		
+		if (ispatch)
+		{
+			int h1 = BigFont.GetHeight() - BigFont.GetDisplacement();
+			let size = TexMan.GetScaledSize(enteringPatch);
+			int h2 = int(size.Y);
+			let disp = min(h1, h2) / 4;
+			// The offset getting applied here must at least be as tall as the largest ascender in the following text to avoid overlaps.
+			if (!wbs.LName1.isValid())
+			{
+				disp += mapname.mFont.GetMaxAscender(lnametexts[1]);
+			}
+			y += disp * CleanYfac;
+		}
+
+		y = DrawName(y, wbs.LName1, lnametexts[1]);
+
+		if (wbs.LName1.isValid() && authortexts[1].length() > 0) 
+		{
+			// Consdider the ascender height of the following text.
+			y += author.mFont.GetMaxAscender(authortexts[1]) * CleanYfac;
+		}
+			
+		DrawAuthor(y, authortexts[1]);
+
+	}
+	
+	int DrawName(int y, TextureID tex, String levelname)
+	{
+		Font textFont = Font.GetFont("BIGUPPER");
+		// draw <LevelName> 
+		if (tex.isValid())
+		{
+			let size = TexMan.GetScaledSize(tex);
+			screen.DrawTexture(tex, true, (screen.GetWidth() - size.X * CleanXfac) /2, y, DTA_CleanNoMove, true);
+			if (size.Y > 50)
+			{ // Fix for Deus Vult II and similar wads that decide to make these hugely tall
+			  // patches with vast amounts of empty space at the bottom.
+				size.Y = TexMan.CheckRealHeight(tex);
+			}
+			return y + int(Size.Y) * CleanYfac;
+		}
+		else if (levelname.Length() > 0)
+		{
+			int h = 0;
+			int lumph = mapname.mFont.GetHeight() * CleanYfac;
+
+			BrokenLines lines = textFont.BreakLines(levelname, screen.GetWidth() / CleanXfac);
+
+			int count = lines.Count();
+			for (int i = 0; i < count; i++)
+			{
+				screen.DrawText(textFont, mapname.mColor, (screen.GetWidth() - lines.StringWidth(i) * CleanXfac) / 2, y + h, lines.StringAt(i), DTA_CleanNoMove, true);
+				h += lumph;
+			}
+			return y + h;
+		}
+		return 0;
+	}
+	
+}
