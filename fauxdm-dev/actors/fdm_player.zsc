@@ -27,6 +27,8 @@ class FDM_Player : PlayerPawn
 		Player.StartItem "Fist";
 		Player.StartItem "Clip", 50;
 		
+		Player.JumpZ 8.01;
+		
 		// Screw your locked doors!
 		Player.StartItem "RedCard";
 		Player.StartItem "RedSkull";

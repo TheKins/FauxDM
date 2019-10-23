@@ -11,6 +11,48 @@
 ================================================================================
 */
 
+// Player - Male
+$playeralias	player	male	*death		player/die
+$playersound	player	male	*xdeath		playdihi
+$playersound	player	male	*gibbed		dsslop
+$playeralias	player	male	*pain100	player/25
+$playeralias	player	male	*pain75		player/50
+$playeralias	player	male	*pain50		player/75
+$playeralias	player	male	*pain25		player/100
+$playersound	player	male	*grunt		playoof
+$playersound	player	male	*land		playland
+$playeralias	player	male	*jump		player/jump
+$playersound	player	male	*fist		dspunch
+$playersound	player	male	*usefail	playpush
+
+$random player/25 { player/25a player/25b player/25c }
+player/25a		play25a
+player/25b		play25b
+player/25c		play25c
+
+$random player/50 { player/50a player/50b player/50c }
+player/50a		play50a
+player/50b		play50b
+player/50c		play50c
+
+$random player/75 { player/75a player/75b player/75c }
+player/75a		play75a
+player/75b		play75b
+player/75c		play75c
+
+$random player/100 { player/100a player/100b player/100c }
+player/100a		play100a
+player/100b		play100b
+player/100c		play100c
+
+$random player/die { player/die1 player/die2 }
+player/die1		playdie1
+player/die2		playdie2
+
+$random player/jump { player/jump1 player/jump2 }
+player/jump1		playjmp1
+player/jump2		playjmp2
+
 // Shared Noises
 $random actors/shared/gibbed { actors/shared/gibbed1 actors/shared/gibbed2 actors/shared/gibbed3 }
 actors/shared/gibbed1		actrgib1
