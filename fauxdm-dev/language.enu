@@ -48,6 +48,7 @@ TXT_IMLOSE = "Failed!";
 TXT_IMKILLS = "Frags";
 TXT_IMTOTAL = "Total";
 TXT_IMCAREER = "Career";
+TXT_IMSUX = "Sucks!";
 
 // Weapons
 GOTMINIGUN = "You got the Minigun!";

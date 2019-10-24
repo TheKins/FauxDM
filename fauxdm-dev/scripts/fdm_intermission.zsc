@@ -169,7 +169,13 @@ class FDM_StatusScreen : StatusScreen
 		if (sp_state >= 6)
 		{
 			screen.DrawText (textFont, tcolor, 50, 115, "$TXT_IMTIME", DTA_Clean, true, DTA_Shadow, true);
-			drawTimeFont (textFont, countpos, 115, cnt_time, tcolor);
+			
+			if (players[consoleplayer].mo.CountInv("FDM_Endgame_Loser"))
+			{
+				screen.DrawText (textFont, tcolor, 190, 115, "$TXT_IMSUX", DTA_Clean, true, DTA_Shadow, true);
+			} else {
+				drawTimeFont (textFont, countpos, 115, cnt_time, tcolor);
+			}
 		}
 		if (sp_state >= 8)
 		{
