@@ -13,6 +13,13 @@
 
 weapons/swap					wswap
 
+// Gauntlet
+weapons/gauntlet/loop			glntloop
+weapons/gauntlet/hit			glnthit
+weapons/gauntlet/wall			glntwall
+$limit weapons/gauntlet/wall 8
+
+// Pistol
 weapons/pistol/fire				pistfire
 
 // Shotgun

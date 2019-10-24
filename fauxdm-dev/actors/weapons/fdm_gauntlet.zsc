@@ -44,13 +44,13 @@ class FDM_Gauntlet : FDM_BaseWeapon
 		"####" A 1 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE);
 		goto Ready;
 	Fire:
-		GNTL B 2 
+		GNTL B 1 
 		{
-			A_CustomPunch ((20), 1, CPF_NOTURN, "BulletPuff", 64, 0, 0, "ArmorBonus", "weapons/sawhit");
+			A_CustomPunch ((20), 1, CPF_NOTURN, "FDM_GauntletPuff", 64, 0, 0, "ArmorBonus", "weapons/gauntlet/hit");
 			A_WeaponOffset(random(-2,2),random(32,34),WOF_INTERPOLATE);
-			A_PlaySound("weapons/sawfull", CHAN_6, 1.0, 1);
+			A_PlaySound("weapons/gauntlet/loop", CHAN_6, 1.0, 1);
 		}
-		GNTL CD 2
+		GNTL BCCDD 1
 		{
 			A_WeaponOffset(random(-2,2),random(32,34),WOF_INTERPOLATE);
 		}
@@ -63,6 +63,30 @@ class FDM_Gauntlet : FDM_BaseWeapon
 		Goto Ready;
 	Spawn:
 		GNTL Z -1;
+		Stop;
+	}
+}
+
+class FDM_GauntletPuff : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALLOWPARTICLES
+		+RANDOMIZE
+		+ZDOOMTRANS
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+	}
+	States
+	{
+	Spawn:
+		PUFF A 0 Bright;
+		PUFF A 4 Bright A_PlaySound("weapons/gauntlet/wall", CHAN_6);
+		PUFF BCD 4;
 		Stop;
 	}
 }
