@@ -92,8 +92,8 @@ script "FDM_MissionFailed" (void)
 {
 	ClearInventory();
 	GiveInventory("FDM_Endgame_Loser", 1);
-	SetFont ("BIGFONT");
-	HudMessageBold(s:"YOU FAILED!"; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 5.0);
+	SetFont ("BIGUPPER");
+	HudMessageBold(s:"You Failed!"; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 5.0);
 	SetPlayerProperty (1, 1, PROP_TOTALLYFROZEN);
 	SetPlayerProperty (1, 1, PROP_INVULNERABILITY);
 	SetMusic("M_NULL",0);
@@ -109,8 +109,8 @@ script "FDM_MissionComplete" (void)
 {
 	stoptheclock = 1;
 	GiveInventory("FDM_Endgame_Winner", 1);
-	SetFont ("BIGFONT");
-	HudMessageBold(s:"YOU WIN!"; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 5.0);
+	SetFont ("BIGUPPER");
+	HudMessageBold(s:"You Win!"; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 5.0);
 	SetPlayerProperty (1, 1, PROP_INVULNERABILITY);
 	SetMusic("M_NULL",0);
 	AmbientSound("gameplay/missioncomplete", 127);
