@@ -51,6 +51,9 @@ TXT_IMCAREER = "Career";
 TXT_IMSUX = "Sucks!";
 
 // Weapons
+GOTGAUNTLET = "You got the Gauntlet! Is this your big chance?";
+TAGGAUNTLET = "Gauntlet";
+
 GOTMINIGUN = "You got the Minigun!";
 TAGMINIGUN = "Minigun";
 

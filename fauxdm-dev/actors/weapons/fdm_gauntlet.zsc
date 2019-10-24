@@ -4,9 +4,9 @@ class FDM_Gauntlet : FDM_BaseWeapon
 	{
 		Weapon.SelectionOrder 3700;
 		Weapon.Kickback 100;
-		Inventory.PickupMessage "$GOTCHAINSAW";
+		Inventory.PickupMessage "$GOTGAUNTLET";
 		Obituary "$OB_MPCHAINSAW";
-		Tag "$TAG_CHAINSAW";
+		Tag "$TAGGAUNTLET";
 		+WEAPON.MELEEWEAPON		
 	}
 	States
