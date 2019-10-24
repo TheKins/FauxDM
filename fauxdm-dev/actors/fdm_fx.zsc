@@ -191,6 +191,78 @@ class FDM_WaterSplashBaseSmall : FDM_WaterSplashBase
 	}
 }
 
+// Nukage Splash
+class FDM_NukageSplash : Actor
+{
+	default
+	{
+		+NOBLOCKMAP
+		+NOCLIP
+		+NOGRAVITY
+		+DONTSPLASH
+	}
+	States
+	{
+	Spawn:
+		SLIM EF 3
+		{
+			for (int i; i < 7; i++)
+			{
+				A_SpawnParticle("09873c",SPF_RELATIVE,random(0,32),random(3,8),0,0,-8,(height / 2),frandom(2.0,-2.0),frandom(2.0,-2.0),frandom(1,8),0,0,-0.4);
+				A_SpawnParticle("Green",SPF_RELATIVE,random(0,16),random(3,8),0,-8,0,(height / 2),frandom(2.0,-2.0),frandom(2.0,-2.0),frandom(1,8),0,0,-0.4);
+			}
+		}
+		SLIM GH 3;
+		Stop;
+	}
+}
+
+// Lava Splash
+class FDM_LavaSplash : Actor
+{
+	default
+	{
+		+NOBLOCKMAP
+		+NOCLIP
+		+NOGRAVITY
+		+DONTSPLASH
+		+DONTBLAST
+	}
+	States
+	{
+	Spawn:
+		LVAS AB 5 Bright
+		{
+			for (int i; i < 7; i++)
+			{
+				A_SpawnParticle("f7ab05",SPF_RELATIVE,random(0,32),random(3,8),0,0,-8,(height / 2),frandom(2.0,-2.0),frandom(2.0,-2.0),frandom(1,8),0,0,-0.4);
+				A_SpawnParticle("Orange",SPF_RELATIVE,random(0,16),random(3,8),0,-8,0,(height / 2),frandom(2.0,-2.0),frandom(2.0,-2.0),frandom(1,8),0,0,-0.4);
+			}
+		}
+		LVAS CDEF 5 Bright;
+		Stop;
+	}
+}
+
+class FDM_LavaSmoke : Actor
+{
+	default
+	{
+		+NOBLOCKMAP
+		+NOCLIP
+		+NOGRAVITY
+		+DONTSPLASH
+		RenderStyle "Add";
+		DefaultAlpha;
+	}
+	States
+	{
+	Spawn:
+		LVAS GHIJK 5 Bright;
+		Stop;
+	}
+}
+
 // THE CARNAGE ACTORS
 // Used some Samsara code as an extremely loose base
 class FDM_Gib : Actor

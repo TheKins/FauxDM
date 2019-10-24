@@ -23,3 +23,51 @@ pic SW0304 tics 1
 pic SW0305 tics 1
 pic SW0306 tics 1
 pic SW0307 tics 1
+
+// ReDoom Defs. We're going back, Marty!
+warp2 flat BLOOD1
+warp2 flat BLOOD2
+warp2 flat BLOOD3
+warp2 flat SLIME01
+warp2 flat SLIME02
+warp2 flat SLIME03
+warp2 flat SLIME04
+warp2 flat SLIME05
+warp2 flat SLIME06
+warp2 flat SLIME07
+warp2 flat SLIME08
+warp flat NUKAGE1
+warp flat NUKAGE2
+warp flat NUKAGE3
+warp2 flat FWATER1
+warp2 flat FWATER2
+warp2 flat FWATER3
+warp2 flat FWATER4
+warp2 flat LAVA1
+warp flat LAVA2
+warp flat LAVA3
+warp flat LAVA4
+
+flat FWATER1
+    pic 1 tics 1
+    pic 1 tics 1
+    
+flat BLOOD1
+    pic 1 tics 1
+    pic 1 tics 1
+    
+flat SLIME01
+    pic 1 tics 1
+    pic 1 tics 1
+    
+flat NUKAGE1
+    pic 1 tics 1
+    pic 1 tics 1
+    
+flat LAVA1
+    pic 1 tics 1
+    pic 1 tics 1
+    
+flat SLIME05
+    pic 1 tics 1
+    pic 1 tics 1  

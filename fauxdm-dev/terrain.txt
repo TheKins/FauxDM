@@ -12,7 +12,7 @@
 */
 
 // Water splash - recycled from NULL
-splash DoomWater
+splash Water
 {
    smallclass      FDM_WaterSplashBaseSmall
    smallclip      0
@@ -23,18 +23,81 @@ splash DoomWater
    noalert
 }
 
-terrain DoomWater
+terrain Water
 {
-	splash			DoomWater
+	splash			Water
 	//footclip		10
+	liquid
+}
+
+// Nukage - Edited from ReDoom
+splash Nuke
+{
+	smallclass		FDM_LavaSmoke
+	smallclip		12
+	smallsound		world/lavasizzle
+
+	baseclass		FDM_NukageSplash
+	chunkclass		FDM_LavaSmoke
+	chunkxvelshift	-1
+	chunkyvelshift	-1
+	chunkzvelshift	7
+	chunkbasezvel	1
+	sound			world/lavasizzle
+}
+
+terrain Nuke
+{
+	splash			Nuke
+	footclip		10
+	liquid
+}
+
+// Lava - Edited from ReDoom
+splash Lava
+{
+	smallclass		FDM_LavaSmoke
+	smallclip		12
+	smallsound		world/lavasizzle
+
+	baseclass		FDM_LavaSplash
+	chunkclass		FDM_LavaSmoke
+	chunkxvelshift	-1
+	chunkyvelshift	-1
+	chunkzvelshift	7
+	chunkbasezvel	1
+	sound			world/lavasizzle
+}
+
+terrain Lava
+{
+	splash			Lava
+	footclip		10
 	liquid
 }
 
 // Terrains are assigned to flats here
 
 // Water
-floor fwater1 Doomwater
-floor fwater2 Doomwater
-floor fwater3 Doomwater
-floor fwater4 Doomwater
-floor sw0780 Doomwater
+floor fwater1 Water
+floor fwater2 Water
+floor fwater3 Water
+floor fwater4 Water
+floor sw0780 Water
+floor FWATER1 Water
+floor FWATER2 Water
+floor FWATER3 Water
+floor FWATER4 Water
+
+// Nukage
+floor NUKAGE1 Nuke
+floor NUKAGE2 Nuke
+floor NUKAGE3 Nuke
+floor DNSLIME Nuke
+
+// Lava
+floor LAVA1 Lava
+floor LAVA2 Lava
+floor LAVA3 Lava
+floor LAVA4 Lava
+floor DNLAVA Lava
