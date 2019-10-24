@@ -22,7 +22,11 @@ class FDM_BaseWeapon : DoomWeapon
 		TNT1 A 1;
 		Loop;
 	Deadman:
-		TNT1 A 1;
+		TNT1 A 1
+		{
+			A_StopSound(CHAN_6);
+			A_StopSound(CHAN_7);
+		}
 		Loop;
 	}
 	

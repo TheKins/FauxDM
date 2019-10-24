@@ -128,7 +128,7 @@ script "FDM_ResetInventory" ENTER
 	ClearInventory();
 	TakeInventory("FDM_Endgame_Winner",9999);
 	TakeInventory("FDM_Endgame_Loser",9999);
-	GiveInventory("Fist", 1);
+	GiveInventory("FDM_Gauntlet", 1);
 	if (GetCVar("fdm_startingweapon") == 1)
 	{
 		GiveInventory("FDM_Shotgun", 1);
@@ -149,7 +149,7 @@ script "FDM_ResetInventory" ENTER
 script "FDM_ResetInventoryOnRespawn" RESPAWN
 {
 	ClearInventory();
-	GiveInventory("Fist", 1);
+	GiveInventory("FDM_Gauntlet", 1);
 	if (GetCVar("fdm_startingweapon") == 1)
 	{
 		GiveInventory("FDM_Shotgun", 1);

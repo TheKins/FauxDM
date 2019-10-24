@@ -23,7 +23,7 @@ gameinfo
 	statusbarclass = "FDM_StatusBar"
 	statscreen_single = "FDM_StatusScreen"
 	
-	weaponslot = 1, "Fist", "Chainsaw"
+	weaponslot = 1, "FDM_Gauntlet"
 	weaponslot = 2, "FDM_Handgun"
 	weaponslot = 3, "FDM_Shotgun", "FDM_SuperShotgun"
 	weaponslot = 4, "FDM_Machinegun", "FDM_Minigun"
