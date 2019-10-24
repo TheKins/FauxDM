@@ -26,7 +26,7 @@ splash Water
 terrain Water
 {
 	splash			Water
-	//footclip		10
+	footclip		10
 	liquid
 }
 
