@@ -114,6 +114,7 @@ class FDM_StatusScreen : StatusScreen
 		}
 		else if (sp_state == 6)
 		{
+				cnt_time = Thinker.Tics2Seconds(Plrs[me].stime);
 				PlaySound("intermission/nextstage");
 				sp_state++;
 		}
