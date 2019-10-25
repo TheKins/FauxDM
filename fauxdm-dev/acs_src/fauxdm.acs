@@ -98,7 +98,7 @@ script "FDM_GameplayTimer" (void)
 
 script "FDM_MissionFailed" (void)
 {
-	ClearInventory();
+	ClearInventory();	
 	GiveInventory("FDM_Endgame_Loser", 1);
 	SetFont ("BIGUPPER");
 	HudMessageBold(s:"You Failed!"; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 5.0);
@@ -107,7 +107,15 @@ script "FDM_MissionFailed" (void)
 	SetMusic("M_NULL",0);
 	AmbientSound("gameplay/missionfailed", 127);
 	AmbientSound("gameplay/missionfailed", 127);
-	delay(105);
+	delay(35);
+	/*
+	if (soclose >= almost)
+	{
+		AmbientSound("gameplay/timer/oneoff", 127);
+		AmbientSound("gameplay/timer/oneoff", 127);
+	}
+	*/
+	delay(70);
 	SetPlayerProperty (1, 0, PROP_TOTALLYFROZEN);
 	SetPlayerProperty (1, 0, PROP_INVULNERABILITY);
 	Teleport_NewMap (GetLevelInfo(LEVELINFO_LEVELNUM), 0, 0);
