@@ -16,6 +16,8 @@ misc/spawn					itemresp
 
 gameplay/missionfailed		lvlfail
 gameplay/missioncomplete	lvlwin
+gameplay/timer/alert		timealrt
+gameplay/timer/lowtick		timetick
 
 // UI Garbage
 $random gameplay/start { gameplay/start01 gameplay/start02 gameplay/start03 gameplay/start04 gameplay/start05 gameplay/start06 gameplay/start07 gameplay/start08 gameplay/start09 gameplay/start10 gameplay/start11 gameplay/start12 gameplay/start13 gameplay/start14 }

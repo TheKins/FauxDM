@@ -64,10 +64,18 @@ script "FDM_GameplayTimer" (void)
 
         if (seconds <= 0)
         {
-            minutes--;
+            if (minutes == 1)
+			{
+				AmbientSound("gameplay/timer/alert", 127);
+			}
+			minutes--;
             seconds = 59;
         } else {
-            seconds--;
+            if (minutes == 0 && seconds <= 10 && seconds > 1)
+			{
+				AmbientSound("gameplay/timer/lowtick", 127);
+			}
+			seconds--;
         }
 		
 		if (minutes == 0 && seconds == 0 && stoptheclock == 0)
