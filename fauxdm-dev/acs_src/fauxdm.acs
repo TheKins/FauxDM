@@ -108,13 +108,13 @@ script "FDM_MissionFailed" (void)
 	AmbientSound("gameplay/missionfailed", 127);
 	AmbientSound("gameplay/missionfailed", 127);
 	delay(35);
-	/*
-	if (soclose >= almost)
+	
+	/*if (CheckInventory("FDM_FragCounter") >= (killcap - 2))
 	{
 		AmbientSound("gameplay/timer/oneoff", 127);
 		AmbientSound("gameplay/timer/oneoff", 127);
-	}
-	*/
+	}*/
+	
 	delay(70);
 	SetPlayerProperty (1, 0, PROP_TOTALLYFROZEN);
 	SetPlayerProperty (1, 0, PROP_INVULNERABILITY);
@@ -132,10 +132,12 @@ script "FDM_MissionComplete" (void)
 	AmbientSound("gameplay/missioncomplete", 127);
 	AmbientSound("gameplay/missioncomplete", 127);
 	delay(35);
+	
 	if (minutes == 0)
 	{
 		AmbientSound("gameplay/timer/lastmin", 127);
 	}
+	
 	delay(70);
 	SetPlayerProperty (1, 0, PROP_INVULNERABILITY);
 	//TakeInventory("FDM_FragCounter",9999);
