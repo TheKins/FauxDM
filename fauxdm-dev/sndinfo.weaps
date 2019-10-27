@@ -15,6 +15,7 @@ weapons/swap					wswap
 
 // Gauntlet
 weapons/gauntlet/loop			glntloop
+weapons/gauntlet/loopx			glntloox
 weapons/gauntlet/hit			glnthit
 weapons/gauntlet/wall			glntwall
 $limit weapons/gauntlet/wall 8

@@ -44,6 +44,7 @@ class FDM_Gauntlet : FDM_BaseWeapon
 		"####" A 1 A_WeaponReady(WRF_NOSWITCH|WRF_NOFIRE);
 		goto Ready;
 	Fire:
+		GNTL B 0 A_JumpIfInventory("PowerStrength", 1, "FireSuper");
 		GNTL B 1 
 		{
 			A_CustomPunch ((20), 1, CPF_NOTURN, "FDM_GauntletPuff", 64, 0, 0, "ArmorBonus", "weapons/gauntlet/hit");
@@ -53,6 +54,25 @@ class FDM_Gauntlet : FDM_BaseWeapon
 		GNTL BCCDD 1
 		{
 			A_WeaponOffset(random(-2,2),random(32,34),WOF_INTERPOLATE);
+		}
+		GNTL B 0 A_ReFire;
+		GNTL B 0
+		{
+			A_StopSound(CHAN_6);
+			A_WeaponOffset(0,32,WOF_INTERPOLATE);
+		}
+		Goto Ready;
+	FireSuper:
+		GNTL B 1 
+		{
+			A_CustomPunch ((20), 1, 0, "FDM_GauntletPuff", 64, 0, 0, "ArmorBonus", "weapons/gauntlet/hit");
+			A_WeaponOffset(random(-8,8),random(32,34),WOF_INTERPOLATE);
+			A_PlaySound("weapons/gauntlet/loopx", CHAN_6, 1.0, 1);
+		}
+		GNTL BCCDD 1
+		{
+			A_WeaponOffset(random(-8,8),random(32,34),WOF_INTERPOLATE);
+			A_CustomPunch ((20), 1,0, "FDM_GauntletPuff", 64, 0, 0, "ArmorBonus", "weapons/gauntlet/hit");
 		}
 		GNTL B 0 A_ReFire;
 		GNTL B 0
