@@ -53,6 +53,10 @@ class FDM_QuadDamage : PowerupGiver
 		RenderStyle "Translucent";
 		Inventory.PickupMessage "$GOTQUAD";
 		Inventory.PickupSound "items/powerups/quad";
+		//$Category "Powerups"
+		//$Title "Quad Damage"
+		//$NotAngled
+		//$Color 9
 	}
 	
 	States
