@@ -66,6 +66,7 @@ class FDM_PlasmaRifle : FDM_BaseWeapon replaces PlasmaRifle
 			A_GunFlash();
 			A_WeaponOffset(0, 42);
 			A_ZoomFactor(0.994,ZOOM_INSTANT|ZOOM_NOSCALETURNING);
+			A_QuadNoise();
 		}
 		BEEM C 1 BRIGHT { A_WeaponOffset(0, 40, WOF_INTERPOLATE); A_ZoomFactor(0.998,ZOOM_NOSCALETURNING); }
 		BEEM D 1 BRIGHT { A_WeaponOffset(0, 38, WOF_INTERPOLATE); A_ZoomFactor(0.999,ZOOM_NOSCALETURNING); }

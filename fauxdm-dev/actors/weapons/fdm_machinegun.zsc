@@ -65,6 +65,7 @@ class FDM_Machinegun : FDM_BaseWeapon replaces Chaingun
 			A_GunFlash();
 			A_FireBullets(5.6, 0, 1, 5, "BulletPuff");
 			A_ZoomFactor(0.997,ZOOM_INSTANT|ZOOM_NOSCALETURNING);
+			A_QuadNoise();
 		}
 		MGUN C 1 BRIGHT A_ZoomFactor(0.998,ZOOM_NOSCALETURNING);
 		MGUN D 1 A_ZoomFactor(1.0,ZOOM_NOSCALETURNING);

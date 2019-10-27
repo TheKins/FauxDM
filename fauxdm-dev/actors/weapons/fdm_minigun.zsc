@@ -91,6 +91,7 @@ class FDM_Minigun : FDM_BaseWeapon
 			A_Quake(8,2,0,128,"null");
 			A_PlaySound("weapons/minigun",CHAN_WEAPON);
 			A_PlaySound("weapons/minigunhold",6,1,1);
+			A_QuadNoise();
 		}
 		TSSF B 1 BRIGHT A_FireBullets(5.6,0,2,5,"BulletPuff");
 		TSSN D 1; //A_FireCustomMissile("BulletCasingSpawn",5,0,8,-9);

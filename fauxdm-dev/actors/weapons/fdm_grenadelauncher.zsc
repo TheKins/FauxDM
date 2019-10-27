@@ -72,6 +72,7 @@ class FDM_GrenadeLauncher : FDM_BaseWeapon
 			A_PlaySound("weapons/grenade/fire");
 			A_FireProjectile("FDM_Grenade");
 			A_ZoomFactor(0.9,ZOOM_NOSCALETURNING);
+			A_QuadNoise();
 		}
 		GLAU D 2 BRIGHT A_ZoomFactor(0.95,ZOOM_NOSCALETURNING);
 		GLAU E 2 BRIGHT A_ZoomFactor(0.96,ZOOM_NOSCALETURNING);

@@ -109,7 +109,7 @@ DoomEdNums
 	5030 = "SoulSphere" // Turbosphere
 	5032 = "SoulSphere"// TimeFreezeSphere
 	5035 = "BlurSphere" // InvisibilitySphere
-	5036 = "Berserk" // DoomSphere
+	5036 = "FDM_QuadDamage" // DoomSphere
 	5037 = "BlueArmor" // Guardsphere
 	5039 = "SoulSphere" // RandomPowerup
 	

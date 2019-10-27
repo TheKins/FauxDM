@@ -41,4 +41,12 @@ class FDM_BaseWeapon : DoomWeapon
 
 		return ResolveState(null);
 	}
+	
+	action void A_QuadNoise()
+	{
+		if (CountInv("PowerDamage") > 0)
+		{
+			A_PlaySound("weapons/quad", CHAN_5);
+		}
+	}
 }

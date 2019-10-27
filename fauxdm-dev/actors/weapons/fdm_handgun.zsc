@@ -71,6 +71,7 @@ class FDM_Handgun : FDM_BaseWeapon replaces Pistol
 			A_PlaySound("weapons/pistol/fire", CHAN_WEAPON);
 			A_GunFlash();
 			A_ZoomFactor(0.997,ZOOM_INSTANT|ZOOM_NOSCALETURNING);
+			A_QuadNoise();
 		}
 		HGUN C 2 BRIGHT A_ZoomFactor(1.0,ZOOM_NOSCALETURNING);
 		HGUN DED 2;

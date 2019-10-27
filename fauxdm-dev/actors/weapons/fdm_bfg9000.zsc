@@ -69,6 +69,7 @@ class FDM_BFG9000 : FDM_BaseWeapon replaces BFG9000
 		{
 			A_FireBFG();
 			A_PlaySound("weapons/bfg/fire", CHAN_WEAPON);
+			A_QuadNoise();
 		}
 		ABFG CDEFG 2 BRIGHT;
 		ABFG A 10 A_ReFire;

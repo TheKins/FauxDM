@@ -69,6 +69,7 @@ TAGGRENL = "Grenade Launcher";
 // Items
 GOTUNIAMMO = "Picked up an Ammo Sampler Pack!";
 GOTBERSERK = "Berserk Pack - Super Gauntlet!";
+GOTQUAD = "Quad Damage!";
 
 // Obituaries
 OB_MONTELEFRAG = "%o was telefragged by";

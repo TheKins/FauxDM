@@ -75,6 +75,8 @@ class FDM_Railgun : FDM_BaseWeapon
 			// Wee little particle core
 			A_RailAttack(0,0,0,"","White",RGF_SILENT,0,"",0,0,8192,35,1.0,1.0,"",4);
 			
+			A_QuadNoise();
+			
 		}
 		RAIL B 1 BRIGHT Offset (0,40) A_ZoomFactor(0.91,ZOOM_NOSCALETURNING);
 		RAIL C 1 BRIGHT Offset (0,40) A_ZoomFactor(0.92,ZOOM_NOSCALETURNING);

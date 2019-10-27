@@ -50,3 +50,4 @@ items/ammo/uni				getammo
 
 // Powerups
 items/powerups/berserk		getbzrk
+items/powerups/quad			getquad

@@ -12,6 +12,7 @@
 */
 
 weapons/swap					wswap
+weapons/quad					wquad
 
 // Gauntlet
 weapons/gauntlet/loop			glntloop

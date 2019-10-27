@@ -33,3 +33,32 @@ class FDM_Berserk : CustomInventory replaces Berserk
 		Stop;
 	}
 }
+
+// Taken from MetaDoom because lazy.
+class FDM_QuadDamage : PowerupGiver
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.BIGPOWERUP
+		+FLOATBOB
+		Inventory.MaxAmount 0;
+		powerup.type "PowerDamage";
+		Powerup.Duration -30;
+		damagefactor 4;
+		Powerup.Color "AF 00 FF", 0.3;
+		scale 0.75;
+		RenderStyle "Translucent";
+		Inventory.PickupMessage "$GOTQUAD";
+		Inventory.PickupSound "items/powerups/quad";
+	}
+	
+	States
+	{
+	Spawn:
+		QUAD ABCDCB 6 Bright;
+		Loop;
+	}
+}

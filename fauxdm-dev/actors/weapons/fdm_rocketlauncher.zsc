@@ -69,6 +69,7 @@ class FDM_RocketLauncher : FDM_BaseWeapon replaces RocketLauncher
 			A_PlaySound("weapons/rocket/fire");
 			A_FireProjectile("FDM_PlayerRocket");
 			A_ZoomFactor(0.9,ZOOM_NOSCALETURNING);
+			A_QuadNoise();
 		}
 		RLAU D 2 BRIGHT A_ZoomFactor(0.95,ZOOM_NOSCALETURNING);
 		RLAU E 2 BRIGHT A_ZoomFactor(0.96,ZOOM_NOSCALETURNING);
