@@ -17,33 +17,36 @@ misc/w_pkup					getweap
 $random items/armor/crumb		{ items/armor/crumb1 items/armor/crumb2 items/armor/crumb3 items/armor/crumb4 }
 $random items/health/crumb		{ items/health/crumb1 items/health/crumb2 items/health/crumb3 items/health/crumb4 }
 
-items/armor/crumb1		armrcrm1
-items/armor/crumb2		armrcrm2
-items/armor/crumb3		armrcrm3
-items/armor/crumb4		armrcrm4
+items/armor/crumb1			armrcrm1
+items/armor/crumb2			armrcrm2
+items/armor/crumb3			armrcrm3
+items/armor/crumb4			armrcrm4
 
-items/health/crumb1		healcrm1
-items/health/crumb2		healcrm2
-items/health/crumb3		healcrm3
-items/health/crumb4		healcrm4
+items/health/crumb1			healcrm1
+items/health/crumb2			healcrm2
+items/health/crumb3			healcrm3
+items/health/crumb4			healcrm4
 
-items/armor/light		getarm1
-items/armor/heavy		getarm2
+items/armor/light			getarm1
+items/armor/heavy			getarm2
 
-items/health/light		getheal1
-items/health/heavy		getheal2
+items/health/light			getheal1
+items/health/heavy			getheal2
 
 // From MetaDoom... FOR NOW
-items/ammo/clip1		getclip1
-items/ammo/clip2		getclip2
+items/ammo/clip1			getclip1
+items/ammo/clip2			getclip2
 
-items/ammo/shell1		getshel1
-items/ammo/shell2		getshel2
+items/ammo/shell1			getshel1
+items/ammo/shell2			getshel2
 
-items/ammo/rocket1		getrock1
-items/ammo/rocket2		getrock2
+items/ammo/rocket1			getrock1
+items/ammo/rocket2			getrock2
 
-items/ammo/cell1		getcell1
-items/ammo/cell2		getcell2
+items/ammo/cell1			getcell1
+items/ammo/cell2			getcell2
 
-items/ammo/uni			getammo
+items/ammo/uni				getammo
+
+// Powerups
+items/powerups/berserk		getbzrk

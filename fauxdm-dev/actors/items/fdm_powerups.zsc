@@ -1,0 +1,35 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Powerups
+ 
+ Comment: 
+
+================================================================================
+*/
+
+class FDM_Berserk : CustomInventory replaces Berserk
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.ISHEALTH
+		Inventory.PickupMessage "$GOTBERSERK";
+		Inventory.PickupSound "items/powerups/berserk";
+	}
+	States
+	{
+	Spawn:
+		PSTR A -1;
+		Stop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory("PowerStrength");
+		TNT1 A 0 HealThing(100, 0);
+		TNT1 A 0 A_SelectWeapon("FDM_Gauntlet");
+		Stop;
+	}
+}

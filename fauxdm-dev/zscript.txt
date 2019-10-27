@@ -38,6 +38,7 @@ Version "3.8"
 #include "actors/fdm_fx.zsc"
 #include "actors/items/fdm_healtharmor.zsc"
 #include "actors/items/fdm_ammo.zsc"
+#include "actors/items/fdm_powerups.zsc"
 
 #include "actors/fdm_decor.zsc"
 
