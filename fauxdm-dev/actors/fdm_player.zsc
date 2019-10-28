@@ -44,6 +44,7 @@ class FDM_Player : PlayerPawn
 		Player.WeaponSlot 5, "FDM_RocketLauncher", "FDM_GrenadeLauncher";
 		Player.WeaponSlot 6, "FDM_PlasmaRifle", "FDM_Railgun";
 		Player.WeaponSlot 7, "FDM_BFG9000";
+		Player.WeaponSlot 8, "FDM_Flamethrower";
 		
 		Player.ColorRange 112, 127;
 		Player.Colorset 0, "$TXT_COLOR_GREEN",		0x70, 0x7F,  0x72;

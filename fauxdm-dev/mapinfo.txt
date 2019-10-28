@@ -30,6 +30,7 @@ gameinfo
 	weaponslot = 5, "FDM_RocketLauncher", "FDM_GrenadeLauncher"
 	weaponslot = 6, "FDM_PlasmaRifle", "FDM_Railgun"
 	weaponslot = 7, "FDM_BFG9000"
+	weaponslot = 8, "FDM_Flamethrower"
 }
 
 gamedefaults

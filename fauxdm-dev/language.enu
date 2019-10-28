@@ -66,8 +66,12 @@ TAGMACHGUN = "Machinegun";
 GOTGRENL = "You got the Grenade Launcher!";
 TAGGRENL = "Grenade Launcher";
 
+GOTFLAMER = "You got the Flamethrower!";
+TAGFLAMER = "Flamethrower";
+
 // Items
 GOTUNIAMMO = "Picked up an Ammo Sampler Pack!";
+GOTFUEL = "Picked up a Fuel Canister";
 GOTBERSERK = "Berserk Pack - Super Gauntlet!";
 GOTQUAD = "Quad Damage!";
 

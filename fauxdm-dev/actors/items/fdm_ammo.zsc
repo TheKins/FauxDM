@@ -165,3 +165,25 @@ class FDM_UniversalAmmo : CustomInventory replaces Backpack
 		Stop;
 	}
 }
+
+// Fuel
+class FDM_Fuel : Ammo
+{
+	Default
+	{
+		Inventory.Amount 25;
+		Inventory.MaxAmount 300;
+		Ammo.BackpackAmount 25;
+		Ammo.BackpackMaxAmount 600;
+		Inventory.PickupMessage "$GOTFUEL";
+		Inventory.Icon "FUELA0";
+		inventory.pickupsound "items/ammo/fuel";
+	}
+	
+	States
+	{
+		Spawn:
+			FUEL A -1;
+			Stop;
+	}
+}

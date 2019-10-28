@@ -82,3 +82,8 @@ weapons/idc			idc
 $random weapons/minigun{weapons/minigun1 weapons/minigun2}
 weapons/minigun1	DSMINIG1
 weapons/minigun2	DSMINIG2
+
+// Flamethrower
+weapons/flamethrower/fire		flamfire
+weapons/flamethrower/hit		flamhit
+weapons/flamethrower/crak		flamcrak
