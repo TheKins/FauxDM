@@ -17,6 +17,9 @@ Zombie
 Kodi
 Comet
 
+External Scripts:
+Boondorl (Flamethrower Code)
+
 Graphics That Weren't "Borrowed" From Commercial Games:
 Zrrion (Quake Ranger)
 hidfan (Doom AI Rescale)
@@ -29,6 +32,7 @@ Michael Niggel and Edmundo Bordeau (Skulltag Railgun)
 Sonik.O.Fan (Shotgun and Machinegun sprites, Skulltag railgun remaster)
 Amuscaria (Rocket and Grenade Launchers, Hell-Forged Texture pack)
 VriskaSerket (BFG sprites)
+YukiHerz (Flamethrower sprites)
 
 Other Stuff From Other Mods:
 JoeyTD (BFG9000 Attack)
