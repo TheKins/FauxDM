@@ -86,4 +86,10 @@ weapons/minigun2	DSMINIG2
 // Flamethrower
 weapons/flamethrower/fire		flamfire
 weapons/flamethrower/hit		flamhit
-weapons/flamethrower/crak		flamcrak
+$random weapons/flamethrower/crak { weapons/flamethrower/crak1 weapons/flamethrower/crak2 weapons/flamethrower/crak3 weapons/flamethrower/crak4 }
+$limit weapons/flamethrower/crak 8
+
+weapons/flamethrower/crak1		flamcrk1
+weapons/flamethrower/crak2		flamcrk2
+weapons/flamethrower/crak3		flamcrk3
+weapons/flamethrower/crak4		flamcrk4

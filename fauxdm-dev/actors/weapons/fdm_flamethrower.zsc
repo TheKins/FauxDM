@@ -106,7 +106,7 @@ class FDM_FlamethrowerProjectile : CustomProj
 		CustomProj.HeightScaleFactor 0.03;
 		
 		CustomProj.CustomDamage 10;
-		DamageType "Fire";
+		DamageType "Flamer";
 		CustomProj.SplashDamage 32;
 		CustomProj.SplashRadiusScale 2;
 		
@@ -163,7 +163,7 @@ class FDM_BurnDOT : CustomDOT
 	Default
 	{
 		Damage 5;
-		DamageType "Fire";
+		DamageType "Flamer";
 		
 		CustomDOT.NumberOfTics 3;
 		CustomDOT.Duration 3;
@@ -192,7 +192,7 @@ class FDM_FlameEffect : DOTEffect
 	{
 		Spawn:
 			FTRA A 0;
-			FTRA A 0 { crackvolume = 0.5; }
+			FTRA A 0 { crackvolume = 0.25; }
 			FTRA ABCDEFGHIJK 1 Bright;
 			Stop;
 	}
@@ -203,7 +203,7 @@ class FDM_FlameEffect : DOTEffect
 		
 		crackvolume - 0.1;
 		
-		A_PlaySound("weapons/flamethrower/crak",CHAN_BODY,crackvolume,0,ATTN_NORM,false,frandom(0.5,2));
+		A_PlaySound("weapons/flamethrower/crak",CHAN_BODY,crackvolume,0,ATTN_NORM,false,frandom(0.5,1));
 	}
 }
 
@@ -220,7 +220,7 @@ class FDM_FireAOE : CustomAOE
 		Radius 16;
 		Height 24;
 		Damage 5;
-		DamageType "Fire";
+		DamageType "Flamer";
 		
 		CustomAOE.CoolDown 0.25;
 		CustomAOE.DOTItem "FDM_BurnDOT";
@@ -258,7 +258,7 @@ class FDM_GroundFireFlame : Actor
 	{
 		RenderStyle "Add";
 		Alpha 0.9;
-		Scale 0.3;
+		Scale 0.5;
 		
 		+NOINTERACTION
 	}
@@ -280,6 +280,6 @@ class FDM_GroundFireFlame : Actor
 		scale.x -= min(0.02, scale.x);
 		scale.y -= min(0.02, scale.y);
 		
-		A_PlaySound("weapons/flamethrower/crak",CHAN_BODY,scale.x,0,ATTN_NORM,false,frandom(0.5,2));
+		A_PlaySound("weapons/flamethrower/crak",CHAN_BODY,(scale.x / 2),0,ATTN_NORM,false,frandom(0.1,0.5));
 	}
 }

@@ -40,6 +40,10 @@ class FDM_BaseMonster : Actor
 	
 	States
 	{
+	Death.Flamer:
+		"####" "#" 0 A_SetTranslation("Scorched");
+		"####" "#" 0 A_Jump(256, "Death");
+		stop;
 	XDeath:
 		GUTS A 0 
 		{
