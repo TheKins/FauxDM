@@ -31,7 +31,7 @@ MONSTERS:
 - Maybe some fake text chat every now and then?
 
 WEAPONS:
-- Add replacements for Chainsaw and Skulltag BFG10k
+- Add replacements for Skulltag BFG10k
 - Make the Grenade Launcher's grenades more like the Quake GL's
 
 MISC:
