@@ -63,7 +63,7 @@ class FDM_Machinegun : FDM_BaseWeapon replaces Chaingun
 		{
 			A_PlaySound("weapons/machinegun/fire", CHAN_WEAPON);
 			A_GunFlash();
-			A_FireBullets(5.6, 0, 1, 7, "BulletPuff");
+			A_FireBullets(2, 2, 1, 7, "BulletPuff");
 			A_ZoomFactor(0.997,ZOOM_INSTANT|ZOOM_NOSCALETURNING);
 			A_QuadNoise();
 		}
@@ -73,7 +73,7 @@ class FDM_Machinegun : FDM_BaseWeapon replaces Chaingun
 		{
 			A_PlaySound("weapons/machinegun/fire", CHAN_WEAPON);
 			A_GunFlash();
-			A_FireBullets(5.6, 0, 1, 7, "BulletPuff");
+			A_FireBullets(3.5, 3.5, 1, 7, "BulletPuff");
 			A_ZoomFactor(0.997,ZOOM_INSTANT|ZOOM_NOSCALETURNING);
 			A_QuadNoise();
 		}
@@ -83,7 +83,7 @@ class FDM_Machinegun : FDM_BaseWeapon replaces Chaingun
 		{
 			A_PlaySound("weapons/machinegun/fire", CHAN_WEAPON);
 			A_GunFlash();
-			A_FireBullets(5.6, 0, 1, 7, "BulletPuff");
+			A_FireBullets(5.6, 5.6, 1, 7, "BulletPuff");
 			A_ZoomFactor(0.997,ZOOM_INSTANT|ZOOM_NOSCALETURNING);
 			A_QuadNoise();
 		}
