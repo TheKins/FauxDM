@@ -26,10 +26,10 @@ class FDM_JPFGuy : FDM_BaseMonster
 		FDM_BaseMonster.TauntSound "actors/jpfguy/taunt";
 		PainSound "actors/jpfguy/pain";
 		DeathSound "actors/jpfguy/die";
-		//ActiveSound "grunt/active";
 		Obituary "$OB_JPFGUY";
 		DropItem "Clip";
 		Decal "BulletChip";
+		translation "112:127=[48,165,91]:[9,23,14]";
 	}
 	States
 	{
