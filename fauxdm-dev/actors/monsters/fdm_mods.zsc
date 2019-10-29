@@ -52,19 +52,19 @@ class FDM_JPFGuy : FDM_BaseMonster
 		JPFG F 2
 		{
 			A_PlaySound ("actors/jpfguy/fire");
-			A_CustomBulletAttack (5.6, 5.6, 1, random(6,15), "BulletPuff", 0, CBAF_NORANDOM);
+			A_CustomBulletAttack (5.6, 5.6, 1, random(6,12), "BulletPuff", 0, CBAF_NORANDOM);
 		}
 		JPFG E 2 A_FaceTarget;
 		JPFG F 2
 		{
 			A_PlaySound ("actors/jpfguy/fire");
-			A_CustomBulletAttack (5.6, 5.6, 1, random(6,15), "BulletPuff", 0, CBAF_NORANDOM);
+			A_CustomBulletAttack (5.6, 5.6, 1, random(6,12), "BulletPuff", 0, CBAF_NORANDOM);
 		}
 		JPFG E 2 A_FaceTarget;
 		JPFG F 2
 		{
 			A_PlaySound ("actors/jpfguy/fire");
-			A_CustomBulletAttack (5.6, 5.6, 1, random(6,15), "BulletPuff", 0, CBAF_NORANDOM);
+			A_CustomBulletAttack (5.6, 5.6, 1, random(6,12), "BulletPuff", 0, CBAF_NORANDOM);
 		}
 		JPFG E 8 A_FaceTarget;
 		JPFG Y 4;
