@@ -27,6 +27,7 @@ class FDM_BaseMonster : Actor
 		+NOBLOCKMONST
 		+BLOCKASPLAYER
 		+DROPOFF
+		Monster;
 	}
 	
 	int swimtimer;
