@@ -84,5 +84,6 @@ OB_IMP = "%o was toasted by";
 OB_CHUBBS = "%o was weighed down by";
 OB_QUAKERANGER = "%o was nailed by";
 OB_BLOODCULTIST = "%o was pulped by";
+OB_JPFGUY = "%o was overpowered by";
 
 OB_ICON = "%o was splattered by a big wall texture!";

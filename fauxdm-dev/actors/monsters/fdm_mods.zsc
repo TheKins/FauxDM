@@ -4,7 +4,7 @@
  
  Author: The Kinsie
  
- Purpose: Repurposed old Doom monsters
+ Purpose: Monsters from older mods
  
  Comment: 
 
@@ -27,7 +27,7 @@ class FDM_JPFGuy : FDM_BaseMonster
 		PainSound "actors/jpfguy/pain";
 		DeathSound "actors/jpfguy/die";
 		//ActiveSound "grunt/active";
-		Obituary "$OB_ZOMBIEMAN";
+		Obituary "$OB_JPFGUY";
 		DropItem "Clip";
 		Decal "BulletChip";
 	}
