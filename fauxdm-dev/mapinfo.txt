@@ -134,6 +134,55 @@ DoomEdNums
 	
 	5068 = "FDM_SpringPadZone"
 	
+	// Skulltag Props
+	5051 = "GreyColumn"
+	5052 = "TallGreyColumn"
+	5053 = "GreyHeartColumn"
+	5054 = "TallGothicColumn"
+	5055 = "RevenantHand"
+	5056 = "ImpHead"
+	5058 = "FDM_Blank" // Impse
+	5009 = "FloatingBobbingSkull"
+	5120 = "ImpalingSpike"
+	5121 = "ImpalingSpike2"
+	5122 = "ImpalingSpike3"
+	5150 = "WhiteTorch"
+	5151 = "ShortWhiteTorch"
+	5152 = "YellowTorch"
+	5153 = "ShortYellowTorch"
+	5059 = "RedEvilEye"
+	5060 = "BlueEvilEye"
+	5156 = "RedCandleStick"
+	5157 = "BlueCandleStick"
+	5154 = "RedTechLamp"
+	5155 = "RedTechLamp2"
+	5158 = "RedColumn"
+	5159 = "BlueColumn"
+	5320 = "ImpalingSpike4"
+	5321 = "ImpalingSpike5"
+	5322 = "ImpalingSpike6"
+	5323 = "ImpalingSpike7"
+	5324 = "ImpalingSpike8"
+	5325 = "ImpalingSpike9"
+	5326 = "ImpalingSpike10"
+	5327 = "ImpalingSpike11"
+	5328 = "MarineHelmetGibs"
+	
+	5070 = "DeadCyberdemon"
+	5057 = "FDM_Blank" // Hissy
+	5110 = "ImpStatue"
+	5111 = "DemonStatue"
+	5112 = "ArchvileStatue"
+	5113 = "BaronStatue"
+	5114 = "CyberdemonStatue"
+	5115 = "MassmouthStatue"
+	
+	5020 = "FDM_Blank" // HellScorePillar
+	10022 = "FDM_Blank" // HellScorePillarBlue
+	10021 = "FDM_Blank" // HellScorePillarRed
+	5131 = "FDM_Blank" // RedFlagSpot
+	5130 = "FDM_Blank" // BlueFlagSpot
+	
 	// New Stuff
 	21000 = "TangoHangingLight144"
 	21001 = "TangoHangingLight96"

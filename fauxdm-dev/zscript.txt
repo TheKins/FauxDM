@@ -43,6 +43,7 @@ Version "3.8"
 #include "actors/items/fdm_powerups.zsc"
 
 #include "actors/fdm_decor.zsc"
+#include "actors/fdm_stprops.zsc"
 
 #include "actors/monsters/fdm_base.zsc"
 #include "actors/monsters/fdm_spawners.zsc"

@@ -1,0 +1,855 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: Skulltag Dev Team, TDRR
+ 
+ Purpose: Decorative props for maps.
+ 
+ Comment: 
+
+================================================================================
+*/
+
+class GreyColumn : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 40;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Grey Column"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		COL8 A -1;
+		Stop;
+	}
+}
+
+class TallGreyColumn : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 52;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Grey Column - Tall"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		COL7 A -1;
+		Stop;
+	}
+}
+
+class GreyHeartColumn : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 40;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Grey Column w/ Heart"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		COL9 AB 14;
+		Loop;
+	}
+}
+
+class TallGothicColumn : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 52;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Gothic Column - Tall"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		GCOL A -1;
+		Stop;
+	}
+}
+
+class RevenantHand : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 16;
+		+SOLID
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Spooky Skeleton Hand"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		SGRB AB 14;
+		Stop;
+	}
+}
+
+class ImpHead : Actor
+{
+	Default
+	{
+		Radius 8;
+		Height 32;
+		+SOLID
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Imp Head"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		IHED A -1;
+		Stop;
+	}
+}
+
+class FloatingBobbingSkull : FloatingSkull
+{
+	Default
+	{
+		+FLOATBOB
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Floating Skull w/ FloatBob"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+}
+
+class ImpalingSpike : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 64;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Impaling Spike"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		POL7 A -1;
+		Stop;
+	}
+}
+
+class ImpalingSpike2 : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 56;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Impaling Spike w/ Chaingunner Head"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		POL8 A -1;
+		Stop;
+	}
+}
+
+class ImpalingSpike3 : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 56;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Impaling Spike w/ Zombieman Head"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		POL9 A -1;
+		Stop;
+	}
+}
+
+class WhiteTorch : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 68;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "White Torch"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		TWHI ABCD 4 BRIGHT;
+		Loop;
+	}
+}
+
+class ShortWhiteTorch : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 37;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "White Torch - Short"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		SMWT ABCD 4 BRIGHT;
+		Loop;
+	}
+}
+
+class YellowTorch : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 68;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Yellow Torch"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		TYEL ABCD 4 BRIGHT;
+		Loop;
+	}
+}
+
+class ShortYellowTorch : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 37;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Yellow Torch - Short"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		SMYT ABCD 4 BRIGHT;
+		Loop;
+	}
+}
+
+class RedEvilEye : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 54;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Evil Eye - Red"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		CEYR ABCB 6 BRIGHT;
+		Loop;
+	}
+}
+
+class BlueEvilEye : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 54;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Evil Eye - Blue"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		CEYB ABCB 6 BRIGHT;
+		Loop;
+	}
+}
+
+class RedCandleStick : Actor
+{
+	Default
+	{
+		Radius 20;
+		Height 14;
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Candlestick - Red"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		CANR A -1 BRIGHT;
+		Stop;
+	}
+}
+
+class BlueCandleStick : Actor
+{
+	Default
+	{
+		Radius 20;
+		Height 14;
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Candlestick - Blue"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		CANB A -1 BRIGHT;
+		Stop;
+	}
+}
+
+class RedTechLamp : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 80;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Red Tech Lamp"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		TLP3 ABCD 4 BRIGHT;
+		Loop;
+	}
+}
+
+class RedTechLamp2 : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 60;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Red Tech Lamp 2"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		TLP4 ABCD 4 BRIGHT;
+		Loop;
+	}
+}
+
+class RedColumn : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 48;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Red Column"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		RCOL A -1;
+		Stop;
+	}
+}
+
+class BlueColumn : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 48;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Blue Column"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		BCOL A -1;
+		Stop;
+	}
+}
+
+class ImpalingSpike4 : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 56;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Impaling Spike w/ Doomguy Head"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		POLA A -1;
+		Stop;
+	}
+}
+
+class ImpalingSpike5 : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 64;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Impaling Spike w/ Three Doomguy Heads"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		POLB A -1;
+		Stop;
+	}
+}
+
+class ImpalingSpike6 : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 45;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Impaling Spike w/ Three Doomguy Heads - Short"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		POLC A -1;
+		Stop;
+	}
+}
+
+class ImpalingSpike7 : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 54;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Impaling Spike w/ Doomguy Torso (One Arm)"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		POLD A -1;
+		Stop;
+	}
+}
+
+class ImpalingSpike8 : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 54;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Impaling Spike w/ Doomguy Torso (Both Arms)"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		POLE A -1;
+		Stop;
+	}
+}
+
+class ImpalingSpike9 : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 64;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Impaling Spike w/ Skewered Doomguy"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		POLF A 6;
+		POLF B 8;
+		Loop;
+	}
+}
+
+class ImpalingSpike10 : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 64;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Impaling Spike w/ Skewered Doomguy (Long Arm)"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		POLG A -1;
+		Stop;
+	}
+}
+
+class ImpalingSpike11 : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 64;
+		+SOLID
+		+USESPECIAL
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Impaling Spike w/ Skewered Doomguy (Short Arm)"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		POLH A -1;
+		Stop;
+	}
+}
+
+class MarineHelmetGibs : Actor
+{
+	Default
+	{
+		Radius 16;
+		Height 64;
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Gibs w/ Marine Helmet"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		GIB1 A -1;
+		Stop;
+	}
+}
+
+class DeadCyberdemon : Actor
+{
+	Default
+	{
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Dead Cyberdemon"
+		//$IsDecoration	
+		//$NotAngled
+		//$Color 11
+	}
+	States
+	{
+	Spawn:
+		CYBR P -1;
+		Stop;
+	}
+}
+
+class ImpStatue : Actor
+{
+	Default
+	{
+		Radius 20;
+		Height 56;
+		+SOLID
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Statue - Imp"
+		//$IsDecoration
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		STA1 A -1;
+		Stop;
+	}
+}
+
+class DemonStatue : Actor
+{
+	Default
+	{
+		Radius 30;
+		Height 56;
+		+SOLID
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Statue - Demon"
+		//$IsDecoration
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		STA2 A -1;
+		Stop;
+	}
+}
+
+class ArchvileStatue : Actor
+{
+	Default
+	{
+		Radius 20;
+		Height 56;
+		+SOLID
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Statue - Archvile"
+		//$IsDecoration
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		STA3 A -1;
+		Stop;
+	}
+}
+
+class BaronStatue : Actor
+{
+	Default
+	{
+		Radius 24;
+		Height 64;
+		+SOLID
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Statue - Baron"
+		//$IsDecoration
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		STA4 A -1;
+		Stop;
+	}
+}
+
+class CyberdemonStatue : Actor
+{
+	Default
+	{
+		Radius 40;
+		Height 110;
+		+SOLID
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Statue - Cyberdemon"
+		//$IsDecoration
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		STA5 A -1;
+		Stop;
+	}
+}
+
+class MassmouthStatue : Actor
+{
+	Default
+	{
+		Radius 24;
+		Height 64;
+		XScale 0.5;
+		YScale 0.5;
+		+SOLID
+		//$Category "FauxDM Skulltag Compat"
+		//$Title "Statue - Massmouth"
+		//$IsDecoration
+		//$Color 11
+	}
+
+	States
+	{
+	Spawn:
+		STA6 A -1;
+		Stop;
+	}
+}
+
