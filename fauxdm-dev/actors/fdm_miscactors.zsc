@@ -20,6 +20,23 @@ class FDM_BossBrain : BossBrain replaces BossBrain
 		Health 99999;
 		+NODAMAGE
 	}
+	
+	States
+	{
+	Spawn:
+		BBRN A -1;
+		Stop;
+	Pain.Rocket:
+		BBRN B 36
+		{
+			A_BrainPain();
+			A_CallSpecial(special, args[0], args[1], args[2], args[3], args[4]);
+		}
+		Goto Spawn;
+	Pain:
+		BBRN B 36;
+		Goto Spawn;
+	}
 }
 
 class FDM_BossEye : BossEye replaces BossEye
