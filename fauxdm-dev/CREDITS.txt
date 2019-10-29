@@ -40,6 +40,7 @@ MaxiClouds (Re-Blood TNT code)
 Samsara Devs (Duke3D Gib code)
 Skulltag Development Team (Any further Skulltag assets otherwise uncredited)
 Jekyll Grim Payne (Scorch translation effect)
+TDRR (Skulltag Emulation stuff)
 
 Testers:
 BlorgX3
