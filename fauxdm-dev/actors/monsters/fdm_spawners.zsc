@@ -21,6 +21,7 @@ class FDM_Spawner : Actor
 	}
 	
 	int spawncount;
+	int lapcount;
 	
 	// Different Spawn Lists that get harder. Typically aim for a cycle of
 	// 4 easy, 2 medium, 1 hard to mix things up a bit.
@@ -80,6 +81,7 @@ class FDM_Spawner : Actor
 			
 			if (spawncount > 7)
 			{
+				lapcount++;
 				spawncount = 0;
 			}
 			
