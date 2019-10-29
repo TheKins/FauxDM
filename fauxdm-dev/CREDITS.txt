@@ -33,6 +33,7 @@ Sonik.O.Fan (Shotgun and Machinegun sprites, Skulltag railgun remaster)
 Amuscaria (Rocket and Grenade Launchers, Hell-Forged Texture pack)
 VriskaSerket (BFG sprites)
 YukiHerz (Flamethrower sprites)
+Jekyll Grim Payne (Gas Cannister base)
 
 Other Stuff From Other Mods:
 JoeyTD (BFG9000 Attack)
