@@ -15,7 +15,7 @@ GAMEPLAY JUNK:
 - Skill settings need implementing. Prob. once more stuff is added.
   
 MAPS:
-- FDM02 could use further tweaking.
+- FDM02 needs an art-pass for the southwest wing.
 - FDM04 needs more actors and additional STUFF in the outside bit.
   
 ================================================================================

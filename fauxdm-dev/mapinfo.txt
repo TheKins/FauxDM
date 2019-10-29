@@ -231,7 +231,7 @@ map D5M1 "Plead the Fifth" // Orig. SS-MAP1 (aka DWANGO5 Map01) by Rockt and Asm
 
 map FDM02 "Forgotten Temple" // orig from first 1995 SW proto
 {
-	author = "Eric Reuter, The Kins"
+	author = "Eric Reuter, Joe Selinske, The Kins"
 	next = "FDM03"
 	sky1 = "SNSSKY01"
 	music = "swtaiko"
