@@ -28,6 +28,7 @@ class FDM_Player : PlayerPawn
 		Player.StartItem "Clip", 50;
 		
 		Player.JumpZ 8.01;
+		Player.TeleportFreezeTime 0;
 		
 		// Screw your locked doors!
 		Player.StartItem "RedCard";
