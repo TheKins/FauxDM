@@ -51,5 +51,6 @@ Version "3.8"
 #include "actors/monsters/fdm_oldmonsters.zsc"
 #include "actors/monsters/fdm_retrofps.zsc"
 #include "actors/monsters/fdm_skulltag.zsc"
+#include "actors/monsters/fdm_mods.zsc"
 
 #include "actors/fdm_miscactors.zsc"

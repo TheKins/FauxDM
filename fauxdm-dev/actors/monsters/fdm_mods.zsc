@@ -1,0 +1,100 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Repurposed old Doom monsters
+ 
+ Comment: 
+
+================================================================================
+*/
+
+// Zombieman
+class FDM_JPFGuy : FDM_BaseMonster
+{
+	Default
+	{
+		Health 100;
+		Radius 16;
+		Height 56;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		speed 4;
+		FDM_BaseMonster.TauntSound "actors/jpfguy/taunt";
+		PainSound "actors/jpfguy/pain";
+		DeathSound "actors/jpfguy/die";
+		//ActiveSound "grunt/active";
+		Obituary "$OB_ZOMBIEMAN";
+		DropItem "Clip";
+		Decal "BulletChip";
+	}
+	States
+	{
+	Spawn:
+		JPFG Z 10 A_Look;
+		goto Roam;
+	Roam:
+		JPFG AABBCCDD 4 A_FDMRoam();
+		Loop;
+	See:
+		JPFG AABBCCDD 4 A_FDMChase;
+		Loop;
+	Missile:
+		JPFG E 0
+		{
+			bNOTAUTOAIMED = 1;
+			height = 28;
+		}
+		JPFG E 8 A_FaceTarget;
+		JPFG F 2
+		{
+			A_PlaySound ("actors/jpfguy/fire");
+			A_CustomBulletAttack (5.6, 5.6, 1, random(6,15), "BulletPuff", 0, CBAF_NORANDOM);
+		}
+		JPFG E 2 A_FaceTarget;
+		JPFG F 2
+		{
+			A_PlaySound ("actors/jpfguy/fire");
+			A_CustomBulletAttack (5.6, 5.6, 1, random(6,15), "BulletPuff", 0, CBAF_NORANDOM);
+		}
+		JPFG E 2 A_FaceTarget;
+		JPFG F 2
+		{
+			A_PlaySound ("actors/jpfguy/fire");
+			A_CustomBulletAttack (5.6, 5.6, 1, random(6,15), "BulletPuff", 0, CBAF_NORANDOM);
+		}
+		JPFG E 8 A_FaceTarget;
+		JPFG Y 4;
+		JPFG Z 4 
+		{
+			bNOTAUTOAIMED = 0;
+			height = 56;
+		}
+		Goto See;
+	Pain:
+		JPFG G 0
+		{
+			bNOTAUTOAIMED = 0;
+			height = 56;
+		}
+		JPFG G 3;
+		JPFG G 3 A_Pain;
+		Goto See;
+	Death:
+		JPFG H 5;
+		JPFG I 5 A_Scream;
+		JPFG J 5 A_NoBlocking;
+		JPFG K 5;
+		JPFG L -1;
+		Stop;
+	}
+	
+	override void PostBeginPlay ()
+	{
+		Super.PostBeginPlay ();
+		bFRIGHTENED = random(0,1);
+	}
+}

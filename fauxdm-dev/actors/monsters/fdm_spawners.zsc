@@ -28,7 +28,8 @@ class FDM_Spawner : Actor
 	{
 		"FDM_ZombieMan",
 		"FDM_ShotgunGuy",
-		"FDM_DoomImp"
+		"FDM_DoomImp",
+		"FDM_JPFGuy"
 	};
 	
 	static const string CritterListMedium[] =
