@@ -246,6 +246,9 @@ class FDM_BaseMonster : Actor
 			A_GiveInventory("FDM_MonsterTaunt", 1, AAPTR_TARGET);
 		}
 		
+		// And do a little flipspritery, while we're at it.
+		bSPRITEFLIP = random(0,1);
+		
 		Super.Die(source, inflictor, dmgflags, MeansOfDeath);
 	}
 	
