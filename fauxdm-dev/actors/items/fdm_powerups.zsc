@@ -66,3 +66,79 @@ class FDM_QuadDamage : PowerupGiver
 		Loop;
 	}
 }
+
+// More MetaDoom rippery
+class FDM_InvulnerabilitySphere : PowerupGiver replaces InvulnerabilitySphere
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.BIGPOWERUP
+		+FLOATBOB
+		scale 0.75;
+		Inventory.MaxAmount 0;
+		powerup.type "PowerInvulnerable";
+		Powerup.Color "GoldMap";
+		Inventory.PickupMessage "$GOTINVUL";
+		Inventory.PickupSound "items/powerups/invuln";
+	}
+	
+	States
+	{
+	Spawn:
+		PINV ABCDCB 6 Bright;
+		Loop;
+	}
+}
+
+// Soulsphere
+class FDM_Soulsphere : Health replaces Soulsphere
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.FANCYPICKUPSOUND
+		+FLOATBOB
+		scale 0.75;
+		Inventory.Amount 100;
+		Inventory.MaxAmount 200;
+		Inventory.PickupMessage "$GOTSUPER";
+		Inventory.PickupSound "items/powerups/soulsphere";
+	}
+	
+	States
+	{
+	Spawn:
+		SOUL ABCDCB 6 Bright;
+		Loop;
+	}
+}
+
+// Megasphere
+class FDM_Megasphere : CustomInventory replaces Megasphere
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		+FLOATBOB
+		scale 0.75;
+		Inventory.PickupMessage "$GOTMSPHERE";
+		Inventory.PickupSound "items/powerups/megasphere";
+	}
+	
+	States
+	{
+	Spawn:
+		MEGA ABCD 6 BRIGHT;
+		Loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory("FDM_BlueArmor", 1);
+		TNT1 A 0 A_GiveInventory("MegasphereHealth", 1);
+		Stop;
+	}
+}	

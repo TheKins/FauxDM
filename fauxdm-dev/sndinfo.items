@@ -50,5 +50,8 @@ items/ammo/uni				getammo
 items/ammo/fuel				getfuel
 
 // Powerups
-items/powerups/berserk		getbzrk
-items/powerups/quad			getquad
+items/powerups/berserk				getbzrk
+items/powerups/quad					getquad
+items/powerups/invuln				getinvl
+items/powerups/soulsphere			getsoul
+items/powerups/megasphere			getmega
