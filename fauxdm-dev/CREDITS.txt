@@ -45,6 +45,7 @@ TDRR (Skulltag Emulation stuff)
 
 Testers:
 BlorgX3
+Kevansevans
 
 ================================================================================
 

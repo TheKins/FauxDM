@@ -9,6 +9,11 @@ MONSTERS:
   proper bots (they're idiot monsters that think they're people!) but it'd be
   nice if they didn't just "run the rope" between walls as much.
   
+WEAPONS:
+- Flamethrower doesn't really take players into account. Just sort of acts like
+  a ripper projectile without any DOT effect. Inherited from Boondorl's scripts,
+  but needs a-fixin'.
+  
 GAMEPLAY JUNK:
 - ACS should probably be de-fucked and ported to ZScript, but that stuff is
   pretty scary, so it's ACS for now. _For now._
@@ -37,7 +42,8 @@ WEAPONS:
 - Make the Grenade Launcher's grenades more like the Quake GL's
 
 MISC:
-- Make the win/lose intermission pics script better handle non-320x240 resolutions.
+- Improve how the intermission win/lose backdrops are drawn to match how the
+  engine draws the real backdrop.
 
 ================================================================================
 
