@@ -16,7 +16,6 @@ GAMEPLAY JUNK:
   
 MAPS:
 - FDM02 needs an art-pass for the southwest wing.
-- FDM04 needs more actors and additional STUFF in the outside bit.
 
 MISC. NONSENSE:
 - Add GLDEFs definitions to everything.
