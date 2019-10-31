@@ -84,10 +84,6 @@ floor fwater2 Water
 floor fwater3 Water
 floor fwater4 Water
 floor sw0780 Water
-floor FWATER1 Water
-floor FWATER2 Water
-floor FWATER3 Water
-floor FWATER4 Water
 
 // Nukage
 floor NUKAGE1 Nuke

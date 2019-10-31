@@ -221,7 +221,7 @@ class FDM_FireAOE : CustomAOE
 	static const String noSpawn[] =
 	{
 		"FWATER1", "FWATER2", "FWATER3", "FWATER4",
-		"BLOOD1", "BLOOD2", "BLOOD3"
+		"BLOOD1", "BLOOD2", "BLOOD3", "sw0780"
 	};
 	
 	Default
