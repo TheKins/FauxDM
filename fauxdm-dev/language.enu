@@ -87,3 +87,7 @@ OB_BLOODCULTIST = "%o was pulped by";
 OB_JPFGUY = "%o was overpowered by";
 
 OB_ICON = "%o was splattered by a big wall texture!";
+
+OB_RAILGUN = "%o was railed by %k.";
+OB_FLAMETHROWER = "%o was set ablaze by %k.";
+OB_FLAMETHROWER_DOT = "%o was slow-cooked by $k.";

@@ -20,7 +20,7 @@ class FDM_Railgun : FDM_BaseWeapon
 		Weapon.AmmoGive 40;
 		Weapon.AmmoType "Cell";
 		Inventory.PickupMessage "$GOTRAILGUN";
-		Obituary "$OB_MPSHOTGUN";
+		Obituary "$OB_RAILGUN";
 		Tag "$TAGRAILGUN";
 		//$Category "Weapons"
 		//$Title "Railgun"

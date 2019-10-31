@@ -120,7 +120,7 @@ class FDM_FlamethrowerProjectile : CustomProj
 		Speed 24;
 		RenderStyle "Add";
 		//Alpha 0.75;
-		Obituary "%o was burned to death by %k.";
+		Obituary "$OB_FLAMETHROWER";
 		
 		+FORCEXYBILLBOARD
 		
@@ -172,6 +172,8 @@ class FDM_BurnDOT : CustomDOT
 		CustomDOT.StackType "Stackable";
 		CustomDOT.DamageApplication "Delayed";
 		CustomDOT.EffectActor "FDM_FlameEffect";
+		
+		Obituary "$OB_FLAMETHROWER_DOT";
 	}
 }
 
