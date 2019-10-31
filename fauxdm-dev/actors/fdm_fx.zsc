@@ -470,39 +470,6 @@ class FDM_BloodShred : Actor replaces Blood
 	}
 }
 
-/*
-class FDM_BloodSpurt : Actor
-{
-	Default
-	{
-		Health 2;
-		radius 3;
-		height 6;
-		speed 0.1;
-		Scale 0.2;
-		Mass 0;
-		BounceType "Doom";
-		+FLOORCLIP
-		+DONTSPLASH
-		+NOTELEPORT
-		+NOBLOCKMAP
-		+FORCEXYBILLBOARD
-		+CLIENTSIDEONLY
-	}
-	States
-	{
-	Spawn:
-		SPRY A 0;
-		SPRY A 0;
-		BBLD ABCDABCDABCDABCD 1;
-		BBLD AB 1 A_SetTranslucent(.8);
-		BBLD CD 1 A_SetTranslucent(.6);
-		BBLD AB 1 A_SetTranslucent(.4);
-		BBLD CD 1 A_SetTranslucent(.2);
-		Stop;
-	}
-}*/
-
 class FDM_BloodSpurt : Actor
 {
 	Default
@@ -524,7 +491,6 @@ class FDM_BloodSpurt : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 0;
 		TNT1 A 0;
 		TNT1 AAAAAAAAAAAAAAAA 1
 		{
