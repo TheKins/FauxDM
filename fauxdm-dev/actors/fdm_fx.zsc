@@ -306,6 +306,11 @@ class FDM_Gib : Actor
 			}
 		}
 		
+		if (waterlevel > 0)
+		{
+			ThrustThingZ(0,4,1,1);
+		}
+		
 		Super.Tick();
 	}
 }
