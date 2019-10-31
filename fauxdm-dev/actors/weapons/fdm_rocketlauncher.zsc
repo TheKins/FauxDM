@@ -104,15 +104,29 @@ class FDM_Rocket : Actor replaces Rocket
 		+ROCKETTRAIL
 		Obituary "$OB_MPROCKET";
 	}
+	
+	int rocketlife;
+	
 	States
 	{
 	Spawn:
-		MISL A 1 Bright A_PlaySound("weapons/rocket/loop", CHAN_BODY, 1.0, 1);
+		MISL A 1 Bright 
+		{
+			rocketlife++;
+			A_PlaySound("weapons/rocket/loop", CHAN_BODY, 1.0, 1);
+		}
 		Loop;
 	Death:
 		MISL B 0
 		{
-			A_Explode();
+			if (rocketlife <= 8)
+			{
+				A_Explode (128, 128, XF_HURTSOURCE|XF_EXPLICITDAMAGETYPE, 0, 0, 0, 0, "BulletPuff", "PlayerRocket");
+				//A_Log("Probably A Rocket Jump");
+			} else {
+				A_Explode();
+				//A_Log("Somebody Exploded You");
+			}
 			A_SpawnItem("FDM_RocketExplosionVisualOnly");
 		}
 		Stop;

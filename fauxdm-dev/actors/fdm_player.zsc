@@ -57,6 +57,8 @@ class FDM_Player : PlayerPawn
 		Player.Colorset 5, "$TXT_COLOR_LIGHTBROWN",	0x38, 0x47,  0x3A;
 		Player.Colorset 6, "$TXT_COLOR_LIGHTRED",	0xB0, 0xBF,  0xB2;
 		Player.Colorset 7, "$TXT_COLOR_LIGHTBLUE",	0xC0, 0xCF,  0xC2;
+		
+		damagefactor "PlayerRocket", 0.5;
 	}
 
 	States
