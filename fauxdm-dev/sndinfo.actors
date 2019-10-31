@@ -60,6 +60,7 @@ actors/shared/gibbed2		actrgib2
 actors/shared/gibbed3		actrgib3
 
 actors/shared/telefragged	actrtfrg
+actors/shared/extinguish	actrext
 
 // Old Doom Monsters
 actors/oldactors/imptaunt		imptnt

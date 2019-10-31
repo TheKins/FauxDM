@@ -101,11 +101,12 @@ class FDM_BaseMonster : Actor
 	override void Tick()
 	{
 		// These have all been broken into seperate functions so that individual
-		// actors can disable or orverride them for whatever reason.
+		// actors can disable or override them for whatever reason.
 		
 		DoNeckChecker();
 		DoAllianceFlicker();
 		DoFluidNavigation();
+		DoExtinguish();
 		DoHurtFloorDamage();
 		DoTaunts();
 		
@@ -232,6 +233,16 @@ class FDM_BaseMonster : Actor
 				A_PlaySound(TauntSound, CHAN_VOICE, 1.0, 0, ATTN_NONE);
 				tauntdelaytimer = 0;
 			}
+		}
+	}
+	
+	// Get extinguished if entering water.
+	virtual void DoExtinguish()
+	{
+		if (waterlevel > 0 && CountInv("FDM_BurnDOT"))
+		{
+			A_TakeInventory("FDM_BurnDOT", 9999);
+			A_PlaySound("actors/shared/extinguish", CHAN_5);
 		}
 	}
 	

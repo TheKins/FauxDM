@@ -1,4 +1,17 @@
-// Star Soldier Energy Gun
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Decal definitions.
+ 
+ Comment: 
+
+================================================================================
+*/
+
+// Star Soldier Energy Gun from Project Crosshairs
 decal StarSoldierPlasmaScorchLower1
 {
 	pic PLASMA1

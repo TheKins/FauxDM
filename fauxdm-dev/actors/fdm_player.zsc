@@ -123,6 +123,26 @@ class FDM_Player : PlayerPawn
 	// Disable the "Secret Found" stuff for now
 	override bool OnGiveSecret(bool printmsg, bool playsound) { return false; }
 	
+	override void Tick()
+	{
+		// These have all been broken into seperate functions so that individual
+		// actors can disable or override them for whatever reason.
+		
+		DoExtinguish();
+		
+		Super.Tick();
+	}
+	
+	// Get extinguished if entering water.
+	virtual void DoExtinguish()
+	{
+		if (waterlevel > 0 && CountInv("FDM_BurnDOT"))
+		{
+			A_TakeInventory("FDM_BurnDOT", 9999);
+			A_PlaySound("actors/shared/extinguish", CHAN_5);
+		}
+	}
+	
 	// If killed, let the monster taunt your corpse
 	override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
 	{
