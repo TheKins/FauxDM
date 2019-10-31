@@ -11,7 +11,7 @@
 ================================================================================
 */
 
-class FDM_ActorSpawnFog : Actor
+class FDM_ActorSpawnFog : Actor replaces TeleportFog
 {
 	default
 	{
