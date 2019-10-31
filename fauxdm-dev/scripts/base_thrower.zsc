@@ -1,3 +1,20 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: Boondorl
+ 
+ Purpose: Flamethrower library class
+ 
+ Comment: https://forum.zdoom.org/viewtopic.php?f=37&t=65883
+ 
+ One minor change was made by The Kinsie - checks for the ISMONSTER flag were
+ changed to check for SHOOTABLE, to ensure that flamethrowers properly effect
+ players as well as monsters.
+
+================================================================================
+*/
+
 class CustomDOT : Inventory abstract
 {
 	Array<int> ticTimers;
@@ -335,7 +352,7 @@ class CustomAOE : Actor abstract
 						mo.DamageMobj(self, target, realDamage, damageType);
 						inCoolDown.Push(mo);
 						coolDownTimers.Push(coolDown);
-						if (mo.bIsMonster)
+						if (mo.bSHOOTABLE)
 							mo.A_GiveInventory(DOTItem);
 					}
 				}
@@ -489,7 +506,7 @@ class CustomProj : Actor abstract
 				mo = it.thing;
 				if (noSplashOnHit && tracer == mo)
 					continue;
-				else if (mo.bIsMonster && GetRadiusDamage(mo, damage, distance, fulldamagedistance, bOldRadiusDmg) > 0 && CheckSight(mo, SF_IGNOREVISIBILITY|SF_IGNOREWATERBOUNDARY))
+				else if (mo.bSHOOTABLE && GetRadiusDamage(mo, damage, distance, fulldamagedistance, bOldRadiusDmg) > 0 && CheckSight(mo, SF_IGNOREVISIBILITY|SF_IGNOREWATERBOUNDARY))
 				{
 					if (mo.health <= 0)
 					{
@@ -762,7 +779,7 @@ class CustomProj : Actor abstract
 				realDamage *= Random(minRandomMulti, maxRandomMulti);
 			
 			int newdam = victim.DamageMobj(self, target, realDamage, damageType);
-			if (victim.bIsMonster && victim.health > 0 && newdam > 0)
+			if (victim.bSHOOTABLE && victim.health > 0 && newdam > 0)
 				victim.A_GiveInventory(DOTItem);
 				
 			if (!victim.bNoBlood && !victim.bDormant && !victim.bInvulnerable)
