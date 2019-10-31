@@ -18,9 +18,6 @@ GAMEPLAY JUNK:
 - ACS should probably be de-fucked and ported to ZScript, but that stuff is
   pretty scary, so it's ACS for now. _For now._
 - Skill settings need implementing. Prob. once more stuff is added.
-  
-MAPS:
-- FDM02 needs an art-pass for the southwest wing.
 
 MISC. NONSENSE:
 - Add GLDEFs definitions to everything.
