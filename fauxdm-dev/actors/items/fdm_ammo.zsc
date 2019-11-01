@@ -52,6 +52,7 @@ class FDM_Shell : Shell replaces Shell
 		Inventory.PickupMessage "$GOTSHELLS";
 		Inventory.Amount 4;
 		inventory.pickupsound "items/ammo/shell1";
+		scale 0.75;
 	}
 	States
 	{
