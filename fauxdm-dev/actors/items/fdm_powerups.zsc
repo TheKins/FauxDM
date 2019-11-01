@@ -224,7 +224,7 @@ class FDM_RadSuit : CustomInventory replaces RadSuit
 		Height 46;
 		+INVENTORY.AUTOACTIVATE
 		+INVENTORY.ALWAYSPICKUP
-		scale 0.75;
+		Inventory.PickupMessage "$GOTSUIT";
 		Inventory.PickupSound "items/powerups/radsuit";
 		scale 0.75;
 	}

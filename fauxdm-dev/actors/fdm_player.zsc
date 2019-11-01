@@ -152,6 +152,11 @@ class FDM_Player : PlayerPawn
 			A_PlaySound("actors/shared/extinguish", CHAN_5);
 			A_SpawnItem("FDM_ExtinguishSmokeGenerator");
 		}
+		
+		if (CountInv("PowerAsbestos"))
+		{
+			A_TakeInventory("FDM_BurnDOT", 9999);
+		}
 	}
 	
 	// If killed, let the monster taunt your corpse
