@@ -136,12 +136,6 @@ class FDM_Player : PlayerPawn
 		Super.Tick();
 	}
 	
-	static const String noSpawn[] =
-	{
-		"FWATER1", "FWATER2", "FWATER3", "FWATER4",
-		"BLOOD1", "BLOOD2", "BLOOD3", "sw0780"
-	};
-	
 	// Get extinguished if entering water.
 	virtual void DoExtinguish()
 	{
@@ -151,15 +145,10 @@ class FDM_Player : PlayerPawn
 			A_PlaySound("actors/shared/extinguish", CHAN_5);
 		}
 		
-		TextureID offLimits;
-		for (int i = 0; i < noSpawn.Size(); ++i)
+		if (pos.z == floorz && floorterrain == 1 && waterlevel == 0 && CountInv("FDM_BurnDOT"))
 		{
-			offLimits = TexMan.CheckForTexture(noSpawn[i], TexMan.Type_Flat);
-			if (pos.z == floorz && floorpic == offLimits && waterlevel == 0 && CountInv("FDM_BurnDOT"))
-			{
-				A_TakeInventory("FDM_BurnDOT", 9999);
-				A_PlaySound("actors/shared/extinguish", CHAN_5);
-			}
+			A_TakeInventory("FDM_BurnDOT", 9999);
+			A_PlaySound("actors/shared/extinguish", CHAN_5);
 		}
 	}
 	
