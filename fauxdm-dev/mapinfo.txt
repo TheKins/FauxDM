@@ -107,7 +107,7 @@ DoomEdNums
 	5014 = "FDM_Minigun" // Minigun
 	5012 = "FDM_Railgun" // Railgun
 	
-	5030 = "SoulSphere" // Turbosphere
+	5030 = "FDM_HasteSphere" // Turbosphere
 	5032 = "SoulSphere"// TimeFreezeSphere
 	5035 = "BlurSphere" // InvisibilitySphere
 	5036 = "FDM_QuadDamage" // DoomSphere
