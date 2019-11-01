@@ -143,7 +143,12 @@ class FDM_BaseMonster : Actor
 	{
 		// Randomly flick between friendly and unfriendly if you don't have a
 		// target, in order to simulate a free-for-all.
-		if (target == null || target.health > 0 && health > 0)
+		if (target == null && health > 0)
+		{
+			bFRIENDLY = random(0,1);
+		}
+		
+		if (target != null && target.health > 0 && health > 0)
 		{
 			bFRIENDLY = random(0,1);
 		}
