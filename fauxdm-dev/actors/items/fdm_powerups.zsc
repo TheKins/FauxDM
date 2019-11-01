@@ -156,6 +156,7 @@ class FDM_HasteSphere : PowerupGiver replaces BlurSphere
 		powerup.type "PowerSpeed";
 		Speed 1.5;
 		scale 0.75;
+		Powerup.Duration -30;
 		RenderStyle "Translucent";
 		Inventory.PickupMessage "$GOTHASTE";
 		Inventory.PickupSound "items/powerups/haste";
@@ -168,3 +169,74 @@ class FDM_HasteSphere : PowerupGiver replaces BlurSphere
 		Loop;
 	}
 }
+
+class FDM_ProtectSuitRad : PowerupGiver
+{
+	Default
+	{
+		Height 46;
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		Inventory.MaxAmount 0;
+		Inventory.PickupMessage "$GOTSUIT";
+		Powerup.Type "PowerIronFeet";
+		Inventory.PickupSound "items/powerups/radsuit";
+		scale 0.75;
+		Powerup.Duration -30;
+	}
+	States
+	{
+	Spawn:
+		SUIT A -1 Bright;
+		Stop;
+	}
+}	
+
+class PowerAsbestos : PowerProtection
+{
+	Default
+	{
+		DamageFactor "Flamer", 0.0;
+	}
+}
+
+class FDM_ProtectSuitAsbestos : PowerupGiver
+{
+	Default
+	{
+	Inventory.PickupMessage "$GOTSUIT";
+	Powerup.Type "PowerAsbestos";
+	Powerup.Duration -30;
+	+INVENTORY.AUTOACTIVATE
+	}
+	States
+	{
+	Spawn:
+		SUIT A -1 Bright;
+		Stop;
+	}
+}
+
+class FDM_RadSuit : CustomInventory replaces RadSuit
+{
+	Default
+	{
+		Height 46;
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		scale 0.75;
+		Inventory.PickupSound "items/powerups/radsuit";
+		scale 0.75;
+	}
+	
+	States
+	{
+	Spawn:
+		SUIT A -1 Bright;
+		Loop;
+	Pickup:
+		TNT1 A 0 A_GiveInventory("FDM_ProtectSuitRad", 1);
+		TNT1 A 0 A_GiveInventory("FDM_ProtectSuitAsbestos", 1);
+		Stop;
+	}
+}	

@@ -75,6 +75,7 @@ GOTFUEL = "Picked up a Fuel Canister";
 GOTBERSERK = "Berserk Pack - Super Gauntlet!";
 GOTQUAD = "Quad Damage!";
 GOTHASTE = "Haste!";
+GOTSUIT = "Protective Suit!";
 
 // Obituaries
 OB_MONTELEFRAG = "%o was telefragged by";

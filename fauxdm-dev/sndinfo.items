@@ -56,3 +56,4 @@ items/powerups/invuln				getinvl
 items/powerups/soulsphere			getsoul
 items/powerups/megasphere			getmega
 items/powerups/haste				gethast
+items/powerups/radsuit				getsuit
