@@ -160,6 +160,7 @@ class FDM_FlamethrowerProjectile : CustomProj
 		{
 			A_PlaySound("weapons/flamethrower/sizzle");
 			A_Remove(AAPTR_DEFAULT,RMVF_MISSILES);
+			A_SpawnItem("FDM_ExtinguishSmoke");
 		}
 		
 	}
@@ -269,6 +270,7 @@ class FDM_FireAOE : CustomAOE
 		{
 			A_PlaySound("weapons/flamethrower/sizzle");
 			A_Remove(AAPTR_DEFAULT,RMVF_EVERYTHING);
+			A_SpawnItem("FDM_ExtinguishSmokeGenerator");
 		}
 	}
 	
@@ -308,6 +310,47 @@ class FDM_GroundFireFlame : Actor
 		{
 			A_PlaySound("weapons/flamethrower/sizzle");
 			A_Remove(AAPTR_DEFAULT,RMVF_EVERYTHING);
+			A_SpawnItem("FDM_ExtinguishSmokeGenerator");
 		}
+	}
+}
+
+class FDM_ExtinguishSmoke : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALLOWPARTICLES
+		+RANDOMIZE
+		+ZDOOMTRANS
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+		Scale 2;
+	}
+	States
+	{
+	Spawn:
+		PUFF C 1 A_FadeOut(0.01);
+		loop;
+	}
+}
+
+class FDM_ExtinguishSmokeGenerator : Actor
+{
+	Default
+	{
+		+NOGRAVITY
+	}
+	States
+	{
+	Spawn:
+		TNT1 AAAAAAAAAAAAA 1
+		{
+			A_SpawnItemEx("FDM_ExtinguishSmoke",random(-32,32), random(-32,32), 0,0,0,2);
+		}
+		stop;
 	}
 }

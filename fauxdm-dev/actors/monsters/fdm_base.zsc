@@ -243,6 +243,7 @@ class FDM_BaseMonster : Actor
 		{
 			A_TakeInventory("FDM_BurnDOT", 9999);
 			A_PlaySound("actors/shared/extinguish", CHAN_5);
+			A_SpawnItem("FDM_ExtinguishSmokeGenerator");
 		}
 	}
 	

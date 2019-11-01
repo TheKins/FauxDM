@@ -143,12 +143,14 @@ class FDM_Player : PlayerPawn
 		{
 			A_TakeInventory("FDM_BurnDOT", 9999);
 			A_PlaySound("actors/shared/extinguish", CHAN_5);
+			A_SpawnItem("FDM_ExtinguishSmokeGenerator");
 		}
 		
 		if (pos.z == floorz && floorterrain == 1 && waterlevel == 0 && CountInv("FDM_BurnDOT"))
 		{
 			A_TakeInventory("FDM_BurnDOT", 9999);
 			A_PlaySound("actors/shared/extinguish", CHAN_5);
+			A_SpawnItem("FDM_ExtinguishSmokeGenerator");
 		}
 	}
 	
