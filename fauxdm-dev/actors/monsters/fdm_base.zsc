@@ -265,6 +265,10 @@ class FDM_BaseMonster : Actor
 			A_GiveInventory("FDM_MonsterTaunt", 1, AAPTR_TARGET);
 		}
 		
+		// Fixes issue where friendly monsters don't count as killed monsters,
+		// clogging up the spawners. I hope.
+		bFRIENDLY = 0;
+		
 		// And do a little flipspritery, while we're at it.
 		bSPRITEFLIP = random(0,1);
 		
