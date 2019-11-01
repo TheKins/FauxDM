@@ -36,16 +36,18 @@ YukiHerz (Flamethrower sprites)
 Jekyll Grim Payne (Gas Cannister base)
 
 Other Stuff From Other Mods:
-JoeyTD (BFG9000 Attack)
-MaxiClouds (Re-Blood TNT code)
+JoeyTD (BFG9000 Attack, from Vanilla as Fuck)
+MaxiClouds (TNT code, from Re-Blood)
 Samsara Devs (Duke3D Gib code)
 Skulltag Development Team (Any further Skulltag assets otherwise uncredited)
-Jekyll Grim Payne (Scorch translation effect)
+Jekyll Grim Payne (Scorch translation effect, from Beautiful Doom)
 TDRR (Skulltag Emulation stuff)
+Nanka Kurashiki (Painting in FDM02, from JPCP)
 
 Testers:
 BlorgX3
 Kevansevans
+Techokami
 
 ================================================================================
 
