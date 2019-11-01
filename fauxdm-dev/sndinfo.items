@@ -55,3 +55,4 @@ items/powerups/quad					getquad
 items/powerups/invuln				getinvl
 items/powerups/soulsphere			getsoul
 items/powerups/megasphere			getmega
+items/powerups/haste				gethast

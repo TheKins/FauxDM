@@ -142,3 +142,29 @@ class FDM_Megasphere : CustomInventory replaces Megasphere
 		Stop;
 	}
 }	
+
+class FDM_HasteSphere : PowerupGiver replaces BlurSphere
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		+INVENTORY.BIGPOWERUP
+		+FLOATBOB
+		Inventory.MaxAmount 0;
+		powerup.type "PowerSpeed";
+		Speed 1.5;
+		scale 0.75;
+		RenderStyle "Translucent";
+		Inventory.PickupMessage "$GOTHASTE";
+		Inventory.PickupSound "items/powerups/haste";
+	}
+	
+	States
+	{
+	Spawn:
+		HAST ABCD 2 Bright;
+		Loop;
+	}
+}
