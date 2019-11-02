@@ -69,12 +69,16 @@ actors/oldactors/posstaunt2		posstnt2
 
 // Quake Ranger
 actors/quakeranger/jump			qranjump
-$random actors/quakeranger/die { actors/quakeranger/die1 actors/quakeranger/die2 }
+$random actors/quakeranger/die { actors/quakeranger/die1 actors/quakeranger/die2 actors/quakeranger/die3 }
 actors/quakeranger/die1			qrandie1
 actors/quakeranger/die2			qrandie2
+actors/quakeranger/die3			qrandie3
 $random actors/quakeranger/pain { actors/quakeranger/pain1 actors/quakeranger/pain2 }
 actors/quakeranger/pain1			qranpn1
 actors/quakeranger/pain2			qranpn2
+$random actors/quakeranger/burn { actors/quakeranger/burn1 actors/quakeranger/burn2 }
+actors/quakeranger/burn1			qranbrn1
+actors/quakeranger/burn2			qranbrn2
 $random actors/quakeranger/taunt { actors/quakeranger/taunt1 actors/quakeranger/taunt2 actors/quakeranger/taunt3 actors/quakeranger/taunt4 actors/quakeranger/taunt5 }
 actors/quakeranger/taunt1			qrantnt1
 actors/quakeranger/taunt2			qrantnt2

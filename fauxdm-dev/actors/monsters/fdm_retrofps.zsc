@@ -94,6 +94,13 @@ class FDM_QuakeRanger : FDM_BaseMonster
 		QRAN G 3;
 		QRAN G 3 A_Pain;
 		Goto See;
+	Pain.Fire:
+	Pain.Slime:
+	Pain.Flamer:
+		QRAN A 0 { strafedir = random(0,1); }
+		QRAN G 3;
+		QRAN G 3 A_PlaySound("actors/quakeranger/burn", CHAN_VOICE);
+		Goto See;
 	Death:
 		QRAN H 5;
 		QRAN I 5 A_Scream;
