@@ -131,6 +131,10 @@ actors/cultist/rant7		cultrnt7
 actors/cultist/rant8		cultrnt8
 actors/cultist/rant9		cultrnt9
 
+$random actors/cultist/burn { actors/cultist/burn1 actors/cultist/burn2 }
+actors/cultist/burn1			cultbrn1
+actors/cultist/burn2			cultbrn2
+
 // Chubbs
 actors/chubbs/oof			chuboof
 actors/chubbs/pain			chubpain
