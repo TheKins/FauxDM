@@ -152,7 +152,10 @@ actors/jpfguy/pain1		jpfpain1
 actors/jpfguy/pain2		jpfpain2
 
 actors/jpfguy/taunt		jpftnt
-actors/jpfguy/die		jpfdie
+$random actors/jpfguy/die { actors/jpfguy/die1 actors/jpfguy/die2 actors/jpfguy/die3 }
+actors/jpfguy/die1			jpfdie1
+actors/jpfguy/die2			jpfdie2
+actors/jpfguy/die3			jpfdie3
 
 $random actors/jpfguy/fire { actors/jpfguy/fire1 actors/jpfguy/fire2 actors/jpfguy/fire3 actors/jpfguy/fire4 }
 actors/jpfguy/fire1		jpffire1
