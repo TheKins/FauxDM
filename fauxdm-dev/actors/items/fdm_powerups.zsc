@@ -207,6 +207,7 @@ class FDM_ProtectSuitAsbestos : PowerupGiver
 	Inventory.PickupMessage "$GOTSUIT";
 	Powerup.Type "PowerAsbestos";
 	Powerup.Duration -30;
+	Inventory.MaxAmount 0;
 	+INVENTORY.AUTOACTIVATE
 	}
 	States
