@@ -35,6 +35,7 @@ script "FDM_StartGameplay" OPEN
 script "FDM_GameplayFragTracker" ENTER
 {
 	TakeInventory("FDM_FragCounter", 999999);
+	HealThing(100);
 	
 	if (GameType() == GAME_SINGLE_PLAYER && GetCVar("sv_nomonsters") == 0)
 	{
