@@ -205,7 +205,7 @@ script "FDM_ResetInventoryOnRespawn" RESPAWN
 
 script "FDM_MapIntro" ENTER
 {
-	int Verb[7] =
+	int Verb[11] =
 	{
 		"waste",
 		"nuke",
@@ -213,17 +213,25 @@ script "FDM_MapIntro" ENTER
 		"destroy",
 		"splatter",
 		"evaporate",
-		"spray"
+		"spray",
+		"stab",
+		"melt",
+		"delete",
+		"flay"
 	};
 	
-	int Punchline[6] =
+	int Punchline[10] =
 	{
 		"Get to it!",
 		"Get crackin'!",
 		"Haev a balst!",
 		"Don't fuck up!",
 		"Refrain from failure!",
-		"That cool with you?"
+		"That cool with you?",
+		"Get stabbin'!",
+		"Any objections, lady?",
+		"That's an order!",
+		"So what are you waiting for?"
 	};
 	
 	if (GameType() == GAME_SINGLE_PLAYER && GetCVar("sv_nomonsters") == 0)
@@ -237,8 +245,8 @@ script "FDM_MapIntro" ENTER
 		} else {
 			HudMessageBold(s:"You have five minutes"; HUDMSG_PLAIN, 1, CR_RED, 0.5, 0.45, 5.0);
 		}
-		HudMessageBold(s:"to ", s:Verb[random(0,6)], s:" ", i:killcap, s:" enemies!"; HUDMSG_PLAIN, 2, CR_RED, 0.5, 0.5, 5.0);
-		HudMessageBold(s:Punchline[random(0,5)]; HUDMSG_PLAIN, 31, CR_RED, 0.5, 0.6, 5.0);
+		HudMessageBold(s:"to ", s:Verb[random(0,10)], s:" ", i:killcap, s:" enemies!"; HUDMSG_PLAIN, 2, CR_RED, 0.5, 0.5, 5.0);
+		HudMessageBold(s:Punchline[random(0,9)]; HUDMSG_PLAIN, 31, CR_RED, 0.5, 0.6, 5.0);
 	}
 }
 
