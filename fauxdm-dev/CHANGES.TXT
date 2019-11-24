@@ -12,3 +12,6 @@ WEAPON CHANGES:
 - Replaced the ever-useless Pistol with the Machinegun
 - Renamed the Machinegun sprites to avoid sprite conflict with other mods
 - Added the Chaingun to fill the slot left behind by the Machinegun
+
+MISC. CHANGES:
+- Changed Title Screen music
