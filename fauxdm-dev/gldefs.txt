@@ -1,0 +1,15 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: Jekyll Grim Payne
+ 
+ Purpose: Hardware Rendering Light Definitions
+ 
+ Comment: 
+
+================================================================================
+*/
+
+#include "gldefs/player.gld"
+#include "gldefs/monsters.gld"

@@ -1,0 +1,71 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: Jekyll Grim Payne
+ 
+ Purpose: Hardware Rendering Light Definitions - Player & Weapons
+ 
+ Comment: 
+
+================================================================================
+*/
+
+object FDM_Player
+{
+	frame PLAYF { light ZOMBIEATK }
+}
+
+object FDM_Rocket
+{
+	frame MISL { light ROCKET	}
+}
+
+pulselight Explosion
+{
+	color 1.0 0.7 0.0
+	size 64
+	secondarySize 0
+	interval 4
+} 
+
+Object FDM_RocketExplosionVisualOnly
+{
+	frame BEXP { light Explosion }
+}
+
+Object FDM_ExplosiveBarrelExplosionVisualOnly
+{
+	frame BEXP { light Explosion }
+}
+
+Flickerlight Flamer
+{
+	Color 1.0 0.6 0.0
+	Size 32
+	SecondarySize 48
+	Chance 0.6
+}
+
+Flickerlight FlamerSmall
+{
+	Color 1.0 0.6 0.0
+	Size 8
+	SecondarySize 16
+	Chance 0.6
+}
+
+Object FDM_FlamethrowerProjectile
+{
+	frame FTHR { light Flamer }
+}
+
+Object FDM_FlameEffect
+{
+	frame FTRA { light FlamerSmall }
+}
+
+Object FDM_GroundFireFlame
+{
+	frame FFLA { light FlamerSmall }
+}

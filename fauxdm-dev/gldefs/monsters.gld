@@ -1,0 +1,52 @@
+/*
+================================================================================
+ FauxDM Definition Code
+ 
+ Author: Jekyll Grim Payne
+ 
+ Purpose: Hardware Rendering Light Definitions - Monsters
+ 
+ Comment: 
+
+================================================================================
+*/
+
+object FDM_ZombieMan
+{
+	frame POSSF { light ZOMBIEATK }
+}
+
+object FDM_ShotgunGuy
+{
+	frame SPOSF { light ZOMBIEATK }
+}
+
+object FDM_QuakeRanger
+{
+	frame QRANF { light ZOMBIEATK }
+}
+
+object FDM_BloodCultist
+{
+	frame CUL1H { light ZOMBIEATK }
+}
+
+object FDM_JPFGuy
+{
+	frame JPFGF { light ZOMBIEATK }
+}
+
+object FDM_Chubbs
+{
+	frame CHUBF { light ZOMBIEATK }
+}
+
+Object FDM_SpawnShotExplosion
+{
+	frame BEXP { light Explosion }
+}
+
+Object FDM_BloodCultistTNTExplosion
+{
+	frame BEXP { light Explosion }
+}
