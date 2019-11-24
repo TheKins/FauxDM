@@ -16,9 +16,38 @@ object FDM_Player
 	frame PLAYF { light ZOMBIEATK }
 }
 
+object FDM_ActorSpawnFog
+{
+	frame TFOGA { light DTFOG1 }
+	frame TFOGB { light DTFOG2 }
+	frame TFOGC { light DTFOG2 }
+	frame TFOGD { light DTFOG2 }
+	frame TFOGE { light DTFOG3 }
+	frame TFOGF { light DTFOG4 }
+	frame TFOGI { light DTFOG4 }
+	frame TFOGJ { light DTFOG3 }
+}
+
+pointlight ROCKET
+{
+    color 1.0 0.7 0.0
+    size 24
+	attenuate 1
+}
+
 object FDM_Rocket
 {
-	frame MISL { light ROCKET	}
+	frame MISL { light ROCKET }
+}
+
+object FDM_PlayerRocket
+{
+	frame MISL { light ROCKET }
+}
+
+object FDM_Grenade
+{
+	frame GREN { light ROCKET }
 }
 
 pulselight Explosion
@@ -37,6 +66,61 @@ Object FDM_RocketExplosionVisualOnly
 Object FDM_ExplosiveBarrelExplosionVisualOnly
 {
 	frame BEXP { light Explosion }
+}
+
+pointlight PLASMABALL
+{
+    color 0.5 0.5 1.0
+    size 32
+	attenuate 1
+}
+
+flickerlight PLASMA_X1
+{
+    color 0.5 0.5 1.0
+    size 48
+    secondarySize 56
+    chance 0.4
+	attenuate 1
+}
+
+flickerlight PLASMA_X2
+{
+    color 0.4 0.4 0.8
+    size 64
+    secondarySize 72
+    chance 0.4
+	attenuate 1
+}
+
+flickerlight PLASMA_X3
+{
+    color 0.25 0.25 0.5
+    size 48
+    secondarySize 56
+    chance 0.4
+	attenuate 1
+}
+
+flickerlight PLASMA_X4
+{
+    color 0.1 0.1 0.2
+    size 12
+    secondarySize 24
+    chance 0.4
+	attenuate 1
+}
+
+object FDM_PlasmaBall
+{
+    frame SSPBA { light PLASMABALL }
+    frame SSPBB { light PLASMABALL }
+
+    frame SSPBC { light PLASMA_X1 }
+    frame SSPBD { light PLASMA_X2 }
+    frame SSPBE { light PLASMA_X2 }
+    frame SSPBF { light PLASMA_X3 }
+    frame SSPBG { light PLASMA_X4 }
 }
 
 Flickerlight Flamer
@@ -68,4 +152,17 @@ Object FDM_FlameEffect
 Object FDM_GroundFireFlame
 {
 	frame FFLA { light FlamerSmall }
+}
+
+pulselight RailImpact
+{
+	color 0.5 0.5 1.0
+	size 64
+	secondarySize 0
+	interval 4
+} 
+
+Object FDM_RailPuff
+{
+	frame RIMP { light RailImpact }
 }
