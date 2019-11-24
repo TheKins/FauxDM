@@ -12,6 +12,7 @@ WEAPON CHANGES:
 - Replaced the ever-useless Pistol with the Machinegun.
 - Renamed the Machinegun sprites to avoid sprite conflict with other mods.
 - Added the Chaingun to fill the slot left behind by the Machinegun.
+- Doubled Flamethrower damage.
 
 MAP CHANGES:
 - FDM01: Replaced the SSG in the lava room with a Chaingun, and added two clips.

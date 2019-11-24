@@ -105,7 +105,7 @@ class FDM_FlamethrowerProjectile : CustomProj
 		CustomProj.RadiusScaleFactor 0.03;
 		CustomProj.HeightScaleFactor 0.03;
 		
-		CustomProj.CustomDamage 10;
+		CustomProj.CustomDamage 20;
 		DamageType "Flamer";
 		CustomProj.SplashDamage 32;
 		CustomProj.SplashRadiusScale 2;
@@ -170,7 +170,7 @@ class FDM_BurnDOT : CustomDOT
 {
 	Default
 	{
-		Damage 5;
+		Damage 10;
 		DamageType "Flamer";
 		
 		CustomDOT.NumberOfTics 3;
@@ -230,7 +230,7 @@ class FDM_FireAOE : CustomAOE
 	{
 		Radius 16;
 		Height 24;
-		Damage 5;
+		Damage 10;
 		DamageType "Flamer";
 		
 		CustomAOE.CoolDown 0.25;
