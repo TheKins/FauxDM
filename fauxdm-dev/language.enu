@@ -32,7 +32,7 @@ OPTMNU_FDM = "Deathmatch Simulator Options";
 FDMMNU_TITLE = "DM Simulator Options";
 
 FDMMNU_STARTINGWEAP = "Starting Weapon";
-OPTVAL_PISTOL = "Pistol";
+OPTVAL_PISTOL = "Machinegun";
 OPTVAL_SHOTGUN = "Shotgun";
 
 FDMMNU_MPWEAPS = "MP Weapon Spawns in SP";

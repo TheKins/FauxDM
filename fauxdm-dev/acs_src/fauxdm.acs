@@ -158,8 +158,8 @@ script "FDM_ResetInventory" ENTER
 		GiveInventory("FDM_Shotgun", 1);
 		SetWeapon("FDM_Shotgun");
 	} else {
-		GiveInventory("FDM_Handgun", 1);
-		SetWeapon("FDM_Handgun");
+		GiveInventory("FDM_Machinegun", 1);
+		SetWeapon("FDM_Machinegun");
 	}
 	GiveInventory("Clip", 30);
 	GiveInventory("RedCard", 1);
@@ -179,8 +179,8 @@ script "FDM_ResetInventoryOnRespawn" RESPAWN
 		GiveInventory("FDM_Shotgun", 1);
 		SetWeapon("FDM_Shotgun");
 	} else {
-		GiveInventory("FDM_Handgun", 1);
-		SetWeapon("FDM_Handgun");
+		GiveInventory("FDM_Machinegun", 1);
+		SetWeapon("FDM_Machinegun");
 	}
 	GiveInventory("Clip", 30);
 	GiveInventory("RedCard", 1);

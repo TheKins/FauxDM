@@ -15,7 +15,7 @@
 server int fdm_devspew = 0;
 
 // Defines the weapon you spawn with.
-// 0 = Pistol (Default)
+// 0 = Machinegun
 // 1 = Shotgun
 server int fdm_startingweapon = 0;
 
