@@ -14,5 +14,5 @@ WEAPON CHANGES:
 - Added the Chaingun to fill the slot left behind by the Machinegun.
 
 MISC. CHANGES:
-- Added GLDef lights to weapons and enemies.
+- Added GLDef lights to a variety of effects, weapons and enemies.
 - Changed the Title Screen music.
