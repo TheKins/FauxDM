@@ -211,7 +211,7 @@ map FDM01 "Carnyard Love" // orig by Carnevil and Matthew McGee
 {
 	author = "Orig. by Carnevil & Matthew McGee"
 	next = "D5M1"
-	sky1 = "STSKY1"
+	sky1 = "FDMSKY1"
 	music = "mglodoom"
 	levelnum = 1
 	cluster = 50
