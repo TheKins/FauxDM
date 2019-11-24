@@ -42,6 +42,9 @@ OptionMenu "FDMOptionsMenu"
 	Title "$FDMMNU_TITLE"
 	Option "$FDMMNU_STARTINGWEAP",		"fdm_startingweapon", "StartingWeaponChoices"
 	StaticText ""
+	NumberField "$FDMMNU_FRAGCOUNT_STARTING", "fdm_fragcount_starting", 1, 999
+	NumberField "$FDMMNU_FRAGCOUNT_ADDITIONAL", "fdm_fragcount_additional", 0, 999
+	StaticText ""
 	Option "$FDMMNU_MPWEAPS",			"fdm_mpweaps", "OnOff"
 	StaticText "$FDMNU_MPWEAPSWARN1"
 	StaticText "$FDMNU_MPWEAPSWARN2"

@@ -42,6 +42,9 @@ FDMNU_MPWEAPSWARN3 = "If a map seems fucked or gunless, toggle and reload!";
 
 FDMMNU_DEVSPEW = "Developer Barf";
 
+FDMMNU_FRAGCOUNT_STARTING = "Starting Fragcount";
+FDMMNU_FRAGCOUNT_ADDITIONAL = "Fragcount Increase";
+
 // Intermission Text
 TXT_IMWIN = "Completed!";
 TXT_IMLOSE = "Failed!";

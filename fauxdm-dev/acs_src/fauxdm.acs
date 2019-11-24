@@ -26,7 +26,7 @@ script "FDM_StartGameplay" OPEN
 {
 	if (GameType() == GAME_SINGLE_PLAYER && GetCVar("sv_nomonsters") == 0)
 	{
-		killcap = 20 + (mapsCleared * 5);
+		killcap = GetCVar("fdm_fragcount_starting") + (mapsCleared * GetCVar("fdm_fragcount_additional"));
 		
 		ACS_NamedExecute("FDM_GamePlayTimer",0);
 	}

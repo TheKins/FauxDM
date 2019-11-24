@@ -23,3 +23,7 @@ server int fdm_startingweapon = 0;
 // This currently overwrites thing flags, which can cause problems
 // with certain kinds of script trigger, so for now it defaults to off.
 server int fdm_mpweaps = 0;
+
+// Frag count stuff
+server int fdm_fragcount_starting = 20;
+server int fdm_fragcount_additional = 5;
