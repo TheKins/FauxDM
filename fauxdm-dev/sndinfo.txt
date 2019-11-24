@@ -16,6 +16,8 @@ misc/spawn					itemresp
 
 gameplay/missionfailed		lvlfail
 gameplay/missioncomplete	lvlwin
+$pitchshift gameplay/missionfailed 0
+$pitchshift gameplay/missioncomplete 0
 gameplay/timer/alert		timealrt
 gameplay/timer/lowtick		timetick
 gameplay/timer/lastmin		lastmin1

@@ -21,3 +21,4 @@ MAP CHANGES:
 MISC. CHANGES:
 - Added GLDef lights to a variety of effects, weapons and enemies.
 - Changed the Title Screen music.
+- Removed pitch shifting from end-of-round win/lose fanfare.
