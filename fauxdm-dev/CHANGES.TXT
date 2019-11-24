@@ -1,3 +1,4 @@
 CHANGES SINCE BUILD 01:
 - Replaced Pistol with Machinegun
 - Added ability to change fragcount stuff in menu
+- Renamed Machinegun sprites to avoid sprite conflict with other mods
