@@ -28,10 +28,10 @@ script "FDM_StartGameplay" OPEN
 	{
 		killcap = GetCVar("fdm_fragcount_starting") + (mapsCleared * GetCVar("fdm_fragcount_additional"));
 		
-		if ((mapsCleared + 1) >= 5)
+		if ((mapsCleared + 1) >= GetCVar("fdm_timeextend_every"))
 		{
-			int dividdle = (mapsCleared / 5);
-			seconds = (10 * dividdle);
+			int dividdle = (mapsCleared / GetCVar("fdm_timeextend_every"));
+			seconds = (GetCVar("fdm_timeextend_amount") * dividdle);
 		}
 		
 		ACS_NamedExecute("FDM_GamePlayTimer",0);
@@ -231,7 +231,12 @@ script "FDM_MapIntro" ENTER
 		delay(16);
 		AmbientSound("gameplay/start",127);
 		SetFont ("BIGUPPER");
-		HudMessageBold(s:"You have five minutes"; HUDMSG_PLAIN, 1, CR_RED, 0.5, 0.45, 5.0);
+		if ((mapsCleared + 1) >= GetCVar("fdm_timeextend_every"))
+		{
+			HudMessageBold(s:"You have five-ish minutes"; HUDMSG_PLAIN, 1, CR_RED, 0.5, 0.45, 5.0);
+		} else {
+			HudMessageBold(s:"You have five minutes"; HUDMSG_PLAIN, 1, CR_RED, 0.5, 0.45, 5.0);
+		}
 		HudMessageBold(s:"to ", s:Verb[random(0,6)], s:" ", i:killcap, s:" enemies!"; HUDMSG_PLAIN, 2, CR_RED, 0.5, 0.5, 5.0);
 		HudMessageBold(s:Punchline[random(0,5)]; HUDMSG_PLAIN, 31, CR_RED, 0.5, 0.6, 5.0);
 	}

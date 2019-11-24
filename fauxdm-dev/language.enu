@@ -45,6 +45,9 @@ FDMMNU_DEVSPEW = "Developer Barf";
 FDMMNU_FRAGCOUNT_STARTING = "Starting Fragcount";
 FDMMNU_FRAGCOUNT_ADDITIONAL = "Fragcount Increase";
 
+FDMMNU_TIMEEXTEND_STARTING = "Time Extend Amount (in seconds)";
+FDMMNU_TIMEEXTEND_ADDITIONAL = "Time Extend Intervals (in maps)";
+
 // Intermission Text
 TXT_IMWIN = "Completed!";
 TXT_IMLOSE = "Failed!";

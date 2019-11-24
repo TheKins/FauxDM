@@ -27,3 +27,7 @@ server int fdm_mpweaps = 0;
 // Frag count stuff
 server int fdm_fragcount_starting = 20;
 server int fdm_fragcount_additional = 5;
+
+// Time extension every X maps
+server int fdm_timeextend_amount = 20;
+server int fdm_timeextend_every = 4;
