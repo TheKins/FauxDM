@@ -28,6 +28,12 @@ script "FDM_StartGameplay" OPEN
 	{
 		killcap = GetCVar("fdm_fragcount_starting") + (mapsCleared * GetCVar("fdm_fragcount_additional"));
 		
+		if ((mapsCleared + 1) >= 5)
+		{
+			int dividdle = (mapsCleared / 5);
+			seconds = (10 * dividdle);
+		}
+		
 		ACS_NamedExecute("FDM_GamePlayTimer",0);
 	}
 }
@@ -78,6 +84,12 @@ script "FDM_GameplayTimer" (void)
 			}
 			seconds--;
         }
+		
+		if (seconds >= 60)
+		{
+			minutes++;
+			seconds = seconds - 60;
+		}
 		
 		if (minutes == 0 && seconds == 0 && stoptheclock == 0)
 		{
