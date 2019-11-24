@@ -166,3 +166,86 @@ Object FDM_RailPuff
 {
 	frame RIMP { light RailImpact }
 }
+
+object FDM_BFGBall
+{
+    frame BFC1 { light BFGBALL }
+
+    frame BFE1A { light BFGBALL_X1 }
+    frame BFE1B { light BFGBALL_X2 }
+    frame BFE1C { light BFGBALL_X3 }
+    frame BFE1D { light BFGBALL_X1 }
+    frame BFE1E { light BFGBALL_X4 }
+    frame BFE1F { light BFGBALL_X5 }
+}
+
+pointlight BFGFragShot
+{
+    color 0.5 1.0 0.5
+    size 64
+	attenuate 1
+}
+
+pulselight BFGFragExplo
+{
+	color 0.5 1.0 0.5
+	size 72
+	secondarySize 0
+	interval 4
+} 
+
+object FDM_BFGBlastTLite
+{
+    frame DLITA { light BFGFragShot }
+	frame DLITB { light BFGFragShot }
+	frame DLITC { light BFGFragShot }
+
+    frame DLITD { light BFGFragExplo }
+	frame DLITE { light BFGFragExplo }
+	frame DLITF { light BFGFragExplo }
+	frame DLITG { light BFGFragExplo }
+	frame DLITH { light BFGFragExplo }
+	frame DLITI { light BFGFragExplo }
+	frame DLITJ { light BFGFragExplo }
+	frame DLITK { light BFGFragExplo }
+	frame DLITL { light BFGFragExplo }
+	frame DLITM { light BFGFragExplo }
+	frame DLITN { light BFGFragExplo }
+	frame DLITO { light BFGFragExplo }
+}
+
+object FDM_BFGBlastTShot
+{
+    frame LFX1 { light BFGFragShot }
+
+    frame DLITD { light BFGFragExplo }
+	frame DLITE { light BFGFragExplo }
+	frame DLITF { light BFGFragExplo }
+	frame DLITG { light BFGFragExplo }
+	frame DLITH { light BFGFragExplo }
+	frame DLITI { light BFGFragExplo }
+	frame DLITJ { light BFGFragExplo }
+	frame DLITK { light BFGFragExplo }
+	frame DLITL { light BFGFragExplo }
+	frame DLITM { light BFGFragExplo }
+	frame DLITN { light BFGFragExplo }
+	frame DLITO { light BFGFragExplo }
+}
+
+object FDM_BFGBlastTShot2
+{
+    frame LFX2 { light BFGFragShot }
+
+    frame DLITD { light BFGFragExplo }
+	frame DLITE { light BFGFragExplo }
+	frame DLITF { light BFGFragExplo }
+	frame DLITG { light BFGFragExplo }
+	frame DLITH { light BFGFragExplo }
+	frame DLITI { light BFGFragExplo }
+	frame DLITJ { light BFGFragExplo }
+	frame DLITK { light BFGFragExplo }
+	frame DLITL { light BFGFragExplo }
+	frame DLITM { light BFGFragExplo }
+	frame DLITN { light BFGFragExplo }
+	frame DLITO { light BFGFragExplo }
+}
