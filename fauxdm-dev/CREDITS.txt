@@ -52,10 +52,9 @@ Techokami
 ================================================================================
 
 Music Credits:
-"D64INTER"
-Doom 64 Intermission
-Original by Aubrey Hodges
-MIDIfied by Jose Navarrete
+"D_DM2TTL"
+Zombie Wars Character Select
+by Steven Baker
 
 "MGLODOOM"
 Megalodoomia

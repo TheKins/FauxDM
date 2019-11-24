@@ -13,7 +13,7 @@
 
 gameinfo
 {
-	titlemusic = "D64INTER"
+	//titlemusic = "D64INTER"
 	playerclasses = "FDM_Player"
 	
 	gibfactor = 0.5
