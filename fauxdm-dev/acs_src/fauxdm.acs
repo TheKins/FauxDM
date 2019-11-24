@@ -241,3 +241,9 @@ script "FDM_MapIntro" ENTER
 		HudMessageBold(s:Punchline[random(0,5)]; HUDMSG_PLAIN, 31, CR_RED, 0.5, 0.6, 5.0);
 	}
 }
+
+script "FDM_HumiliationSound" (void)
+{
+	delay(8);
+	LocalAmbientSound("gameplay/humiliation",127);
+}

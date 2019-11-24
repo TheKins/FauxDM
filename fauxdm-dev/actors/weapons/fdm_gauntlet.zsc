@@ -7,7 +7,8 @@ class FDM_Gauntlet : FDM_BaseWeapon
 		Inventory.PickupMessage "$GOTGAUNTLET";
 		Obituary "$OB_MPCHAINSAW";
 		Tag "$TAGGAUNTLET";
-		+WEAPON.MELEEWEAPON		
+		+WEAPON.MELEEWEAPON	
+		damagetype "Gauntlet";
 	}
 	States
 	{
@@ -103,6 +104,7 @@ class FDM_GauntletPuff : Actor
 		Alpha 0.5;
 		VSpeed 1;
 		Mass 5;
+		damagetype "Gauntlet";
 	}
 	States
 	{

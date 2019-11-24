@@ -44,6 +44,21 @@ gameplay/start16			start16
 gameplay/start17			start17
 gameplay/start18			start18
 
+$random gameplay/humiliation { gameplay/humiliation01 gameplay/humiliation02 gameplay/humiliation03 gameplay/humiliation04 gameplay/humiliation05 gameplay/humiliation06 gameplay/humiliation07 gameplay/humiliation08 gameplay/humiliation09 gameplay/humiliation10 gameplay/humiliation11 gameplay/humiliation12 gameplay/humiliation13 }
+gameplay/humiliation01			humil01
+gameplay/humiliation02			humil02
+gameplay/humiliation03			humil03
+gameplay/humiliation04			humil04
+gameplay/humiliation05			humil05
+gameplay/humiliation06			humil06
+gameplay/humiliation07			humil07
+gameplay/humiliation08			humil08
+gameplay/humiliation09			humil09
+gameplay/humiliation10			humil10
+gameplay/humiliation11			humil11
+gameplay/humiliation12			humil12
+gameplay/humiliation13			humil13
+
 intermission/nextstage		endlcntd
 
 $random intermission/paststats { intermission/nextmap1 intermission/nextmap2 intermission/nextmap3 }

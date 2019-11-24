@@ -121,6 +121,12 @@ class FDM_Player : PlayerPawn
 		GUTS ABCDEFGHIJK 3;
 		GUTS L -1;
 		Stop;
+	Death.Gauntlet:
+		"####" "#" 0 { target.ACS_NamedExecuteAlways("FDM_HumiliationSound",0,0,0,0); }
+		goto Death;
+	XDeath.Gauntlet:
+		"####" "#" 0 { target.ACS_NamedExecuteAlways("FDM_HumiliationSound",0,0,0,0); }
+		goto XDeath;
 	}
 	
 	// Disable the "Secret Found" stuff for now
