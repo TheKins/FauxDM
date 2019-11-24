@@ -1,4 +1,13 @@
-CHANGES SINCE BUILD 01:
-- Replaced Pistol with Machinegun
-- Added ability to change fragcount stuff in menu
-- Renamed Machinegun sprites to avoid sprite conflict with other mods
+CHANGES SINCE BUILD 01
+======================
+
+GAMEPLAY CHANGES:
+- Added the ability to customize the initial frag count, and how much it increases
+  every time a level is completed, via the DM Sim menu.
+- Added a "time extension" that increases your starting time every time a number
+  of maps is completed. The amount and intervals between increases can be customized
+  in the DM Sim menu.
+
+WEAPON CHANGES:
+- Replaced the ever-useless Pistol with the Machinegun
+- Renamed the Machinegun sprites to avoid sprite conflict with other mods
