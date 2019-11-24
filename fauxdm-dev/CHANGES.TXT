@@ -13,6 +13,11 @@ WEAPON CHANGES:
 - Renamed the Machinegun sprites to avoid sprite conflict with other mods.
 - Added the Chaingun to fill the slot left behind by the Machinegun.
 
+MAP CHANGES:
+- FDM01: Replaced the SSG in the lava room with a Chaingun, and added two clips.
+- FDM03: Replaced the eastmost SSG and shells with a Chaingun and clips.
+- FDM04: Moved the Minigun over to the UniAmmo island, added a Chaingun in its place.
+
 MISC. CHANGES:
 - Added GLDef lights to a variety of effects, weapons and enemies.
 - Changed the Title Screen music.
