@@ -37,6 +37,15 @@ weapons/ssg/load1			ssgload1
 weapons/ssg/load2			ssgload2
 weapons/ssg/load3			ssgload3
 
+// Chaingun
+$random weapons/chaingun/fire { weapons/chaingun/fire1 weapons/chaingun/fire2 weapons/chaingun/fire3 weapons/chaingun/fire4 }
+weapons/chaingun/fire1		chaifir1
+weapons/chaingun/fire2		chaifir2
+weapons/chaingun/fire3		chaifir3
+weapons/chaingun/fire4		chaifir4
+
+weapons/chaingun/wind		chaiwind
+
 // Machinegun
 $random weapons/machinegun/fire { weapons/machinegun/fire1 weapons/machinegun/fire2 }
 weapons/machinegun/fire1	mgunfir1

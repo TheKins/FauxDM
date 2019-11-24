@@ -41,7 +41,7 @@ class FDM_Player : PlayerPawn
 		Player.WeaponSlot 1, "FDM_Gauntlet";
 		Player.WeaponSlot 2, "FDM_Handgun", "FDM_Machinegun";
 		Player.WeaponSlot 3, "FDM_Shotgun", "FDM_SuperShotgun";
-		Player.WeaponSlot 4, "FDM_Minigun";
+		Player.WeaponSlot 4, "FDM_Chaingun", "FDM_Minigun";
 		Player.WeaponSlot 5, "FDM_RocketLauncher", "FDM_GrenadeLauncher";
 		Player.WeaponSlot 6, "FDM_PlasmaRifle", "FDM_Railgun";
 		Player.WeaponSlot 7, "FDM_BFG9000";
