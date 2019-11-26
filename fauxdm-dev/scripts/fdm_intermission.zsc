@@ -54,9 +54,9 @@ class FDM_StatusScreen : StatusScreen
 		
 		if (players[consoleplayer].mo.CountInv("FDM_Endgame_Winner"))
 		{
-			screen.DrawTexture (winBG, true, interPicTL.x, 0, DTA_CleanNoMove, true);
+			screen.DrawTexture (winBG, true, 0, 0, DTA_Fullscreen, true);
 		} else {
-			screen.DrawTexture (loseBG, true, interPicTL.x, 0, DTA_CleanNoMove, true);
+			screen.DrawTexture (loseBG, true, 0, 0, DTA_Fullscreen, true);
 		}
     }
 	
