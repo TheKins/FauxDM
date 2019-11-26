@@ -151,6 +151,36 @@ class FDM_CyberBruiser : FDM_BaseMonster
 		Stop;
 	}
 	
+	// Give the actor a real stupid name.
+	override void GiveStupidName()
+	{
+		static const string NameList[] =
+		{
+			// Less Dumb Stuff
+			"Cyber-Baron",
+			"Cyber-Hell Knight",
+			"Cyber-Bruiser",
+			"Terminator",
+			"Cyber-DoorWithHealth",
+			// Real Dumb Stuff
+			"LittleBabbyBabbyMan",
+			"CyberdemonDiaperfur",
+			"AngerGremlin",
+			"HOOONK",
+			"Cyber-Buns",
+			"H*ckBoy(tm)",
+			"RokkitRidah",
+			// Just Goat Stuff
+			"GoatSimulator",
+			"Goatse",
+			"PinkPhillip",
+			"Billy"
+		};
+		int i;
+		i = random(0,NameList.Size()-1);
+		SetTag(NameList[i]);
+	}
+	
 	override void PostBeginPlay ()
 	{
 		Super.PostBeginPlay ();
