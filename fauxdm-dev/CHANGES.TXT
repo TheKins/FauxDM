@@ -10,6 +10,7 @@ GAMEPLAY CHANGES:
   
 MONSTER CHANGES:
 - Added the Cyber-Bruiser!
+- Quake Ranger is slightly less prolific.
 
 WEAPON CHANGES:
 - Replaced the ever-useless Pistol with the Machinegun.
@@ -23,6 +24,7 @@ MAP CHANGES:
 - FDM04: Moved the Minigun over to the UniAmmo island, added a Chaingun in its place.
 
 MISC. CHANGES:
+- Fixed background drawing on intermission screen (Thanks, Marisa!)
 - Added GLDef lights to a variety of effects, weapons and enemies.
 - Changed the Title Screen music.
 - Removed pitch shifting from end-of-round win/lose fanfare.
