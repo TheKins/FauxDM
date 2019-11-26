@@ -34,6 +34,7 @@ Amuscaria (Rocket and Grenade Launchers, Hell-Forged Texture pack)
 VriskaSerket (BFG sprites)
 YukiHerz (Flamethrower sprites)
 Jekyll Grim Payne (Gas Cannister base)
+Ben2k9 (Cyber-Bruiser sprites)
 
 Other Stuff From Other Mods:
 JoeyTD (BFG9000 Attack, from Vanilla as Fuck)

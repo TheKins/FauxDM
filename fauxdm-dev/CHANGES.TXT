@@ -7,6 +7,9 @@ GAMEPLAY CHANGES:
 - Added a "time extension" that increases your starting time every time a number
   of maps is completed. The amount and intervals between increases can be customized
   in the DM Sim menu.
+  
+MONSTER CHANGES:
+- Added the Cyber-Bruiser!
 
 WEAPON CHANGES:
 - Replaced the ever-useless Pistol with the Machinegun.

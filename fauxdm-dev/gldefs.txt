@@ -2,7 +2,7 @@
 ================================================================================
  FauxDM Definition Code
  
- Author: Jekyll Grim Payne
+ Author: The Kinsie
  
  Purpose: Hardware Rendering Light Definitions
  

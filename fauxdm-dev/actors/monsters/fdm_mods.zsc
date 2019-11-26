@@ -98,3 +98,62 @@ class FDM_JPFGuy : FDM_BaseMonster
 		bFRIGHTENED = random(0,1);
 	}
 }
+
+// Cyber-Bruiser
+class FDM_CyberBruiser : FDM_BaseMonster
+{
+	Default
+	{
+		Health 200;
+		Radius 16;
+		Height 56;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		speed 3;
+		FDM_BaseMonster.TauntSound "actors/cyberbruiser/taunt";
+		PainSound "actors/cyberbruiser/pain";
+		DeathSound "actors/cyberbruiser/die";
+		Obituary "$OB_CYBERBRUISER";
+		scale 0.85;
+	}
+	States
+	{
+	Spawn:
+		CBOS A 10 A_Look;
+		goto Roam;
+	Roam:
+		CBOS AABBCCDD 4 A_FDMRoam();
+		Loop;
+	See:
+		CBOS AABBCCDD 4 A_FDMChase;
+		Loop;
+	Missile:
+		CBOS E 0 A_PlaySound("actors/cyberbruiser/arm", CHAN_WEAPON);
+		CBOS E 12 A_FaceTarget;
+		CBOS F 8 BRIGHT 
+		{
+			A_PlaySound("weapons/rocket/fire", CHAN_WEAPON);
+			A_SpawnProjectile("FDM_Rocket",27,13,0);
+		}
+		CBOS E 12;
+		Goto See;
+	Pain:
+		CBOS H 3;
+		CBOS H 3 A_Pain;
+		Goto See;
+	Death:
+		CBOS I 8;
+		CBOS J 8 A_Scream;
+		CBOS K 8 A_NoBlocking;
+		CBOS L 8;
+		CBOS M -1;
+		Stop;
+	}
+	
+	override void PostBeginPlay ()
+	{
+		Super.PostBeginPlay ();
+		bFRIGHTENED = random(0,1);
+	}
+}
