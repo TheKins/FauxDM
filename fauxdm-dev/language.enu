@@ -20,7 +20,7 @@ SKILL3 = "Normal Mode";
 SKILL4 = "Hard Mode";
 SKILL5 = "Stupid Mode";
 
-TXT_FDM = "FauxDM Maps";
+TXT_FDM = "DM Sim Maps";
 
 MNU_NEWGAME = "Join Server";
 MNU_INFO = "MOTD";
@@ -47,6 +47,23 @@ FDMMNU_FRAGCOUNT_ADDITIONAL = "Fragcount Increase";
 
 FDMMNU_TIMEEXTEND_STARTING = "Time Extend Amount (in seconds)";
 FDMMNU_TIMEEXTEND_ADDITIONAL = "Time Extend Intervals (in maps)";
+
+// Quit Messages
+QUITMSG = "Disconnect from Server?\n\n(Reason Given: Mailman just\nshowed up at door, brb)";
+QUITMSG1 = "Disconnect from Server?\n\n(Reason Given: Up way past bedtime,\nI've got work in -16 minutes.)";
+QUITMSG2 = "Disconnect from Server?\n\n(Reason Given: Goddamn Chet blasting\n2 Live Crew over voice chat again,\nChrist. Give it a rest, dude!)";
+QUITMSG3 = "Disconnect from Server?\n\n(Reason Given: Too many goddamn noobs\nkilling me dead constantly)";
+QUITMSG4 = "Disconnect from Server?\n\n(Reason Given: Wait a sec...\nThis isn't a REAL deathmatch!!)";
+QUITMSG5 = "Disconnect from Server?\n\n(Reason Given: Not Reelism 2, don't care)";
+QUITMSG6 = "Disconnect from Server?\n\n(Reason Given: Divorce lawyer just\nshowed up at door, brb)";
+QUITMSG7 = "Disconnect from Server?\n\n(Reason Given: Kicked by anticheat\nfor just being TOO good.\n\nReally.)";
+QUITMSG8 = "Disconnect from Server?\n\n(Reason Given: SWAT just\nshowed up at door, brb)";
+QUITMSG9 = "Disconnect from Server?\n\n(Reason Given: Your stupid server's\nway too laggy for my 28k\ndial-up connection!)";
+QUITMSG10 = "Disconnect from Server?\n\n(Reason Given: Disney-funded\ndeath-squads just showed\nup at door, brb)";
+QUITMSG11 = "Disconnect from Server?\n\n(Reason Given: Ping! Pong! Ping! Pong!\nPing!... ... ...)";
+QUITMSG12 = "Disconnect from Server?\n\n(Reason Given: ur packets done\nbe a booty, chappy)";
+QUITMSG13 = "Disconnect from Server?\n\n(Reason Given: Gotta go back to playing\na REAL game, like piloting\nmilitary drones. Later, losers!)";
+QUITMSG14 = "Disconnect from Server?\n\n(Reason Given: Y'all need Jesus.)";
 
 // Intermission Text
 TXT_IMWIN = "Completed!";
