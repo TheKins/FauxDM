@@ -18,6 +18,7 @@ plats/start				platstrt
 plats/mid				platloop
 plats/stop				platstop
 
+// Terrain sounds
 world/drip splish
 world/watersplash splash
 world/lavasizzle acid5

@@ -86,8 +86,6 @@ weapons/minigunup	dsmgup
 weapons/minigundown	dsmgdown
 weapons/miniout		miniout
 
-weapons/idc			idc
-
 $random weapons/minigun{weapons/minigun1 weapons/minigun2}
 weapons/minigun1	DSMINIG1
 weapons/minigun2	DSMINIG2
