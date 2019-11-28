@@ -12,6 +12,7 @@ MONSTER CHANGES:
 - Added the Cyber-Bruiser to the Hard spawn list.
 - Removed the Quake Ranger from the Hard spawn list. (Don't worry, he's still
   in the Medium list!)
+- Shotgun Guys now drop Shells instead of Shotguns.
 
 WEAPON CHANGES:
 - Replaced the ever-useless Pistol with the Machinegun.
