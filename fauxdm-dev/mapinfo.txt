@@ -191,7 +191,7 @@ DoomEdNums
 	21004 = "FDM_MarshLily"
 	21005 = "FDM_MarshReeds"
 	21006 = "FDM_Waterspout"
-	21006 = "FDM_Fuel"
+	21007 = "FDM_Fuel"
 }
 	
 
