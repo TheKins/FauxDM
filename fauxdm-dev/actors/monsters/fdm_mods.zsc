@@ -131,7 +131,13 @@ class FDM_CyberBruiser : FDM_BaseMonster
 	Missile:
 		CBOS E 0 A_PlaySound("actors/cyberbruiser/arm", CHAN_WEAPON);
 		CBOS E 12 A_FaceTarget;
-		CBOS F 8 BRIGHT 
+		CBOS F 12 BRIGHT 
+		{
+			A_PlaySound("weapons/rocket/fire", CHAN_WEAPON);
+			A_SpawnProjectile("FDM_CyberBruiserRocket",27,13,0);
+		}
+		CBOS E 12 A_FaceTarget;
+		CBOS F 12 BRIGHT 
 		{
 			A_PlaySound("weapons/rocket/fire", CHAN_WEAPON);
 			A_SpawnProjectile("FDM_CyberBruiserRocket",27,13,0);
