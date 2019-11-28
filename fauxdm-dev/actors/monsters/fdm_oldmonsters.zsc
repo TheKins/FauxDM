@@ -92,7 +92,7 @@ class FDM_ShotgunGuy : FDM_BaseMonster
 		ActiveSound "shotguy/active";
 		Obituary "$OB_SHOTGUNGUY";
 		//Tag "$FN_SHOTGUN";
-		DropItem "Shotgun";
+		DropItem "FDM_Shell"; //"Shotgun";
 		Decal "BulletChip";
 	}
 	States
