@@ -23,6 +23,7 @@ WEAPON CHANGES:
 
 MAP CHANGES:
 - FDM01: Replaced the SSG in the lava room with a Chaingun, and added two clips.
+- FDM02: Removed Minigun, twiddled with weapons near big fountain.
 - FDM03: Replaced the eastmost SSG and shells with a Chaingun and clips.
 - FDM04: Moved the Minigun over to the UniAmmo island, added a Chaingun in its place.
 
