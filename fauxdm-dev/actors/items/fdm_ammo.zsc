@@ -180,6 +180,10 @@ class FDM_Fuel : Ammo
 		Inventory.PickupMessage "$GOTFUEL";
 		Inventory.Icon "FUELA0";
 		inventory.pickupsound "items/ammo/fuel";
+		//$Category "Ammunition"
+		//$Title "Flamethrower Fuel"
+		//$NotAngled
+		//$Color 6
 	}
 	
 	States
