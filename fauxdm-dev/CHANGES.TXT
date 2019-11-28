@@ -13,6 +13,7 @@ MONSTER CHANGES:
 - Removed the Quake Ranger from the Hard spawn list. (Don't worry, he's still
   in the Medium list!)
 - Shotgun Guys now drop Shells instead of Shotguns.
+- Monsters now give up and stop attacking once the player achieves victory.
 
 WEAPON CHANGES:
 - Replaced the ever-useless Pistol with the Machinegun.
