@@ -130,7 +130,7 @@ class FDM_BaseMonster : Actor
 		// If the player's won... give up!
 		if (CountInv("FDM_MonsterGiveUp"))
 		{
-			if (!InStateSequence(CurState, ResolveState("Pain")) && !InStateSequence(CurState, ResolveState("Death")) && !InStateSequence(CurState, ResolveState("GiveUp")))
+			if (!InStateSequence(CurState, ResolveState("Pain")) && !InStateSequence(CurState, ResolveState("GiveUp")) && health > 0)
 			{
 				SetStateLabel("GiveUp");
 			}
