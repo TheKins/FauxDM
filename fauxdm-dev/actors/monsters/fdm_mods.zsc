@@ -115,6 +115,8 @@ class FDM_CyberBruiser : FDM_BaseMonster
 		PainSound "actors/cyberbruiser/pain";
 		DeathSound "actors/cyberbruiser/die";
 		Obituary "$OB_CYBERBRUISER";
+		DropItem "FDM_RocketAmmo";
+		DropItem "FDM_RocketAmmo";
 		scale 0.85;
 	}
 	States
