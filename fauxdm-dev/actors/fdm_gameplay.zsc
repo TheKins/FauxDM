@@ -61,3 +61,12 @@ class FDM_Endgame_Loser : Inventory
 	+Inventory.UNDROPPABLE
 	}
 }
+
+class FDM_MonsterGiveUp : Inventory
+{
+    Default
+	{    
+	Inventory.MaxAmount 1;
+    -Inventory.INVBAR
+	}
+}

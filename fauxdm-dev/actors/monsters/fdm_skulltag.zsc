@@ -67,6 +67,9 @@ class FDM_Chubbs : FDM_BaseMonster
 		CHUB KLM 5;
 		CHUB N -1;
 		Stop;
+	GiveUp:
+		CHUB AG 12;
+		loop;
 	}
 	
 	// Give the actor a real stupid name.

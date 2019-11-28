@@ -144,6 +144,7 @@ script "FDM_MissionComplete" (void)
 	SetMusic("M_NULL",0);
 	AmbientSound("gameplay/missioncomplete", 127);
 	AmbientSound("gameplay/missioncomplete", 127);
+	ScriptCall("FDM_ACSCrap", "GiveUpLittleHomie");
 	delay(35);
 	
 	if (minutes == 0)

@@ -90,6 +90,9 @@ class FDM_JPFGuy : FDM_BaseMonster
 		JPFG K 5;
 		JPFG L -1;
 		Stop;
+	GiveUp:
+		JPFG AG 12;
+		loop;
 	}
 	
 	override void PostBeginPlay ()
@@ -157,6 +160,9 @@ class FDM_CyberBruiser : FDM_BaseMonster
 		CBOS L 8;
 		CBOS M -1;
 		Stop;
+	GiveUp:
+		CBOS AH 12;
+		loop;
 	}
 	
 	// Give the actor a real stupid name.

@@ -63,6 +63,9 @@ class FDM_ZombieMan : FDM_BaseMonster
 		POSS K 5;
 		POSS L -1;
 		Stop;
+	GiveUp:
+		POSS AG 12;
+		loop;
 	}
 	
 	override void PostBeginPlay ()
@@ -122,6 +125,9 @@ class FDM_ShotgunGuy : FDM_BaseMonster
 		SPOS K 5;
 		SPOS L -1;
 		Stop;
+	GiveUp:
+		SPOS AG 12;
+		loop;
 	}
 	
 	override void PostBeginPlay ()
@@ -179,6 +185,9 @@ class FDM_DoomImp : FDM_BaseMonster
 		TROO L 6 A_NoBlocking;
 		TROO M -1;
 		Stop;
+	GiveUp:
+		TROO AH 12;
+		loop;
 	}
 	
 	override void PostBeginPlay ()

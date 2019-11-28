@@ -85,6 +85,9 @@ class FDM_BaseMonster : Actor
 		GUTS ABCDEFGHIJK 3;
 		GUTS L -1;
 		Stop;
+	GiveUp:
+		"####" "#" 0 A_Jump(256, "Death");
+		stop;
 	}
 	
 	void A_FDMChase(statelabel melee = "Melee", statelabel missile = "Missile", int flags = 0)
@@ -117,8 +120,21 @@ class FDM_BaseMonster : Actor
 		DoExtinguish();
 		DoHurtFloorDamage();
 		DoTaunts();
+		DoGiveUp();
 		
 		Super.Tick();
+	}
+	
+	virtual void DoGiveUp()
+	{
+		// If the player's won... give up!
+		if (CountInv("FDM_MonsterGiveUp"))
+		{
+			if (!InStateSequence(CurState, ResolveState("Pain")) && !InStateSequence(CurState, ResolveState("Death")) && !InStateSequence(CurState, ResolveState("GiveUp")))
+			{
+				SetStateLabel("GiveUp");
+			}
+		}
 	}
 	
 	virtual void DoAvoidWallrunning()

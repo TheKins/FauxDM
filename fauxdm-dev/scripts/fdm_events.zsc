@@ -155,3 +155,26 @@ class FDM_SP_ItemRespawner : EventHandler
 		}
 	}
 }
+
+// ZScript extensions for the ACS script.
+class FDM_ACSCrap : Actor
+{
+    // Upon the player winning, tell the monsters that there is no hope left in
+	// this world and they should just give up.
+	static void GiveUpLittleHomie()
+    {
+        PlayerInfo p = players[consoleplayer];
+        
+        BlockThingsIterator it = BlockThingsIterator.CreateFromPos(0,0,0,0,32767,0);
+        while (it.Next())
+        {
+            Actor mo = it.thing;
+            // only consider monster-tagged things:
+            if (mo.bIsMonster)
+            {
+                //mo.A_Die();
+                mo.A_GiveInventory("FDM_MonsterGiveUp", 1);
+            }
+        }
+    }
+}

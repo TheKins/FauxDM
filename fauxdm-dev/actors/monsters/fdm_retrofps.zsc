@@ -108,6 +108,9 @@ class FDM_QuakeRanger : FDM_BaseMonster
 		QRAN KL 5;
 		QRAN M -1;
 		Stop;
+	GiveUp:
+		QRAN AG 12;
+		loop;
 	}
 	
 	// HUHH HUHH HUHH HUHH
@@ -269,6 +272,9 @@ class FDM_BloodCultist : FDM_BaseMonster
 		CUL1 RST 3;
 		CUL1 V -1;
 		Stop;
+	GiveUp:
+		CUL1 AO 12;
+		loop;
 	}
 	
 	void A_CultistAttack()
