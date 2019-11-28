@@ -16,6 +16,7 @@ Jekyll Grim Payne
 Zombie
 Kodi
 Comet
+Marisa Kirisame
 
 External Scripts:
 Boondorl (Flamethrower Code)
@@ -24,8 +25,8 @@ Graphics That Weren't "Borrowed" From Commercial Games:
 Zrrion (Quake Ranger)
 hidfan (Doom AI Rescale)
 Mechadon (Big Box-o-Skies)
-Seth Gorden (Skulltag Intermission Pics base)
-Seth Gorden and Chris Schnefke (Chubbs skin)
+Seth Gorden (Skulltag Intermission Pics base, Chubbs skin)
+Chris Schnefke (Chubbs skin)
 LossForWords (Quake SSG)
 Smooth Doom Team (Doom 64 SSG Frames)
 Michael Niggel and Edmundo Bordeau (Skulltag Railgun)
@@ -44,6 +45,7 @@ Skulltag Development Team (Any further Skulltag assets otherwise uncredited)
 Jekyll Grim Payne (Scorch translation effect, from Beautiful Doom)
 TDRR (Skulltag Emulation stuff)
 Nanka Kurashiki (Painting in FDM02, from JPCP)
+Hyena (Baron Killer! from Mock2)
 
 Testers:
 BlorgX3
@@ -64,7 +66,7 @@ Based off tracks by Bobby Prince and Toby Fox
 by Xaser Acheron
 
 "300TOLL"
-Dethtoll.mid sped up x3
+Dethtoll.mid (sped up x3)
 Original by Bobby Prince
 
 "SWTAIKO"
@@ -72,15 +74,15 @@ Taiko Recall
 by Lee Jackson
 
 "STWIN"
-Skulltag victory music
-Original by Joose Zansai
+Skulltag Victory Music
+by Joose Zansai
 
 "STLOSE"
-TNT Evilution intermission music
-Original by TeamTNT
+TNT Evilution Intermission Music
+by TeamTNT
 
 "PBLOOD1"
-Untitled track for Blood prototype
+Untitled Track for Blood Prototype
 by Jay Wilson
 
 ================================================================================
