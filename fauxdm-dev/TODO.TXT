@@ -33,10 +33,6 @@ MONSTERS:
 WEAPONS:
 - Make the Grenade Launcher's grenades more like the Quake GL's
 
-MISC:
-- Improve how the intermission win/lose backdrops are drawn to match how the
-  engine draws the real backdrop.
-
 ================================================================================
 
  The Can't-Do List
