@@ -171,3 +171,25 @@ $random actors/cyberbruiser/taunt { actors/cyberbruiser/taunt1 actors/cyberbruis
 actors/cyberbruiser/taunt1		cybutnt1
 actors/cyberbruiser/taunt2		cybutnt2
 actors/cyberbruiser/taunt3		cybutnt3
+
+// Duke-Bot
+actors/dukebot/fire			dbotfire
+actors/dukebot/kick			dbotkick
+
+$random actors/dukebot/die { actors/dukebot/die1 actors/dukebot/die2 actors/dukebot/die3 }
+actors/dukebot/die1			dbotdie1
+actors/dukebot/die2			dbotdie2
+actors/dukebot/die3			dbotdie3
+
+$random actors/dukebot/pain { actors/dukebot/pain1 actors/dukebot/pain2 actors/dukebot/pain3 }	
+actors/dukebot/pain1			dbotpai1
+actors/dukebot/pain2			dbotpai2
+actors/dukebot/pain3			dbotpai3
+
+$random actors/dukebot/taunt { actors/dukebot/taunt1 actors/dukebot/taunt2 actors/dukebot/taunt3 actors/dukebot/taunt4 actors/dukebot/taunt5 actors/dukebot/taunt6 }
+actors/dukebot/taunt1			dbottnt1
+actors/dukebot/taunt2			dbottnt2
+actors/dukebot/taunt3			dbottnt3
+actors/dukebot/taunt4			dbottnt4
+actors/dukebot/taunt5			dbottnt5
+actors/dukebot/taunt6			dbottnt6
