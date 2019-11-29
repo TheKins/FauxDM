@@ -46,7 +46,7 @@ class FDM_JPFGuy : FDM_BaseMonster
 		JPFG E 0
 		{
 			bNOTAUTOAIMED = 1;
-			height = 28;
+			height = 38;
 		}
 		JPFG E 8 A_FaceTarget;
 		JPFG F 2
@@ -91,6 +91,11 @@ class FDM_JPFGuy : FDM_BaseMonster
 		JPFG L -1;
 		Stop;
 	GiveUp:
+		JPFG G 0
+		{
+			bNOTAUTOAIMED = 0;
+			height = 56;
+		}
 		JPFG AG 12;
 		loop;
 	}
