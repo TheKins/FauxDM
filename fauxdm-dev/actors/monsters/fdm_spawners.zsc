@@ -37,12 +37,12 @@ class FDM_Spawner : Actor
 	{
 		"FDM_DoomImp",
 		"FDM_ShotgunGuy",
-		"FDM_QuakeRanger"
+		"FDM_QuakeRanger",
+		"FDM_DukeBot"
 	};
 	
 	static const string CritterListHard[] =
 	{
-		//"FDM_QuakeRanger",
 		"FDM_Chubbs",
 		"FDM_BloodCultist",
 		"FDM_CyberBruiser"

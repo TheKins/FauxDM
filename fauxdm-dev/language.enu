@@ -111,6 +111,7 @@ OB_QUAKERANGER = "%o was nailed by";
 OB_BLOODCULTIST = "%o was pulped by";
 OB_JPFGUY = "%o was overpowered by";
 OB_CYBERBRUISER = "%o was exploded by";
+OB_DUKEBOT = "%o was owned by";
 
 OB_ICON = "%o was splattered by a big wall texture!";
 

@@ -457,7 +457,7 @@ class FDM_DukeBot : FDM_BaseMonster
 		DBOT AABBCCDD 4 A_FDMRoam();
 		Loop;
 	See:
-		DBOT AABBCCDD 4 A_FDMChase("Melee", "Missile", CHF_FASTCHASE|CHF_STOPIFBLOCKED);
+		DBOT AABBCCDD 4 A_FDMChase("Melee", "Missile", CHF_STOPIFBLOCKED);
 		Loop;
 	Missile:
 		DBOT AABBCCDD 4 
@@ -511,7 +511,7 @@ class FDM_DukeBot : FDM_BaseMonster
 			}
 		}
 		DBOT A 0 A_JumpIf(kickcount >= 5, "StopKickingYouFool");
-		DBOT A 0 A_Jump(64, "KickWallsABunch");
+		DBOT A 0 A_Jump(16, "KickWallsABunch");
 	StopKickingYouFool:
 		DBOT A 0
 		{
@@ -544,5 +544,32 @@ class FDM_DukeBot : FDM_BaseMonster
 				self.angle = self.angle + 180;
 			}
 		}
+	}
+	
+	// Give the actor a real stupid name.
+	override void GiveStupidName()
+	{
+		static const string NameList[] =
+		{
+			"CON Parser",
+			"Ken's Global Values",
+			"CollisionDetectionRewrite",
+			"SOB-Bot",
+			"Crap@LegalChicken",
+			"Sector Effector",
+			"IOwnMaidens",
+			"define GOTTASMART",
+			"LameDuke",
+			"RoachCondo",
+			"AntiProfit",
+			"KinoFabino",
+			"WheresTehBaeta",
+			"DecadeDevCycle",
+			"Fake AI"
+		};
+		
+		int i;
+		i = random(0,NameList.Size()-1);
+		SetTag(NameList[i]);
 	}
 }

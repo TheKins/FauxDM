@@ -319,8 +319,6 @@ class FDM_BaseMonster : Actor
 			"FiveDrunkenBats",
 			"[MLB]Slugfeast",
 			// Shade Thrown At Retro FPS Things
-			"CON Parser",
-			"Ken's Global Values",
 			"PolyObject-amorous",
 			// New and Exciting! Yes.
 			"AlternativeFaxMachine",
