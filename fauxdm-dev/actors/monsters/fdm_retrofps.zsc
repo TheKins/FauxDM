@@ -472,7 +472,7 @@ class FDM_DukeBot : FDM_BaseMonster
 				A_FaceTarget();
 				A_PlaySound("actors/dukebot/fire", CHAN_WEAPON);
 				A_CustomBulletAttack (22.5, 0, 1, random(1,5) * 2, "BulletPuff", 0, CBAF_NORANDOM);
-				A_SpawnItemEx("FDM_DukeBotMuzzleFlare",4,10,32);
+				A_SpawnItemEx("FDM_DukeBotMuzzleFlare",4,32,32);
 			}
 		}
 		DBOT A 0 A_CPosRefire;
@@ -496,6 +496,7 @@ class FDM_DukeBot : FDM_BaseMonster
 		DBOT ZG 12;
 		loop;
 	KickWallsABunch:
+		DBOT A 0 A_Jump(32, "StopKickingYouFool");
 		DBOT E 8
 		{
 			self.angle = atan2(SurfaceData.HitLine.delta.Y, SurfaceData.HitLine.delta.X) + 90;

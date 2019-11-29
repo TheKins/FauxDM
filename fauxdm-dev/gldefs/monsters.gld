@@ -46,6 +46,11 @@ object FDM_CyberBruiser
 	frame CBOSF { light ZOMBIEATK }
 }
 
+object FDM_DukeBotMuzzleFlare
+{
+	frame DBFL { light ZOMBIEATK }
+}
+
 Object FDM_SpawnShotExplosion
 {
 	frame BEXP { light Explosion }
