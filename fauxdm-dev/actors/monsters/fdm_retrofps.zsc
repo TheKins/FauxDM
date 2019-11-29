@@ -447,6 +447,7 @@ class FDM_DukeBot : FDM_BaseMonster
 	bool oddeven;
 	FLineTraceData SurfaceData;
 	int kickcount;
+	int strafedir; 
 	
 	States
 	{
@@ -509,9 +510,19 @@ class FDM_DukeBot : FDM_BaseMonster
 			{
 				ThrustThingZ (0, 16, 0, 1);
 			}
+			
+			if (strafedir == 1)
+			{
+				ThrustThing(angle * 256 / 360 + 64, 8, 0, 0);
+			} else {
+				ThrustThing(angle * 256 / 360 + 192, 8, 0, 0);
+			}
+			
+			strafedir = random(0,1);
 		}
 		DBOT A 0 A_JumpIf(kickcount >= 5, "StopKickingYouFool");
-		DBOT A 0 A_Jump(16, "KickWallsABunch");
+		DBOT A 0 A_Jump(32, "StopKickingYouFool");
+		DBOT A 0 A_CanIDoSomeKicking();
 	StopKickingYouFool:
 		DBOT A 0
 		{
@@ -526,6 +537,7 @@ class FDM_DukeBot : FDM_BaseMonster
 	{
 		Super.PostBeginPlay ();
 		oddeven = 0;
+		strafedir = random(0,1);
 	}
 	
 	override void DoAvoidWallrunning()
@@ -533,16 +545,21 @@ class FDM_DukeBot : FDM_BaseMonster
 		// Making an attempt to prevent actors running into walls a bunch
 		if (pos.xy == oldpos.xy)
 		{
-			self.LineTrace(self.angle, 64, self.pitch, TRF_THRUACTORS, offsetz: 32, data:SurfaceData);
+			A_CanIDoSomeKicking();
+		}
+	}
+	
+	void A_CanIDoSomeKicking()
+	{
+		self.LineTrace(self.angle, 64, self.pitch, TRF_THRUACTORS, offsetz: 32, data:SurfaceData);
 			
-			if (SurfaceData.HitType == SurfaceData.TRACE_HitWall)
-			{
-				self.angle = atan2(SurfaceData.HitLine.delta.Y, SurfaceData.HitLine.delta.X) + 90;
-				SetStateLabel("KickWallsABunch");
-			} else {
-				A_Recoil(speed * 2);
-				self.angle = self.angle + 180;
-			}
+		if (SurfaceData.HitType == SurfaceData.TRACE_HitWall)
+		{
+			self.angle = atan2(SurfaceData.HitLine.delta.Y, SurfaceData.HitLine.delta.X) + 90;
+			SetStateLabel("KickWallsABunch");
+		} else {
+			A_Recoil(speed * 2);
+			self.angle = self.angle + 180;
 		}
 	}
 	
