@@ -9,6 +9,7 @@ GAMEPLAY CHANGES:
   in the DM Sim menu.
   
 MONSTER CHANGES:
+- Added the Duke Bot to the Medium spawn list.
 - Added the Cyber-Bruiser to the Hard spawn list.
 - Removed the Quake Ranger from the Hard spawn list. (Don't worry, he's still
   in the Medium list!)
