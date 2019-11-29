@@ -13,6 +13,8 @@ MONSTER CHANGES:
 - Removed the Quake Ranger from the Hard spawn list. (Don't worry, he's still
   in the Medium list!)
 - Shotgun Guys now drop Shells instead of Shotguns.
+- JPF Guy's hitbox is now 10 units taller when crouched.
+- JPF Guy's pain sounds are slightly shorter.
 - Monsters now give up and stop attacking once the player achieves victory.
 
 WEAPON CHANGES:
