@@ -423,3 +423,127 @@ class FDM_BloodCultistTNTExplosion : Actor
 		Stop;
 	}
 }
+
+// Awful Duke Bot!
+class FDM_DukeBot : FDM_BaseMonster
+{
+	Default
+	{
+		Health 200;
+		Radius 16;
+		Height 56;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		speed 4;
+		FDM_BaseMonster.TauntSound "actors/oldactors/posstaunt2";
+		PainSound "grunt/pain";
+		DeathSound "grunt/death";
+		ActiveSound "grunt/active";
+		Obituary "$OB_ZOMBIEMAN";
+		Decal "BulletChip";
+		scale 0.65;
+	}
+	
+	bool oddeven;
+	FLineTraceData SurfaceData;
+	int kickcount;
+	
+	States
+	{
+	Spawn:
+		DBOT Z 10 A_Look;
+		goto Roam;
+	Roam:
+		DBOT AABBCCDD 4 A_FDMRoam();
+		Loop;
+	See:
+		DBOT AABBCCDD 4 A_FDMChase("Melee", "Missile", CHF_FASTCHASE|CHF_STOPIFBLOCKED);
+		Loop;
+	Missile:
+		DBOT AABBCCDD 4 
+		{
+			oddeven = !oddeven;
+			
+			if (oddeven)
+			{
+				A_FDMChase(null, null, CHF_FASTCHASE|CHF_STOPIFBLOCKED);
+				A_FaceTarget();
+				A_PlaySound("weapons/pistol/fire", CHAN_WEAPON);
+				A_CustomBulletAttack (22.5, 0, 1, random(1,5) * 2, "BulletPuff", 0, CBAF_NORANDOM);
+			}
+		}
+		DBOT A 0 A_CPosRefire;
+		Goto Missile;
+	Melee:
+		DBOT E 8 A_FaceTarget();
+		DBOT F 8 A_CustomMeleeAttack(random(5, 10), "skeleton/melee");
+		goto See;
+	Pain:
+		DBOT G 3;
+		DBOT G 3 A_Pain;
+		Goto See;
+	Death:
+		DBOT H 5;
+		DBOT I 5 A_Scream;
+		DBOT J 5 A_NoBlocking;
+		DBOT KL 5;
+		DBOT M -1;
+		Stop;
+	GiveUp:
+		DBOT ZG 12;
+		loop;
+	KickWallsABunch:
+		DBOT E 8
+		{
+			self.angle = atan2(SurfaceData.HitLine.delta.Y, SurfaceData.HitLine.delta.X) + 90;
+		}
+		DBOT F 8
+		{
+			self.angle = atan2(SurfaceData.HitLine.delta.Y, SurfaceData.HitLine.delta.X) + 90;
+			A_PlaySound("skeleton/melee", CHAN_WEAPON);
+			kickcount++;
+		}
+		DBOT E 0
+		{
+			if (pos.z == floorz)
+			{
+				ThrustThingZ (0, 16, 0, 1);
+			}
+		}
+		DBOT A 0 A_JumpIf(kickcount >= 5, "StopKickingYouFool");
+		DBOT A 0 A_Jump(64, "KickWallsABunch");
+	StopKickingYouFool:
+		DBOT A 0
+		{
+			kickcount = 0;
+			A_Recoil(speed * 2);
+			self.angle = self.angle + 180;
+		}
+		Goto See;
+	}
+	
+	override void PostBeginPlay ()
+	{
+		Super.PostBeginPlay ();
+		oddeven = 0;
+	}
+	
+	override void DoAvoidWallrunning()
+	{
+		// Making an attempt to prevent actors running into walls a bunch
+		if (pos.xy == oldpos.xy)
+		{
+			self.LineTrace(self.angle, 64, self.pitch, TRF_THRUACTORS, offsetz: 32, data:SurfaceData);
+			
+			if (SurfaceData.HitType == SurfaceData.TRACE_HitWall)
+			{
+				self.angle = atan2(SurfaceData.HitLine.delta.Y, SurfaceData.HitLine.delta.X) + 90;
+				SetStateLabel("KickWallsABunch");
+			} else {
+				A_Recoil(speed * 2);
+				self.angle = self.angle + 180;
+			}
+		}
+	}
+}
