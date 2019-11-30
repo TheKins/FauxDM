@@ -263,3 +263,14 @@ map FDM04 "Don't Wake Daddy" // All original, baby
 	cluster = 50
 	EnterPic = "I_FDM04"
 }
+
+map FDM05 "Tiny Town" // based on a map from gta2
+{
+	author = "Orig. by DMA Design"
+	next = "FDM01"
+	sky1 = "dn3d0094"
+	music = "hurl1"
+	levelnum = 6
+	cluster = 50
+	EnterPic = "I_FDM05"
+}
