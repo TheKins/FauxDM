@@ -36,6 +36,7 @@ MAP CHANGES:
 MISC. CHANGES:
 - Fixed background drawing on intermission screen (Thanks, Marisa!)
 - Added GLDef lights to a variety of effects, weapons and enemies.
+- Added more mad-lib entries to the map-start screen (Thanks, Techokami!)
 - Changed the Title Screen music.
 - Removed pitch shifting from end-of-round win/lose fanfare.
 - Added a "Humiliation" announcer call-out for Gauntlet kills.

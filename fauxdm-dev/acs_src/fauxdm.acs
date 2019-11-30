@@ -206,7 +206,7 @@ script "FDM_ResetInventoryOnRespawn" RESPAWN
 
 script "FDM_MapIntro" ENTER
 {
-	int Verb[11] =
+	int Verb[16] =
 	{
 		"waste",
 		"nuke",
@@ -218,7 +218,12 @@ script "FDM_MapIntro" ENTER
 		"stab",
 		"melt",
 		"delete",
-		"flay"
+		"flay",
+		"dispose of",
+		"extinguish",
+		"end",
+		"blast",
+		"ruin"
 	};
 	
 	int Punchline[10] =
@@ -246,7 +251,7 @@ script "FDM_MapIntro" ENTER
 		} else {
 			HudMessageBold(s:"You have five minutes"; HUDMSG_PLAIN, 1, CR_RED, 0.5, 0.45, 5.0);
 		}
-		HudMessageBold(s:"to ", s:Verb[random(0,10)], s:" ", i:killcap, s:" enemies!"; HUDMSG_PLAIN, 2, CR_RED, 0.5, 0.5, 5.0);
+		HudMessageBold(s:"to ", s:Verb[random(0,15)], s:" ", i:killcap, s:" enemies!"; HUDMSG_PLAIN, 2, CR_RED, 0.5, 0.5, 5.0);
 		HudMessageBold(s:Punchline[random(0,9)]; HUDMSG_PLAIN, 31, CR_RED, 0.5, 0.6, 5.0);
 	}
 }
