@@ -46,6 +46,7 @@ Jekyll Grim Payne (Scorch translation effect, from Beautiful Doom)
 TDRR (Skulltag Emulation stuff)
 Nanka Kurashiki (Painting in FDM02, from JPCP)
 Hyena (Baron Killer! from Mock2)
+Nash Muhandes (A couple of lines of ZScript from SpriteShadows)
 
 Testers:
 BlorgX3

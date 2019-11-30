@@ -86,62 +86,6 @@ class FDM_StatusScreen : StatusScreen
 		cnt_total_time = -1;
 	}
 
-	override void updateStats ()
-	{
-		if (acceleratestage && sp_state != 10)
-		{
-			acceleratestage = 0;
-			sp_state = 10;
-			PlaySound("intermission/nextstage");
-
-			cnt_kills[0] = Plrs[me].skills;
-			cnt_items[0] = Plrs[me].sitems;
-			cnt_secret[0] = Plrs[me].ssecret;
-			cnt_time = Thinker.Tics2Seconds(Plrs[me].stime);
-			cnt_par = wbs.partime / Thinker.TICRATE;
-			cnt_total_time = Thinker.Tics2Seconds(wbs.totaltime);
-		}
-
-		if (sp_state == 2)
-		{
-				PlaySound("intermission/nextstage");
-				sp_state++;
-		}
-		else if (sp_state == 4)
-		{
-				PlaySound("intermission/nextstage");
-				sp_state++;
-		}
-		else if (sp_state == 6)
-		{
-				cnt_time = Thinker.Tics2Seconds(Plrs[me].stime);
-				PlaySound("intermission/nextstage");
-				sp_state++;
-		}
-		else if (sp_state == 8)
-		{
-				cnt_total_time = Thinker.Tics2Seconds(wbs.totaltime);
-				PlaySound("intermission/nextstage");
-				sp_state++;
-		}
-		else if (sp_state == 10)
-		{
-			if (acceleratestage)
-			{
-				PlaySound("intermission/paststats");
-				initShowNextLoc();
-			}
-		}
-		else if (sp_state & 1)
-		{
-			if (!--cnt_pause)
-			{
-				sp_state++;
-				cnt_pause = Thinker.TICRATE;
-			}
-		}
-	}
-
 	override void drawStats (void)
 	{
 		// line height
@@ -328,6 +272,62 @@ class FDM_StatusScreen : StatusScreen
 			return y + h;
 		}
 		return 0;
+	}
+	
+	override void updateStats ()
+	{
+		if (acceleratestage && sp_state != 10)
+		{
+			acceleratestage = 0;
+			sp_state = 10;
+			PlaySound("intermission/nextstage");
+
+			cnt_kills[0] = Plrs[me].skills;
+			cnt_items[0] = Plrs[me].sitems;
+			cnt_secret[0] = Plrs[me].ssecret;
+			cnt_time = Thinker.Tics2Seconds(Plrs[me].stime);
+			cnt_par = wbs.partime / Thinker.TICRATE;
+			cnt_total_time = Thinker.Tics2Seconds(wbs.totaltime);
+		}
+
+		if (sp_state == 2)
+		{
+				PlaySound("intermission/nextstage");
+				sp_state++;
+		}
+		else if (sp_state == 4)
+		{
+				PlaySound("intermission/nextstage");
+				sp_state++;
+		}
+		else if (sp_state == 6)
+		{
+				cnt_time = Thinker.Tics2Seconds(Plrs[me].stime);
+				PlaySound("intermission/nextstage");
+				sp_state++;
+		}
+		else if (sp_state == 8)
+		{
+				cnt_total_time = Thinker.Tics2Seconds(wbs.totaltime);
+				PlaySound("intermission/nextstage");
+				sp_state++;
+		}
+		else if (sp_state == 10)
+		{
+			if (acceleratestage)
+			{
+				PlaySound("intermission/paststats");
+				initShowNextLoc();
+			}
+		}
+		else if (sp_state & 1)
+		{
+			if (!--cnt_pause)
+			{
+				sp_state++;
+				cnt_pause = Thinker.TICRATE;
+			}
+		}
 	}
 	
 }

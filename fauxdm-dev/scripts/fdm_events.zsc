@@ -163,7 +163,9 @@ class FDM_ACSCrap : Actor
 	// this world and they should just give up.
 	static void GiveUpLittleHomie()
     {
-        PlayerInfo p = players[consoleplayer];
+        // BlockThingsIterator code taken from Duke3D Sprite Shadows by
+		// Nash Muhandes. https://forum.zdoom.org/viewtopic.php?f=105&t=54992
+		PlayerInfo p = players[consoleplayer];
         
         BlockThingsIterator it = BlockThingsIterator.CreateFromPos(0,0,0,0,32767,0);
         while (it.Next())
