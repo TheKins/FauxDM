@@ -9,6 +9,7 @@ GAMEPLAY CHANGES:
   in the DM Sim menu.
   
 MONSTER CHANGES:
+- Spawner outlines are now fullbright and thus easier to see in dark areas.
 - Added the Duke Bot to the Medium spawn list.
 - Added the Cyber-Bruiser to the Hard spawn list.
 - Removed the Quake Ranger from the Hard spawn list. (Don't worry, he's still
@@ -16,6 +17,7 @@ MONSTER CHANGES:
 - Shotgun Guys now drop Shells instead of Shotguns.
 - JPF Guy's hitbox is now 10 units taller when crouched.
 - JPF Guy's pain sounds are slightly shorter.
+- Chubbs' SSG sound is now louder.
 - Monsters now give up and stop attacking once the player achieves victory.
 
 WEAPON CHANGES:
