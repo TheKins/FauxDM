@@ -47,6 +47,7 @@ TDRR (Skulltag Emulation stuff)
 Nanka Kurashiki (Painting in FDM02, from JPCP)
 Hyena (Baron Killer! from Mock2)
 Nash Muhandes (A couple of lines of ZScript from SpriteShadows)
+Zeberpal (GTA2 Texture Rips from Doom Center Anywhere City)
 
 Testers:
 BlorgX3
