@@ -257,7 +257,7 @@ map FDM03 "Shooting Gallery" // from Metroid Prime 2 MP
 map FDM04 "Don't Wake Daddy" // All original, baby
 {
 	author = "The Kins"
-	next = "FDM01"
+	next = "FDM05"
 	sky1 = "STSKY6"
 	music = "PBLOOD1"
 	levelnum = 5
