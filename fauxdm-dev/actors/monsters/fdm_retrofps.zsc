@@ -247,11 +247,12 @@ class FDM_BloodCultist : FDM_BaseMonster
 		CUL1 G 8 A_FaceTarget;
 	ThrowTNT:
 		CUL1 I 4 A_FaceTarget;
-		CUL1 IJKL 3;
+		CUL1 IJKL 3 A_FaceTarget;
 		CUL1 M 15
 		{
 			A_PlaySound("actors/cultist/throw");
 			A_SpawnProjectile("FDM_BloodCultistTNT");
+			A_FaceTarget();
 		}
 		Goto See;
 	Pain:
