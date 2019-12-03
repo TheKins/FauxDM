@@ -208,6 +208,97 @@ class FDM_ExplosiveBarrel : Actor replaces ExplosiveBarrel
 	}
 }
 
+// Reelism Explosive Cars
+class FDM_Car : Actor
+{
+	Default
+	{
+		obituary "%o was hit by a parked car.";
+		health 300;
+		radius 48;
+		height 56;
+		mass 10000;
+		+SOLID
+		+SHOOTABLE
+		+DONTGIB
+		+NOICEDEATH
+		+CANPASS
+		+NOBLOODDECALS
+		+NOBLOOD
+		//bloodtype "MetalSpark"
+		//$Category "FauxDM Props"
+		//$Title "Reelism Car"
+		//$Color 11
+	}
+	
+	states
+	{
+	Spawn:
+		CARZ A -1;
+		Stop;
+	Death:
+		CARZ A 0 
+		{
+			//Radius_Quake(10,60,0,120,0);
+			A_Explode(150);
+			ThrustThingZ(0,64,0,1);
+			for (int i; i < 22; i++)
+			{
+				//A_CustomMissile("DEBRIS",random(16,56),0,random(0,360),2,random(4,32))
+			}
+			A_SpawnItem("FDM_ExplosiveBarrelExplosionVisualOnly");
+			//A_SpawnItemEx("Fire",0,0,16,16,0,0,random(0,360));
+		}
+	SmashUp:
+		CARZ A 0; 
+		CARZ A 8 
+		{
+			A_SpawnItemEx("FDM_ExplosiveBarrelExplosionVisualOnly",random(0,30),random(0,30),random(0,30),0,0,0,random(0,360));
+			A_Explode(150);
+			A_Quake(6,8,0,2048,"nosound");
+			//A_SpawnItemEx("Fire",0,0,16,16,0,0,random(0,360));
+			A_SpawnProjectile("FDM_FlamethrowerProjectile",32,0,random(0,360),CMF_ABSOLUTEANGLE|CMF_ABSOLUTEANGLE|CMF_ABSOLUTEPITCH,random(32,45));
+		}
+		CARZ A 0 A_JumpIf(pos.z == floorz,"SmashUpEnd");
+		loop;
+	SmashUpEnd:
+		CARZ A 0 
+		{
+			A_Explode(150);
+			for (int i; i < 22; i++)
+			{
+				//A_CustomMissile("DEBRIS",random(16,56),0,random(0,360),2,random(4,32))
+				//A_CustomMissile("RobotShards",random(16,56),0,random(0,360),2,random(4,32))
+			}
+			A_SpawnItemEx("FDM_ExplosiveBarrelExplosionVisualOnly",random(0,30),random(0,30),random(0,30),0,0,0,random(0,360));
+			A_SpawnItem("FDM_FireAOE");
+		}
+		TNT1 A 1050;
+		TNT1 A 5 A_Respawn;
+		Wait;
+	}
+	
+	/*
+	override void PostBeginPlay ()
+	{
+		int carcolor;
+		
+		carcolor = random (0,4);
+		Super.PostBeginPlay ();
+		
+		if (carcolor == 2)
+		{
+			translation = 0;
+		} else if (carcolor == 3)
+		{
+			translation = 1;
+		} else if (carcolor == 4)
+		{
+			translation = 2;
+		}
+	}
+	*/
+}
 
 // Skulltag Springpads
 class FDM_SpringPadZone : SectorAction
