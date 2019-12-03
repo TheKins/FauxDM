@@ -9,27 +9,30 @@ GAMEPLAY CHANGES:
   in the DM Sim menu.
   
 MONSTER CHANGES:
-- Spawner outlines are now fullbright and thus easier to see in dark areas.
-- Added the Duke Bot to the Medium spawn list.
-- Added the Cyber-Bruiser to the Hard spawn list.
-- Removed the Quake Ranger from the Hard spawn list. (Don't worry, he's still
+- Spawners: Outlines are now fullbright and thus easier to see in dark areas.
+- Duke Bot: Added to the Medium spawn list!
+- Cyber-Bruiser: Added to the Hard spawn list!
+- Quake Ranger: Removed from the Hard spawn list. (Don't worry, he's still
   in the Medium list!)
-- Shotgun Guys now drop Shells instead of Shotguns.
-- JPF Guy's hitbox is now 10 units taller when crouched.
-- JPF Guy's pain sounds are slightly shorter.
-- Chubbs' SSG sound is now louder.
-- Fixed Cultists not looking at their target while throwing TNT.
-- Monsters now give up and stop attacking once the player achieves victory.
+- Shotgun Guys: Now drop Shells instead of Shotguns.
+- JPF Guy: Hitbox is now 10 units taller when crouched.
+- JPF Guy: Pain sounds are slightly shorter.
+- Chubbs: SSG firing sound is now louder.
+- Chubbs: Several minor frame tweaks and "improvements"
+- Cultists: Fixed them not looking at their target while throwing TNT.
+- General: Monsters now give up and stop attacking once player achieves victory.
 
 WEAPON CHANGES:
-- Replaced the ever-useless Pistol with the Machinegun.
-- Renamed the Machinegun sprites to avoid sprite conflict with other mods.
-- Added the Chaingun to fill the slot left behind by the Machinegun.
-- Doubled Flamethrower damage.
-- Flamethrower ammo is now placeable by map authors.
+- Gauntlet: Added a "Humiliation" announcer call-out for Gauntlet kills.
+- Pistol: Removed on account of being useless.
+- Machinegun: Moved into Pistol slot (and as such is now default starting weapon)
+- Machinegun: Sprites renamed to avoid sprite conflict with custom mapsets.
+- Chaingun: Added! Fills the void left by the Machinegun.
+- Flamethrower: Damage has been doubled.
+- Flamethrower: Ammo is now placeable by map authors.
 
 MAP CHANGES:
-- Added Tiny Town (FDM05)!
+- FDM05: Added a new map, Tiny Town! Based off the same map from GTA2 multiplayer.
 - FDM01: Replaced the SSG in the lava room with a Chaingun, and added two clips.
 - FDM02: Removed Minigun, twiddled with weapons near big fountain.
 - FDM03: Replaced the eastmost SSG and shells with a Chaingun and clips.
@@ -38,7 +41,6 @@ MAP CHANGES:
 MISC. CHANGES:
 - Fixed background drawing on intermission screen (Thanks, Marisa!)
 - Added GLDef lights to a variety of effects, weapons and enemies.
-- Added more mad-lib entries to the map-start screen (Thanks, Techokami!)
-- Changed the Title Screen music.
+- Added more mad-lib entries to the map-start objective toast. (Thanks, Techokami!)
 - Removed pitch shifting from end-of-round win/lose fanfare.
-- Added a "Humiliation" announcer call-out for Gauntlet kills.
+- Changed the Title Screen music.
