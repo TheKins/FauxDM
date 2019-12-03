@@ -36,6 +36,7 @@ VriskaSerket (BFG sprites)
 YukiHerz (Flamethrower sprites)
 Jekyll Grim Payne (Gas Cannister base)
 Ben2k9 (Cyber-Bruiser sprites)
+Sgt. Shivers (Smooth Chaingun wind-down sprites)
 
 Other Stuff From Other Mods:
 JoeyTD (BFG9000 Attack, from Vanilla as Fuck)
