@@ -25,7 +25,7 @@ gameinfo
 	statscreen_single = "FDM_StatusScreen"
 	
 	weaponslot = 1, "FDM_Gauntlet"
-	weaponslot = 2, "FDM_Handgun", "FDM_Machinegun"
+	weaponslot = 2, "FDM_Machinegun"
 	weaponslot = 3, "FDM_Shotgun", "FDM_SuperShotgun"
 	weaponslot = 4, "FDM_Chaingun", "FDM_Minigun"
 	weaponslot = 5, "FDM_RocketLauncher", "FDM_GrenadeLauncher"

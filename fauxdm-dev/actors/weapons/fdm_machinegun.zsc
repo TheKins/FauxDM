@@ -11,7 +11,7 @@
 ================================================================================
 */
 
-class FDM_Machinegun : FDM_BaseWeapon //replaces Chaingun
+class FDM_Machinegun : FDM_BaseWeapon replaces Pistol
 {
 	Default
 	{
