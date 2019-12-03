@@ -14,6 +14,7 @@
 warp flat DNLAVA
 warp flat DNSLIME
 warp2 flat SW0780
+warp2 flat GTAWATR
 
 texture SW0300
 pic SW0301 tics 1
