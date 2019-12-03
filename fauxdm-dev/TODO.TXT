@@ -28,21 +28,10 @@ MONSTERS:
 - Add more monster types! And then add more! AND THEN MORE.
 - Find a way to fake obituaries when killed, using player name and monster name.
   Yes, this would be spammy. No, I don't care.
-- Maybe some fake text chat every now and then?
 
-WEAPONS:
-- Make the Grenade Launcher's grenades more like the Quake GL's
+CODE:
+- Add LevelPostProcessor code to add a Player 1 start if one is not present.
+- Rewrite the multiplayer weapon spawn code using LevelPostProcessor.
 
-================================================================================
-
- The Can't-Do List
- 
-================================================================================
-
-- Even though they basically aren't used by the mod, maps still require a Player
-  1 start to load. This rules out some Deathmatch map sets unless you manually
-  add a start position in an editor. Which isn't HARD, but it can be tedious.
-- The LevelCompatibility script to make multiplayer weapon spawns appear mangles
-  spawn flags, causing script-triggering actors like SecActHitFloor to have
-  incorrect settings. As such, this is locked behind a CVar until engine-side
-  functionality emerges to fix this.
+MISC.:
+- Add the fake voice chat system!

@@ -18,6 +18,7 @@ MONSTER CHANGES:
 - JPF Guy's hitbox is now 10 units taller when crouched.
 - JPF Guy's pain sounds are slightly shorter.
 - Chubbs' SSG sound is now louder.
+- Fixed Cultists not looking at their target while throwing TNT.
 - Monsters now give up and stop attacking once the player achieves victory.
 
 WEAPON CHANGES:
@@ -28,6 +29,7 @@ WEAPON CHANGES:
 - Flamethrower ammo is now placeable by map authors.
 
 MAP CHANGES:
+- Added Tiny Town (FDM05)!
 - FDM01: Replaced the SSG in the lava room with a Chaingun, and added two clips.
 - FDM02: Removed Minigun, twiddled with weapons near big fountain.
 - FDM03: Replaced the eastmost SSG and shells with a Chaingun and clips.
