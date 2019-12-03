@@ -274,7 +274,7 @@ class FDM_Car : Actor
 			A_SpawnItem("FDM_FireAOE");
 		}
 		TNT1 A 1050;
-		TNT1 A 5 A_Respawn;
+		TNT1 A 5 A_Respawn(RSF_FOG);
 		Wait;
 	}
 	
