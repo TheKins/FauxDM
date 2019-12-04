@@ -201,6 +201,11 @@ class FDM_ExplosiveBarrel : Actor replaces ExplosiveBarrel
 		{
 			A_Explode();
 			A_SpawnItem("FDM_ExplosiveBarrelExplosionVisualOnly");
+			
+			for (int i; i < 8; i++)
+			{
+				A_SpawnProjectile("FDM_Debris",random(16,42),random(-8,8),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
+			}
 		}
 		TNT1 A 1050 BRIGHT;
 		TNT1 A 5 A_Respawn;
@@ -231,6 +236,8 @@ class FDM_Car : Actor
 		//$Color 11
 	}
 	
+	int timeout;
+	
 	states
 	{
 	Spawn:
@@ -240,26 +247,34 @@ class FDM_Car : Actor
 		CARZ A 0 
 		{
 			//Radius_Quake(10,60,0,120,0);
-			A_Explode(150);
+			A_Explode(150,192);
 			ThrustThingZ(0,64,0,1);
 			for (int i; i < 22; i++)
 			{
-				//A_CustomMissile("DEBRIS",random(16,56),0,random(0,360),2,random(4,32))
+				A_SpawnProjectile("FDM_Debris",random(32,56),random(-32,32),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
 			}
-			A_SpawnItem("FDM_ExplosiveBarrelExplosionVisualOnly");
-			//A_SpawnItemEx("Fire",0,0,16,16,0,0,random(0,360));
+			A_SpawnItem("FDM_CarExplosionVisualOnly");
 		}
 	SmashUp:
 		CARZ A 0; 
-		CARZ A 8 
+		CARZ A 2 
 		{
 			A_SpawnItemEx("FDM_ExplosiveBarrelExplosionVisualOnly",random(0,30),random(0,30),random(0,30),0,0,0,random(0,360));
 			A_Explode(150);
 			A_Quake(6,8,0,2048,"nosound");
-			//A_SpawnItemEx("Fire",0,0,16,16,0,0,random(0,360));
-			A_SpawnProjectile("FDM_FlamethrowerProjectile",32,0,random(0,360),CMF_ABSOLUTEANGLE|CMF_ABSOLUTEANGLE|CMF_ABSOLUTEPITCH,random(32,45));
+			
+			for (int i; i < 3; i++)
+			{
+				A_SpawnProjectile("FDM_FlamethrowerProjectile",32,0,random(0,360),CMF_ABSOLUTEANGLE|CMF_ABSOLUTEANGLE|CMF_ABSOLUTEPITCH,random(32,45));
+			}
+			
+			if (vel.z == 0)
+			{
+				timeout++;
+			}
 		}
-		CARZ A 0 A_JumpIf(pos.z == floorz,"SmashUpEnd");
+		CARZ AAAAAA 1 A_JumpIf(pos.z == floorz,"SmashUpEnd");
+		CARZ A 0 A_JumpIf(timeout > 8,"SmashUpEnd");
 		loop;
 	SmashUpEnd:
 		CARZ A 0 
@@ -267,11 +282,18 @@ class FDM_Car : Actor
 			A_Explode(150);
 			for (int i; i < 22; i++)
 			{
-				//A_CustomMissile("DEBRIS",random(16,56),0,random(0,360),2,random(4,32))
-				//A_CustomMissile("RobotShards",random(16,56),0,random(0,360),2,random(4,32))
+				A_SpawnProjectile("FDM_Debris",random(32,56),random(-32,32),random(0,360),CMF_ABSOLUTEPITCH,random(-30,-50));
 			}
 			A_SpawnItemEx("FDM_ExplosiveBarrelExplosionVisualOnly",random(0,30),random(0,30),random(0,30),0,0,0,random(0,360));
-			A_SpawnItem("FDM_FireAOE");
+			A_SpawnItemEx("FDM_FireAOE",-64,0,0);
+			A_SpawnItemEx("FDM_FireAOE",0,0,0);
+			A_SpawnItemEx("FDM_FireAOE",64,0,0);
+			A_SpawnItemEx("FDM_FireAOE",-64,-64,0);
+			A_SpawnItemEx("FDM_FireAOE",0,-64,0);
+			A_SpawnItemEx("FDM_FireAOE",64,-64,0);
+			A_SpawnItemEx("FDM_FireAOE",-64,64,0);
+			A_SpawnItemEx("FDM_FireAOE",0,64,0);
+			A_SpawnItemEx("FDM_FireAOE",64,64,0);
 		}
 		TNT1 A 1050;
 		TNT1 A 5 A_Respawn(RSF_FOG);

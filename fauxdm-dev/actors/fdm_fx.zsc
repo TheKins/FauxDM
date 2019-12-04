@@ -383,6 +383,63 @@ class FDM_Gib_Spine : FDM_Gib
 	}
 }
 
+class FDM_Debris : Actor
+{
+    Default
+	{
+		Radius 1;
+		Height 1;
+		Speed 5;
+		Projectile;
+		-NOGRAVITY
+		-SOLID
+		+MOVEWITHSECTOR
+		+CLIENTSIDEONLY
+		+NOBLOCKMAP
+		+NOTELEPORT
+		Gravity 0.65;
+		//scale 0.5;
+	}
+	
+	States
+	{
+	Spawn:
+		DEBS A 0;
+		DEBS A 0
+		{
+			bSPRITEFLIP = random(0,1);
+		}
+		DEBS A 0 A_Jump(256, "Speen1", "Speen2", "Speen3", "Speen4");
+	Speen1:
+		DEBS AB 5;
+	Speen2:
+		DEBS CD 5;
+	Speen3:
+		DEBS EF 5;
+	Speen4:
+		DEBS GH 5;
+		goto Speen1;
+	Death:
+		TNT1 A 0;
+		stop;
+	}
+	
+	override void PostBeginPlay()
+	{		
+		self.vel.z = random(5,9);
+	}
+	
+	override void Tick()
+	{
+		if (waterlevel > 0)
+		{
+			ThrustThingZ(0,4,1,1);
+		}
+		
+		Super.Tick();
+	}
+}
+
 // Explosions
 class FDM_ExplosiveBarrelExplosionVisualOnly : Actor
 {
@@ -431,6 +488,32 @@ class FDM_RocketExplosionVisualOnly : Actor
 			A_playSound("weapons/explode",CHAN_WEAPON);
 		}
 		BEXP ABCDEFGHIJKLM 2 Bright;
+		Stop;
+	}
+}
+
+class FDM_CarExplosionVisualOnly : Actor
+{
+	Default
+	{
+	+NOCLIP
+	+FORCEXYBILLBOARD 
+	Projectile;
+	Speed 0;
+	RenderStyle "Add";
+	scale 2.0;
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 
+		{
+			A_Quake (1,24,0,750,0);
+			A_playSound("weapons/explode",CHAN_WEAPON,1.0,0,0.5,0,0.5);
+		}
+		BEXP ABCDEFGHIJKLM 4 Bright;
 		Stop;
 	}
 }
