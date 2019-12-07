@@ -167,16 +167,24 @@ class FDM_ACSCrap : Actor
 		// Nash Muhandes. https://forum.zdoom.org/viewtopic.php?f=105&t=54992
 		PlayerInfo p = players[consoleplayer];
         
-        BlockThingsIterator it = BlockThingsIterator.CreateFromPos(0,0,0,0,32767,0);
+		BlockThingsIterator it = BlockThingsIterator.CreateFromPos(0,0,0,0,32767,0);
         while (it.Next())
         {
             Actor mo = it.thing;
             // only consider monster-tagged things:
+			
             if (mo.bIsMonster)
             {
                 //mo.A_Die();
                 mo.A_GiveInventory("FDM_MonsterGiveUp", 1);
             }
         }
+		
+		ThinkerIterator bit = ThinkerIterator.Create("FDM_Spawner");
+		Actor fo;
+		while (fo = FDM_Spawner(bit.Next()))
+		{
+			fo.SetStateLabel("Null");
+		}
     }
 }
