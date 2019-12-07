@@ -229,7 +229,7 @@ class FDM_Car : Actor
 		+NOICEDEATH
 		+CANPASS
 		+NOBLOODDECALS
-		//+NOBLOOD
+		+DONTTHRUST
 		bloodtype "FDM_MetalImpact";
 		//$Category "FauxDM Props"
 		//$Title "Reelism Car"
