@@ -1,5 +1,5 @@
-CHANGES SINCE BUILD 01
-======================
+BUILD 02 (December 8th 2019)
+============================
 
 GAMEPLAY CHANGES:
 - Added the ability to customize the initial frag count, and how much it increases
@@ -9,7 +9,9 @@ GAMEPLAY CHANGES:
   in the DM Sim menu.
   
 MONSTER CHANGES:
+- General: Monsters now give up and stop attacking once player achieves victory.
 - Spawners: Outlines are now fullbright and thus easier to see in dark areas.
+- Spawners: Disabled once player achieves victory.
 - Duke Bot: Added to the Medium spawn list!
 - Cyber-Bruiser: Added to the Hard spawn list!
 - Quake Ranger: Removed from the Hard spawn list. (Don't worry, he's still
@@ -21,7 +23,6 @@ MONSTER CHANGES:
 - Chubbs: SSG firing sound is now louder.
 - Chubbs: Several minor frame tweaks and "improvements"
 - Cultists: Fixed them not looking at their target while throwing TNT.
-- General: Monsters now give up and stop attacking once player achieves victory.
 
 WEAPON CHANGES:
 - Gauntlet: Added a unique wall decal to attack.
@@ -48,4 +49,9 @@ MISC. CHANGES:
 - Added more mad-lib entries to the map-start objective toast. (Thanks, Techokami!)
 - Removed pitch shifting from end-of-round win/lose fanfare.
 - Bulletpuffs now have ricochet sounds and particle effects. Sometimes.
-- Changed the Title Screen music.
+- Changed the Title Screen music. Twice.
+
+BUILD 01 (NOVEMBER 6th 2019)
+============================
+
+- Initial Release

@@ -49,12 +49,21 @@ Nanka Kurashiki (Painting in FDM02, from JPCP)
 Hyena (Baron Killer! from Mock2)
 Nash Muhandes (A couple of lines of ZScript from SpriteShadows)
 Zeberpal (GTA2 Texture Rips from Doom Center Anywhere City)
+ACE Team (Ye Olde Batman Doom Car Sprites)
 
 Testers:
 BlorgX3
 Kevansevans
 Techokami
 Zero X. Diamond
+
+Special Thanks To:
+Striker
+IcarusLiv3s
+Shadsy
+Jasper St. Pierre
+T.M.
+Civvie11
 
 ================================================================================
 
@@ -118,3 +127,8 @@ Remade by The Kins
 
 FDM04: "Don't Wake Daddy"
 Made by The Kins
+
+FDM05: "Tiny Town"
+Based on Tiny Town from GTA2 Multiplayer
+Originally by DMA Design
+Remade by The Kins
