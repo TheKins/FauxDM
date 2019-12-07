@@ -175,7 +175,7 @@ class FDM_QuakeRangerNail : FastProjectile
 		Projectile;
 		+RANDOMIZE
 		+ZDOOMTRANS
-		Decal "BulletChip";
+		Decal "StarSoldierNailgun";
 	}
 	States
 	{

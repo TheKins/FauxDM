@@ -11,6 +11,78 @@
 ================================================================================
 */
 
+// Star Soldier Chainsaw from Project Crosshairs
+decal StarSoldierSawHit1
+{
+	pic CSAWD1
+	translucent 0.85
+	shade "00 00 00"
+	x-scale 0.5
+	y-scale 0.5
+	randomflipx
+	randomflipy
+}
+
+decal StarSoldierSawHit2
+{
+	pic CSAWD2
+	translucent 0.85
+	shade "00 00 00"
+	x-scale 0.5
+	y-scale 0.5
+	randomflipx
+	randomflipy
+}
+
+decal StarSoldierSawHit3
+{
+	pic CSAWD3
+	translucent 0.85
+	shade "00 00 00"
+	x-scale 0.5
+	y-scale 0.5
+	randomflipx
+	randomflipy
+}
+
+decal StarSoldierSawHit4
+{
+	pic CSAWD4
+	translucent 0.85
+	shade "00 00 00"
+	x-scale 0.5
+	y-scale 0.5
+	randomflipx
+	randomflipy
+}
+
+decalgroup StarSoldierSawHit
+{
+	StarSoldierSawHit1	1
+	StarSoldierSawHit2	1
+	StarSoldierSawHit3	1
+	StarSoldierSawHit4	1
+}
+
+// Star Soldier Nail Gun from Project Crosshairs
+decal StarSoldierNailgunLower
+{
+	pic NAILHOLE
+	shade "00 00 00"
+	x-scale 1
+	y-scale 1
+	randomflipx
+	randomflipy
+}
+
+decal StarSoldierNailgun
+{
+	pic QKNLA5
+	x-scale 1
+	y-scale 1
+	lowerdecal StarSoldierNailgunLower
+}
+
 // Star Soldier Energy Gun from Project Crosshairs
 decal StarSoldierPlasmaScorchLower1
 {
