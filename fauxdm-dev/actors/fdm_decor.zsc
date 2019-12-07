@@ -104,7 +104,7 @@ class FDM_DoomTree : Actor
 	}
 }
 
-// From the Doom Romero data dump
+// From the Shadow Warrior prototypes
 class FDM_MarshReeds : Actor
 {
 	Default

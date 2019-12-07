@@ -13,7 +13,6 @@
 
 gameinfo
 {
-	//titlemusic = "D64INTER"
 	quitsound = ""
 	playerclasses = "FDM_Player"
 	
