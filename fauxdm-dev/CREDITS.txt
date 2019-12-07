@@ -60,8 +60,9 @@ Zero X. Diamond
 
 Music Credits:
 "D_DM2TTL"
-Zombie Wars Character Select
-by Steven Baker
+Sega CD US BIOS Theme V2
+Original by David Javelosa
+MIDIfied by John Weeks
 
 "MGLODOOM"
 Megalodoomia
