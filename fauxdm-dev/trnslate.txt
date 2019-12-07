@@ -2,7 +2,7 @@
 ================================================================================
  FauxDM Definition Code
  
- Author: Jekyll Grim Payne
+ Author: The Kinsie, Jekyll Grim Payne
  
  Purpose: Palette Translations
  
@@ -11,4 +11,11 @@
 ================================================================================
 */
 
+// Monsters Killed by Flamethrower - by Jekyll Grim Payne
 Scorched = "0:255=%[0.00,0.00,0.00]:[0.33,0.33,0.33]"
+
+// Car Translations
+Car1 = "112:127=16:47"
+Car2 = "112:127=48:79"
+Car3 = "112:127=192:207"
+Car4 = "112:127=80:111"

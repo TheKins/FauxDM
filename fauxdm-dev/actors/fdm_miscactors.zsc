@@ -259,6 +259,7 @@ class FDM_Car : Actor
 		CARZ A 0; 
 		CARZ A 2 
 		{
+			A_SetTranslation("Scorched");
 			A_SpawnItemEx("FDM_ExplosiveBarrelExplosionVisualOnly",random(0,30),random(0,30),random(0,30),0,0,0,random(0,360));
 			A_Explode(150);
 			A_Quake(6,8,0,2048,"nosound");
@@ -300,26 +301,27 @@ class FDM_Car : Actor
 		Wait;
 	}
 	
-	/*
 	override void PostBeginPlay ()
 	{
 		int carcolor;
-		
 		carcolor = random (0,4);
-		Super.PostBeginPlay ();
-		
-		if (carcolor == 2)
+				
+		if (carcolor == 1)
 		{
-			translation = 0;
+			A_SetTranslation("Car1");
+		} else if (carcolor == 2)
+		{
+			A_SetTranslation("Car2");
 		} else if (carcolor == 3)
 		{
-			translation = 1;
+			A_SetTranslation("Car3");
 		} else if (carcolor == 4)
 		{
-			translation = 2;
+			A_SetTranslation("Car4");
 		}
+		
+		Super.PostBeginPlay ();
 	}
-	*/
 }
 
 // Skulltag Springpads
