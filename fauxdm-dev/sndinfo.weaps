@@ -14,6 +14,13 @@
 weapons/swap					wswap
 weapons/quad					wquad
 
+$random weapons/ric { weapons/ric1 weapons/ric2 weapons/ric3 weapons/ric4 weapons/ric5 }
+weapons/ric1		ric1
+weapons/ric2		ric2
+weapons/ric3		ric3
+weapons/ric4		ric4
+weapons/ric5		ric5
+
 // Gauntlet
 weapons/gauntlet/loop			glntloop
 weapons/gauntlet/loopx			glntloox

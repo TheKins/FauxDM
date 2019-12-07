@@ -62,6 +62,12 @@ actors/shared/gibbed3		actrgib3
 actors/shared/telefragged	actrtfrg
 actors/shared/extinguish	actrext
 
+$random actors/metalimpact { actors/metalimpact1 actors/metalimpact2 actors/metalimpact3 actors/metalimpact4 }
+actors/metalimpact1			metlhit1
+actors/metalimpact2			metlhit2
+actors/metalimpact3			metlhit3
+actors/metalimpact4			metlhit4
+
 // Old Doom Monsters
 actors/oldactors/imptaunt		imptnt
 actors/oldactors/posstaunt1		posstnt1

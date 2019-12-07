@@ -111,7 +111,16 @@ class FDM_GauntletPuff : Actor
 	{
 	Spawn:
 		PUFF A 0 Bright;
-		PUFF A 4 Bright A_PlaySound("weapons/gauntlet/wall", CHAN_6);
+		PUFF A 4 Bright 
+		{
+			A_PlaySound("weapons/gauntlet/wall", CHAN_6);
+			
+			for (int i; i < 3; i++)
+			{
+				A_SpawnParticle("ffc400",SPF_RELATIVE|SPF_FULLBRIGHT,random(0,56),random(3,8),0,0,-8,0,frandom(2.0,-2.0),frandom(2.0,-2.0),frandom(1,8),0,0,-0.4);
+				A_SpawnParticle("ff8a00",SPF_RELATIVE|SPF_FULLBRIGHT,random(0,56),random(3,8),0,0,-8,0,frandom(2.0,-2.0),frandom(2.0,-2.0),frandom(1,8),0,0,-0.4);
+			}
+		}
 		PUFF BCD 4;
 		Stop;
 	}

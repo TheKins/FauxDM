@@ -587,3 +587,36 @@ class FDM_BloodSpurt : Actor
 		Stop;
 	}
 }
+
+class FDM_MetalImpact : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+ALLOWPARTICLES
+		+RANDOMIZE
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		VSpeed 1;
+		Mass 5;
+	}
+	States
+	{
+	Spawn:
+		PUFF A 0;
+		PUFF A 4 Bright
+		{
+			A_PlaySound("actors/metalimpact");
+			
+			for (int i; i < 3; i++)
+			{
+				A_SpawnParticle("ffc400",SPF_RELATIVE|SPF_FULLBRIGHT,random(0,56),random(3,8),0,0,-8,0,frandom(2.0,-2.0),frandom(2.0,-2.0),frandom(1,8),0,0,-0.4);
+				A_SpawnParticle("ff8a00",SPF_RELATIVE|SPF_FULLBRIGHT,random(0,56),random(3,8),0,0,-8,0,frandom(2.0,-2.0),frandom(2.0,-2.0),frandom(1,8),0,0,-0.4);
+			}
+		
+		}
+		PUFF BCD 4;
+		Stop;
+	}
+}
