@@ -97,7 +97,7 @@ class FDM_Car : Actor
 		CARZ A 0; 
 		CARZ A 2 
 		{
-			A_SetTranslation("Scorched");
+			//A_SetTranslation("Scorched");
 			A_SpawnItemEx("FDM_ExplosiveBarrelExplosionVisualOnly",random(0,30),random(0,30),random(0,30),0,0,0,random(0,360));
 			A_Explode(150);
 			A_Quake(6,8,0,2048,"nosound");
