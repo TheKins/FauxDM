@@ -100,6 +100,7 @@ class FDM_BFGBall : BFGBall replaces BFGBall
 		RenderStyle "Add";
 		Alpha 0.75;
 		Obituary "$OB_MPBFG_BOOM";
+		decal "BFGBall";
 	}
 	
 	int user_ang;

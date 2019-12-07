@@ -103,6 +103,7 @@ class FDM_Rocket : Actor replaces Rocket
 		+RANDOMIZE
 		+ROCKETTRAIL
 		Obituary "$OB_MPROCKET";
+		decal "Scorch";
 	}
 	
 	int rocketlife;
