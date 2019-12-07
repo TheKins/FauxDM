@@ -27,6 +27,7 @@ WEAPON CHANGES:
 - Pistol: Removed on account of being useless.
 - Machinegun: Moved into Pistol slot (and as such is now default starting weapon)
 - Machinegun: Sprites renamed to avoid sprite conflict with custom mapsets.
+- Super Shotgun: Fixed an reload animation oversight.
 - Chaingun: Added! Fills the void left by the Machinegun.
 - Flamethrower: Damage has been doubled.
 - Flamethrower: Ammo is now placeable by map authors.
