@@ -14,7 +14,7 @@ MONSTER CHANGES:
 - Cyber-Bruiser: Added to the Hard spawn list!
 - Quake Ranger: Removed from the Hard spawn list. (Don't worry, he's still
   in the Medium list!)
-- Quake Ranger: Added a unique decal to nail attack.
+- Quake Ranger: Added a unique wall decal to nailgun attack.
 - Shotgun Guys: Now drop Shells instead of Shotguns.
 - JPF Guy: Hitbox is now 10 units taller when crouched.
 - JPF Guy: Pain sounds are slightly shorter.
@@ -24,13 +24,14 @@ MONSTER CHANGES:
 - General: Monsters now give up and stop attacking once player achieves victory.
 
 WEAPON CHANGES:
-- Gauntlet: Added a unique decal to attack.
+- Gauntlet: Added a unique wall decal to attack.
 - Gauntlet: Added a "Humiliation" announcer call-out for Gauntlet kills.
 - Pistol: Removed on account of being useless.
 - Machinegun: Moved into Pistol slot (and as such is now default starting weapon)
 - Machinegun: Sprites renamed to avoid sprite conflict with custom mapsets.
 - Super Shotgun: Fixed an reload animation oversight.
 - Chaingun: Added! Fills the void left by the Machinegun.
+- Rocket Launcher: Now applies the appropriate decal on impact with walls.
 - Flamethrower: Damage has been doubled.
 - Flamethrower: Ammo is now placeable by map authors.
 
