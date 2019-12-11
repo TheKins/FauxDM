@@ -35,6 +35,8 @@ FDMMNU_STARTINGWEAP = "Starting Weapon";
 OPTVAL_PISTOL = "Machinegun";
 OPTVAL_SHOTGUN = "Shotgun";
 
+FDMMNU_SCRIPTACTORS = "Monsters Trigger Player Floor Scripts";
+
 FDMMNU_MPWEAPS = "MP Weapon Spawns in SP";
 FDMNU_MPWEAPSWARN1 = "WARNING: This will mangle thing flags, breaking some";
 FDMNU_MPWEAPSWARN2 = "script activators in maps! Takes effect on map load.";

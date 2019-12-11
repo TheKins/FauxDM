@@ -48,6 +48,8 @@ OptionMenu "FDMOptionsMenu"
 	NumberField "$FDMMNU_TIMEEXTEND_STARTING", "fdm_timeextend_amount", 0, 999
 	NumberField "$FDMMNU_TIMEEXTEND_ADDITIONAL", "fdm_timeextend_every", 1, 32
 	StaticText ""
+	Option "$FDMMNU_SCRIPTACTORS",			"fdm_monsterscriptactors", "OnOff"
+	StaticText ""
 	Option "$FDMMNU_MPWEAPS",			"fdm_mpweaps", "OnOff"
 	StaticText "$FDMNU_MPWEAPSWARN1"
 	StaticText "$FDMNU_MPWEAPSWARN2"

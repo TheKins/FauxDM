@@ -1,0 +1,32 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Scripting actors
+ 
+ Comment: 
+
+================================================================================
+*/
+//$GZDB_SKIP
+class FDM_SecActHitFloor : SectorAction replaces SecActHitFloor
+{
+	Default
+	{
+		Health SECSPAC_HitFloor;
+	}
+	
+	override void BeginPlay ()
+	{
+		Super.BeginPlay ();
+
+		// Make scripts that the player can trigger also get triggered
+		// by monsters, for something approaching consistency.
+		if (!bFRIENDLY && fdm_monsterscriptactors)
+		{
+			bAMBUSH = true;
+		}
+	}
+}

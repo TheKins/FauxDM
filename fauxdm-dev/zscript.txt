@@ -55,3 +55,4 @@ Version "3.8"
 
 #include "actors/fdm_bossbrain.zsc"
 #include "actors/fdm_miscactors.zsc"
+#include "actors/fdm_scriptactors.zsc"

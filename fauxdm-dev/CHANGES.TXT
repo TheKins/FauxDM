@@ -1,6 +1,12 @@
 NEXT VERSION
 ============
 
+MONSTER CHANGES:
+- General: Monsters can now trigger "Sector Action: Actor Hits Floor" actors that
+  are set up to be effected by players, since these are commonly used to kill or
+  teleport players that go out of bounds. This is, of course, togglable in the
+  DM Sim menu.
+  
 MISC. CHANGES:
 - Renamed explosion sprites to avoid sprite conflict with custom mapsets.
 - Removed duplicate Rocket Launcher sprites.
