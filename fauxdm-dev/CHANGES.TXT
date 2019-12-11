@@ -1,3 +1,9 @@
+NEXT VERSION
+============
+
+MISC. CHANGES:
+- Renamed explosion sprites to avoid sprite conflict with custom mapsets.
+
 BUILD 02 (December 8th 2019)
 ============================
 
