@@ -97,14 +97,17 @@ script "FDM_GameplayTimer" (void)
 			break;
 		}
 		
-        SetFont ("BIGFONT");
-		if (seconds < 10)
+		if (GetCVar("screenblocks") != 12)
 		{
-			if (stoptheclock == 0)
-				HudMessageBold(i:minutes, s:":0", i:seconds; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 1.0);
-		} else {
-			if (stoptheclock == 0)
-				HudMessageBold(i:minutes, s:":", i:seconds; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 1.0);
+			SetFont ("BIGFONT");
+			if (seconds < 10)
+			{
+				if (stoptheclock == 0)
+					HudMessageBold(i:minutes, s:":0", i:seconds; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 1.0);
+			} else {
+				if (stoptheclock == 0)
+					HudMessageBold(i:minutes, s:":", i:seconds; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 1.0);
+			}
 		}
     }
 }

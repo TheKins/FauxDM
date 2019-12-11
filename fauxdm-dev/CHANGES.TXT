@@ -10,6 +10,7 @@ MONSTER CHANGES:
 MISC. CHANGES:
 - Renamed explosion sprites to avoid sprite conflict with custom mapsets.
 - Removed duplicate Rocket Launcher sprites.
+- Timer now (eventually) not visible when HUD is disabled.
 
 BUILD 02 (December 8th 2019)
 ============================
