@@ -35,6 +35,7 @@ script "FDM_StartGameplay" OPEN
 		}
 		
 		ACS_NamedExecute("FDM_GamePlayTimer",0);
+		ACS_NamedExecute("FDM_GamePlayTimerDrawer",0);
 	}
 }
 
@@ -96,20 +97,28 @@ script "FDM_GameplayTimer" (void)
 			ACS_NamedExecute("FDM_MissionFailed",0);
 			break;
 		}
-		
+    }
+}
+
+script "FDM_GameplayTimerDrawer" (void)
+{
+    while(stoptheclock == 0)
+    {
 		if (GetCVar("screenblocks") != 12)
 		{
 			SetFont ("BIGFONT");
 			if (seconds < 10)
 			{
 				if (stoptheclock == 0)
-					HudMessageBold(i:minutes, s:":0", i:seconds; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 1.0);
+					HudMessageBold(i:minutes, s:":0", i:seconds; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 0.1);
 			} else {
 				if (stoptheclock == 0)
-					HudMessageBold(i:minutes, s:":", i:seconds; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 1.0);
+					HudMessageBold(i:minutes, s:":", i:seconds; HUDMSG_PLAIN, 99, CR_RED, 0.5, 0.9, 0.1);
 			}
 		}
-    }
+		
+		delay(1);
+	}
 }
 
 script "FDM_MissionFailed" (void)
