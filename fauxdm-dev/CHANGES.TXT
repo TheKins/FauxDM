@@ -7,6 +7,9 @@ MONSTER CHANGES:
   teleport players that go out of bounds. This is, of course, togglable in the
   DM Sim menu.
   
+ITEM CHANGES:
+- Fuel Canister: New pickup sound.
+  
 MISC. CHANGES:
 - Renamed explosion sprites to avoid sprite conflict with custom mapsets.
 - Removed duplicate Rocket Launcher sprites.
