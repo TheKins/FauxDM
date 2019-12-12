@@ -13,7 +13,9 @@ MISC. CHANGES:
 - Explosive Barrels now have their original delay before exploding.
 - Timer is no longer visible when HUD is disabled.
 - Converted Jimmy's smallfont to the modern Unicode font format, making it play
-  nicer with mapsets that override the smallfont.
+  nicer with custom mapsets that override the smallfont.
+- Respawn/Teleport fog looks a little nicer, and has a different sound when
+  teleporting instead of respawning.
 
 BUILD 02 (December 8th 2019)
 ============================

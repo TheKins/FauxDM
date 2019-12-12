@@ -36,7 +36,7 @@ class FDM_ActorSpawnFog : Actor replaces TeleportFog
 				A_SpawnItemEx("FDM_ActorSpawnFogParticle",0,0,0,random(-5,5),random(-5,5),random(-5,5),random(270,360),SXF_NOCHECKPOSITION);
 			}
 			
-			if (target != null && target.GetAge() > 4)
+			if (target != null && !(target is "FDM_Spawner") && target.GetAge() > 4)
 			{
 				A_PlaySound ("actors/teleport", CHAN_BODY);
 			} else {
