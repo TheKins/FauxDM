@@ -12,6 +12,7 @@
 */
 
 actors/spawn				actrspwn
+actors/teleport				actrtele
 misc/spawn					itemresp
 
 // UI Garbage
