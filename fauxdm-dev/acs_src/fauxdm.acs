@@ -270,3 +270,16 @@ script "FDM_HumiliationSound" (void)
 	delay(8);
 	LocalAmbientSound("gameplay/humiliation",127);
 }
+
+script "FDM_TimeSphereEffects" (void)
+{
+	int givesecs = 60;
+	
+	while(givesecs != 0)
+    {
+		seconds++;
+		givesecs--;
+		delay(1);
+	}
+}
+	

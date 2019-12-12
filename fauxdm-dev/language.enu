@@ -101,6 +101,7 @@ GOTBERSERK = "Berserk Pack - Super Gauntlet!";
 GOTQUAD = "Quad Damage!";
 GOTHASTE = "Haste!";
 GOTSUIT = "Protective Suit!";
+GOTTIMESPHERE = "Time Extension!";
 
 // Obituaries
 OB_MONTELEFRAG = "%o was telefragged by";

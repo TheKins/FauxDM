@@ -148,9 +148,9 @@ class FDM_SP_ItemRespawner : EventHandler
 	{
 		if (!multiplayer && !deathmatch)
 		{
-			if (e.thing is "Inventory" || e.thing is "Weapon")
+			if ((e.thing is "Inventory" || e.thing is "Weapon") && !(e.thing is "FDM_Timesphere")) // an exception must be made...
 			{
-				Inventory(e.thing).bALWAYSRESPAWN = true;
+					Inventory(e.thing).bALWAYSRESPAWN = true;
 			}
 		}
 	}

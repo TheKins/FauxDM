@@ -57,3 +57,4 @@ items/powerups/soulsphere			getsoul
 items/powerups/megasphere			getmega
 items/powerups/haste				gethast
 items/powerups/radsuit				getsuit
+items/powerups/timesphere			gettime

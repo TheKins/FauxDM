@@ -241,3 +241,27 @@ class FDM_RadSuit : CustomInventory replaces RadSuit
 		Stop;
 	}
 }	
+
+// Time Pickup
+class FDM_Timesphere : CustomInventory replaces Allmap
+{
+	Default
+	{
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+		+FLOATBOB
+		scale 0.75;
+		Inventory.PickupMessage "$GOTTIMESPHERE";
+		Inventory.PickupSound "items/powerups/timesphere";
+	}
+	
+	States
+	{
+	Spawn:
+		TIME A 6 BRIGHT;
+		Loop;
+	Pickup:
+		TNT1 A 0 ACS_NamedExecuteAlways ("FDM_TimeSphereEffects", 0, 0, 0, 0);
+		Stop;
+	}
+}	

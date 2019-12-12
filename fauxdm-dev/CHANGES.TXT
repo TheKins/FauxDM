@@ -8,6 +8,7 @@ MONSTER CHANGES:
   DM Sim menu.
   
 ITEM CHANGES:
+- Time Sphere: Added as an Area Map replacement!
 - Fuel Canister: New pickup sound.
   
 MISC. CHANGES:
