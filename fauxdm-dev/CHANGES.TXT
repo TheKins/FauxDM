@@ -12,6 +12,8 @@ MISC. CHANGES:
 - Removed duplicate Rocket Launcher sprites.
 - Explosive Barrels now have their original delay before exploding.
 - Timer is no longer visible when HUD is disabled.
+- Converted Jimmy's smallfont to the modern Unicode font format, making it play
+  nicer with mapsets that override the smallfont.
 
 BUILD 02 (December 8th 2019)
 ============================
