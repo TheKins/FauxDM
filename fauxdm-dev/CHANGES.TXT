@@ -7,8 +7,11 @@ MONSTER CHANGES:
   teleport players that go out of bounds. This is togglable in the DM Sim menu.
   
 ITEM CHANGES:
-- Time Sphere: Added as an Area Map replacement!
+- Time Sphere: Added as an Area Map replacement! Replaced by HasteSphere in multi.
 - Fuel Canister: New pickup sound.
+
+MAP CHANGES:
+- FDM01: Replaced HasteSphere with TimeSphere.
   
 MISC. CHANGES:
 - Renamed explosion sprites to avoid sprite conflict with custom mapsets.
