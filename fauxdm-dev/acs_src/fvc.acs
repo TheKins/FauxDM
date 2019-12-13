@@ -1,0 +1,72 @@
+/*
+================================================================================
+ FauxDM ACS Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Fake Voice Chat scripting
+ 
+ Comment: This will inevitably have to be ported over to ZScript at some point.
+          Preferably sooner rather than later. But ZScript is scary so we're
+		  starting here for now.
+
+================================================================================
+*/
+
+#library "fvc"
+#include "zcommon.acs"
+
+int musicVolume = 1.0;
+
+script "FVC_FadeDown" (void)
+{
+	while(musicVolume > 0.25)
+    {
+        musicVolume -= 0.025;
+        SetMusicVolume(musicVolume);
+        Delay(1);
+    }
+}
+
+script "FVC_FadeUp" (void)
+{
+	while(musicVolume < 1.0)
+    {
+        musicVolume += 0.025;
+        SetMusicVolume(musicVolume);
+        Delay(1);
+    }
+}
+
+// Ventrillo Gag
+script "FVC_Ventrillo" (void)
+{
+	ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
+	
+	AmbientSound("fvc/ventrillo/start", 127);
+	delay(52);
+	
+	AmbientSound("fvc/ventrillo/rep1", 127);
+	delay(78);
+	AmbientSound("fvc/ventrillo/rep2", 127);
+	delay(120);
+	
+	AmbientSound("fvc/ventrillo/end", 127);
+	delay(78);
+	
+	ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
+}
+
+// Stalker Bandit
+script "FVC_Bandit" (void)
+{
+	ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
+	
+	AmbientSound("fvc/bandit/start", 127);
+	delay(270);
+	
+	AmbientSound("fvc/bandit/reply", 127);
+	delay(210);
+	
+	ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
+}
