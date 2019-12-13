@@ -160,6 +160,10 @@ class FDM_HasteSphere : PowerupGiver replaces BlurSphere
 		RenderStyle "Translucent";
 		Inventory.PickupMessage "$GOTHASTE";
 		Inventory.PickupSound "items/powerups/haste";
+		//$Category "Powerups"
+		//$Title "HasteSphere"
+		//$NotAngled
+		//$Color 9
 	}
 	
 	States
@@ -253,6 +257,10 @@ class FDM_Timesphere : CustomInventory replaces Allmap
 		scale 0.75;
 		Inventory.PickupMessage "$GOTTIMESPHERE";
 		Inventory.PickupSound "items/powerups/timesphere";
+		//$Category "Powerups"
+		//$Title "TimeSphere"
+		//$NotAngled
+		//$Color 9
 	}
 	
 	States
