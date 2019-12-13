@@ -6,7 +6,7 @@
  
  Purpose: Remove all pre-existing monsters and keys from each map.
  
- Comment: There's probably a more graceful way to do this.
+ Comment: Most of this is now handled by an event handler in fdm_events.
 
 ================================================================================
 */
@@ -38,12 +38,17 @@ class FDM_ActivateBossScripts : Actor
 	}
 }
 
+class FDM_BlankedFatso : FDM_ActivateBossScripts replaces Fatso{}
+class FDM_BlankedBaronOfHell : FDM_ActivateBossScripts replaces BaronOfHell{}
+class FDM_BlankedArachnotron : FDM_ActivateBossScripts replaces Arachnotron{}
+
+/*
 class FDM_BlankedShotgunGuy : FDM_Blank replaces ShotgunGuy{}
 class FDM_BlankedChaingunGuy : FDM_Blank replaces ChaingunGuy{}
-class FDM_BlankedBaronOfHell : FDM_ActivateBossScripts replaces BaronOfHell{}
+
 class FDM_BlankedZombieman : FDM_Blank replaces Zombieman{}
 class FDM_BlankedDoomImp : FDM_Blank replaces DoomImp{}
-class FDM_BlankedArachnotron : FDM_ActivateBossScripts replaces Arachnotron{}
+
 class FDM_BlankedSpiderMastermind : FDM_Blank replaces SpiderMastermind{}
 class FDM_BlankedDemon : FDM_Blank replaces Demon{}
 class FDM_BlankedSpectre : FDM_Blank replaces Spectre{}
@@ -61,7 +66,7 @@ class FDM_BlankedStealthZombieMan : FDM_Blank replaces StealthZombieman{}
 class FDM_BlankedStealthShotgunGuy : FDM_Blank replaces ShotgunGuy{}
 class FDM_BlankedLostSoul : FDM_Blank replaces LostSoul{}
 class FDM_BlankedArchvile : FDM_Blank replaces Archvile{}
-class FDM_BlankedFatso : FDM_ActivateBossScripts replaces Fatso{}
+
 class FDM_BlankedHellKnight : FDM_Blank replaces HellKnight{}
 class FDM_BlankedCyberdemon : FDM_Blank replaces Cyberdemon{}
 class FDM_BlankedPainElemental : FDM_Blank replaces PainElemental{}
@@ -88,3 +93,4 @@ class FDM_BlankedMarineRocket : FDM_Blank replaces MarineRocket{}
 class FDM_BlankedMarinePlasma : FDM_Blank replaces MarinePlasma{}
 class FDM_BlankedMarineRailgun : FDM_Blank replaces MarineRailgun{}
 class FDM_BlankedMarineBFG : FDM_Blank replaces MarineBFG{}
+*/

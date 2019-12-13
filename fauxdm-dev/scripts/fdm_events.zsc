@@ -156,6 +156,34 @@ class FDM_SP_ItemRespawner : EventHandler
 	}
 }
 
+Class FDM_MonsterRemover : EventHandler
+{	
+	override void WorldLoaded(WorldEvent e)
+	{
+		BlockThingsIterator it = BlockThingsIterator.CreateFromPos(0,0,0,0,32767,0);
+        while (it.Next())
+        {
+            Actor mo = it.thing;
+            // only consider monster-tagged things:
+			
+			if (mo is "Key")
+			{
+				mo.SetStateLabel("Null");
+			}
+			
+            if (mo.bIsMonster)
+            {
+                if (mo is "Fatso" || mo is "Arachnotron" || mo is "BaronOfHell")
+				{
+					
+				} else {				
+					mo.SetStateLabel("Null");
+				}
+            }
+        }
+	}
+}
+
 // ZScript extensions for the ACS script.
 class FDM_ACSCrap : Actor
 {
