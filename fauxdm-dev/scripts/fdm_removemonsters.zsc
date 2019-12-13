@@ -11,8 +11,6 @@
 ================================================================================
 */
 
-//$GZDB_SKIP
-
 // Remove all normal monsters from pre-existing maps for compatibility purposes,
 // triggering bossdeath scripts where appropriate
 

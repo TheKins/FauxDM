@@ -193,7 +193,6 @@ DoomEdNums
 	21006 = "FDM_Waterspout"
 	21007 = "FDM_Fuel"
 	21008 = "FDM_Car"
-	21009 = "FDM_TimeSphere"
 }
 	
 
