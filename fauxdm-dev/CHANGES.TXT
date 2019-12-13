@@ -14,6 +14,7 @@ MAP CHANGES:
 - FDM01: Replaced HasteSphere with TimeSphere.
   
 MISC. CHANGES:
+- Updated the HUD to display weapon slots and ammo totals.
 - Renamed explosion sprites to avoid sprite conflict with custom mapsets.
 - Removed duplicate Rocket Launcher sprites.
 - Explosive Barrels now have their original delay before exploding.

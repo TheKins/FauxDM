@@ -109,6 +109,61 @@ class FDM_StatusBar : BaseStatusBar
 		{
 			DrawInventoryBar(diparms, (0, 0), 7, DI_SCREEN_CENTER_BOTTOM, HX_SHADOW);
 		}
+		
+		// CENTER SECTION: INVENTORY BAR AND WEAPON SLOTS
+		// Copy-pasted straight out of JPF. Remember that? Nobody else does.
+
+		// Draw weapon slots
+		// change y value based on aspect ratio
+		int weapnumsy;
+
+		if (abs(screen.GetAspectRatio() - 4/3.0) < 1.0e-6f) // goofy IEEE-754 bullshit
+		{
+			weapnumsy = -36;
+		} else {
+			weapnumsy = -16;
+		}
+		
+		if (screenblocks > 10)
+		{
+			weapnumsy = weapnumsy + 8;
+		}
+		
+		DrawImage(CPlayer.HasWeaponsInSlot(1)? "STYSNUM1" : "STGNUM1", (-72, weapnumsy), DI_SCREEN_CENTER_BOTTOM);
+		DrawImage(CPlayer.HasWeaponsInSlot(2)? "STYSNUM2" : "STGNUM2", (-56, weapnumsy), DI_SCREEN_CENTER_BOTTOM);
+		DrawImage(CPlayer.HasWeaponsInSlot(3)? "STYSNUM3" : "STGNUM3", (-40, weapnumsy), DI_SCREEN_CENTER_BOTTOM);
+		DrawImage(CPlayer.HasWeaponsInSlot(4)? "STYSNUM4" : "STGNUM4", (-24, weapnumsy), DI_SCREEN_CENTER_BOTTOM);
+		DrawImage(CPlayer.HasWeaponsInSlot(5)? "STYSNUM5" : "STGNUM5", (-8, weapnumsy), DI_SCREEN_CENTER_BOTTOM);
+		DrawImage(CPlayer.HasWeaponsInSlot(6)? "STYSNUM6" : "STGNUM6", (8, weapnumsy), DI_SCREEN_CENTER_BOTTOM);
+		DrawImage(CPlayer.HasWeaponsInSlot(7)? "STYSNUM7" : "STGNUM7", (24, weapnumsy), DI_SCREEN_CENTER_BOTTOM);
+		DrawImage(CPlayer.HasWeaponsInSlot(8)? "STYSNUM8" : "STGNUM8", (40, weapnumsy), DI_SCREEN_CENTER_BOTTOM);
+		DrawImage(CPlayer.HasWeaponsInSlot(9)? "STYSNUM9" : "STGNUM9", (56, weapnumsy), DI_SCREEN_CENTER_BOTTOM);
+		DrawImage(CPlayer.HasWeaponsInSlot(0)? "STYSNUM0" : "STGNUM0", (72, weapnumsy), DI_SCREEN_CENTER_BOTTOM);
+		
+		// Draw Ammo
+		int amt1, maxamt;
+		if (screenblocks <= 10)
+		{
+			[amt1, maxamt] = GetAmount("Clip");
+			DrawImage("HDAMO1", (-72, weapnumsy + 8), DI_SCREEN_CENTER_BOTTOM, 1.0, (-1, -1), (1, 1));
+			DrawString(mIndexFont, FormatNumber(amt1, 3), (-64, weapnumsy + 2), DI_SCREEN_CENTER_BOTTOM);
+
+			[amt1, maxamt] = GetAmount("Shell");
+			DrawImage("HDAMO2", (-40, weapnumsy + 8), DI_SCREEN_CENTER_BOTTOM, 1.0, (-1, -1), (1, 1));
+			DrawString(mIndexFont, FormatNumber(amt1, 3), (-32, weapnumsy + 2), DI_SCREEN_CENTER_BOTTOM);
+
+			[amt1, maxamt] = GetAmount("RocketAmmo");
+			DrawImage("HDAMO3", (-8, weapnumsy + 8), DI_SCREEN_CENTER_BOTTOM, 1.0, (-1, -1), (1, 1));
+			DrawString(mIndexFont, FormatNumber(amt1, 3), (0, weapnumsy + 2), DI_SCREEN_CENTER_BOTTOM);
+
+			[amt1, maxamt] = GetAmount("Cell");
+			DrawImage("HDAMO4", (24, weapnumsy + 8), DI_SCREEN_CENTER_BOTTOM, 1.0, (-1, -1), (1, 1));
+			DrawString(mIndexFont, FormatNumber(amt1, 3), (32, weapnumsy + 2), DI_SCREEN_CENTER_BOTTOM);
+			
+			[amt1, maxamt] = GetAmount("FDM_Fuel");
+			DrawImage("HDAMO5", (56, weapnumsy + 8), DI_SCREEN_CENTER_BOTTOM, 1.0, (-1, -1), (1, 1));
+			DrawString(mIndexFont, FormatNumber(amt1, 3), (64, weapnumsy + 2), DI_SCREEN_CENTER_BOTTOM);
+		}
 	}
 	
 	protected virtual void DrawFullscreenKeys()
