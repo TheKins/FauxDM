@@ -184,6 +184,20 @@ Class FDM_MonsterRemover : EventHandler
 	}
 }
 
+class FDM_ContextualReplacements : EventHandler
+{
+    override void CheckReplacement(ReplaceEvent e)
+	{
+		if (e.replacee == "FDM_TimeSphere")
+		{
+			if (multiplayer | deathmatch | sv_nomonsters)
+			{
+				e.Replacement = "FDM_HasteSphere";
+			}
+		}
+	}
+}
+
 // ZScript extensions for the ACS script.
 class FDM_ACSCrap : Actor
 {

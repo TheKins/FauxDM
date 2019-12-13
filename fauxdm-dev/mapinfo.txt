@@ -18,7 +18,7 @@ gameinfo
 	
 	gibfactor = 0.5
 	
-	AddEventHandlers = "FDM_DMPlayerSpawnHandler", "FDM_DMSpawnHandler", "FDM_SP_ItemRespawner", "FDM_MonsterRemover"
+	AddEventHandlers = "FDM_DMPlayerSpawnHandler", "FDM_DMSpawnHandler", "FDM_SP_ItemRespawner", "FDM_MonsterRemover", "FDM_ContextualReplacements"
 	translator = "xlat.txt"
 	statusbarclass = "FDM_StatusBar"
 	statscreen_single = "FDM_StatusScreen"
