@@ -20,6 +20,7 @@ MISC. CHANGES:
   nicer with custom mapsets that override the smallfont.
 - Respawn/Teleport fog looks a little nicer, and has a different sound when
   teleporting instead of respawning.
+- Laid groundwork for the Fake Voice Chat system.
 
 BUILD 02 (December 8th 2019)
 ============================
