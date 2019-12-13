@@ -41,7 +41,7 @@ script "FVC_FadeUp" (void)
 // Ventrillo Gag
 script "FVC_Ventrillo" (void)
 {
-	ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
+	//ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
 	
 	AmbientSound("fvc/ventrillo/start", 127);
 	delay(52);
@@ -54,13 +54,13 @@ script "FVC_Ventrillo" (void)
 	AmbientSound("fvc/ventrillo/end", 127);
 	delay(78);
 	
-	ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
+	//ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
 }
 
 // Stalker Bandit
 script "FVC_Bandit" (void)
 {
-	ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
+	//ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
 	
 	AmbientSound("fvc/bandit/start", 127);
 	delay(270);
@@ -68,5 +68,5 @@ script "FVC_Bandit" (void)
 	AmbientSound("fvc/bandit/reply", 127);
 	delay(210);
 	
-	ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
+	//ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
 }
