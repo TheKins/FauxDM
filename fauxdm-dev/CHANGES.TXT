@@ -4,8 +4,7 @@ NEXT VERSION
 MONSTER CHANGES:
 - General: Monsters can now trigger "Sector Action: Actor Hits Floor" actors that
   are set up to be effected by players, since these are commonly used to kill or
-  teleport players that go out of bounds. This is, of course, togglable in the
-  DM Sim menu.
+  teleport players that go out of bounds. This is togglable in the DM Sim menu.
   
 ITEM CHANGES:
 - Time Sphere: Added as an Area Map replacement!
@@ -20,7 +19,8 @@ MISC. CHANGES:
   nicer with custom mapsets that override the smallfont.
 - Respawn/Teleport fog looks a little nicer, and has a different sound when
   teleporting instead of respawning.
-- Laid groundwork for the Fake Voice Chat system.
+- Laid a bit of groundwork for the Fake Voice Chat system.
+- Moved most monster/key removal to an event handler for greater universality.
 
 BUILD 02 (December 8th 2019)
 ============================
