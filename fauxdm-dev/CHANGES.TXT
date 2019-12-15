@@ -12,6 +12,7 @@ ITEM CHANGES:
 
 MAP CHANGES:
 - FDM01: Replaced HasteSphere with TimeSphere.
+- FDM05: Added some more texture detail to the buildings.
   
 MISC. CHANGES:
 - Updated the HUD to display weapon slots and ammo totals.
