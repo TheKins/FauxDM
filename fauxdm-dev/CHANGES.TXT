@@ -17,6 +17,7 @@ MAP CHANGES:
 - FDM02: Replaced Grenade Launcher in ruins with Rocket Launcher.
 - FDM02: Added Grenade Launcher to temple.
 - FDM05: Added some more texture detail to the buildings.
+- FDM05: Added a TimeSphere somewhere where you won't find it...
   
 MISC. CHANGES:
 - Updated the HUD to display weapon slots and ammo totals.
