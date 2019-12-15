@@ -117,8 +117,8 @@ Originally by Rockt and Asmo (https://d5m1.com/)
 Minor tweaks, fixes and bits of visual polish by The Kins
 
 FDM02: "Forgotten Temple"
-Based on ERIC-1.MAP from the January 1995 prototype of Shadow Warrior
-Originally by Eric Reuter... presumably
+Based on ERIC-1.MAP and JOE-4.MAP from the Jan 1995 prototype of Shadow Warrior
+Originally by Eric Reuter and Joe Selinske... presumably
 Porting and turning into a DM map by The Kins
 
 FDM03: "Shooting Gallery"

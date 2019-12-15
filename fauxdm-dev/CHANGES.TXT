@@ -30,6 +30,7 @@ MISC. CHANGES:
   teleporting instead of respawning.
 - Laid a bit of groundwork for the Fake Voice Chat system.
 - Moved most monster/key removal to an event handler for greater universality.
+- Added a proper CREDIT graphic.
 
 BUILD 02 (December 8th 2019)
 ============================
