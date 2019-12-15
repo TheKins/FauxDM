@@ -12,6 +12,10 @@ ITEM CHANGES:
 
 MAP CHANGES:
 - FDM01: Replaced HasteSphere with TimeSphere.
+- FDM02: Replaced Flamethrower in temple with Timesphere.
+- FDM02: Replaced Rocket Launcher near ruins with Flamethrower.
+- FDM02: Replaced Grenade Launcher in ruins with Rocket Launcher.
+- FDM02: Added Grenade Launcher to temple.
 - FDM05: Added some more texture detail to the buildings.
   
 MISC. CHANGES:
