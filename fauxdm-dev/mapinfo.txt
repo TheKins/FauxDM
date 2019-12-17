@@ -11,6 +11,7 @@
 ================================================================================
 */
 
+// Basic game definition info
 gameinfo
 {
 	quitsound = ""
@@ -194,7 +195,6 @@ DoomEdNums
 	21007 = "FDM_Fuel"
 	21008 = "FDM_Car"
 }
-	
 
 // Map Definitions
 episode FDM01
