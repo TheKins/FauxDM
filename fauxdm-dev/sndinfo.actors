@@ -199,3 +199,19 @@ actors/dukebot/taunt3			dbottnt3
 actors/dukebot/taunt4			dbottnt4
 actors/dukebot/taunt5			dbottnt5
 actors/dukebot/taunt6			dbottnt6
+
+// Naughty-List Maker
+actors/santa/roam		sntaroam
+actors/santa/pain		sntapain
+actors/santa/die		sntadie
+
+$random actors/santa/taunt { actors/santa/taunt1 actors/santa/taunt2 actors/santa/taunt3 actors/santa/taunt4 actors/santa/taunt5 actors/santa/taunt6 actors/santa/taunt7 actors/santa/taunt8 actors/santa/taunt9 }
+actors/santa/taunt1		sntatnt1
+actors/santa/taunt2		sntatnt2
+actors/santa/taunt3		sntatnt3
+actors/santa/taunt4		sntatnt4
+actors/santa/taunt5		sntatnt5
+actors/santa/taunt6		sntatnt6
+actors/santa/taunt7		sntatnt7
+actors/santa/taunt8		sntatnt8
+actors/santa/taunt9		sntatnt9

@@ -45,7 +45,8 @@ class FDM_Spawner : Actor
 	{
 		"FDM_Chubbs",
 		"FDM_BloodCultist",
-		"FDM_CyberBruiser"
+		"FDM_CyberBruiser",
+		"FDM_Santa"
 	};
 	
 	States
