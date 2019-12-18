@@ -619,10 +619,11 @@ class FDM_Santa : FDM_BaseMonster
 {
 	Default
 	{
-		Health 200;
+		Health 300;
 		Radius 16;
 		Height 56;
-		PainChance 200;
+		PainChance 50;
+		mass 300;
 		Monster;
 		+FLOORCLIP
 		+MISSILEEVENMORE
