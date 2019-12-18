@@ -1,5 +1,5 @@
-NEXT VERSION
-============
+BUILD 03 (December 18th 2019)
+=============================
 
 MONSTER CHANGES:
 - General: Monsters can now trigger "Sector Action: Actor Hits Floor" actors that
@@ -31,7 +31,7 @@ MISC. CHANGES:
   nicer with custom mapsets that override the smallfont.
 - Respawn/Teleport fog looks a little nicer, and has a different sound when
   teleporting instead of respawning.
-- Laid a bit of groundwork for the Fake Voice Chat system.
+- Laid a bit of groundwork for the Fake Voice Chat system (removed in stable release)
 - Moved most monster/key removal to an event handler for greater universality.
 - Added a proper CREDIT graphic.
 
