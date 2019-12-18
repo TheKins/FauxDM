@@ -5,6 +5,7 @@ MONSTER CHANGES:
 - General: Monsters can now trigger "Sector Action: Actor Hits Floor" actors that
   are set up to be effected by players, since these are commonly used to kill or
   teleport players that go out of bounds. This is togglable in the DM Sim menu.
+- ????? ????: Added to the Hard spawn list! Merry Wednesday!
   
 ITEM CHANGES:
 - Time Sphere: Added as an Area Map replacement! Replaced by HasteSphere in multi.
@@ -18,6 +19,7 @@ MAP CHANGES:
 - FDM02: Added Grenade Launcher to temple.
 - FDM05: Added some more texture detail to the buildings.
 - FDM05: Added a TimeSphere somewhere where you won't find it...
+- D5M1: Added some holiday spirit...
   
 MISC. CHANGES:
 - Updated the HUD to display weapon slots and ammo totals.
