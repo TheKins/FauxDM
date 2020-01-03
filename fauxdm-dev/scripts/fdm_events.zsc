@@ -168,7 +168,7 @@ Class FDM_MonsterRemover : EventHandler
 			
 			if (mo is "Key")
 			{
-				mo.SetStateLabel("Null");
+				mo.A_Remove(AAPTR_DEFAULT, RMVF_EVERYTHING);
 			}
 			
             if (mo.bIsMonster)
@@ -177,7 +177,7 @@ Class FDM_MonsterRemover : EventHandler
 				{
 					
 				} else {				
-					mo.SetStateLabel("Null");
+					mo.A_Remove(AAPTR_DEFAULT, RMVF_EVERYTHING);
 				}
             }
         }

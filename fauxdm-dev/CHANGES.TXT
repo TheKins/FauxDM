@@ -1,3 +1,10 @@
+BUILD 04
+========
+
+MISC. CHANGES:
+- Fixed issue where monsters would not spawn on maps that originally had more
+  than 50 monsters in vanilla gameplay. Derp.
+
 BUILD 03 (December 18th 2019)
 =============================
 
