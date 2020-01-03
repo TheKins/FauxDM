@@ -1,5 +1,8 @@
-BUILD 03.5
+BUILD 03.1
 ==========
+
+MONSTER CHANGES:
+- Santa: Removed from the spawn lists.
 
 MAP CHANGES:
 - FDM05: Removed holiday spirit.
