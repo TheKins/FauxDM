@@ -224,8 +224,8 @@ map D5M1 "Plead the Fifth" // Orig. SS-MAP1 (aka DWANGO5 Map01) by Rockt and Asm
 {
 	author = "Orig. by Rockt & Asmo"
 	next = "FDM02"
-	sky1 = "D5SKYX"
-	music = "musxd5m1"
+	sky1 = "D5SKY"
+	music = "mus_d5m1"
 	levelnum = 2
 	cluster = 50
 	EnterPic = "I_D5M1"

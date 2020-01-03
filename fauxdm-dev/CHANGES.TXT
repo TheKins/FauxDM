@@ -1,5 +1,8 @@
-BUILD 04
-========
+BUILD 03.5
+==========
+
+MAP CHANGES:
+- FDM05: Removed holiday spirit.
 
 MISC. CHANGES:
 - Fixed issue where monsters would not spawn on maps that originally had more
