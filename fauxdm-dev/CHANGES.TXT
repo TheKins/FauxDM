@@ -1,8 +1,11 @@
 NEXT VERSION
 ============
 
-MISC. CHANGES:
+GAMEPLAY CHANGES:
 - Added the ability to play on deathmatch maps that don't have a player 1 start!
+- Rewrote the code to make multiplayer-only actors appear in single player to not
+  mangle actor flags, allowing script actors to function properly. As such, the
+  CVar to toggle this behavior has been removed.
 
 BUILD 03.1 (January 3rd 2019)
 =============================

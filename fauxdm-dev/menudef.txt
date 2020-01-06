@@ -50,11 +50,13 @@ OptionMenu "FDMOptionsMenu"
 	StaticText ""
 	Option "$FDMMNU_SCRIPTACTORS",			"fdm_monsterscriptactors", "OnOff"
 	StaticText ""
+	/*
 	Option "$FDMMNU_MPWEAPS",			"fdm_mpweaps", "OnOff"
 	StaticText "$FDMNU_MPWEAPSWARN1"
 	StaticText "$FDMNU_MPWEAPSWARN2"
 	StaticText "$FDMNU_MPWEAPSWARN3"
 	StaticText ""
+	*/
 	Option "$FDMMNU_DEVSPEW",			"fdm_devspew", "OnOff"
 }
 

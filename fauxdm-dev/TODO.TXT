@@ -29,8 +29,5 @@ MONSTERS:
 - Find a way to fake obituaries when killed, using player name and monster name.
   Yes, this would be spammy. No, I don't care.
 
-CODE:
-- Rewrite the multiplayer weapon spawn code using LevelPostProcessor.
-
 MISC.:
 - Add the fake voice chat system!

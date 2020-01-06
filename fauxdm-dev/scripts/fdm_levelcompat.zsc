@@ -32,7 +32,19 @@ class FDM_LevelPostProc : LevelPostProcessor
 		{
 			AddThing(1, (0,0,0), 0, SKILLS_ALL, MODES_ALL);
 			console.printf("FDM_Notice: No player 1 start! So one was added via script\nso the game doesn't error out. Slap your level designer around\nso they don't do this again, thanks!");
-		}		
+		}
+		
+		if (!multiplayer)
+		{
+			for (int i = 0; i < 65535; i ++)
+			{
+				if (GetThingFlags(i) != MTF_SINGLE)
+				{
+					SetThingFlags(i, MTF_SINGLE);
+				}
+			}			 
+		}
+		
 	}
 }
 
@@ -40,7 +52,7 @@ class FDM_LevelCompatibility : LevelCompatibility
 {
 	protected void Apply(Name checksum, String mapname)
 	{
-		
+		/*
 		// Enable multi-player only items in single player.
 		// This mangles thing flags, a better solution needs to be found
 		if (!multiplayer && fdm_mpweaps)
@@ -50,7 +62,7 @@ class FDM_LevelCompatibility : LevelCompatibility
 				SetThingFlags(i, 2016);
 			}			 
 		}
-		
+		*/
 		
 		
 		switch (checksum)
