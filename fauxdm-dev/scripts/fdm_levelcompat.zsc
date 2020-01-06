@@ -33,7 +33,7 @@ class FDM_LevelPostProc : LevelPostProcessor
 			// If one doesn't exist, add one. Otherwise the game'll error out.
 			if (mapworks == false)
 			{
-				AddThing(1, (0,0,0), 0, SKILLS_ALL, MODES_ALL);
+				AddThing(1, level.PickDeathmatchStart(), 0, SKILLS_ALL, MODES_ALL);
 				console.printf("FDM_Notice: No player 1 start! So one was added via script\nso the game doesn't error out. Slap your level designer around\nso they don't do this again, thanks!");
 			}
 		}
