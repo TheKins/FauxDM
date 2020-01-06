@@ -6,6 +6,9 @@ GAMEPLAY CHANGES:
 - Rewrote the code to make multiplayer-only actors appear in single player to not
   mangle actor flags, allowing script actors to function properly. As such, the
   CVar to toggle this behavior has been removed.
+  
+MISC. CHANGES:
+- Made some tweaks to IWAD maps (E1M8)
 
 BUILD 03.1 (January 3rd 2019)
 =============================

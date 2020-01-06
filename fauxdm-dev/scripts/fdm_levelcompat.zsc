@@ -34,6 +34,7 @@ class FDM_LevelPostProc : LevelPostProcessor
 			console.printf("FDM_Notice: No player 1 start! So one was added via script\nso the game doesn't error out. Slap your level designer around\nso they don't do this again, thanks!");
 		}
 		
+		// Enable multi-player only items in single player.
 		if (!multiplayer)
 		{
 			for (int i = 0; i < 65535; i ++)
@@ -53,7 +54,7 @@ class FDM_LevelCompatibility : LevelCompatibility
 	protected void Apply(Name checksum, String mapname)
 	{
 		/*
-		// Enable multi-player only items in single player.
+		// Old way of enabling multi-player only items in single player.
 		// This mangles thing flags, a better solution needs to be found
 		if (!multiplayer && fdm_mpweaps)
 		{
@@ -64,7 +65,7 @@ class FDM_LevelCompatibility : LevelCompatibility
 		}
 		*/
 		
-		
+		// IWAD Map Tweaks
 		switch (checksum)
 		{			
 			case 'none':
@@ -73,14 +74,34 @@ class FDM_LevelCompatibility : LevelCompatibility
 			case '058FB092EA1B70DA1E3CBF501C4A91A1': // Doom1 E1M8
 			{
 				// Disable Exit Teleporter-O-Death
-				//ClearLineSpecial(233);
 				ClearLineSpecial(299);
+				ClearLineSpecial(300);
 				ClearLineSpecial(301);
 				ClearLineSpecial(302);
 				ClearLineSpecial(303);
 				ClearLineSpecial(304);
 				ClearLineSpecial(305);
 				ClearLineSpecial(306);
+				
+				// Auto-Do The Exit Stairs
+				ClearLineSpecial(233);
+				OffsetSectorPlane(53, Sector.floor, 8);
+				OffsetSectorPlane(54, Sector.floor, 16);
+				OffsetSectorPlane(61, Sector.floor, 24);
+				OffsetSectorPlane(62, Sector.floor, 32);
+				OffsetSectorPlane(63, Sector.floor, 40);
+				OffsetSectorPlane(64, Sector.floor, 48);
+				OffsetSectorPlane(65, Sector.floor, 56);
+				OffsetSectorPlane(55, Sector.floor, 64);
+				OffsetSectorPlane(56, Sector.floor, 72);
+				OffsetSectorPlane(57, Sector.floor, 80);
+				OffsetSectorPlane(58, Sector.floor, 88);
+				OffsetSectorPlane(59, Sector.floor, 96);
+				OffsetSectorPlane(60, Sector.floor, 104);
+				OffsetSectorPlane(67, Sector.floor, 112);
+				
+				// Place Something Fun on the Teleporter Exit Spot
+				AddThing(2003, (448,5120,0), 0, SKILLS_ALL, MODES_ALL);
 				
 				// Open Baron Holes Automagically
 				OffsetSectorPlane(45, Sector.ceiling, 86);
