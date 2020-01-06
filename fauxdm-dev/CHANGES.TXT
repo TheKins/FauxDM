@@ -7,8 +7,9 @@ GAMEPLAY CHANGES:
   mangle actor flags, allowing script actors to function properly. As such, the
   CVar to toggle this behavior has been removed.
   
-MISC. CHANGES:
-- Made some tweaks to IWAD maps (E1M8)
+MAP CHANGES:
+- Made some tweaks to IWAD maps (E1M8, MAP02)
+- FDM03: Adjusted scripting for slanted jumppads to remove workarounds.
 
 BUILD 03.1 (January 3rd 2019)
 =============================
