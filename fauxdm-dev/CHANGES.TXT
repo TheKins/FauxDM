@@ -1,3 +1,9 @@
+NEXT VERSION
+============
+
+MISC. CHANGES:
+- Added the ability to play on deathmatch maps that don't have a player 1 start!
+
 BUILD 03.1 (January 3rd 2019)
 =============================
 

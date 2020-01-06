@@ -30,7 +30,6 @@ MONSTERS:
   Yes, this would be spammy. No, I don't care.
 
 CODE:
-- Add LevelPostProcessor code to add a Player 1 start if one is not present.
 - Rewrite the multiplayer weapon spawn code using LevelPostProcessor.
 
 MISC.:
