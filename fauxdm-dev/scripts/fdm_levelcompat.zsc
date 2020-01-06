@@ -18,21 +18,24 @@ class FDM_LevelPostProc : LevelPostProcessor
 	{
 		bool mapworks;
 		
-		// Check for a player 1 spawn point.
-		for (int i = 0; i < 65535; i ++)
+		if (!multiplayer)
 		{
-			if (GetThingEdNum(i) == 1)
+			// Check for a player 1 spawn point.
+			for (int i = 0; i < 65535; i ++)
 			{
-				mapworks = true;
-				break;
+				if (GetThingEdNum(i) == 1)
+				{
+					mapworks = true;
+					break;
+				}
 			}
-		}
-		
-		// If one doesn't exist, add one. Otherwise the game'll error out.
-		if (mapworks == false)
-		{
-			AddThing(1, (0,0,0), 0, SKILLS_ALL, MODES_ALL);
-			console.printf("FDM_Notice: No player 1 start! So one was added via script\nso the game doesn't error out. Slap your level designer around\nso they don't do this again, thanks!");
+			
+			// If one doesn't exist, add one. Otherwise the game'll error out.
+			if (mapworks == false)
+			{
+				AddThing(1, (0,0,0), 0, SKILLS_ALL, MODES_ALL);
+				console.printf("FDM_Notice: No player 1 start! So one was added via script\nso the game doesn't error out. Slap your level designer around\nso they don't do this again, thanks!");
+			}
 		}
 		
 		// Enable multi-player only items in single player.
