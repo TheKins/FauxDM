@@ -4,13 +4,14 @@
  
  Author: The Kinsie
  
- Purpose: LevelCompatibility adjustments
+ Purpose: LevelPostProcessor scripts and LevelCompatibility adjustments
  
  Comment: Some levels need a little extra KY Jelly to fit this mod inside of 'em
 
 ================================================================================
 */
 
+// LevelPostProcessor scripts
 class FDM_LevelPostProc : LevelPostProcessor
 {
 	protected void Apply(Name checksum, String mapname)
@@ -49,6 +50,7 @@ class FDM_LevelPostProc : LevelPostProcessor
 	}
 }
 
+// Alterations to existing IWAD maps
 class FDM_LevelCompatibility : LevelCompatibility
 {
 	protected void Apply(Name checksum, String mapname)
@@ -106,6 +108,42 @@ class FDM_LevelCompatibility : LevelCompatibility
 				// Open Baron Holes Automagically
 				OffsetSectorPlane(45, Sector.ceiling, 86);
 				OffsetSectorPlane(49, Sector.ceiling, 86);
+				break;
+			}
+			
+			case 'AB24AE6E2CB13CBDD04600A4D37F9189':   // Doom2 MAP02
+			case '1EC0AF1E3985650F0C9000319C599D0C':  // Doom2 BFG Edition MAP02
+			{
+				// Raise Start Room Bars
+				OffsetSectorPlane(40, Sector.ceiling, 72);
+				OffsetSectorPlane(41, Sector.ceiling, 72);
+				OffsetSectorPlane(42, Sector.ceiling, 72);
+				OffsetSectorPlane(43, Sector.ceiling, 72);
+				
+				// Auto Lower Blockers, Block Off Switches
+				OffsetSectorPlane(15, Sector.floor, -96);
+				OffsetSectorPlane(16, Sector.floor, -96);
+				OffsetSectorPlane(57, Sector.ceiling, -40);
+				OffsetSectorPlane(63, Sector.ceiling, -40);
+				
+				// Open Up Loop
+				OffsetSectorPlane(58, Sector.ceiling, 96);
+				ClearLineSpecial(155);
+				
+				// Open Up Monster Lockers
+				OffsetSectorPlane(91, Sector.ceiling, 64);
+				OffsetSectorPlane(69, Sector.ceiling, 64);
+				ClearLineSpecial(241);
+				
+				// Open Up Teleporter Bit
+				OffsetSectorPlane(81, Sector.ceiling, 80);
+				ClearLineSpecial(268);
+				ClearLineSpecial(293);
+				
+				// Block Off Exit Door
+				ClearLineSpecial(350);
+				
+				break;
 			}
 				
 			case '291F24417FB3DD411339AE82EF9B3597': // Doom2 MAP07
