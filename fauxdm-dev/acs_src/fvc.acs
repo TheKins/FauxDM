@@ -41,32 +41,103 @@ script "FVC_FadeUp" (void)
 // Ventrillo Gag
 script "FVC_Ventrillo" (void)
 {
-	//ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
+	int reply1 = random(1,5);
+	int reply2 = random(1,3);
+	int end = random(1,6);
+	
+	ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
 	
 	AmbientSound("fvc/ventrillo/start", 127);
 	delay(52);
 	
-	AmbientSound("fvc/ventrillo/rep1", 127);
-	delay(78);
-	AmbientSound("fvc/ventrillo/rep2", 127);
-	delay(120);
+	if (reply1 == 1)
+	{
+		AmbientSound("fvc/ventrillo/rep1a", 127);
+		delay(100);
+	} else if (reply1 == 2)
+	{
+		AmbientSound("fvc/ventrillo/rep1b", 127);
+		delay(96);
+	} else if (reply1 == 3)
+	{
+		AmbientSound("fvc/ventrillo/rep1c", 127);
+		delay(107);
+	} else if (reply1 == 4)
+	{
+		AmbientSound("fvc/ventrillo/rep1d", 127);
+		delay(148);
+	} else if (reply1 == 5)
+	{
+		AmbientSound("fvc/ventrillo/rep1e", 127);
+		delay(124);
+	}
 	
-	AmbientSound("fvc/ventrillo/end", 127);
-	delay(78);
+	if (reply2 == 1)
+	{
+		AmbientSound("fvc/ventrillo/rep2a", 127);
+		delay(118);
+	} else if (reply2 == 2)
+	{
+		AmbientSound("fvc/ventrillo/rep2b", 127);
+		delay(66);
+	} else if (reply2 == 3)
+	{
+		AmbientSound("fvc/ventrillo/rep2c", 127);
+		delay(112);
+	}
 	
-	//ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
+	if (end == 1)
+	{
+		AmbientSound("fvc/ventrillo/end1", 127);
+		delay(74);
+	} else if (end == 2)
+	{
+		AmbientSound("fvc/ventrillo/end2", 127);
+		delay(71);
+	} else if (end == 3)
+	{
+		AmbientSound("fvc/ventrillo/end3", 127);
+		delay(63);
+	} else if (end == 4)
+	{
+		AmbientSound("fvc/ventrillo/end4", 127);
+		delay(87);
+	} else if (end == 5)
+	{
+		AmbientSound("fvc/ventrillo/end5", 127);
+		delay(86);
+	} else if (end == 6)
+	{
+		AmbientSound("fvc/ventrillo/end6", 127);
+		delay(78);
+	}
+	
+	ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
 }
 
 // Stalker Bandit
 script "FVC_Bandit" (void)
 {
-	//ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
+	int reply1 = random(1,3);
+	
+	ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
 	
 	AmbientSound("fvc/bandit/start", 127);
 	delay(270);
 	
-	AmbientSound("fvc/bandit/reply", 127);
-	delay(210);
+	if (reply1 == 1)
+	{
+		AmbientSound("fvc/bandit/reply1", 127);
+		delay(62);
+	} else if (reply1 == 2)
+	{
+		AmbientSound("fvc/bandit/reply2", 127);
+		delay(214);
+	} else if (reply1 == 3)
+	{
+		AmbientSound("fvc/bandit/reply3", 127);
+		delay(74);
+	}
 	
-	//ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
+	ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
 }
