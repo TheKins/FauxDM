@@ -232,7 +232,10 @@ script "FVC_Bandit" (void)
 	
 	HudMessage (s:"< ", s:name1; HUDMSG_PLAIN, 1, CR_GREEN, -0.01, -0.8, 0, 1.0);
 	AmbientSound("fvc/bandit/start", 127);
-	delay(270);
+	delay(239); //delay(270);
+	
+	HudMessage (s:" "; HUDMSG_PLAIN, 1, CR_GREEN, -0.01, -0.8, 0, 1.0);
+	delay(32);
 	
 	HudMessage (s:"< ", s:name2; HUDMSG_PLAIN, 1, CR_GREEN, -0.01, -0.8, 0, 1.0);
 	if (reply1 == 1)
