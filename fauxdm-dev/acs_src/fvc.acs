@@ -18,6 +18,102 @@
 
 int musicVolume = 1.0;
 
+#define NUMNAMES 91
+int NamesGeneric[NUMNAMES] = 
+{
+	"Dog Pope", // Default Names
+	"WorldsMostBoringestGhost",
+	"THE JERK",
+	"DinosaurJones",
+	"The Fuck Monster",
+	"MAYOR HOBART DUNGLE",
+	"FiveDrunkenBats",
+	"[MLB]Slugfeast",
+	"AlternativeFaxMachine",
+	"Microsoft Bing Crosby",
+	"7-11 Denialist",
+	"Snr. Constable Daddy",
+	"gimmick halloween name",
+	"large_adult_son",
+	"COMEDY USERNAME",
+	"10X Pee-Drinker",
+	"The Gosh of Heckfire",
+	"Girl Poop",
+	"Intranet Petition",
+	"Elly the Oliphant",
+	"The 24-Hour Rule",
+	"Flaw Enforcer",
+	"Resting Kitsch Face",
+	"Sawn-Off Shogun",
+	"sudo echo",
+	"Hot Girl Summoner",
+	"Fiverr Babysitter",
+	"Ol' Jimmy Euphemisms",
+	"Fiverr Hitman",
+	"Inconspicuous Consumption",
+	"Blood 'n' Silicone",
+	"Emoji w/ a Bulge",
+	"Bob Costas-Rican",
+	"func_wit", // Quake Actors
+	"cutie.qc",
+	"Thresh Prince Of Bel-Aire",
+	"#fuckthestrogg",
+	"Operation Bayshield",
+	"jrbase1",
+	"DWANGO-killer",
+	"Mexican Threewave",
+	"Omicron",
+	"ReaperBot",
+	"Shub-Optimal",
+	"WheresTheDragon",
+	"FragsDoneQuick",
+	"HUHH HUHH HUHH",
+	"shart.bsp",
+	"CruduxCruownage", // Blood Cultist
+	"Shikawaii",
+	"Lithtech Licensee",
+	"MAGIC CLAW",
+	"WORTHY YOU KNOW",
+	"Modern Arts",
+	"Fear Books",
+	"SanjuroMakabe",
+	"KuraAkkaraju",
+	"HankJohnson",
+	"KathrynAkkaraju",
+	"CON Parser", // Duke-Bot
+	"Ken's Global Values",
+	"CollisionDetectionRewrite",
+	"SOB-Bot",
+	"Crap@LegalChicken",
+	"Sector Effector",
+	"IOwnMaidens",
+	"define GOTTASMART",
+	"LameDuke",
+	"RoachCondo",
+	"AntiProfit",
+	"KinoFabino",
+	"WheresTehBaeta",
+	"DecadeDevCycle",
+	"Chunks", // Chubbs
+	"Chonks",
+	"TruffleShuffle",
+	"Superchunk",
+	"Beefcaaaake",
+	"Big-Boned",
+	"MikeMeyers",
+	"Garbagefeld",
+	"LittleBabbyBabbyMan", // Rocket Baron
+	"CyberdemonDiaperfur",
+	"AngerGremlin",
+	"HOOONK",
+	"Cyber-Buns",
+	"H*ckBoy(tm)",
+	"RokkitRidah",
+	"GoatSimulator",
+	"Goatse",
+	"PinkPhillip"
+};
+
 script "FVC_FadeDown" (void)
 {
 	while(musicVolume > 0.25)
@@ -45,11 +141,17 @@ script "FVC_Ventrillo" (void)
 	int reply2 = random(1,3);
 	int end = random(1,6);
 	
+	str name1 = NamesGeneric[random(0,NUMNAMES)];
+	str name2 = NamesGeneric[random(0,NUMNAMES)];
+	str name3 = NamesGeneric[random(0,NUMNAMES)];
+	
 	ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
 	
+	HudMessage (s:"< ", s:name1; HUDMSG_PLAIN, 1, CR_GREEN, -0.01, -0.8, 0, 1.0);
 	AmbientSound("fvc/ventrillo/start", 127);
 	delay(52);
 	
+	HudMessage (s:"< ", s:name2; HUDMSG_PLAIN, 1, CR_GREEN, -0.01, -0.8, 0, 1.0);
 	if (reply1 == 1)
 	{
 		AmbientSound("fvc/ventrillo/rep1a", 127);
@@ -72,6 +174,7 @@ script "FVC_Ventrillo" (void)
 		delay(124);
 	}
 	
+	HudMessage (s:"< ", s:name3; HUDMSG_PLAIN, 1, CR_GREEN, -0.01, -0.8, 0, 1.0);
 	if (reply2 == 1)
 	{
 		AmbientSound("fvc/ventrillo/rep2a", 127);
@@ -86,6 +189,7 @@ script "FVC_Ventrillo" (void)
 		delay(112);
 	}
 	
+	HudMessage (s:"< ", s:name1; HUDMSG_PLAIN, 1, CR_GREEN, -0.01, -0.8, 0, 1.0);
 	if (end == 1)
 	{
 		AmbientSound("fvc/ventrillo/end1", 127);
@@ -112,6 +216,7 @@ script "FVC_Ventrillo" (void)
 		delay(78);
 	}
 	
+	HudMessage (s:" "; HUDMSG_PLAIN, 1, CR_GREEN, -0.01, -0.8, 0, 1.0);
 	ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
 }
 
@@ -120,11 +225,16 @@ script "FVC_Bandit" (void)
 {
 	int reply1 = random(1,3);
 	
+	str name1 = NamesGeneric[random(0,NUMNAMES)];
+	str name2 = NamesGeneric[random(0,NUMNAMES)];
+	
 	ACS_NamedExecuteAlways("FVC_FadeDown",0,0,0,0);
 	
+	HudMessage (s:"< ", s:name1; HUDMSG_PLAIN, 1, CR_GREEN, -0.01, -0.8, 0, 1.0);
 	AmbientSound("fvc/bandit/start", 127);
 	delay(270);
 	
+	HudMessage (s:"< ", s:name2; HUDMSG_PLAIN, 1, CR_GREEN, -0.01, -0.8, 0, 1.0);
 	if (reply1 == 1)
 	{
 		AmbientSound("fvc/bandit/reply1", 127);
@@ -139,5 +249,6 @@ script "FVC_Bandit" (void)
 		delay(74);
 	}
 	
+	HudMessage (s:" "; HUDMSG_PLAIN, 1, CR_GREEN, -0.01, -0.8, 0, 1.0);
 	ACS_NamedExecuteAlways("FVC_FadeUp",0,0,0,0);
 }
