@@ -104,6 +104,7 @@ class FDM_LevelCompatibility : LevelCompatibility
 				OffsetSectorPlane(59, Sector.floor, 96);
 				OffsetSectorPlane(60, Sector.floor, 104);
 				OffsetSectorPlane(67, Sector.floor, 112);
+				SetWallTexture(233, Line.front, Side.bottom, "STONE3");
 				
 				// Place Something Fun on the Teleporter Exit Spot
 				AddThing(2003, (448,5120,0), 0, SKILLS_ALL, MODES_ALL);
@@ -111,6 +112,13 @@ class FDM_LevelCompatibility : LevelCompatibility
 				// Open Baron Holes Automagically
 				OffsetSectorPlane(45, Sector.ceiling, 86);
 				OffsetSectorPlane(49, Sector.ceiling, 86);
+				
+				// Make Things A Bit More Interesting
+				SetSectorSpecial(29, 768);
+				SetSectorTexture(29, Sector.floor, "LAVA1");
+				SetLineSpecial(169, Line_Horizon, 0, 0);
+				SetLineSpecial(170, Line_Horizon, 0, 0);
+				SetLineSpecial(171, Line_Horizon, 0, 0);
 				break;
 			}
 			
@@ -145,6 +153,8 @@ class FDM_LevelCompatibility : LevelCompatibility
 				
 				// Block Off Exit Door
 				ClearLineSpecial(350);
+				OffsetSectorPlane(20, Sector.ceiling, -88);
+				SetWallTexture(342, Line.front, Side.top, "STONE4");
 				
 				break;
 			}
