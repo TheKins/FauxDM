@@ -122,6 +122,25 @@ class FDM_LevelCompatibility : LevelCompatibility
 				break;
 			}
 			
+			// Doom 2 Maps
+			case '3C9902E376CCA1E9C3BE8763BDC21DF5': // DOOM2.WAD map01
+			{
+				// Open Rocket Door Automatically
+				ClearLineSpecial(242);
+				OffsetSectorPlane(58, Sector.ceiling, 128);
+				
+				// Open Outdoors Automatically
+				OffsetSectorPlane(31, Sector.ceiling, 88);
+				ClearLineSpecial(124);
+				
+				// Block Off Exit Door
+				OffsetSectorPlane(32, Sector.ceiling, -72);
+				
+				// Change One Of The Imp Spawns Into A Player Spawn
+				SetThingEdNum(49, 11);
+				break;
+			}
+			
 			case 'AB24AE6E2CB13CBDD04600A4D37F9189':   // Doom2 MAP02
 			case '1EC0AF1E3985650F0C9000319C599D0C':  // Doom2 BFG Edition MAP02
 			{
