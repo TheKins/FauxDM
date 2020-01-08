@@ -20,6 +20,7 @@ class FDM_Berserk : CustomInventory replaces Berserk
 		+INVENTORY.ISHEALTH
 		Inventory.PickupMessage "$GOTBERSERK";
 		Inventory.PickupSound "items/powerups/berserk";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -53,6 +54,7 @@ class FDM_QuadDamage : PowerupGiver
 		RenderStyle "Translucent";
 		Inventory.PickupMessage "$GOTQUAD";
 		Inventory.PickupSound "items/powerups/quad";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 		//$Category "Powerups"
 		//$Title "Quad Damage"
 		//$NotAngled
@@ -83,6 +85,7 @@ class FDM_InvulnerabilitySphere : PowerupGiver replaces InvulnerabilitySphere
 		Powerup.Color "GoldMap";
 		Inventory.PickupMessage "$GOTINVUL";
 		Inventory.PickupSound "items/powerups/invuln";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	
 	States
@@ -108,6 +111,7 @@ class FDM_Soulsphere : Health replaces Soulsphere
 		Inventory.MaxAmount 200;
 		Inventory.PickupMessage "$GOTSUPER";
 		Inventory.PickupSound "items/powerups/soulsphere";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	
 	States
@@ -129,6 +133,7 @@ class FDM_Megasphere : CustomInventory replaces Megasphere
 		scale 0.75;
 		Inventory.PickupMessage "$GOTMSPHERE";
 		Inventory.PickupSound "items/powerups/megasphere";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	
 	States
@@ -160,6 +165,7 @@ class FDM_HasteSphere : PowerupGiver replaces BlurSphere
 		RenderStyle "Translucent";
 		Inventory.PickupMessage "$GOTHASTE";
 		Inventory.PickupSound "items/powerups/haste";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 		//$Category "Powerups"
 		//$Title "HasteSphere"
 		//$NotAngled
@@ -232,6 +238,7 @@ class FDM_RadSuit : CustomInventory replaces RadSuit
 		Inventory.PickupMessage "$GOTSUIT";
 		Inventory.PickupSound "items/powerups/radsuit";
 		scale 0.75;
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	
 	States

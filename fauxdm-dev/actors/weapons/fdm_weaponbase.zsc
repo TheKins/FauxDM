@@ -13,6 +13,11 @@
 
 class FDM_BaseWeapon : DoomWeapon
 {
+	Default
+	{
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
+	}
+	
 	States
 	{
 	Ready:

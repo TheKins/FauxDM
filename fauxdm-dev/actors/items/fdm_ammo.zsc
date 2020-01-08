@@ -19,6 +19,7 @@ class FDM_Clip : Clip replaces Clip
 		Inventory.PickupMessage "$GOTCLIP";
 		Inventory.Amount 10;
 		inventory.pickupsound "items/ammo/clip1";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -35,6 +36,7 @@ class FDM_ClipBox : Clip replaces ClipBox
 		Inventory.PickupMessage "$GOTCLIPBOX";
 		Inventory.Amount 50;
 		inventory.pickupsound "items/ammo/clip2";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -53,6 +55,7 @@ class FDM_Shell : Shell replaces Shell
 		Inventory.Amount 4;
 		inventory.pickupsound "items/ammo/shell1";
 		scale 0.75;
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -69,6 +72,7 @@ class FDM_ShellBox : Shell replaces ShellBox
 		Inventory.PickupMessage "$GOTSHELLBOX";
 		Inventory.Amount 20;
 		inventory.pickupsound "items/ammo/shell2";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -86,6 +90,7 @@ class FDM_RocketAmmo : RocketAmmo replaces RocketAmmo
 		Inventory.PickupMessage "$GOTROCKET";
 		Inventory.Amount 1;
 		inventory.pickupsound "items/ammo/rocket1";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -102,6 +107,7 @@ class FDM_RocketBox : RocketAmmo replaces RocketBox
 		Inventory.PickupMessage "$GOTROCKBOX";
 		Inventory.Amount 5;
 		inventory.pickupsound "items/ammo/rocket2";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -119,6 +125,7 @@ class FDM_Cell : Cell replaces Cell
 		Inventory.PickupMessage "$GOTCELL";
 		Inventory.Amount 20;
 		inventory.pickupsound "items/ammo/cell1";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -135,6 +142,7 @@ class FDM_CellPack : Cell replaces CellPack
 		Inventory.PickupMessage "$GOTCELLBOX";
 		Inventory.Amount 100;
 		inventory.pickupsound "items/ammo/cell2";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -152,6 +160,7 @@ class FDM_UniversalAmmo : CustomInventory replaces Backpack
 		+INVENTORY.ALWAYSPICKUP
 		Inventory.PickupMessage "$GOTUNIAMMO";
 		inventory.pickupsound "items/ammo/uni";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -180,6 +189,7 @@ class FDM_Fuel : Ammo
 		Inventory.PickupMessage "$GOTFUEL";
 		Inventory.Icon "FUELA0";
 		inventory.pickupsound "items/ammo/fuel";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 		//$Category "Ammunition"
 		//$Title "Flamethrower Fuel"
 		//$NotAngled

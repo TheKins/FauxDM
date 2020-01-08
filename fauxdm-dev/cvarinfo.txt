@@ -35,3 +35,6 @@ server int fdm_timeextend_every = 4;
 // Toggle whether SecActHitFloor changes so that monsters can trigger them
 // if they're intended to be triggered by players.
 server int fdm_monsterscriptactors = 1;
+
+// Toggle Respawn Markers
+server int fdm_respawnmarkers = 1;

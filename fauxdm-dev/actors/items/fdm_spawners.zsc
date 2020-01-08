@@ -1,0 +1,82 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: Duke3D-style spawner icons
+ 
+ Comment: 
+
+================================================================================
+*/
+
+class FDM_ItemRespawnMarker : Actor
+{
+	Default
+	{
+		-SOLID
+		RenderStyle "Translucent";
+		alpha 0.8;
+		scale 0.25;
+		+WALLSPRITE
+		+FLOATBOB
+		FloatBobStrength 0.25;
+	}
+	
+	int timer;
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0
+		{
+			timer = 0;
+			
+			if (!fdm_respawnmarkers)
+			{
+				SetStateLabel("Null");
+			}
+		}
+	Phase1:
+		ISPN A 1 BRIGHT
+		{
+			A_SetAngle(4+angle);
+			timer++;
+			
+			if (timer >= 350)
+			{
+				timer = 0;
+				SetStateLabel("Phase2");
+			}
+		}
+		loop;
+	Phase2:
+		ISPN B 1 BRIGHT
+		{
+			A_SetAngle(8+angle);
+			timer++;
+			
+			if (timer >= 350)
+			{
+				timer = 0;
+				SetStateLabel("Phase3");
+			}
+		}
+		loop;
+	Phase3:
+		ISPN C 1 BRIGHT
+		{
+			A_SetAngle(16+angle);
+			timer++;
+			
+			if (timer >= 350)
+			{
+				timer = 0;
+				SetStateLabel("Null");
+			}
+		}
+		loop;
+	}
+}

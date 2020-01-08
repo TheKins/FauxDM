@@ -41,6 +41,7 @@ OptionMenu "FDMOptionsMenu"
 {
 	Title "$FDMMNU_TITLE"
 	Option "$FDMMNU_STARTINGWEAP",		"fdm_startingweapon", "StartingWeaponChoices"
+	Option "$FDMMNU_RESPAWNMARKERS",			"fdm_respawnmarkers", "OnOff"
 	StaticText ""
 	NumberField "$FDMMNU_FRAGCOUNT_STARTING", "fdm_fragcount_starting", 1, 999
 	NumberField "$FDMMNU_FRAGCOUNT_ADDITIONAL", "fdm_fragcount_additional", 0, 999

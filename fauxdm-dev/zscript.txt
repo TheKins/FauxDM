@@ -38,6 +38,8 @@ Version "3.8"
 #include "actors/weapons/fdm_flamethrower.zsc"
 
 #include "actors/fdm_fx.zsc"
+
+#include "actors/items/fdm_spawners.zsc"
 #include "actors/items/fdm_healtharmor.zsc"
 #include "actors/items/fdm_ammo.zsc"
 #include "actors/items/fdm_powerups.zsc"

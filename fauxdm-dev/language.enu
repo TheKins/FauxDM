@@ -35,6 +35,8 @@ FDMMNU_STARTINGWEAP = "Starting Weapon";
 OPTVAL_PISTOL = "Machinegun";
 OPTVAL_SHOTGUN = "Shotgun";
 
+FDMMNU_RESPAWNMARKERS = "Item Respawn Markers";
+
 FDMMNU_SCRIPTACTORS = "Monsters Trigger Player Floor Scripts";
 
 FDMMNU_MPWEAPS = "MP Weapon Spawns in SP";

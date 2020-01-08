@@ -24,6 +24,7 @@ class FDM_HealthBonus : Health replaces HealthBonus
 		+WALLSPRITE
 		+FLOATBOB
 		scale 2.0;
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -40,6 +41,7 @@ class FDM_Stimpack : Health replaces Stimpack
 		Inventory.Amount 10;
 		Inventory.PickupMessage "$GOTSTIM";
 		inventory.pickupsound "items/health/light";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -57,6 +59,7 @@ class FDM_Medikit : Health replaces Medikit
 		Inventory.PickupMessage "$GOTMEDIKIT";
 		Health.LowMessage 25, "$GOTMEDINEED";
 		inventory.pickupsound "items/health/heavy";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -85,6 +88,7 @@ class FDM_ArmorBonus : BasicArmorBonus replaces ArmorBonus
 		+WALLSPRITE
 		+FLOATBOB
 		scale 2.0;
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -105,6 +109,7 @@ class FDM_GreenArmor : BasicArmorPickup replaces GreenArmor
 		Armor.SavePercent 33.335;
 		Armor.SaveAmount 100;
 		inventory.pickupsound "items/armor/light";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -126,6 +131,7 @@ class FDM_BlueArmor : BasicArmorPickup replaces BlueArmor
 		Armor.Savepercent 50;
 		Armor.Saveamount 200;
 		inventory.pickupsound "items/armor/heavy";
+		Inventory.PickupFlash "FDM_ItemRespawnMarker";
 	}
 	States
 	{
@@ -135,4 +141,3 @@ class FDM_BlueArmor : BasicArmorPickup replaces BlueArmor
 		loop;
 	}
 }
-
