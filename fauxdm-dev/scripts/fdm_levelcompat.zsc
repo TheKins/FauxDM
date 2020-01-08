@@ -170,6 +170,14 @@ class FDM_LevelCompatibility : LevelCompatibility
 				ClearLineSpecial(169);
 				break;
 			}
+			
+			case 'AA4CA3FC891D13821ACCABD836E29EB5': // DOOM2.WAD map32
+			{
+				// Disable Boss Door
+				ClearLineSpecial(168);
+				SetWallTexture(158, Line.front, Side.top, "ZZLOCK");
+				break;
+			}
 		}
 	}
 }

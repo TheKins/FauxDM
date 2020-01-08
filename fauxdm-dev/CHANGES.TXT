@@ -8,7 +8,7 @@ GAMEPLAY CHANGES:
   CVar to toggle this behavior has been removed.
   
 MAP CHANGES:
-- Made some tweaks to IWAD maps (E1M8, MAP02)
+- Made some tweaks to IWAD maps (E1M8, MAP02, MAP32)
 - FDM02: Adjusted temple geometry to make the Timesphere jump easier.
 - FDM03: Adjusted scripting for slanted jumppads to remove workarounds.
 
