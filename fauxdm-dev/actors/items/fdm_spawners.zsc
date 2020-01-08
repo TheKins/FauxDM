@@ -40,7 +40,7 @@ class FDM_ItemRespawnMarker : Actor
 			}
 		}
 	Phase1:
-		ISPN A 1 BRIGHT
+		ISPN C 1 BRIGHT
 		{
 			A_SetAngle(4+angle);
 			timer++;
@@ -66,7 +66,7 @@ class FDM_ItemRespawnMarker : Actor
 		}
 		loop;
 	Phase3:
-		ISPN C 1 BRIGHT
+		ISPN A 1 BRIGHT
 		{
 			A_SetAngle(16+angle);
 			timer++;
