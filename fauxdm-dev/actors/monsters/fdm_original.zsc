@@ -64,7 +64,7 @@ class FDM_Pacifist : FDM_BaseMonster
 		PACI K -1;
 		Stop;
 	GiveUp:
-		PACI Y 12;
+		PACI YX 12;
 		loop;
 	XDeath:
 		GUTS A 0 A_DropWeapons();
