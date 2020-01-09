@@ -7,6 +7,9 @@ GAMEPLAY CHANGES:
   mangle actor flags, allowing script actors to function properly. As such, the
   CVar to toggle this behavior has been removed.
 - Added Duke3D-style respawn markers! Togglable in the DM Sim Options menu.
+
+MONSTER CHANGES:
+- Pacifist: Added to the Hard spawn list!
   
 MAP CHANGES:
 - Made some tweaks to IWAD maps (E1M8, MAP01, MAP02, MAP32)
