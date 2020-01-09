@@ -118,6 +118,7 @@ OB_JPFGUY = "%o was overpowered by";
 OB_CYBERBRUISER = "%o was exploded by";
 OB_DUKEBOT = "%o was owned by";
 OB_SANTABOT = "%o was roasted like a yule-log by";
+OB_PACIFIST = "%o was somehow pacifismed to death by"
 
 OB_ICON = "%o was splattered by a big wall texture!";
 

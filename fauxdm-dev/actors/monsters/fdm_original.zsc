@@ -23,17 +23,16 @@ class FDM_Pacifist : FDM_BaseMonster
 		Monster;
 		+FLOORCLIP
 		+PICKUP
+		+AMBUSH
 		speed 4;
 		FDM_BaseMonster.TauntSound "actors/oldactors/posstaunt2";
 		AttackSound "grunt/attack";
 		PainSound "grunt/pain";
 		DeathSound "grunt/death";
 		ActiveSound "grunt/active";
-		Obituary "$OB_ZOMBIEMAN";
-		//Tag "$FN_ZOMBIE";
-		DropItem "Clip";
-		Decal "BulletChip";
+		Obituary "$OB_PACIFIST";
 	}
+	
 	States
 	{
 	Spawn:
@@ -51,7 +50,11 @@ class FDM_Pacifist : FDM_BaseMonster
 		Goto See;
 	Death:
 		PLAY H 5;
-		PLAY I 5 A_Scream;
+		PLAY I 5 
+		{
+			A_Scream();
+			A_DropWeapons();
+		}
 		PLAY J 5 A_NoBlocking;
 		PLAY K 5;
 		PLAY L -1;
@@ -59,6 +62,9 @@ class FDM_Pacifist : FDM_BaseMonster
 	GiveUp:
 		PLAY AG 12;
 		loop;
+	XDeath:
+		GUTS A 0 A_DropWeapons();
+		goto Super::XDeath;
 	}
 	
 	override void Tick()
@@ -86,6 +92,11 @@ class FDM_Pacifist : FDM_BaseMonster
 		Super.Tick();
 	}
 	
+	override void DoAllianceFlicker()
+	{
+		bFRIENDLY = 1;
+	}
+	
 	void A_FDMRoamNoLook()
 	{
 		DoAvoidWallrunning();
@@ -95,8 +106,61 @@ class FDM_Pacifist : FDM_BaseMonster
 		oldPos = pos;
 	}
 	
-	override void DoAllianceFlicker()
+	void A_DropWeapons()
 	{
-		bFRIENDLY = 1;
+		if (CheckInventory("FDM_Machinegun", 1))
+		{
+			A_DropItem ("FDM_Machinegun", -1, 256);
+		}
+
+		if (CheckInventory("FDM_Shotgun", 1))
+		{
+			A_DropItem ("FDM_Shotgun", -1, 256);
+		}
+
+		if (CheckInventory("FDM_SuperShotgun", 1))
+		{
+			A_DropItem ("FDM_SuperShotgun", -1, 256);
+		}
+
+		if (CheckInventory("FDM_Chaingun", 1))
+		{
+			A_DropItem ("FDM_Chaingun", -1, 256);
+		}
+
+		if (CheckInventory("FDM_Minigun", 1))
+		{
+			A_DropItem ("FDM_Minigun", -1, 256);
+		}
+
+		if (CheckInventory("FDM_RocketLauncher", 1))
+		{
+			A_DropItem ("FDM_RocketLauncher", -1, 256);
+		}
+
+		if (CheckInventory("FDM_GrenadeLauncher", 1))
+		{
+			A_DropItem ("FDM_GrenadeLauncher", -1, 256);
+		}
+
+		if (CheckInventory("FDM_PlasmaRifle", 1))
+		{
+			A_DropItem ("FDM_PlasmaRifle", -1, 256);
+		}
+
+		if (CheckInventory("FDM_Railgun", 1))
+		{
+			A_DropItem ("FDM_Railgun", -1, 256);
+		}
+
+		if (CheckInventory("FDM_BFG9000", 1))
+		{
+			A_DropItem ("FDM_BFG9000", -1, 256);
+		}
+
+		if (CheckInventory("FDM_Flamethrower", 1))
+		{
+			A_DropItem ("FDM_Flamethrower", -1, 256);
+		}
 	}
 }
