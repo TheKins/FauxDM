@@ -81,7 +81,7 @@ class FDM_Pacifist : FDM_BaseMonster
 			{
 				Actor mo = it.thing;
 				
-				if (mo is "Inventory" || mo is "Weapon")
+				if (mo is "Inventory" || mo is "Weapon" || !(mo is "FDM_HealthBonus") || !(mo is "FDM_ArmorBonus"))
 				{
 					target = mo;
 					goal = mo;
@@ -90,6 +90,13 @@ class FDM_Pacifist : FDM_BaseMonster
 		}
 		
 		Super.Tick();
+	}
+	
+	override bool CanTouchItem(Inventory item)
+	{
+		target = null;
+		goal = null;
+		return true;
 	}
 	
 	override void DoAllianceFlicker()
