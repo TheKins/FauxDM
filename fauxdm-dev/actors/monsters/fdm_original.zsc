@@ -1,0 +1,102 @@
+/*
+================================================================================
+ FauxDM ZScript Code
+ 
+ Author: The Kinsie
+ 
+ Purpose: New and interesting monsters
+ 
+ Comment: 
+
+================================================================================
+*/
+
+// Pacifist! Steals items
+class FDM_Pacifist : FDM_BaseMonster
+{
+	Default
+	{
+		Health 201;
+		Radius 16;
+		Height 56;
+		PainChance 200;
+		Monster;
+		+FLOORCLIP
+		+PICKUP
+		speed 4;
+		FDM_BaseMonster.TauntSound "actors/oldactors/posstaunt2";
+		AttackSound "grunt/attack";
+		PainSound "grunt/pain";
+		DeathSound "grunt/death";
+		ActiveSound "grunt/active";
+		Obituary "$OB_ZOMBIEMAN";
+		//Tag "$FN_ZOMBIE";
+		DropItem "Clip";
+		Decal "BulletChip";
+	}
+	States
+	{
+	Spawn:
+		PLAY A 10 A_Look;
+		goto Roam;
+	Roam:
+		PLAY AABBCCDD 4 A_FDMRoamNoLook();
+		Loop;
+	See:
+		PLAY AABBCCDD 4 A_FDMChase(null,null);
+		Loop;
+	Pain:
+		PLAY G 3;
+		PLAY G 3 A_Pain;
+		Goto See;
+	Death:
+		PLAY H 5;
+		PLAY I 5 A_Scream;
+		PLAY J 5 A_NoBlocking;
+		PLAY K 5;
+		PLAY L -1;
+		Stop;
+	GiveUp:
+		PLAY AG 12;
+		loop;
+	}
+	
+	override void Tick()
+	{
+		if (health >= 201)
+		{
+			health = 200;
+		}
+		
+		if (!(target is "Inventory") || !(target is "Weapon"))
+		{
+			BlockThingsIterator it = BlockThingsIterator.CreateFromPos(pos.x,pos.y,pos.z,0,128,0);
+			while (it.Next())
+			{
+				Actor mo = it.thing;
+				
+				if (mo is "Inventory" || mo is "Weapon")
+				{
+					target = mo;
+					goal = mo;
+				}
+			}
+		}
+		
+		Super.Tick();
+	}
+	
+	void A_FDMRoamNoLook()
+	{
+		DoAvoidWallrunning();
+		
+		A_Wander();
+		A_Recoil(-speed);
+		oldPos = pos;
+	}
+	
+	override void DoAllianceFlicker()
+	{
+		bFRIENDLY = 1;
+	}
+}
