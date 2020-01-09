@@ -54,6 +54,16 @@ class FDM_BaseWeapon : DoomWeapon
 			A_PlaySound("weapons/quad", CHAN_5);
 		}
 	}
+	
+	// Don't spawn a respawn marker for dropped weapons
+	override void PostBeginPlay ()
+	{
+		Super.PostBeginPlay ();
+		if (bDROPPED)
+		{
+			PickupFlash = null;
+		}
+	}
 }
 
 
