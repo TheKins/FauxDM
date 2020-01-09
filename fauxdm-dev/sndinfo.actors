@@ -215,3 +215,21 @@ actors/santa/taunt6		sntatnt6
 actors/santa/taunt7		sntatnt7
 actors/santa/taunt8		sntatnt8
 actors/santa/taunt9		sntatnt9
+
+// Pacifist
+$random actors/pacifist/die { actors/pacifist/die1 actors/pacifist/die2 }
+actors/pacifist/die1			pacidie1
+actors/pacifist/die2			pacidie2
+
+$random actors/pacifist/pain { actors/pacifist/pain1 actors/pacifist/pain2 actors/pacifist/pain3 actors/pacifist/pain4 }
+actors/pacifist/pain1			pacihit1
+actors/pacifist/pain2			pacihit2
+actors/pacifist/pain3			pacihit3
+actors/pacifist/pain4			pacihit4
+
+$random actors/pacifist/taunt { actors/pacifist/taunt1 actors/pacifist/taunt2 actors/pacifist/taunt3 actors/pacifist/taunt4 actors/pacifist/taunt5 }
+actors/pacifist/taunt1			pacitnt1
+actors/pacifist/taunt2			pacitnt2
+actors/pacifist/taunt3			pacitnt3
+actors/pacifist/taunt4			pacitnt4
+actors/pacifist/taunt5			pacitnt5
