@@ -46,7 +46,7 @@ class FDM_Pacifist : FDM_BaseMonster
 		PACI ABCDEF 4 A_FDMRoamNoLook();
 		Loop;
 	See:
-		PACI ABCDEF 4 A_FDMChase(null,null);
+		PACI ABCDEF 4 A_FDMChasePacifist(null,null);
 		PACI A 0 A_FaceTarget();
 		Loop;
 	Pain:
@@ -147,8 +147,39 @@ class FDM_Pacifist : FDM_BaseMonster
 		DoAvoidWallrunning();
 		
 		A_Wander();
+		A_PacifistJump();
 		A_Recoil(-speed);
 		oldPos = pos;
+	}
+	
+	void A_FDMChasePacifist(statelabel melee = "Melee", statelabel missile = "Missile", int flags = 0)
+	{
+		DoAvoidWallrunning();
+		
+		A_Chase(melee, missile, flags);
+		A_PacifistJump();
+		A_Recoil(-speed);
+		oldPos = pos;
+	}
+
+	// Jump over nearby enemies or players.	
+	void A_PacifistJump()
+	{
+		BlockThingsIterator it = BlockThingsIterator.Create(self,32,0);
+		while (it.Next())
+		{
+			Actor mo = it.thing;
+			
+			if ((mo is "FDM_BaseMonster" && mo != self) || mo is "PlayerPawn")
+			{
+				if (pos.z == floorz)
+				{
+					ThrustThingZ (0, 48, 0, 1);
+					A_PlaySound("actors/quakeranger/jump", CHAN_VOICE, 1.0, 0, ATTN_NORM, 0, 2.0);
+					break;
+				}
+			}
+		}
 	}
 	
 	// Drop any collected weapons upon death
