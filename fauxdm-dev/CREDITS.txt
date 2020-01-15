@@ -104,6 +104,10 @@ by Jay Wilson
 H.U.R.L. Level 1
 by Michael Mcinnis
 
+"CBLOOD7"
+Infuscomus
+by Daniel Bernstein and Guy Whitmore
+
 ================================================================================
 
 Map Credits:
@@ -129,6 +133,10 @@ Remade by The Kins
 
 FDM04: "Don't Wake Daddy"
 Made by The Kins
+
+BB3: "Bodies"
+Based on BB3.MAP from Blood
+Originally by Craig Hubbard
 
 FDM05: "Tiny Town"
 Based on Tiny Town from GTA2 Multiplayer

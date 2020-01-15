@@ -256,12 +256,23 @@ map FDM03 "Shooting Gallery" // from Metroid Prime 2 MP
 map FDM04 "Don't Wake Daddy" // All original, baby
 {
 	author = "The Kins"
-	next = "FDM05"
+	next = "BB3"
 	sky1 = "STSKY6"
 	music = "PBLOOD1"
 	levelnum = 5
 	cluster = 50
 	EnterPic = "I_FDM04"
+}
+
+map BB3 "Bodies" // from Blood
+{
+	author = "Orig. by Craig Hubbard"
+	next = "FDM05"
+	sky1 = "SKY1"
+	music = "cblood7"
+	levelnum = 6
+	cluster = 50
+	EnterPic = "I_BB3"
 }
 
 map FDM05 "Tiny Town" // based on a map from gta2
