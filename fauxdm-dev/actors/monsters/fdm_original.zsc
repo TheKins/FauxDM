@@ -109,7 +109,7 @@ class FDM_Pacifist : FDM_BaseMonster
 		// Target and set goal at some random inventory item that's hopefully attainable
 		if ((!(target is "Inventory") || !(target is "Weapon")))
 		{
-			BlockThingsIterator it = BlockThingsIterator.CreateFromPos(pos.x,pos.y,pos.z,0,128,0);
+			BlockThingsIterator it = BlockThingsIterator.Create(self,128,0);
 			while (it.Next())
 			{
 				Actor mo = it.thing;
