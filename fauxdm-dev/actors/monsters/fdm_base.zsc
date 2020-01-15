@@ -119,7 +119,7 @@ class FDM_BaseMonster : Actor
 	{
 		if ((!(target is "PlayerPawn")))
 		{
-			BlockThingsIterator it = BlockThingsIterator.CreateFromPos(pos.x,pos.y,pos.z,0,64,0);
+			BlockThingsIterator it = BlockThingsIterator.Create(self,64,0);
 			while (it.Next())
 			{
 				Actor mo = it.thing;
