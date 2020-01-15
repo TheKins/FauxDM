@@ -9,6 +9,10 @@ GAMEPLAY CHANGES:
 - Added Duke3D-style respawn markers! Togglable in the DM Sim Options menu.
 
 MONSTER CHANGES:
+- General: Monsters that aren't fighting the player will switch targets to the
+  player if they get reasonably close and aren't actively fighting someone else,
+  reducing the common issue of monsters running past the player seemingly
+  oblivious to their existence.
 - Pacifist: Added to the Hard spawn list!
   
 MAP CHANGES:

@@ -38,6 +38,7 @@ class FDM_BaseMonster : Actor
 	property TauntSound: TauntSound;
 	vector2 neckchecker;
 	int wallcooldown;
+	int addtimer;
 	
 	States
 	{
@@ -95,6 +96,7 @@ class FDM_BaseMonster : Actor
 		DoAvoidWallrunning();
 		
 		A_Chase(melee, missile, flags);
+		PrioritizePlayers();
 		A_Recoil(-speed);
 		oldPos = pos;
 	}
@@ -105,8 +107,30 @@ class FDM_BaseMonster : Actor
 		
 		A_Wander();
 		A_Look();
+		PrioritizePlayers();
 		A_Recoil(-speed);
 		oldPos = pos;
+	}
+	
+	// If a player gets near a roaming enemy, and the enemy hasn't attacked in a little under
+	// two seconds, switch targets to the player. This is to avoid situations where monsters
+	// just wander past the player seemingly oblivious.
+	virtual void PrioritizePlayers()
+	{
+		if ((!(target is "PlayerPawn")))
+		{
+			BlockThingsIterator it = BlockThingsIterator.CreateFromPos(pos.x,pos.y,pos.z,0,64,0);
+			while (it.Next())
+			{
+				Actor mo = it.thing;
+				
+				if ((mo is "PlayerPawn") && addtimer <= 0)
+				{
+					target = mo;
+					break;
+				}
+			}
+		}
 	}
 	
 	override void Tick()
@@ -121,6 +145,18 @@ class FDM_BaseMonster : Actor
 		DoHurtFloorDamage();
 		DoTaunts();
 		DoGiveUp();
+		
+		// Stops monsters from switching away from their opponent to the player
+		// in the middle of a fight (see PrioritizePlayers()...)
+		if (addtimer > 0)
+		{
+			addtimer--;
+		}
+		
+		if (curstate == MissileState || curstate == MeleeState)
+		{
+			addtimer = 60;
+		}
 		
 		Super.Tick();
 	}
