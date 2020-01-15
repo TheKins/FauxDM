@@ -175,7 +175,7 @@ class FDM_Pacifist : FDM_BaseMonster
 				if (pos.z == floorz)
 				{
 					ThrustThingZ (0, 48, 0, 1);
-					A_PlaySound("actors/quakeranger/jump", CHAN_VOICE, 1.0, 0, ATTN_NORM, 0, 2.0);
+					A_PlaySound("actors/pacifist/jump", CHAN_VOICE);
 					break;
 				}
 			}

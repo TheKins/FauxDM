@@ -233,3 +233,8 @@ actors/pacifist/taunt2			pacitnt2
 actors/pacifist/taunt3			pacitnt3
 actors/pacifist/taunt4			pacitnt4
 actors/pacifist/taunt5			pacitnt5
+
+$random actors/pacifist/jump { actors/pacifist/jump1 actors/pacifist/jump2 actors/pacifist/jump3 }
+actors/pacifist/jump1			pacijmp1
+actors/pacifist/jump2			pacijmp2
+actors/pacifist/jump3			pacijmp3
