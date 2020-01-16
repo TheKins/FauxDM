@@ -24,6 +24,7 @@ MAP CHANGES:
 MISC. CHANGES:
 - Added more sound clips for the start of a match.
 - Continued development of the Fake Voice Chat system.
+- Fixed animation on Bossbrain projectile explosions
 
 BUILD 03.1 (January 3rd 2019)
 =============================

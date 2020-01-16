@@ -163,7 +163,7 @@ class FDM_SpawnShotExplosion : Actor
 			A_playSound("actors/cultist/explosion",CHAN_WEAPON);
 			A_Explode();
 		}
-		BEXP ABCDEFGHIJKLM 2 Bright;
+		DNEX ABCDEFGHIJKLM 2 Bright;
 		Stop;
 	}
 	
