@@ -20,6 +20,7 @@ MAP CHANGES:
 - BB3: Added a favorite map from Blood!
 - FDM02: Adjusted temple geometry to make the Timesphere jump easier.
 - FDM03: Adjusted scripting for slanted jumppads to remove workarounds.
+- FDM04: Replaced the hidden Hastesphere with a Timesphere.
 
 MISC. CHANGES:
 - Added more sound clips for the start of a match.
