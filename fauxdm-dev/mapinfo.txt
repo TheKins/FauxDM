@@ -268,7 +268,7 @@ map BB3 "Bodies" // from Blood
 {
 	author = "Orig. by Craig Hubbard"
 	next = "FDM05"
-	sky1 = "SKY1"
+	sky1 = "FIRESK00"
 	music = "cblood7"
 	levelnum = 6
 	cluster = 50
