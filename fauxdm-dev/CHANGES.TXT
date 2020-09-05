@@ -1,5 +1,7 @@
-NEXT VERSION
-============
+BUILD 04 (September 5th 2020)
+=============================
+I kind of dropped this mod in January to go back to MetaDoom and totally forgot
+to kick this release out there. Better late than never!
 
 GAMEPLAY CHANGES:
 - Added the ability to play on deathmatch maps that don't have a player 1 start!
@@ -24,8 +26,9 @@ MAP CHANGES:
 
 MISC. CHANGES:
 - Added more sound clips for the start of a match.
-- Continued development of the Fake Voice Chat system.
+- Continued development of the Fake Voice Chat system. (removed in stable release)
 - Fixed animation on Bossbrain projectile explosions
+- Fixed some intermission issues on newer versions of GZDoom.
 
 BUILD 03.1 (January 3rd 2019)
 =============================

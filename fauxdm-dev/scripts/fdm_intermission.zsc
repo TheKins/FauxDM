@@ -29,10 +29,8 @@ class FDM_StatusScreen : StatusScreen
 			break;
 	
 		case ShowNextLoc:
-			drawShowNextLoc();
-			break;
-	
 		case LeavingIntermission:
+			drawShowNextLoc();
 			break;
 
 		default:
