@@ -12,28 +12,28 @@
 */
 
 // Ventrillo Gag
-fvc/ventrillo/start			vc_v_st
+fvc/ventrillo/start			"fvc/ventrillo/vc_v_st.wav"
 
-fvc/ventrillo/rep1a			vc_v_1a
-fvc/ventrillo/rep1b			vc_v_1b
-fvc/ventrillo/rep1c			vc_v_1c
-fvc/ventrillo/rep1d			vc_v_1d
-fvc/ventrillo/rep1e			vc_v_1e
+fvc/ventrillo/rep1a			"fvc/ventrillo/vc_v_1a.wav"
+fvc/ventrillo/rep1b			"fvc/ventrillo/vc_v_1b.wav"
+fvc/ventrillo/rep1c			"fvc/ventrillo/vc_v_1c.wav"
+fvc/ventrillo/rep1d			"fvc/ventrillo/vc_v_1d.wav"
+fvc/ventrillo/rep1e			"fvc/ventrillo/vc_v_1e.wav"
 
-fvc/ventrillo/rep2a			vc_v_2a
-fvc/ventrillo/rep2b			vc_v_2b
-fvc/ventrillo/rep2c			vc_v_2c
+fvc/ventrillo/rep2a			"fvc/ventrillo/vc_v_2a.wav"
+fvc/ventrillo/rep2b			"fvc/ventrillo/vc_v_2b.wav"
+fvc/ventrillo/rep2c			"fvc/ventrillo/vc_v_2c.wav"
 
-fvc/ventrillo/end1			vc_v_en1
-fvc/ventrillo/end2			vc_v_en2
-fvc/ventrillo/end3			vc_v_en3
-fvc/ventrillo/end4			vc_v_en4
-fvc/ventrillo/end5			vc_v_en5
-fvc/ventrillo/end6			vc_v_en6
+fvc/ventrillo/end1			"fvc/ventrillo/vc_v_en1.wav"
+fvc/ventrillo/end2			"fvc/ventrillo/vc_v_en2.wav"
+fvc/ventrillo/end3			"fvc/ventrillo/vc_v_en3.wav"
+fvc/ventrillo/end4			"fvc/ventrillo/vc_v_en4.wav"
+fvc/ventrillo/end5			"fvc/ventrillo/vc_v_en5.wav"
+fvc/ventrillo/end6			"fvc/ventrillo/vc_v_en6.wav"
 
 // Stalker Bandit
-fvc/bandit/start			vc_b_st
+fvc/bandit/start			"fvc/bandit/vc_b_st.wav"
 
-fvc/bandit/reply1			vc_b_r1
-fvc/bandit/reply2			vc_b_r2
-fvc/bandit/reply3			vc_b_r3
+fvc/bandit/reply1			"fvc/bandit/vc_b_r1.wav"
+fvc/bandit/reply2			"fvc/bandit/vc_b_r2.wav"
+fvc/bandit/reply3			"fvc/bandit/vc_b_r3.wav"

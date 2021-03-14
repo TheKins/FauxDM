@@ -19,6 +19,7 @@ MISC. CHANGES:
 - Updated certain system artworks to support widescreen.
 - Fixed FDM Options not appearing in Simple Options Menu.
 - Fixed menu scaling in GZDoom v4.5.x.
+- Continued development of the Fake Voice Chat system. (maybe this'll ship some day)
 
 BUILD 04 (September 5th 2020)
 =============================
