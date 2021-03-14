@@ -8,6 +8,7 @@ MONSTERS:
 - Navigation is kind of fucked. They're never, _ever_ going to be trying to be
   proper bots (they're idiot monsters that think they're people!) but it'd be
   nice if they didn't just "run the rope" between walls as much.
+- Add more monster types! And then add more! AND THEN MORE.
   
 WEAPONS:
 - Add replacement for Skulltag BFG10k
@@ -16,18 +17,6 @@ WEAPONS:
 GAMEPLAY JUNK:
 - ACS should probably be de-fucked and ported to ZScript, but that stuff is
   pretty scary, so it's ACS for now. _For now._
-- Skill settings need implementing. Prob. once more stuff is added.
-  
-================================================================================
-
- The Will-Do In The Future List
-
-================================================================================
-
-MONSTERS:
-- Add more monster types! And then add more! AND THEN MORE.
-- Find a way to fake obituaries when killed, using player name and monster name.
-  Yes, this would be spammy. No, I don't care.
 
 MISC.:
 - Add the fake voice chat system!
