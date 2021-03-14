@@ -250,20 +250,7 @@ class FDM_LevelPostProc : LevelPostProcessor
 				if (fdm_devspew == 1)
 					Console.printf("FDM_Notice: Removed Skulltag Flag Spot at %i x %i", itemloc.x, itemloc.y);
 			}
-		}
-		
-		// Enable multi-player only items in single player.
-		if (!multiplayer)
-		{
-			for (int i = 0; i < 65535; i ++)
-			{
-				if (GetThingFlags(i) != MTF_SINGLE)
-				{
-					SetThingFlags(i, MTF_SINGLE);
-				}
-			}			 
-		}
-		
+		}		
 	}
 }
 

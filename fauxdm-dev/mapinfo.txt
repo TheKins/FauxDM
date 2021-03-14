@@ -46,26 +46,6 @@ gamedefaults
 // Redefine skill settings to allow for certain features to
 // work in pre-existing Doom maps.
 clearskills
-/*
-skill baby
-{
-	SpawnFilter = Baby
-	Name = "$SKILL1"
-	Key = "i"
-	PlayerRespawn
-	TotalInfighting
-}
-
-skill easy
-{
-	SpawnFilter = Easy
-	Name = "$SKILL2"
-	Key = "h"
-	
-	PlayerRespawn
-	TotalInfighting
-}
-*/
 skill normal
 {
 	SpawnFilter = Normal
@@ -75,30 +55,8 @@ skill normal
 	
 	PlayerRespawn
 	TotalInfighting
+	SpawnMulti
 }
-/*
-skill hard
-{
-	SpawnFilter = Hard
-	Name = "$SKILL4"
-	Key = "u"
-	
-	PlayerRespawn
-	TotalInfighting
-}
-
-skill nightmare
-{
-	DisableCheats
-	SpawnFilter = Nightmare
-	Name = "$SKILL5"
-	MustConfirm
-	Key = "n"
-	
-	PlayerRespawn
-	TotalInfighting
-}
-*/
 
 // Quick-n-Dirty Skulltag Compat
 DoomEdNums
