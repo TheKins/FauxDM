@@ -23,6 +23,7 @@ class FDM_StatusScreen : StatusScreen
 		{
 		case StatCount:
 			// draw animated background
+			widescreenDatShit();
 			bg.drawBackground(CurState, false, false);
 			drawRealBackground();
 			drawStats();
@@ -30,15 +31,31 @@ class FDM_StatusScreen : StatusScreen
 	
 		case ShowNextLoc:
 		case LeavingIntermission:
+			widescreenDatShit();
 			drawShowNextLoc();
 			break;
 
 		default:
+			widescreenDatShit();
 			drawNoState();
 			//drawRealBackground();
 			break;
 		}
 	}
+	
+	// Draws images to the left and right of the traditional intermission graphic,
+	// as a sick hack to fill in space for widescreen players (aka. most players
+	// nowadays in this Brutal-tinged era.
+	// Rewritten by Gutawer. Kudos!
+	void widescreenDatShit ()
+    {
+        TextureID interborder = TexMan.CheckForTexture("INTBACK", TexMan.Type_MiscPatch);
+        Vector2 borderSize = TexMan.GetScaledSize(interborder);
+        Vector2 interpicTL, interpicRS;
+        [interpicTL, interpicRS] = Screen.VirtualToRealCoords((0, 0), (640, 400), (640, 400));
+        screen.DrawTexture (interborder, true, interPicTL.x - borderSize.x * CleanXFac, -64, DTA_CleanNoMove, true);
+        screen.DrawTexture (interborder, true, interPicTL.x + interPicRS.x, -64, DTA_CleanNoMove, true);
+    }
 	
 	// Draw a different background depending on whether you won or lost, ala Skulltag.
 	void drawRealBackground ()
