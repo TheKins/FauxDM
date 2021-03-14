@@ -13,6 +13,8 @@
 
 LISTMENU "MainMenu"
 {
+	Size "Clean"
+	
 	StaticPatch 16, 38, "BETHBOX1"
 	StaticPatch 45, 19, "M_FAUXDM"
 	Position 97, 72
@@ -25,6 +27,8 @@ LISTMENU "MainMenu"
 
 ListMenu "EpisodeMenu"
 {
+	Size "Clean"
+	
 	StaticText 54, 10, "$MNU_EPISODE"
 	Position 48, 30
 	// items will be filled in by MAPINFO
@@ -33,6 +37,11 @@ ListMenu "EpisodeMenu"
 ////////////////////////////////////////////////////////////////////////////////
 
 AddOptionMenu "OptionsMenu"
+{
+	Submenu "$OPTMNU_FDM",			"FDMOptionsMenu"
+}
+
+AddOptionMenu "OptionsMenuSimple"
 {
 	Submenu "$OPTMNU_FDM",			"FDMOptionsMenu"
 }
