@@ -136,10 +136,20 @@ class FDM_Player : PlayerPawn
 	{
 		// These have all been broken into seperate functions so that individual
 		// actors can disable or override them for whatever reason.
-		
 		DoExtinguish();
+		DoUnfuckDeath();
 		
 		Super.Tick();
+	}
+	
+	// Fix a weird bug where sometimes when accidentally killing yourself with a Plasma Rifle splash,
+	// you don't actually enter your death state and die standing up without a death sound.
+	virtual void DoUnfuckDeath()
+	{
+		if (health <= 0 && !InStateSequence(CurState, ResolveState("Death")) && !InStateSequence(CurState, ResolveState("XDeath")))
+		{
+			SetStateLabel("Death");
+		}
 	}
 	
 	// Get extinguished if entering water.

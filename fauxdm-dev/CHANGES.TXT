@@ -32,6 +32,9 @@ MISC. CHANGES:
   replaced by FDM counterparts and/or removed
 - Replaced old hack for making MP items appear in single player with the nice
   new "SpawnMulti" skill setting flag. Hooray, engine-level functionality!
+- Fixed a bug where, when dying under certain odd circumstances, players wouldn't
+  actually enter their death state. Plasma Rifle splash damage suicides were
+  notorious for this.
 - Continued development of the Fake Voice Chat system. (maybe this'll ship some day)
 
 BUILD 04 (September 5th 2020)
