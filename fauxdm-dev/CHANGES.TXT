@@ -17,6 +17,9 @@ MAP CHANGES:
 - FDM05: Added AI redirectors.
 - BB3: Added AI redirectors.
 
+WEAPON CHANGES:
+- Flamethrower: Imported updated version of Flamethrower library from Reelism 2.
+
 MISC. CHANGES:
 - Added widescreen intermission border from MetaDoom.
 - Updated certain system artworks to support widescreen.
