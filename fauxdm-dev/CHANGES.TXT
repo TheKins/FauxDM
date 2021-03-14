@@ -21,6 +21,7 @@ WEAPON CHANGES:
 - Flamethrower: Imported updated version of Flamethrower library from Reelism 2.
 
 MISC. CHANGES:
+- Added and improved the sound clips for match stats and Gauntlet kills.
 - Added widescreen intermission border from MetaDoom.
 - Updated certain system artworks to support widescreen.
 - Fixed FDM Options not appearing in Simple Options Menu.
