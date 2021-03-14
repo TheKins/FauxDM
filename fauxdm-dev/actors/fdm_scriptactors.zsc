@@ -26,7 +26,7 @@ class FDM_PushyBastard32 : Actor
 	
 	override bool CanCollideWith(Actor other, bool passive)
 	{
-		if (other is "FDM_BaseMonster")
+		if (other is "FDM_BaseMonster" && other.health > 0 && !other.InStateSequence(CurState, ResolveState("Pain")))
 		{
 			other.angle = self.angle;
 		}
