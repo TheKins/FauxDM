@@ -1,3 +1,10 @@
+NEXT
+====
+
+MISC. CHANGES:
+- Added widescreen intermission border from MetaDoom
+- Updated certain system artworks to support widescreen
+
 BUILD 04 (September 5th 2020)
 =============================
 I kind of dropped this mod in January to go back to MetaDoom and totally forgot
