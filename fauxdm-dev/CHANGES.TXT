@@ -25,6 +25,7 @@ MISC. CHANGES:
 - Updated certain system artworks to support widescreen.
 - Fixed FDM Options not appearing in Simple Options Menu.
 - Fixed menu scaling in GZDoom v4.5.x.
+- Redesigned the Episode Select for added thematic appropriateness.
 - Fixed weapons and ammo not having proper names in UDB
 - Fixed duplicate item definitions in UDB by changing how Skulltag actors are
   replaced by FDM counterparts and/or removed

@@ -127,10 +127,82 @@ DoomEdNums
 }
 
 // Map Definitions
+clearepisodes
 episode FDM01
 {
 	name = "$TXT_FDM"
 	key = "f"
+}
+
+// Redefining episodes without picnames for the new episode select
+episode map01
+{
+	name = "$TXT_D2E1"
+	key = "h"
+	optional
+}
+
+episode level01
+{
+	name = "$TXT_D2E2"
+	key = "n"
+	optional
+}
+
+episode nv_map01
+{
+	name = "$D2EP2NAME"
+	key = "n"
+	optional
+}
+
+episode e1m1
+{
+	name = "$TXT_D1E1"
+	key = "k"
+	optional
+}
+
+episode e2m1
+{
+	name = "$TXT_D1E2"
+	key = "t"
+	optional
+}
+
+episode e3m1
+{
+	name = "$TXT_D1E3"
+	key = "i"
+	optional
+}
+
+episode e4m1
+{
+	name = "$TXT_D1E4"
+	key = "t"
+	optional
+} 
+
+episode ml_map01
+{
+	name = "$D2MLNAME"
+	key = "m"
+	optional
+}
+
+episode tn_map01
+{
+	name = "$TNTNAME"
+	key = "t"
+	optional
+}
+
+episode pl_map01
+{
+	name = "$PLUNAME"
+	key = "p"
+	optional
 }
 
 cluster 50

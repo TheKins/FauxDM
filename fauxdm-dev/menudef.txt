@@ -29,8 +29,15 @@ ListMenu "EpisodeMenu"
 {
 	Size "Clean"
 	
-	StaticText 54, 10, "$MNU_EPISODE"
-	Position 48, 30
+	StaticPatch 44, 7, "BETHBOX2"
+	StaticTextCentered 160, 0, "$MNU_EPISODE"
+	//StaticText 54, 10, "$MNU_EPISODE"
+	
+	Position 64, 20
+	
+	Font "SmallFont", "White"
+	LineSpacing 9
+	Selector "TCUR1", -12, 0
 	// items will be filled in by MAPINFO
 }
 

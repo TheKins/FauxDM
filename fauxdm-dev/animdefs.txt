@@ -175,3 +175,7 @@ pic 97 tics 2
 pic 98 tics 2
 pic 99 tics 2
 pic 100 tics 2
+
+texture TCUR1
+pic TCUR1 tics 8
+pic TCUR2 tics 8
