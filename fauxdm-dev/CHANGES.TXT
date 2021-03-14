@@ -2,7 +2,17 @@ NEXT
 ====
 
 MONSTER CHANGES:
-- Added AI Redirector actors
+- Added AI Redirector actors! These invisible actors will cause monsters to snap
+  in a certain direction upon touching them under certain circumstances, allowing
+  level designers to tell monsters to stay on bridges and walkways if need be.
+
+MAP CHANGES:
+- FDM02: Added AI redirectors.
+- FDM02: Monsters are no longer stuck in the water, they will sometimes get out.
+- FDM03: Added AI redirectors.
+- FDM04: Added AI redirectors.
+- FDM05: Added AI redirectors.
+- BB3: Added AI redirectors.
 
 MISC. CHANGES:
 - Added widescreen intermission border from MetaDoom
