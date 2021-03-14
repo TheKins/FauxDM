@@ -194,6 +194,9 @@ DoomEdNums
 	21006 = "FDM_Waterspout"
 	21007 = "FDM_Fuel"
 	21008 = "FDM_Car"
+	
+	22000 = "FDM_PushyBastard32"
+	22001 = "FDM_PushyBastard64"
 }
 
 // Map Definitions

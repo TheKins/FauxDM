@@ -10,6 +10,42 @@
 
 ================================================================================
 */
+class FDM_PushyBastard32 : Actor
+{
+	Default
+	{
+		radius 32;
+		height 64;
+		+SOLID
+		+NOGRAVITY
+		//$Category "FauxDM Gameplay"
+		//$Title "AI Actor Redirector - 32 Wide"
+		//$IsDecoration
+		//$Color 11
+	}
+	
+	override bool CanCollideWith(Actor other, bool passive)
+	{
+		if (other is "FDM_BaseMonster")
+		{
+			other.angle = self.angle;
+		}
+		return false;
+	}
+}
+
+class FDM_PushyBastard64 : FDM_PushyBastard32
+{
+	Default
+	{
+		radius 64;
+		//$Category "FauxDM Gameplay"
+		//$Title "AI Actor Redirector - 64 Wide"
+		//$IsDecoration
+		//$Color 11
+	}
+}
+
 //$GZDB_SKIP
 class FDM_SecActHitFloor : SectorAction replaces SecActHitFloor
 {

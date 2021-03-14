@@ -1,6 +1,9 @@
 NEXT
 ====
 
+MONSTER CHANGES:
+- Added AI Redirector actors
+
 MISC. CHANGES:
 - Added widescreen intermission border from MetaDoom
 - Updated certain system artworks to support widescreen
