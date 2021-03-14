@@ -23,6 +23,7 @@ class FDM_Shotgun : FDM_BaseWeapon replaces Shotgun
 		Obituary "$OB_MPSHOTGUN";
 		Tag "$TAG_SHOTGUN";
 		Decal "BulletChip";
+		//$Title "Shotgun"
 	}
 	States
 	{

@@ -24,6 +24,7 @@ class FDM_Flamethrower : FDM_BaseWeapon replaces Chainsaw
 		Inventory.PickupMessage "$GOTFLAMER";
 		Tag "$TAGFLAMER";
 		scale 0.75;
+		//$Title "Flamethrower"
 	}
 	
 	States

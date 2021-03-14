@@ -23,6 +23,7 @@ class FDM_Machinegun : FDM_BaseWeapon replaces Pistol
 		Obituary "$OB_MPCHAINGUN";
 		Tag "$TAGMACHGUN";
 		Decal "BulletChip";
+		//$Title "Machine Gun"
 	}
 	States
 	{

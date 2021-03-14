@@ -23,6 +23,7 @@ class FDM_Chaingun : FDM_BaseWeapon replaces Chaingun
 		Obituary "$OB_MPCHAINGUN";
 		Tag "$TAG_CHAINGUN";
 		Decal "BulletChip";
+		//$Title "Chaingun"
 	}
 	States
 	{

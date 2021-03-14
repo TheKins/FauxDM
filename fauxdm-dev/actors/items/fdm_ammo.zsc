@@ -20,6 +20,7 @@ class FDM_Clip : Clip replaces Clip
 		Inventory.Amount 10;
 		inventory.pickupsound "items/ammo/clip1";
 		Inventory.PickupFlash "FDM_ItemRespawnMarker";
+		//$Title "Clip"
 	}
 	States
 	{
@@ -37,6 +38,7 @@ class FDM_ClipBox : Clip replaces ClipBox
 		Inventory.Amount 50;
 		inventory.pickupsound "items/ammo/clip2";
 		Inventory.PickupFlash "FDM_ItemRespawnMarker";
+		//$Title "Clip Box"
 	}
 	States
 	{
@@ -56,6 +58,7 @@ class FDM_Shell : Shell replaces Shell
 		inventory.pickupsound "items/ammo/shell1";
 		scale 0.75;
 		Inventory.PickupFlash "FDM_ItemRespawnMarker";
+		//$Title "Shell"
 	}
 	States
 	{
@@ -73,6 +76,7 @@ class FDM_ShellBox : Shell replaces ShellBox
 		Inventory.Amount 20;
 		inventory.pickupsound "items/ammo/shell2";
 		Inventory.PickupFlash "FDM_ItemRespawnMarker";
+		//$Title "Shell Box"
 	}
 	States
 	{
@@ -91,6 +95,7 @@ class FDM_RocketAmmo : RocketAmmo replaces RocketAmmo
 		Inventory.Amount 1;
 		inventory.pickupsound "items/ammo/rocket1";
 		Inventory.PickupFlash "FDM_ItemRespawnMarker";
+		//$Title "Rocket"
 	}
 	States
 	{
@@ -108,6 +113,7 @@ class FDM_RocketBox : RocketAmmo replaces RocketBox
 		Inventory.Amount 5;
 		inventory.pickupsound "items/ammo/rocket2";
 		Inventory.PickupFlash "FDM_ItemRespawnMarker";
+		//$Title "Rocket Box"
 	}
 	States
 	{
@@ -126,6 +132,7 @@ class FDM_Cell : Cell replaces Cell
 		Inventory.Amount 20;
 		inventory.pickupsound "items/ammo/cell1";
 		Inventory.PickupFlash "FDM_ItemRespawnMarker";
+		//$Title "Cell"
 	}
 	States
 	{
@@ -143,6 +150,7 @@ class FDM_CellPack : Cell replaces CellPack
 		Inventory.Amount 100;
 		inventory.pickupsound "items/ammo/cell2";
 		Inventory.PickupFlash "FDM_ItemRespawnMarker";
+		//$Title "Cell Box"
 	}
 	States
 	{
@@ -161,6 +169,7 @@ class FDM_UniversalAmmo : CustomInventory replaces Backpack
 		Inventory.PickupMessage "$GOTUNIAMMO";
 		inventory.pickupsound "items/ammo/uni";
 		Inventory.PickupFlash "FDM_ItemRespawnMarker";
+		//$Title "Universal Ammo"
 	}
 	States
 	{

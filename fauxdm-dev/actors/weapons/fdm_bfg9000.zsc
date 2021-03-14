@@ -23,6 +23,7 @@ class FDM_BFG9000 : FDM_BaseWeapon replaces BFG9000
 		+WEAPON.NOAUTOFIRE;
 		Inventory.PickupMessage "$GOTBFG9000";
 		Tag "$TAG_BFG9000";
+		//$Title "BFG 9000"
 	}
 	States
 	{

@@ -9,6 +9,7 @@ class FDM_Gauntlet : FDM_BaseWeapon
 		Tag "$TAGGAUNTLET";
 		+WEAPON.MELEEWEAPON	
 		damagetype "Gauntlet";
+		//$Title "Gauntlet"
 	}
 	States
 	{
