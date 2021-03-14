@@ -103,35 +103,12 @@ skill nightmare
 // Quick-n-Dirty Skulltag Compat
 DoomEdNums
 {
-	5013 = "BFG9000" // BFG10K
 	5011 = "FDM_GrenadeLauncher" // GrenadeLauncher
 	5014 = "FDM_Minigun" // Minigun
 	5012 = "FDM_Railgun" // Railgun
 	
 	5030 = "FDM_HasteSphere" // Turbosphere
-	5032 = "SoulSphere"// TimeFreezeSphere
-	5035 = "BlurSphere" // InvisibilitySphere
 	5036 = "FDM_QuadDamage" // DoomSphere
-	5037 = "BlueArmor" // Guardsphere
-	5039 = "SoulSphere" // RandomPowerup
-	
-	5090 = "FDM_HealthBonus" // MaxHealthBonus
-	5091 = "FDM_ArmorBonus" //  MaxArmorBonus
-	5040 = "BlueArmor" // RedArmor
-	
-	5080 = "FDM_Blank" // Team Spawn
-	5081 = "FDM_Blank" // Team Spawn
-	
-	5100 = "FDM_Blank" // StrengthRune
-	5101 = "FDM_Blank" // RageRune
-	5102 = "FDM_Blank" // DrainRune
-	5103 = "FDM_Blank" // SpreadRune
-	5104 = "FDM_Blank" // ResistanceRune
-	5105 = "FDM_Blank" // RegenerationRune
-	5106 = "FDM_Blank" // ProsperityRune
-	5107 = "FDM_Blank" // ReflectionRune
-	5108 = "FDM_Blank" // HighJumpRune
-	5109 = "FDM_Blank" // HasteRune
 	
 	5068 = "FDM_SpringPadZone"
 	
@@ -142,7 +119,6 @@ DoomEdNums
 	5054 = "TallGothicColumn"
 	5055 = "RevenantHand"
 	5056 = "ImpHead"
-	5058 = "FDM_Blank" // Impse
 	5009 = "FloatingBobbingSkull"
 	5120 = "ImpalingSpike"
 	5121 = "ImpalingSpike2"
@@ -170,19 +146,12 @@ DoomEdNums
 	5328 = "MarineHelmetGibs"
 	
 	5070 = "DeadCyberdemon"
-	5057 = "FDM_Blank" // Hissy
 	5110 = "ImpStatue"
 	5111 = "DemonStatue"
 	5112 = "ArchvileStatue"
 	5113 = "BaronStatue"
 	5114 = "CyberdemonStatue"
 	5115 = "MassmouthStatue"
-	
-	5020 = "FDM_Blank" // HellScorePillar
-	10022 = "FDM_Blank" // HellScorePillarBlue
-	10021 = "FDM_Blank" // HellScorePillarRed
-	5131 = "FDM_Blank" // RedFlagSpot
-	5130 = "FDM_Blank" // BlueFlagSpot
 	
 	// New Stuff
 	21000 = "TangoHangingLight144"

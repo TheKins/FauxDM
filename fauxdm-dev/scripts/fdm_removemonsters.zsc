@@ -14,6 +14,8 @@
 // Remove all normal monsters from pre-existing maps for compatibility purposes,
 // triggering bossdeath scripts where appropriate
 
+//$GZDB_SKIP
+
 class FDM_Blank : Actor
 {
 	States

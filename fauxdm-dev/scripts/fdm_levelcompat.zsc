@@ -38,6 +38,220 @@ class FDM_LevelPostProc : LevelPostProcessor
 			}
 		}
 		
+		// Delete certain items that are unneeded for this mod.
+		for (int j = 0; j < 65535; j ++)
+		{
+			vector3 itemloc = GetThingPos(j);
+			
+			if (GetThingEdNum(j) == 5013) // Skulltag BFG10k
+			{
+				SetThingEdNum(j,  2006);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Replaced Skulltag BFG10k at %i x %i with BFG9000", itemloc.x, itemloc.y);
+			}
+			
+			if (GetThingEdNum(j) == 5032) // TimeFreezeSphere
+			{
+				SetThingEdNum(j, 2013);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Replaced Skulltag TimeFreezeSphere at %i x %i with SoulSphere", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5035) // "BlurSphere" // InvisibilitySphere
+			{
+				SetThingEdNum(j, 2024);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Replaced Skulltag Invis Sphere at %i x %i with Blur Sphere", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5037) // Guardsphere
+			{
+				SetThingEdNum(j, 2019);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Replaced Skulltag Guardsphere at %i x %i with Blue Armor", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5039) // RandomPowerup
+			{
+				SetThingEdNum(j, 2013);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Replaced Skulltag RandomPowerup at %i x %i with SoulSphere", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5090) // MaxHealthBonus
+			{
+				SetThingEdNum(j, 2014);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Replaced Skulltag MaxHealthBonus at %i x %i with HealthBonus", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5091) //  MaxArmorBonus
+			{
+				SetThingEdNum(j, 2015);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Replaced Skulltag MaxArmorBonus at %i x %i with ArmorBonus", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5040) // RedArmor
+			{
+				SetThingEdNum(j, 2019);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Replaced Skulltag Red Armor at %i x %i with Blue Armor", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5080) // Team Spawn
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Team Spawn at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5081) // "FDM_Blank" // Team Spawn
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Team Spawn at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5100) // StrengthRune
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Strength Rune at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5101) // "FDM_Blank" // RageRune
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Rage Rune at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5102) // "FDM_Blank" // DrainRune
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Drain Rune at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5103) // "FDM_Blank" // SpreadRune
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Spread Rune at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5104) // "FDM_Blank" // ResistanceRune
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Resistance Rune at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5105) // "FDM_Blank" // RegenerationRune
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Regen Rune at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5106) // "FDM_Blank" // ProsperityRune
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Prosperity Rune at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5107) // "FDM_Blank" // ReflectionRune
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Reflection Rune at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5108) // "FDM_Blank" // HighJumpRune
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag High Jump Rune at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5109) // "FDM_Blank" // HasteRune
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Haste Rune at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5057) // "FDM_Blank" // Hissy
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Hissy at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5058) // "FDM_Blank" // Impse
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Impse at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5020) // "FDM_Blank" // HellScorePillar
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Hell Score Pillar at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 10022) // "FDM_Blank" // HellScorePillarBlue
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Hell Score Pillar at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 10021) // "FDM_Blank" // HellScorePillarRed
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Hell Score Pillar at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5131) // "FDM_Blank" // RedFlagSpot
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Flag Spot at %i x %i", itemloc.x, itemloc.y);
+			}
+
+			if (GetThingEdNum(j) == 5130) // "FDM_Blank" // BlueFlagSpot
+			{
+				SetThingEdNum(j, 23);
+				SetThingFlags(j,0);
+				if (fdm_devspew == 1)
+					Console.printf("FDM_Notice: Removed Skulltag Flag Spot at %i x %i", itemloc.x, itemloc.y);
+			}
+		}
+		
 		// Enable multi-player only items in single player.
 		if (!multiplayer)
 		{
