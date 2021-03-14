@@ -337,6 +337,32 @@ class FDM_BaseMonster : Actor
 		// And do a little flipspritery, while we're at it.
 		bSPRITEFLIP = random(0,1);
 		
+		// If enabled, prepare and print off an obit for the monster.
+		if (fdm_monsterobits)
+		{
+			string whodunnit;
+			string killerclass;
+			string murderweapon;
+			if (source is "PlayerPawn")
+			{
+				whodunnit = Source.player.GetUserName();
+				killerclass = "Player";
+				murderweapon = Source.player.ReadyWeapon.GetClassName();
+			}
+			else if (source != null && source != self)
+			{
+				whodunnit = Source.GetTag();
+				killerclass = source.GetClassName();
+				murderweapon = "Monster";
+			} else {
+				whodunnit = "World";
+				murderweapon = "World";
+				killerclass = "World";
+			}
+			
+			DoSelfObit(whodunnit, killerclass, MeansOfDeath, murderweapon);
+		}
+		
 		Super.Die(source, inflictor, dmgflags, MeansOfDeath);
 	}
 	
@@ -413,5 +439,80 @@ class FDM_BaseMonster : Actor
         //return string.format("%s %s.",Obituary, GetTag());
 		return string.format("%s %s.", Stringtable.Localize(Obituary), GetTag());
     }
+	
+	// Spam the console with their own obit when killed.
+	virtual void DoSelfObit(string srcname, string srcclass, string mod, string weapon)
+	{
+		string endresult;
+		endresult = string.format("%s was killed by %s with %s.", GetTag(), srcname, weapon);
+		
+		if (srcclass == "World")
+		{
+			endresult = string.format("%s killed their own dumb self.", GetTag(), srcname);
+		}
+		
+		if (mod == "Telefrag")
+		{
+			endresult = string.format("%s was telefragged by %s!", GetTag(), srcname);
+		}
+		
+		if (weapon == "Monster")
+		{
+			endresult = string.format("%s was killed by %s.", GetTag(), srcname);
+			
+			if (srcclass == "FDM_ZombieMan")
+				endresult = string.format("%s was popped by %s.", GetTag(), srcname);
+			else if (srcclass == "FDM_ShotgunGuy")
+				endresult = string.format("%s was peppered by %s.", GetTag(), srcname);
+			else if (srcclass == "FDM_DoomImp")
+				endresult = string.format("%s was clawed by %s.", GetTag(), srcname);
+			else if (srcclass == "FDM_JPFGuy")
+				endresult = string.format("%s was overpowered by %s.", GetTag(), srcname);
+			else if (srcclass == "FDM_QuakeRanger")
+				endresult = string.format("%s was nailed by %s.", GetTag(), srcname);
+			else if (srcclass == "FDM_DukeBot")
+				endresult = string.format("%s was owned by %s.", GetTag(), srcname);
+			else if (srcclass == "FDM_Santa")
+				endresult = string.format("%s was roasted like a yule-log by %s.", GetTag(), srcname);
+			else if (srcclass == "FDM_Chubbs")
+				endresult = string.format("%s was weighed down by %s.", GetTag(), srcname);
+			else if (srcclass == "FDM_BloodCultist")
+				endresult = string.format("%s was pulped by %s.", GetTag(), srcname);
+			else if (srcclass == "FDM_CyberBruiser")
+				endresult = string.format("%s was exploded by %s.", GetTag(), srcname);
+			else if (srcclass == "FDM_Pacifist")
+				endresult = string.format("%s was somehow pacifismed to death by %s.", GetTag(), srcname);
+		}
+		
+		if (srcclass == "Player")
+		{
+			if (weapon == "FDM_Gauntlet")
+				endresult = string.format("%s was sliced up by %s's Gauntlet.", GetTag(), srcname);
+			else if (weapon == "FDM_Machinegun")
+				endresult = string.format("%s was popped by %s's Machinegun.", GetTag(), srcname);
+			else if (weapon == "FDM_Shotgun")
+				endresult = string.format("%s was peppered by %s's Shotgun.", GetTag(), srcname);
+			else if (weapon == "FDM_SuperShotgun")
+				endresult = string.format("%s was splattered by %s's Super Shotgun.", GetTag(), srcname);
+			else if (weapon == "FDM_Chaingun")
+				endresult = string.format("%s was cut down by %s's Chaingun.", GetTag(), srcname);
+			else if (weapon == "FDM_Minigun")
+				endresult = string.format("%s was evaporated by %s's Minigun.", GetTag(), srcname);
+			else if (weapon == "FDM_RocketLauncher")
+				endresult = string.format("%s was blasted by %s's Rocket Launcher.", GetTag(), srcname);
+			else if (weapon == "FDM_GrenadeLauncher")
+				endresult = string.format("%s was wasted by %s's Grenade Launcher.", GetTag(), srcname);
+			else if (weapon == "FDM_PlasmaRifle")
+				endresult = string.format("%s was lit up by %s's Plasma Rifle.", GetTag(), srcname);
+			else if (weapon == "FDM_Railgun")
+				endresult = string.format("%s was railed by %s's Railgun.", GetTag(), srcname);
+			else if (weapon == "FDM_BFG9000")
+				endresult = string.format("%s was nuked by %s's BFG9000.", GetTag(), srcname);
+			else if (weapon == "FDM_Flamethrower")
+				endresult = string.format("%s was fried by %s's Flamethrower", GetTag(), srcname);
+		}
+		
+		Console.printf("\cf%s", endresult);
+	}
 
 }

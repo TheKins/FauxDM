@@ -38,3 +38,6 @@ server int fdm_monsterscriptactors = 1;
 
 // Toggle Respawn Markers
 server int fdm_respawnmarkers = 1;
+
+// Toggle monster obits
+server int fdm_monsterobits = 1;

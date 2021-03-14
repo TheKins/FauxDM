@@ -5,6 +5,8 @@ MONSTER CHANGES:
 - Added AI Redirector actors! These invisible actors will cause monsters to snap
   in a certain direction upon touching them under certain circumstances, allowing
   level designers to tell monsters to stay on bridges and walkways if need be.
+- Monsters will now print obituaries when killed, just like humans do. If you
+  don't appreciate the console spam, this is togglable in the DM Sim menu.
 
 MAP CHANGES:
 - FDM02: Added AI redirectors.
