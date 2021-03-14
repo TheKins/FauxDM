@@ -19,6 +19,11 @@ MISC. CHANGES:
 - Updated certain system artworks to support widescreen.
 - Fixed FDM Options not appearing in Simple Options Menu.
 - Fixed menu scaling in GZDoom v4.5.x.
+- Fixed weapons and ammo not having proper names in UDB
+- Fixed duplicate item definitions in UDB by changing how Skulltag actors are
+  replaced by FDM counterparts and/or removed
+- Replaced old hack for making MP items appear in single player with the nice
+  new "SpawnMulti" skill setting flag. Hooray, engine-level functionality!
 - Continued development of the Fake Voice Chat system. (maybe this'll ship some day)
 
 BUILD 04 (September 5th 2020)
