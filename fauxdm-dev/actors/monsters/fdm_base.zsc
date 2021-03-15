@@ -357,7 +357,7 @@ class FDM_BaseMonster : Actor
 				} else {
 					whodunnit = "Some Asshole";
 					killerclass = self.GetClassName();
-					murderweapon = "Monster"
+					murderweapon = "Monster";
 				}
 			}
 			else if (source != null && source != self)
