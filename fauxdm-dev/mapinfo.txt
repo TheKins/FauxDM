@@ -19,7 +19,7 @@ gameinfo
 	
 	gibfactor = 0.5
 	
-	AddEventHandlers = "FDM_DMPlayerSpawnHandler", "FDM_DMSpawnHandler", "FDM_SP_ItemRespawner", "FDM_MonsterRemover", "FDM_ContextualReplacements"
+	AddEventHandlers = "FDM_DMPlayerSpawnHandler", "FDM_DMSpawnHandler", "FDM_SP_ItemRespawner", "FDM_MonsterRemover", "FDM_ContextualReplacements", "FDM_HolidayShit"
 	translator = "xlat.txt"
 	statusbarclass = "FDM_StatusBar"
 	statscreen_single = "FDM_StatusScreen"
@@ -215,7 +215,6 @@ map FDM01 "Carnyard Love" // orig by Carnevil and Matthew McGee
 {
 	author = "Orig. by Carnevil & Matthew McGee"
 	next = "D5M1"
-	secretnext = "D5M1X"
 	sky1 = "FDMSKY1"
 	music = "mglodoom"
 	levelnum = 1

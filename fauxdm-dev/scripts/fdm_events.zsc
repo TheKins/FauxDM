@@ -184,18 +184,20 @@ Class FDM_MonsterRemover : EventHandler
 	}
 }
 
-class FDM_ContextualReplacements : EventHandler
+class FDM_HolidayShit : EventHandler
 {
-    override void CheckReplacement(ReplaceEvent e)
+	override void WorldTick()
 	{
-		if (e.replacee == "FDM_TimeSphere")
+		if (level.nextmap ~== "D5M1" && fdm_holiday == 1)
 		{
-			if (multiplayer | deathmatch | sv_nomonsters)
-			{
-				e.Replacement = "FDM_HasteSphere";
-			}
+			level.nextmap = "D5M1X";
+		} else if (level.nextmap ~== "D5M1X" && fdm_holiday == 0) {
+			level.nextmap = "D5M1";
 		}
-		
+	}
+	
+	override void CheckReplacement(ReplaceEvent e)
+	{
 		if (e.replacee == "FDM_DukeBot")
 		{
 			if (fdm_holiday == 1)
@@ -207,6 +209,20 @@ class FDM_ContextualReplacements : EventHandler
 				{
 					e.Replacement = "FDM_Santa";
 				}
+			}
+		}
+	}
+}
+
+class FDM_ContextualReplacements : EventHandler
+{
+    override void CheckReplacement(ReplaceEvent e)
+	{
+		if (e.replacee == "FDM_TimeSphere")
+		{
+			if (multiplayer | deathmatch | sv_nomonsters)
+			{
+				e.Replacement = "FDM_HasteSphere";
 			}
 		}
 	}
