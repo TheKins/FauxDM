@@ -39,10 +39,8 @@ FDMMNU_RESPAWNMARKERS = "Item Respawn Markers";
 FDMMNU_MONSTEROBITS = "Obituaries for Monsters";
 FDMMNU_SCRIPTACTORS = "Monsters Trigger Player Floor Scripts";
 
-FDMMNU_MPWEAPS = "MP Weapon Spawns in SP";
-FDMNU_MPWEAPSWARN1 = "WARNING: This will mangle thing flags, breaking some";
-FDMNU_MPWEAPSWARN2 = "script activators in maps! Takes effect on map load.";
-FDMNU_MPWEAPSWARN3 = "If a map seems fucked or gunless, toggle and reload!";
+FDMMNU_HOLIDAY = "Seasonal Content";
+OPTVAL_XMAS = "Merr Chrimbus";
 
 FDMMNU_DEVSPEW = "Developer Barf";
 

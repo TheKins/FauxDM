@@ -215,6 +215,7 @@ map FDM01 "Carnyard Love" // orig by Carnevil and Matthew McGee
 {
 	author = "Orig. by Carnevil & Matthew McGee"
 	next = "D5M1"
+	secretnext = "D5M1X"
 	sky1 = "FDMSKY1"
 	music = "mglodoom"
 	levelnum = 1
@@ -231,6 +232,17 @@ map D5M1 "Plead the Fifth" // Orig. SS-MAP1 (aka DWANGO5 Map01) by Rockt and Asm
 	levelnum = 2
 	cluster = 50
 	EnterPic = "I_D5M1"
+}
+
+map D5M1X "Plead the Fifth" // Xmas Version
+{
+	author = "Orig. by Rockt & Asmo"
+	next = "FDM02"
+	sky1 = "D5SKYX"
+	music = "musxd5m1"
+	levelnum = 2
+	cluster = 50
+	EnterPic = "I_D5M1X"
 }
 
 map FDM02 "Forgotten Temple" // orig from first 1995 SW proto

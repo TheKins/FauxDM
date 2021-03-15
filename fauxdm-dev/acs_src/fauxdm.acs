@@ -166,7 +166,12 @@ script "FDM_MissionComplete" (void)
 	SetPlayerProperty (1, 0, PROP_INVULNERABILITY);
 	ClearInventory();
 	mapsCleared++;
-	Exit_Normal(0);
+	if (GetCVar("fdm_holiday") == 1)
+	{
+		Exit_Secret(0);
+	} else {
+		Exit_Normal(0);
+	}
 }
 
 script "FDM_ResetInventory" ENTER

@@ -195,6 +195,20 @@ class FDM_ContextualReplacements : EventHandler
 				e.Replacement = "FDM_HasteSphere";
 			}
 		}
+		
+		if (e.replacee == "FDM_DukeBot")
+		{
+			if (fdm_holiday == 1)
+			{
+				int cointoss;
+				cointoss = random(0,1);
+				
+				if (cointoss == 1)
+				{
+					e.Replacement = "FDM_Santa";
+				}
+			}
+		}
 	}
 }
 

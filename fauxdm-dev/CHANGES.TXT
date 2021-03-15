@@ -16,11 +16,16 @@ MAP CHANGES:
 - FDM04: Added AI redirectors.
 - FDM05: Added AI redirectors.
 - BB3: Added AI redirectors.
+- D5M1: Re-added holiday version as D5M1X (see Misc. Changes)
 
 WEAPON CHANGES:
 - Flamethrower: Imported updated version of Flamethrower library from Reelism 2.
 
 MISC. CHANGES:
+- Added a CVAR to re-enable Holiday-themed content, so that I don't have to
+  remember to shove out another release next December. You can turn on this
+  content in the DM Sim menu. Content for other holidays may be added in the
+  future, but probably won't.
 - Added and improved the sound clips for match stats and Gauntlet kills.
 - Added widescreen intermission border from MetaDoom.
 - Updated certain system artworks to support widescreen.
