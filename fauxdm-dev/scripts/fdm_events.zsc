@@ -198,7 +198,7 @@ class FDM_HolidayShit : EventHandler
 	
 	override void CheckReplacement(ReplaceEvent e)
 	{
-		if (e.replacee == "FDM_DukeBot")
+		if (e.replacee == "FDM_Chubbs")
 		{
 			if (fdm_holiday == 1)
 			{
