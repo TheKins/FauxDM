@@ -235,6 +235,15 @@ class FDM_BaseMonster : Actor
 			}
 		}
 		
+		FLineTraceData SurfaceData;
+		self.LineTrace(self.angle, 72, 0, TRF_THRUACTORS, offsetz: 8, data:SurfaceData);
+		
+		if (waterlevel >= 1 && health > 0 && SurfaceData.HitType == SurfaceData.TRACE_HitWall)
+		{
+			self.vel.z = 8;
+		}
+		
+		
 		// If in water and dead, sadly float up to the surface
 		if (waterlevel > 1 && health <= 0)
 		{
