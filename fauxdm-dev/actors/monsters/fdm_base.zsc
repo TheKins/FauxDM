@@ -385,11 +385,54 @@ class FDM_BaseMonster : Actor
 				{
 					whodunnit = source.player.GetUserName();
 					killerclass = "Player";
-					murderweapon = Source.player.ReadyWeapon.GetClassName();
+					
+					// By default, the weapon you're holding when the enemy dies
+					// is what's reported as what killed them. This is not always
+					// accurate.
+					if (inflictor is "FDM_BFGBall"
+					|| inflictor is "FDM_BFGBlastTLite"
+					|| inflictor is "FDM_BFGBlastTShot"
+					|| inflictor is "FDM_BFGBlastTShot2")
+					{
+						murderweapon = "FDM_BFG9000";
+					} else if (inflictor is "FDM_PlasmaBall") {
+						murderweapon = "FDM_PlasmaRifle";
+					} else if (inflictor is "FDM_PlayerRocket") {
+						murderweapon = "FDM_RocketLauncher";
+					} else if (inflictor is "FDM_Grenade") {
+						murderweapon = "FDM_GrenadeLauncher";
+					} else if (MeansOfDeath == "Flamer") {
+						murderweapon = "FDM_Flamethrower";
+					} else if (inflictor is "FDM_ExplosiveBarrel") {
+						murderweapon = "FDM_ExplosiveBarrel";	
+					} else {
+						murderweapon = Source.player.ReadyWeapon.GetClassName();
+					}
 				} else if (target.player != null) {
 					whodunnit = target.player.GetUserName();
 					killerclass = "Player";
-					murderweapon = target.player.ReadyWeapon.GetClassName();
+					// By default, the weapon you're holding when the enemy dies
+					// is what's reported as what killed them. This is not always
+					// accurate.
+					if (inflictor is "FDM_BFGBall"
+					|| inflictor is "FDM_BFGBlastTLite"
+					|| inflictor is "FDM_BFGBlastTShot"
+					|| inflictor is "FDM_BFGBlastTShot2")
+					{
+						murderweapon = "FDM_BFG9000";
+					} else if (inflictor is "FDM_PlasmaBall") {
+						murderweapon = "FDM_PlasmaRifle";
+					} else if (inflictor is "FDM_PlayerRocket") {
+						murderweapon = "FDM_RocketLauncher";
+					} else if (inflictor is "FDM_Grenade") {
+						murderweapon = "FDM_GrenadeLauncher";
+					} else if (MeansOfDeath == "Flamer") {
+						murderweapon = "FDM_Flamethrower";
+					} else if (inflictor is "FDM_ExplosiveBarrel") {
+						murderweapon = "FDM_ExplosiveBarrel";	
+					} else {
+						murderweapon = target.player.ReadyWeapon.GetClassName();
+					}
 				} else {
 					whodunnit = "Some Asshole";
 					killerclass = self.GetClassName();
@@ -556,7 +599,9 @@ class FDM_BaseMonster : Actor
 			else if (weapon == "FDM_BFG9000")
 				endresult = string.format("%s was nuked by %s's BFG9000.", GetTag(), srcname);
 			else if (weapon == "FDM_Flamethrower")
-				endresult = string.format("%s was fried by %s's Flamethrower", GetTag(), srcname);
+				endresult = string.format("%s was fried by %s's Flamethrower.", GetTag(), srcname);
+			else if (weapon == "FDM_ExplosiveBarrel")
+				endresult = string.format("%s was barreled over by %s.", GetTag(), srcname);
 		}
 		
 		Console.printf("\cf%s", endresult);
