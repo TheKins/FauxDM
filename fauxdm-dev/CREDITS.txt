@@ -108,6 +108,10 @@ by Michael Mcinnis
 Infuscomus
 by Daniel Bernstein and Guy Whitmore
 
+"ITSGREEN"
+It's Green
+by Lee Jackson
+
 ================================================================================
 
 Map Credits:
@@ -141,4 +145,9 @@ Originally by Craig Hubbard
 FDM05: "Tiny Town"
 Based on Tiny Town from GTA2 Multiplayer
 Originally by DMA Design
+Remade by The Kins
+
+DUST: "LameDust"
+Based on de_dust from the Counter-Strike franchise
+Originally by Dave Johnston
 Remade by The Kins
