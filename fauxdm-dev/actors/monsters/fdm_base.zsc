@@ -345,7 +345,7 @@ class FDM_BaseMonster : Actor
 			string murderweapon;
 			if (source is "PlayerPawn")
 			{
-				if (Source.player.GetUserName() != null)
+				if (Source.player.GetUserName())
 				{
 					whodunnit = Source.player.GetUserName();
 				} else if (target && target is "PlayerPawn") {
