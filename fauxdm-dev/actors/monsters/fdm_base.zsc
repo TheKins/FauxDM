@@ -94,6 +94,7 @@ class FDM_BaseMonster : Actor
 	void A_FDMChase(statelabel melee = "Melee", statelabel missile = "Missile", int flags = 0)
 	{
 		DoAvoidWallrunning();
+		DoClimbing();
 		
 		A_Chase(melee, missile, flags);
 		PrioritizePlayers();
@@ -104,6 +105,7 @@ class FDM_BaseMonster : Actor
 	void A_FDMRoam()
 	{
 		DoAvoidWallrunning();
+		DoClimbing();
 		
 		A_Wander();
 		A_Look();
@@ -248,6 +250,31 @@ class FDM_BaseMonster : Actor
 		if (waterlevel > 1 && health <= 0)
 		{
 			ThrustThingZ(0,1,0,0);
+		}
+	}
+	
+	virtual void DoClimbing()
+	{
+		FLineTraceData SurfaceData;
+		self.LineTrace(self.angle, 72, 0, TRF_THRUACTORS, offsetz: MaxStepHeight + 2, data:SurfaceData);
+		
+		if (health > 0 && pos.z == floorz
+		&& SurfaceData.HitType == SurfaceData.TRACE_HitWall
+		&& SurfaceData.LinePart == Side.bottom)
+		{
+			if (SurfaceData.HitLine.Flags & Line.ML_TWOSIDED)
+			{
+				FLineTraceData ConfirmData;
+				self.LineTrace(self.angle, SurfaceData.Distance + 16, 0, TRF_THRUACTORS|TRF_BLOCKSELF, offsetz: self.height, data:ConfirmData);
+				
+				if (ConfirmData.HitType == SurfaceData.TRACE_HitNone)
+				{
+					//Console.printf ("Rock!");
+					self.vel.z = 10;
+				} else {				
+					//angle = angle + 180;
+				}
+			}
 		}
 	}
 	
