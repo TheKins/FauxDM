@@ -12,6 +12,7 @@ MONSTER CHANGES:
   don't appreciate the console spam, this is togglable in the DM Sim menu.
 
 MAP CHANGES:
+- DUST: Added an old favorite from Counter-Strike!
 - FDM03: Added AI redirectors.
 - FDM03: Added additional detail outside of the playable area.
 - FDM04: Added AI redirectors.
