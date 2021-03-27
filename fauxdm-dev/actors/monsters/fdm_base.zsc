@@ -430,6 +430,8 @@ class FDM_BaseMonster : Actor
 						murderweapon = "FDM_Flamethrower";
 					} else if (inflictor is "FDM_ExplosiveBarrel") {
 						murderweapon = "FDM_ExplosiveBarrel";	
+					} else if (inflictor is "FDM_Car") {
+						murderweapon = "FDM_Car";	
 					} else {
 						murderweapon = target.player.ReadyWeapon.GetClassName();
 					}
@@ -602,6 +604,8 @@ class FDM_BaseMonster : Actor
 				endresult = string.format("%s was fried by %s's Flamethrower.", GetTag(), srcname);
 			else if (weapon == "FDM_ExplosiveBarrel")
 				endresult = string.format("%s was barreled over by %s.", GetTag(), srcname);
+			else if (weapon == "FDM_Car")
+				endresult = string.format("%s was roadkilled by %s.", GetTag(), srcname);
 		}
 		
 		Console.printf("\cf%s", endresult);
