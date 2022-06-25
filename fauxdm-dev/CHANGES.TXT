@@ -1,6 +1,9 @@
 BUILD 05.1 (June 25th 2022)
 ===========================
 
+MONSTER CHANGES:
+- Added a few more dumbass names to the list.
+
 MISC CHANGES:
 - Fixed the mod not starting in GZDoom 4.8.0.
 

@@ -90,7 +90,8 @@ class FDM_Chubbs : FDM_BaseMonster
 			"Garfield",
 			"Garbagefeld",
 			"Plus-Sized",
-			"BodyPositive"
+			"BodyPositive",
+			"MeatShield"
 		};
 		int i;
 		i = random(0,NameList.Size()-1);

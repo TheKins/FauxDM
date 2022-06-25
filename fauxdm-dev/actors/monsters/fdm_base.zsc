@@ -472,8 +472,13 @@ class FDM_BaseMonster : Actor
 			"MAYOR HOBART DUNGLE",
 			"FiveDrunkenBats",
 			"[MLB]Slugfeast",
+			"El_Tyrante",
+			"HonestApe",
+			"B-Ball Glitch",
 			// Shade Thrown At Retro FPS Things
 			"PolyObject-amorous",
+			"MADE WITH UNITY",
+			"Immersive Simp",			
 			// New and Exciting! Yes.
 			"AlternativeFaxMachine",
 			"Microsoft Bing Crosby",
@@ -500,7 +505,8 @@ class FDM_BaseMonster : Actor
 			"Inconspicuous Consumption",
 			"Blood 'n' Silicone",
 			"Emoji w/ a Bulge",
-			"Bob Costas-Rican"
+			"Bob Costas-Rican",
+			"Captain's Pick"
 		};
 		
 		int i;

@@ -151,7 +151,9 @@ class FDM_QuakeRanger : FDM_BaseMonster
 			"WheresTheDragon",
 			"FragsDoneQuick",
 			"HUHH HUHH HUHH",
-			"shart.bsp"
+			"shart.bsp",
+			"MapJammer",
+			"BouncyBoomGoo"
 		};
 		int i;
 		i = random(0,NameList.Size()-1);
@@ -586,7 +588,13 @@ class FDM_DukeBot : FDM_BaseMonster
 			"KinoFabino",
 			"WheresTehBaeta",
 			"DecadeDevCycle",
-			"Fake AI"
+			"Fake AI",
+			// time to party like it's 2001
+			"EzVEND",
+			"Bellowsaur",
+			"Teslaraptor",
+			"Gus",
+			"ShadesOS"
 		};
 		
 		int i;
