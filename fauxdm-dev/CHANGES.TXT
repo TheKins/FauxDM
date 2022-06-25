@@ -1,3 +1,9 @@
+BUILD 05.1 (June 25th 2022)
+===========================
+
+MISC CHANGES:
+- Fixed the mod not starting in GZDoom 4.8.0.
+
 BUILD 05 (March 28th 2021)
 ==========================
 
