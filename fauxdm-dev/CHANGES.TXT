@@ -2,6 +2,7 @@ NEXT
 ====
 
 MISC. CHANGES:
+- Added multikill announcements! Not currently togglable.
 - Minor sound improvements
 
 BUILD 05.1 (June 25th 2022)

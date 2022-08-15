@@ -60,6 +60,10 @@ class FDM_Player : PlayerPawn
 		
 		damagefactor "PlayerRocket", 0.5;
 	}
+	
+	int mktime;
+	int mkold;
+	int mkdiff;
 
 	States
 	{
@@ -138,8 +142,44 @@ class FDM_Player : PlayerPawn
 		// actors can disable or override them for whatever reason.
 		DoExtinguish();
 		DoUnfuckDeath();
+		DoManageMultiKills();
 		
 		Super.Tick();
+	}
+	
+	// Play funny sound when wasting lots of dudes at once
+	virtual void DoManageMultiKills()
+	{
+		int mknum;
+		
+		if (multiplayer)
+		{
+			mknum = self.player.FragCount;
+		} else {
+			mknum = CountInv("FDM_FragCounter");
+		}
+		
+		if (!isFrozen())
+		{
+			mktime++;
+		}
+		
+		if (mktime > 2)
+		{
+			mktime = 0;
+			mkdiff = mknum - mkold;
+			
+			if (mkdiff > 0)
+			{
+				//Console.Printf("Diff: %i", mkdiff);
+				
+				ACS_NamedExecute("FDM_Multikills", 0, mkdiff);
+				
+				mkdiff = 0;
+			}
+			
+			mkold = mknum;
+		}
 	}
 	
 	// Fix a weird bug where sometimes when accidentally killing yourself with a Plasma Rifle splash,

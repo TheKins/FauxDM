@@ -72,6 +72,12 @@ gameplay/humiliation12			humil12
 gameplay/humiliation13			humil13
 gameplay/humiliation14			humil14
 
+gameplay/multikill/2			mkill2
+gameplay/multikill/3			mkill3
+gameplay/multikill/4			mkill4
+gameplay/multikill/5			mkill5
+gameplay/multikill/6			mkill6
+
 // Intermission
 intermission/nextstage		endlcntd
 
