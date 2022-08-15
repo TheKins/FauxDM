@@ -299,25 +299,30 @@ script "FDM_Multikills" (int num)
 
 		case 2:
 		LocalAmbientSound("gameplay/multikill/2", 127);
+		LocalAmbientSound("gameplay/multikill/2", 127);
 		HudMessage(s:"Two-Fer!"; HUDMSG_PLAIN, 666, CR_RED, 0.5, 0.8, 2.0);
 		break;
 
 		case 3:
+		LocalAmbientSound("gameplay/multikill/3", 127);
 		LocalAmbientSound("gameplay/multikill/3", 127);
 		HudMessage(s:"Threesome!"; HUDMSG_PLAIN, 666, CR_RED, 0.5, 0.8, 2.0);
 		break;
 		
 		case 4:
 		LocalAmbientSound("gameplay/multikill/4", 127);
+		LocalAmbientSound("gameplay/multikill/4", 127);
 		HudMessage(s:"Quadrilateral!"; HUDMSG_PLAIN, 666, CR_RED, 0.5, 0.8, 2.0);
 		break;
 		
 		case 5:
 		LocalAmbientSound("gameplay/multikill/5", 127);
+		LocalAmbientSound("gameplay/multikill/5", 127);
 		HudMessage(s:"Combo No. 5!"; HUDMSG_PLAIN, 666, CR_RED, 0.5, 0.8, 2.0);
 		break;
 		
 		default:
+		LocalAmbientSound("gameplay/multikill/6", 127);
 		LocalAmbientSound("gameplay/multikill/6", 127);
 		HudMessage(s:"Orgy of Blood!"; HUDMSG_PLAIN, 666, CR_RED, 0.5, 0.8, 2.0);
 		break;
