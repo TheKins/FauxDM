@@ -1,3 +1,9 @@
+NEXT
+====
+
+MISC. CHANGES:
+- Minor sound improvements
+
 BUILD 05.1 (June 25th 2022)
 ===========================
 
