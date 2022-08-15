@@ -64,6 +64,7 @@ class FDM_Player : PlayerPawn
 	int mktime;
 	int mkold;
 	int mkdiff;
+	int lifetime;
 
 	States
 	{
@@ -138,11 +139,22 @@ class FDM_Player : PlayerPawn
 	
 	override void Tick()
 	{
+		if (health > 0)
+		{
+			lifetime++;
+			//console.printf("%i", lifetime);
+		} else {
+			lifetime = 0;
+		}
+		
 		// These have all been broken into seperate functions so that individual
 		// actors can disable or override them for whatever reason.
 		DoExtinguish();
 		DoUnfuckDeath();
-		DoManageMultiKills();
+		if (health > 0)
+		{
+			DoManageMultiKills();
+		}
 		
 		Super.Tick();
 	}
@@ -169,7 +181,7 @@ class FDM_Player : PlayerPawn
 			mktime = 0;
 			mkdiff = mknum - mkold;
 			
-			if (mkdiff > 0)
+			if (mkdiff > 0 && lifetime > 8)
 			{
 				//Console.Printf("Diff: %i", mkdiff);
 				
