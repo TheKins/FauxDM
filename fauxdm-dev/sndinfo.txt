@@ -56,7 +56,7 @@ gameplay/start27			start27
 gameplay/start28			start28
 gameplay/start29			start29
 
-$random gameplay/humiliation { gameplay/humiliation01 gameplay/humiliation02 gameplay/humiliation03 gameplay/humiliation04 gameplay/humiliation05 gameplay/humiliation06 gameplay/humiliation07 gameplay/humiliation08 gameplay/humiliation09 gameplay/humiliation10 gameplay/humiliation11 gameplay/humiliation12 gameplay/humiliation13 gameplay/humiliation14 }
+$random gameplay/humiliation { gameplay/humiliation01 gameplay/humiliation02 gameplay/humiliation03 gameplay/humiliation04 gameplay/humiliation05 gameplay/humiliation06 gameplay/humiliation07 gameplay/humiliation08 gameplay/humiliation09 gameplay/humiliation10 gameplay/humiliation11 gameplay/humiliation12 gameplay/humiliation13 gameplay/humiliation14 gameplay/humiliation15 gameplay/humiliation16 gameplay/humiliation17 }
 gameplay/humiliation01			humil01
 gameplay/humiliation02			humil02
 gameplay/humiliation03			humil03
@@ -71,6 +71,9 @@ gameplay/humiliation11			humil11
 gameplay/humiliation12			humil12
 gameplay/humiliation13			humil13
 gameplay/humiliation14			humil14
+gameplay/humiliation15          humil15
+gameplay/humiliation16          humil16
+gameplay/humiliation17          humil17
 
 gameplay/multikill/2			mkill2
 gameplay/multikill/3			mkill3
