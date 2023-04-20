@@ -189,7 +189,7 @@ MAP CHANGES:
 - FDM04: Moved the Minigun over to the UniAmmo island, added a Chaingun in its place.
 
 MISC. CHANGES:
-- Fixed background drawing on intermission screen (Thanks, Marisa!)
+- Fixed background drawing on intermission screen
 - Added GLDef lights to a variety of effects, weapons and enemies.
 - Added more mad-lib entries to the map-start objective toast. (Thanks, Techokami!)
 - Removed pitch shifting from end-of-round win/lose fanfare.

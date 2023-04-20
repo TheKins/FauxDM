@@ -16,7 +16,6 @@ Jekyll Grim Payne
 Zombie
 Kodi
 Comet
-Marisa the Magician
 
 External Scripts:
 Boondorl (Flamethrower Code)
